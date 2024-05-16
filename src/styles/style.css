@@ -1,0 +1,12 @@
+/* Import Bootstrap and Tailwind CSS */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Custom styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ... tambahkan gaya lainnya di sini ... */
