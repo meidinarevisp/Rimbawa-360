@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start-dev": "webpack serve --config webpack.dev.js",
+    "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "serve": "http-server dist --port 9000",
-    "build-serve": "npm run build && npm run serve"
+    "serve": "http-server dist",
+    "lint": "eslint ./src"
   },
   "keywords": [],
   "author": "your_name <your_email@gmail.com>",
