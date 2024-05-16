@@ -1,4 +1,4 @@
-const forumContainer = document.getElementById("forum");
+const forumContainer = document.getElementById('forum')
 forumContainer.innerHTML = `
   <div class="container py-5">
     <h2 class="text-success mb-4">Forum Diskusi</h2>
@@ -12,24 +12,24 @@ forumContainer.innerHTML = `
       </div>
     </div>
   </div>
-`;
+`
 
 // Fungsi untuk mengirimkan komentar dan menampilkannya di forum
-const commentTextarea = document.querySelector(".discussion-forum textarea");
-const sendButton = document.querySelector(".discussion-forum button");
-const commentsContainer = document.querySelector(".discussion-forum .comments");
+const commentTextarea = document.querySelector('.discussion-forum textarea')
+const sendButton = document.querySelector('.discussion-forum button')
+const commentsContainer = document.querySelector('.discussion-forum .comments')
 
-sendButton.addEventListener("click", () => {
-  const commentText = commentTextarea.value.trim();
+sendButton.addEventListener('click', () => {
+  const commentText = commentTextarea.value.trim()
   if (commentText) {
-    const commentElement = document.createElement("div");
-    commentElement.classList.add("card", "mb-3");
+    const commentElement = document.createElement('div')
+    commentElement.classList.add('card', 'mb-3')
     commentElement.innerHTML = `
       <div class="card-body">
         <p class="card-text">${commentText}</p>
       </div>
-    `;
-    commentsContainer.appendChild(commentElement);
-    commentTextarea.value = "";
+    `
+    commentsContainer.appendChild(commentElement)
+    commentTextarea.value = ''
   }
-});
+})
