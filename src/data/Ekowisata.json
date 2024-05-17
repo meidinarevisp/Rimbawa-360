@@ -1,0 +1,94 @@
+{
+  "ekowisata_hutan": [
+    {
+      "id": 1,
+      "nama_tempat": "Taman Nasional Gunung Leuser",
+      "lokasi": "Aceh dan Sumatera Utara",
+      "deskripsi": "Taman Nasional Gunung Leuser adalah salah satu kawasan konservasi terbesar di Indonesia yang menjadi habitat bagi banyak spesies langka seperti orangutan Sumatera.",
+      "aktivitas": [
+        "Trekking",
+        "Birdwatching",
+        "Observasi Satwa",
+        "Fotografi Alam"
+      ],
+      "akses": "Dapat diakses dari Medan, Sumatera Utara melalui perjalanan darat sekitar 3-4 jam menuju Bukit Lawang.",
+      "fasilitas": [
+        "Pusat Informasi",
+        "Penginapan",
+        "Pemandu Wisata",
+        "Area Camping"
+      ],
+      "link_google_maps": "https://maps.google.com/?q=Taman+Nasional+Gunung+Leuser",
+      "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715924187/Taman_Nasional_Gunung_Leuser_ahrhkq.jpg"
+    },
+    {
+      "id": 2,
+      "nama_tempat": "Taman Nasional Ujung Kulon",
+      "lokasi": "Banten",
+      "deskripsi": "Taman Nasional Ujung Kulon terkenal sebagai habitat terakhir dari badak Jawa yang sangat langka.",
+      "aktivitas": ["Trekking", "Snorkeling", "Pengamatan Satwa", "Tur Perahu"],
+      "akses": "Dapat diakses melalui perjalanan darat dari Jakarta menuju Pandeglang, lalu melanjutkan perjalanan dengan perahu dari Desa Sumur.",
+      "fasilitas": [
+        "Pusat Informasi",
+        "Penginapan",
+        "Pemandu Wisata",
+        "Perahu Wisata"
+      ],
+      "link_google_maps": "https://maps.google.com/?q=Taman+Nasional+Ujung+Kulon",
+      "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715924361/taman_nasional_ujung_kulon_qrvglh.jpg"
+    },
+    {
+      "id": 3,
+      "nama_tempat": "Taman Nasional Komodo",
+      "lokasi": "Nusa Tenggara Timur",
+      "deskripsi": "Taman Nasional Komodo merupakan rumah bagi komodo, kadal terbesar di dunia, serta memiliki keindahan bawah laut yang mempesona.",
+      "aktivitas": ["Menyelam", "Snorkeling", "Trekking", "Observasi Komodo"],
+      "akses": "Dapat diakses dengan pesawat dari Bali ke Labuan Bajo, kemudian dilanjutkan dengan perjalanan perahu.",
+      "fasilitas": [
+        "Pusat Informasi",
+        "Penginapan",
+        "Pemandu Wisata",
+        "Perahu Wisata"
+      ],
+      "link_google_maps": "https://maps.google.com/?q=Taman+Nasional+Komodo",
+      "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715924188/taman_nasional_komodo_linfdm.jpg"
+    },
+    {
+      "id": 4,
+      "nama_tempat": "Taman Nasional Lorentz",
+      "lokasi": "Papua",
+      "deskripsi": "Taman Nasional Lorentz adalah taman nasional terbesar di Asia Tenggara dengan keanekaragaman hayati yang tinggi dan memiliki gletser tropis.",
+      "aktivitas": [
+        "Trekking",
+        "Pengamatan Satwa",
+        "Fotografi Alam",
+        "Ekspedisi Ilmiah"
+      ],
+      "akses": "Dapat diakses melalui penerbangan ke Wamena, kemudian melanjutkan perjalanan darat dan sungai.",
+      "fasilitas": ["Pusat Informasi", "Pemandu Wisata", "Area Camping"],
+      "link_google_maps": "https://maps.google.com/?q=Taman+Nasional+Lorentz",
+      "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715924360/Taman_Nasional_Lorentz_xxj6wx.jpg"
+    },
+    {
+      "id": 5,
+      "nama_tempat": "Taman Nasional Bromo Tengger Semeru",
+      "lokasi": "Jawa Timur",
+      "deskripsi": "Taman Nasional Bromo Tengger Semeru terkenal dengan keindahan alamnya, terutama Gunung Bromo dan Gunung Semeru yang merupakan gunung tertinggi di Jawa.",
+      "aktivitas": [
+        "Trekking",
+        "Fotografi Alam",
+        "Observasi Matahari Terbit",
+        "Jelajah Kawah"
+      ],
+      "akses": "Dapat diakses dari Malang atau Probolinggo dengan perjalanan darat.",
+      "fasilitas": [
+        "Pusat Informasi",
+        "Penginapan",
+        "Pemandu Wisata",
+        "Area Camping"
+      ],
+      "link_google_maps": "https://maps.google.com/?q=Taman+Nasional+Bromo+Tengger+Semeru",
+      "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715924359/taman_nasional_bromo_emxdnm.jpg"
+    }
+  ]
+}

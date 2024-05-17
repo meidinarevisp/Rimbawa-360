@@ -1,7 +1,7 @@
 /* General Styles */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #e8eedc;
 }
 
 section {
@@ -9,6 +9,10 @@ section {
 }
 
 /* Navbar */
+.dropdown-menu {
+  background-color: #e8eedc;
+}
+
 .navbar {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font-size: 1.3rem;
@@ -43,7 +47,7 @@ section {
 }
 
 .hero-section h1 {
-  font-size: 4.5rem; /* Ukuran font diperbesar */
+  font-size: 3.5rem; /* Ukuran font diperbesar */
   color: #d2e0bb !important;
   font-weight: bolder;
 }
@@ -127,28 +131,241 @@ i.fa-angle-right {
 }
 
 /* Edukasi Section */
+.edukasi-section h2 {
+  font-size: 40px;
+  margin-left: 20px;
+}
+
 .edukasi-section {
   background-color: #e9ecef;
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+
+.flex-item {
+  background-color: #d2e0bb;
+  border-radius: 15px;
+  overflow: hidden; /* Ensure content stays within rounded corners */
+  display: flex;
+}
+
+.inner-flex-container {
+  display: flex;
+  align-items: stretch;
+  gap: 0; /* Remove gap between text and image */
+  flex: 1;
+}
+
+.row1 {
+  flex-direction: row; /* Image on the right */
+}
+
+.row2 {
+  flex-direction: row-reverse; /* Image on the left */
+}
+
+.text-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px; /* Add padding inside the text container */
+}
+
+.text {
+  text-align: justify;
+  font-size: 1.3em;
+}
+
+.image-edukasi img {
+  display: block; /* Ensure image fills the container */
+  height: 200px; /* Ensure image touches top and bottom */
+  width: auto;
+}
+
+.image-edukasi {
+  overflow: hidden; /* Ensure image stays within rounded corners */
+  display: flex;
+  align-items: center;
+}
+
 /* Tentang Kami Section */
 .tentang-kami-section {
-  background-color: #f8f9fa;
+  background-color: #e9ecef;
+  padding: 20px 0;
+}
+.tentang-kami-section h2 {
+  font-size: 40px;
+  padding-top: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.content-flex {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.image-tentang img {
+  width: 450px;
+  height: auto;
+}
+
+.text {
+  flex: 1;
 }
 
 /* Spesies Section */
-.spesies-section img {
-  margin-bottom: 20px;
+.spesies-section .image-row {
+  height: 100%;
+}
+
+.spesies-section .full-height {
+  height: 100%; /* Adjusted for screen fit */
+  width: 100%; /* Ensure it fits within the container */
+}
+
+.spesies-section .d-flex img {
+  border-radius: 20px; /* Optional: add rounded corners to images */
+}
+
+.spesies-section h2 {
+  font-size: 50px;
+}
+
+.spesies-section .large-img {
+  flex: 2 1 0; /* Larger image */
+  object-fit: cover; /* Ensure the image covers the full area without distortion */
+  height: 35%; /* Reduced height */
+}
+
+.spesies-section .small-img {
+  flex: 1 1 0; /* Smaller image */
+  object-fit: cover; /* Ensure the image covers the full area without distortion */
+  height: 25%; /* Reduced height */
+}
+
+.spesies-section .row + center {
+  margin-top: 20px; /* Add space between the image row and the button */
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.2em; /* Adjust the font size as needed */
+  border-radius: 0 0 20px 20px; /* Match the image border radius */
 }
 
 /* Destinasi Section */
-.destinasi-section img {
-  margin-bottom: 20px;
+.destinasi-section h2 {
+  font-size: 40px;
+}
+
+.destinasi-section .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Jarak antara kolom */
+  padding-bottom: 20px;
+}
+
+.destinasi-section .row .col-md-4 {
+  background-color: #e8c614; /* Warna latar belakang untuk kolom */
+  padding-bottom: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 10px; /* Membuat sudut yang melengkung */
+  flex: 1 1 calc(33.333% - 20px); /* Pastikan kolom memiliki ukuran yang tepat dan mempertimbangkan gap */
+  box-sizing: border-box; /* Termasuk padding dalam ukuran elemen */
+  overflow: hidden; /* Menjamin konten tidak keluar dari batas elemen */
+  position: relative; /* Untuk memungkinkan penggunaan posisi absolut pada anak elemen */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Membuat konten dalam kolom terdistribusi secara merata */
+  height: 500px; /* Tinggi tetap untuk semua kolom */
+}
+
+.destinasi-section .row .col-md-4 .image-container {
+  position: relative; /* Untuk memastikan posisi absolut h1 relatif terhadap container ini */
+  width: 100%; /* Lebar penuh untuk kontainer gambar */
+  height: 60%; /* Tinggi tetap untuk kontainer gambar */
+  overflow: hidden; /* Potong gambar yang melebihi kontainer */
+  border-radius: 10px 10px 0 0; /* Membuat sudut yang melengkung hanya di atas */
+}
+
+.destinasi-section .row .col-md-4 .image-container img {
+  display: block; /* Menjamin gambar mengisi seluruh lebar kolom */
+  width: 100%; /* Menjamin gambar mengisi seluruh lebar kontainer */
+  height: 100%; /* Menjamin gambar mengisi seluruh tinggi kontainer */
+  object-fit: cover; /* Pastikan gambar mengisi kontainer dengan proporsi yang benar */
+}
+
+.destinasi-section .row .col-md-4 .image-container h1 {
+  position: absolute; /* Menempatkan h1 di posisi absolut dalam container */
+  top: 0px; /* Jarak dari atas */
+  right: 0px; /* Jarak dari kanan */
+  background-color: #004225;
+  color: #fff; /* Warna teks putih */
+  padding: 5px 10px; /* Padding untuk h1 */
+  border-radius: 0px 0px 0px 10px; /* Sudut melengkung untuk h1 */
+  font-size: 1.1em; /* Ukuran teks */
+}
+
+.destinasi-section .row .col-md-4 .text-content {
+  background-color: #b5e0cd; /* Warna latar belakang untuk teks */
+  padding: 15px; /* Padding untuk teks */
+  border-radius: 0 0 10px 10px; /* Membuat sudut yang melengkung di bawah */
+  height: 40%; /* Tinggi tetap untuk kontainer teks */
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+
+.destinasi-section .row .col-md-4 .text-content h4,
+.destinasi-section .row .col-md-4 .text-content p {
+  margin: 0; /* Menghapus margin default */
+}
+
+.destinasi-section .row .col-md-4 h4 {
+  margin-bottom: 10px; /* Jarak antara h4 dan p */
+  text-align: justify;
+  padding-bottom: 10px;
+  white-space: nowrap; /* Mencegah teks melintasi batas kolom */
+  overflow: hidden; /* Menyembunyikan teks yang terpotong */
+  text-overflow: ellipsis; /* Menampilkan elipsis (...) jika teks terpotong */
 }
 
 /* Cerita Kita Section */
 .cerita-kita-section {
-  background-color: #e9ecef;
+  background-color: #eeeeee;
 }
 
 .cerita-kita {
@@ -170,14 +387,28 @@ i.fa-angle-right {
 
 /* Footer */
 footer {
-  background-color: #f8f9fa;
+  background-color: #004225;
 }
 
 footer ul li a {
-  color: #6c757d;
+  color: #ffffff;
   text-decoration: none;
 }
 
 footer ul li a:hover {
-  color: #343a40;
+  color: #9d9e9f;
+}
+
+footer p {
+  color: #fff;
+}
+
+footer h5 {
+  color: #ffff;
+  text-decoration: underline;
+  padding-bottom: 15px;
+}
+
+footer hr {
+  color: #fff;
 }

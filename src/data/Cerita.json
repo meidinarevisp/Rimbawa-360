@@ -1,0 +1,39 @@
+{
+  "keterlibatanMasyarakat": [
+    {
+      "id": 1,
+      "foto_profile": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715926410/user_ltszv9.png",
+      "nama": "Rudi Hartono",
+      "cerita": "Saya adalah penduduk asli dari kawasan Taman Nasional Gunung Leuser. Saya terlibat dalam program konservasi harimau Sumatra dan telah mendirikan sebuah komunitas untuk melindungi habitat alami mereka. Kami juga melakukan patroli rutin untuk mencegah perburuan liar.",
+      "waktu_upload": "2024-05-15T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "foto_profile": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715926410/user_ltszv9.png",
+      "nama": "Siti Aminah",
+      "cerita": "Sebagai anggota komunitas di sekitar Hutan Lindung Bukit Barisan Selatan, saya memimpin inisiatif penanaman pohon yang melibatkan anak-anak sekolah. Kami percaya bahwa pendidikan lingkungan sejak dini adalah kunci untuk menjaga hutan kami tetap lestari.",
+      "waktu_upload": "2024-05-16T14:45:00Z"
+    },
+    {
+      "id": 3,
+      "foto_profile": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715926410/user_ltszv9.png",
+      "nama": "Budi Santoso",
+      "cerita": "Saya bekerja dengan LSM lokal untuk mempromosikan ekowisata di Kawasan Konservasi Karimunjawa. Kami mengembangkan program snorkeling yang edukatif, di mana pengunjung bisa belajar tentang terumbu karang dan cara melindunginya dari kerusakan.",
+      "waktu_upload": "2024-05-17T09:15:00Z"
+    },
+    {
+      "id": 4,
+      "foto_profile": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715926410/user_ltszv9.png",
+      "nama": "Dewi Lestari",
+      "cerita": "Di Taman Nasional Lorentz, saya menjalankan sebuah proyek untuk mendokumentasikan keanekaragaman hayati yang ada di sana. Melalui fotografi dan penulisan, saya berbagi cerita tentang flora dan fauna unik yang perlu kita jaga bersama.",
+      "waktu_upload": "2024-05-18T08:00:00Z"
+    },
+    {
+      "id": 5,
+      "foto_profile": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715926410/user_ltszv9.png",
+      "nama": "Ahmad Fauzi",
+      "cerita": "Sebagai pemuda asli dari sekitar Hutan Mangrove di Bali, saya memulai inisiatif untuk membersihkan sampah plastik dari pantai dan hutan mangrove. Kami juga bekerja sama dengan para nelayan untuk mengurangi penggunaan jaring yang dapat merusak ekosistem.",
+      "waktu_upload": "2024-05-19T11:30:00Z"
+    }
+  ]
+}
