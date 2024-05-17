@@ -170,8 +170,9 @@ i.fa-angle-right {
 }
 
 .edukasi-section h2 {
-  font-size: 40px;
+  font-size: 2.8rem;
   margin-left: 20px;
+  font-weight: 700;
 }
 
 .edukasi-section {
@@ -440,10 +441,21 @@ i.fa-angle-right {
 }
 
 .cerita-kita {
-  background-color: pink;
   border-radius: 20px;
   margin-left: 150px;
   margin-right: 150px;
+}
+
+.cerita-1 {
+  background-color: #ffd9d9; /* Warna pastel untuk cerita pertama */
+}
+
+.cerita-2 {
+  background-color: #c9e4c6; /* Warna pastel untuk cerita kedua */
+}
+
+.cerita-3 {
+  background-color: #e8d6c2; /* Warna pastel untuk cerita ketiga */
 }
 
 .blockquote {

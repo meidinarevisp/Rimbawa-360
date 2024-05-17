@@ -83,8 +83,8 @@ if (carouselElement) {
   // Mendapatkan elemen div dengan class carousel-inner
   const carouselInner = carouselElement.querySelector(".carousel-inner");
 
-  // Loop melalui setiap cerita dalam data JSON
-  ceritaData.keterlibatanMasyarakat.forEach((cerita, index) => {
+  // Loop melalui 3 cerita pertama dalam data JSON
+  ceritaData.keterlibatanMasyarakat.slice(0, 3).forEach((cerita, index) => {
     // Membuat elemen div untuk setiap cerita
     const ceritaItem = document.createElement("div");
     ceritaItem.classList.add("carousel-item");
@@ -96,27 +96,29 @@ if (carouselElement) {
 
     // Membuat konten cerita
     const ceritaContent = `
-      <section class="cerita-kita">
-  <blockquote class="blockquote">
-    <center>
-      <img
-        class="mb-3"
-        src="${cerita.foto_profile}"
-        alt="${cerita.nama}"
-        class="profil-image"
-        width="120"
-        height="120"
-      />
-      <h3>${cerita.nama}</h3>
-      <p class="waktu-unggah">${new Date(cerita.waktu_upload).toLocaleString(
-        "id-ID",
-        { dateStyle: "medium", timeStyle: "short" }
-      )}</p>
-    </center>
-    <p class="detail-cerita">${cerita.cerita}</p>
-  </blockquote>
-</section>
-    `;
+    <section class="cerita-kita cerita-${index + 1}">
+      <blockquote class="blockquote">
+        <center>
+          <img
+            class="mb-3"
+            src="${cerita.foto_profile}"
+            alt="${cerita.nama}"
+            class="profil-image"
+            width="120"
+            height="120"
+          />
+          <h3>${cerita.nama}</h3>
+          <p class="waktu-unggah">${new Date(
+            cerita.waktu_upload
+          ).toLocaleString("id-ID", {
+            dateStyle: "medium",
+            timeStyle: "short",
+          })}</p>
+        </center>
+        <p class="detail-cerita">${cerita.cerita}</p>
+      </blockquote>
+    </section>
+  `;
 
     // Menambahkan konten cerita ke dalam elemen ceritaItem
     ceritaItem.innerHTML = ceritaContent;
