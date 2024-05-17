@@ -18,7 +18,10 @@ if (destinasiSection) {
     destinasiRow.innerHTML = "";
 
     // Ambil tiga destinasi acak dari data JSON
-    const destinasiAcak = getRandomDestinations(ekowisataData.ekowisata_hutan, 3);
+    const destinasiAcak = getRandomDestinations(
+      ekowisataData.ekowisata_hutan,
+      3
+    );
 
     // Loop melalui tiga destinasi acak
     destinasiAcak.forEach((destinasi) => {
@@ -94,22 +97,25 @@ if (carouselElement) {
     // Membuat konten cerita
     const ceritaContent = `
       <section class="cerita-kita">
-        <blockquote class="blockquote">
-          <center>
-            <img
-              class="mb-3"
-              src="${cerita.foto_profile}"
-              alt="${cerita.nama}"
-              class="profil-image"
-              width="80"
-              height="80"
-            />
-            <h3>${cerita.nama}</h3>
-            <p class="waktu-unggah">Waktu Unggah: ${new Date(cerita.waktu_upload).toLocaleDateString()}</p>
-          </center>
-          <p class="detail-cerita">${cerita.cerita}</p>
-        </blockquote>
-      </section>
+  <blockquote class="blockquote">
+    <center>
+      <img
+        class="mb-3"
+        src="${cerita.foto_profile}"
+        alt="${cerita.nama}"
+        class="profil-image"
+        width="120"
+        height="120"
+      />
+      <h3>${cerita.nama}</h3>
+      <p class="waktu-unggah">${new Date(cerita.waktu_upload).toLocaleString(
+        "id-ID",
+        { dateStyle: "medium", timeStyle: "short" }
+      )}</p>
+    </center>
+    <p class="detail-cerita">${cerita.cerita}</p>
+  </blockquote>
+</section>
     `;
 
     // Menambahkan konten cerita ke dalam elemen ceritaItem
@@ -191,10 +197,12 @@ if (edukasiSection) {
       const edukasiContent = `
         <div class="inner-flex-container row${index + 1}">
           <div class="text-container">
-            <h3 style="font-size: 20px">${edukasi.nama_isu}</h3>
+            <h3 style="font-size: 1.8rem">${edukasi.nama_isu}</h3>
             <div class="text">${edukasi.deskripsi} ${edukasi.dampak}</div>
           </div>
-          <div class="image-edukasi"><img src="${edukasi.gambar}" alt="${edukasi.nama_isu}" /></div>
+          <div class="image-edukasi"><img src="${edukasi.gambar}" alt="${
+        edukasi.nama_isu
+      }" /></div>
         </div>
       `;
 
