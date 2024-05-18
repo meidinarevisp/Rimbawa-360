@@ -7,6 +7,8 @@ module.exports = {
     app: path.resolve(__dirname, "src/scripts/index.js"),
     login: path.resolve(__dirname, "src/scripts/login.js"),
     register: path.resolve(__dirname, "src/scripts/register.js"),
+    direktori: path.resolve(__dirname, "src/scripts/direktori.js"),
+    tentang: path.resolve(__dirname, "src/scripts/tentang.js"),
   },
   output: {
     filename: "[name].bundle.js",
@@ -33,6 +35,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "register.html",
       template: path.resolve(__dirname, "src/templates/register.html"),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "direktori.html",
+      template: path.resolve(__dirname, "src/templates/direktori.html"),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "tentang.html",
+      template: path.resolve(__dirname, "src/templates/tentang.html"),
     }),
     new CopyWebpackPlugin({
       patterns: [
