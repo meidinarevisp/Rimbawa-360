@@ -909,3 +909,26 @@ footer .fa-2x {
   font-size: 2.8rem;
   padding-bottom: 30px;
 }
+
+.tentang-kami-page .text {
+  text-align: justify;
+  font-size: 1.5em;
+  margin-left: 20px;
+}
+
+.tentang-kami-page {
+  background-color: #eeeeee;
+  padding-bottom: 65px;
+}
+
+.tentang-kami-page h2 {
+  font-size: 50px;
+  padding-top: 50px;
+  margin-bottom: 30px;
+  margin-left: 110px;
+}
+
+.tentang-kami-img img {
+  width: 450px;
+  height: auto;
+}

@@ -15,5 +15,3 @@ function setActiveNavLink() {
 
 // Call the function when the page is loaded
 window.onload = setActiveNavLink;
-
-// Fungsi untuk menampilkan atau menyembunyikan jawaban FAQ
