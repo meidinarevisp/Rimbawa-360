@@ -21,6 +21,7 @@
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <title>Direktori Ekowisata Hutan</title>
   </head>
   <body>
@@ -89,29 +90,6 @@
       </div>
     </nav>
 
-    <!-- Tentang Kami Section -->
-    <section class="tentang-kami-section" id="tentang-kami">
-      <div class="container">
-        <h2 style="text-align: center"><strong>Tentang Kami</strong></h2>
-        <div class="content-flex">
-          <div class="image-tentang">
-            <img src="images/pohon.png" alt="Tentang Kami Image" />
-          </div>
-          <div class="text">
-            <p><strong>Apa Itu Rimbawa 360?</strong></p>
-            <p>
-              Rimbawa 360 adalah sebuah platform yang berkomitmen untuk
-              mengedukasi masyarakat tentang pentingnya menjaga kelestarian
-              hutan dan kehidupan liar di Indonesia. Melalui informasi dan fitur
-              yang disediakan, Rimbawa 360 berupaya untuk membangun kesadaran
-              akan isu-isu lingkungan serta mempromosikan partisipasi aktif
-              dalam upaya pelestarian alam.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="destinasi-section">
       <div class="container">
         <h2>
@@ -126,6 +104,16 @@
         <center>
           <a href="#" class="btn btn-primary mt-3">Selengkapnya</a>
         </center>
+      </div>
+    </section>
+
+    <!-- Peta Interaktif Section -->
+    <section class="peta-interaktif-section">
+      <div class="container">
+        <h2 style="text-align: center" class="mb-lg-4">
+          <strong>Peta Interaktif Ekowisata</strong>
+        </h2>
+        <div id="map"></div>
       </div>
     </section>
 
@@ -182,5 +170,6 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   </body>
 </html>

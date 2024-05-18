@@ -3,7 +3,10 @@
     {
       "id": 1,
       "nama_tempat": "Taman Nasional Gunung Leuser",
-      "lokasi": "Aceh dan Sumatera Utara",
+      "lokasi": {
+        "latitude": 3.5273,
+        "longitude": 98.5611
+      },
       "deskripsi": "Taman Nasional Gunung Leuser adalah salah satu kawasan konservasi terbesar di Indonesia yang menjadi habitat bagi banyak spesies langka seperti orangutan Sumatera.",
       "aktivitas": [
         "Trekking",
@@ -24,7 +27,10 @@
     {
       "id": 2,
       "nama_tempat": "Taman Nasional Ujung Kulon",
-      "lokasi": "Banten",
+      "lokasi": {
+        "latitude": -6.75,
+        "longitude": 105.35
+      },
       "deskripsi": "Taman Nasional Ujung Kulon terkenal sebagai habitat terakhir dari badak Jawa yang sangat langka.",
       "aktivitas": ["Trekking", "Snorkeling", "Pengamatan Satwa", "Tur Perahu"],
       "akses": "Dapat diakses melalui perjalanan darat dari Jakarta menuju Pandeglang, lalu melanjutkan perjalanan dengan perahu dari Desa Sumur.",
@@ -40,7 +46,10 @@
     {
       "id": 3,
       "nama_tempat": "Taman Nasional Komodo",
-      "lokasi": "Nusa Tenggara Timur",
+      "lokasi": {
+        "latitude": -8.5782,
+        "longitude": 119.4411
+      },
       "deskripsi": "Taman Nasional Komodo merupakan rumah bagi komodo, kadal terbesar di dunia, serta memiliki keindahan bawah laut yang mempesona.",
       "aktivitas": ["Menyelam", "Snorkeling", "Trekking", "Observasi Komodo"],
       "akses": "Dapat diakses dengan pesawat dari Bali ke Labuan Bajo, kemudian dilanjutkan dengan perjalanan perahu.",
@@ -56,7 +65,10 @@
     {
       "id": 4,
       "nama_tempat": "Taman Nasional Lorentz",
-      "lokasi": "Papua",
+      "lokasi": {
+        "latitude": -4.092,
+        "longitude": 137.212
+      },
       "deskripsi": "Taman Nasional Lorentz adalah taman nasional terbesar di Asia Tenggara dengan keanekaragaman hayati yang tinggi dan memiliki gletser tropis.",
       "aktivitas": [
         "Trekking",
@@ -72,7 +84,10 @@
     {
       "id": 5,
       "nama_tempat": "Taman Nasional Bromo Tengger Semeru",
-      "lokasi": "Jawa Timur",
+      "lokasi": {
+        "latitude": -7.9425,
+        "longitude": 112.9533
+      },
       "deskripsi": "Taman Nasional Bromo Tengger Semeru terkenal dengan keindahan alamnya, terutama Gunung Bromo dan Gunung Semeru yang merupakan gunung tertinggi di Jawa.",
       "aktivitas": [
         "Trekking",

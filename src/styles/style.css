@@ -544,6 +544,11 @@ i.fa-angle-right {
   text-overflow: ellipsis;
 }
 
+#map {
+  height: 500px;
+  width: 100%;
+}
+
 .cerita-kita-section {
   background-color: #eeeeee;
 }
