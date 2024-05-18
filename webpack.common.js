@@ -21,7 +21,6 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
-      // tambahkan juga konfigurasi untuk file gambar
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [

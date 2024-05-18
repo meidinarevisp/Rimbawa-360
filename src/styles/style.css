@@ -544,11 +544,6 @@ i.fa-angle-right {
   text-overflow: ellipsis;
 }
 
-#map {
-  height: 500px;
-  width: 100%;
-}
-
 .cerita-kita-section {
   background-color: #eeeeee;
 }
@@ -673,4 +668,244 @@ footer .list-inline-item a:hover {
 
 footer .fa-2x {
   font-size: 2em;
+}
+
+.destinasi-page hr {
+  border: none;
+  height: 6px;
+  background-color: #004225;
+  opacity: 100%;
+  margin-left: 13px;
+  width: 45%;
+  position: relative;
+}
+
+.destinasi-page:after {
+  content: "";
+  position: absolute;
+  top: 255px;
+  right: 790px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ec9c00;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+}
+
+.destinasi-page h2 {
+  font-size: 25px;
+  margin-left: 13px;
+  padding-bottom: 10px;
+}
+.destinasi-page h1 {
+  margin-left: 12px;
+}
+.destinasi-page .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.destinasi-page .row .col-md-4 {
+  background-color: #e8c614;
+  padding-bottom: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 10px;
+  flex-basis: calc(33.333% - 20px);
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  left: 25px;
+}
+
+.destinasi-page .row .col-md-4 .image-container {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+
+.destinasi-page .row .col-md-4 .image-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.destinasi-page .row .col-md-4 .image-container h1 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #004225;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 0px 0px 0px 10px;
+  font-size: 1.1em;
+}
+
+.destinasi-page .row .col-md-4 .text-content {
+  background-color: #b5e0cd;
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+
+.destinasi-page .row .col-md-4 .text-content h4,
+.destinasi-page .row .col-md-4 .text-content p {
+  margin: 0;
+}
+
+.destinasi-page .row .col-md-4 h4 {
+  margin-bottom: 10px;
+  text-align: justify;
+  padding-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.destinasi-page .row .col-md-4:last-child {
+  margin-right: 0;
+}
+
+.destinasi-page:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -24%;
+  width: 50vw;
+  height: 100%;
+  background-color: #e8c614;
+  border-radius: 0 100% 100% 0;
+  z-index: -1;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #c7c4c4;
+  border: none;
+  padding: 9px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.pagination button.active {
+  background-color: #e8c614;
+  color: #004225;
+}
+
+.pagination button:disabled {
+  background-color: #004225;
+  color: #eeeeee;
+  cursor: not-allowed;
+}
+
+.tim-kami-section {
+  background-color: #e8eedc;
+  padding: 90px 0;
+}
+
+#tim-kami h2 {
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+#tim-kami p {
+  text-align: center;
+  font-size: 1.3rem;
+  padding-bottom: 20px;
+}
+
+.team-member {
+  background-color: #005c42;
+  color: #ffffff;
+  border-radius: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.team-member::after {
+  content: "";
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #e8c614;
+}
+
+.team-member h4 {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  font-weight: 600;
+}
+
+.team-img {
+  width: 100%;
+  height: 380px;
+  border-radius: 30px 30px 0 0;
+}
+
+/* FAQ Section */
+.faq-section {
+  background-color: #eeeeee;
+  padding: 50px 0;
+}
+
+.faq-item button {
+  width: 100%;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 600;
+  position: relative;
+  padding-right: 30px;
+}
+
+.faq-item button i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.faq-item {
+  background-color: #d2e0bb;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.faq-answer {
+  display: none;
+  font-size: 1.3rem;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 20px;
+}
+
+#faq h2 {
+  font-size: 2.8rem;
+  padding-bottom: 30px;
 }
