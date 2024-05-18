@@ -95,7 +95,8 @@ section {
 }
 
 .dropdown-menu .dropdown-item:hover {
-  background-color: #56ab2e !important;
+  background-color: #bbe0aa !important;
+  color: #333433 !important;
   border-radius: 20px;
 }
 
@@ -112,10 +113,9 @@ section {
   height: 100%;
 }
 
-.navbar-nav .nav-item .nav-link.active,
-.navbar-nav .nav-item .nav-link:focus,
-.navbar-nav .nav-item .nav-link:hover {
+.navbar-nav .nav-link.active {
   color: #56ab2e !important;
+  background-color: transparent !important;
 }
 
 .navbar-nav .nav-item {
@@ -127,7 +127,7 @@ section {
 }
 
 .nav-link {
-  color: #333433;
+  color: #333433 !important;
 }
 
 .nav-link:hover {
