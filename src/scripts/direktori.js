@@ -21,7 +21,7 @@ function createMap() {
   });
 
   data.ekowisata_hutan.forEach((place) => {
-    const marker = L.marker([place.lokasi.latitude, place.lokasi.longitude], {
+    const marker = L.marker([place.titik.latitude, place.titik.longitude], {
       icon: customIcon,
     }).addTo(map);
     marker.bindPopup(`<b>${place.nama_tempat}</b><br>${place.deskripsi}`);

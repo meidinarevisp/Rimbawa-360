@@ -3,7 +3,8 @@
     {
       "id": 1,
       "nama_tempat": "Taman Nasional Gunung Leuser",
-      "lokasi": {
+      "lokasi": "Aceh dan Sumatera Utara",
+      "titik": {
         "latitude": 3.5273,
         "longitude": 98.5611
       },
@@ -27,7 +28,8 @@
     {
       "id": 2,
       "nama_tempat": "Taman Nasional Ujung Kulon",
-      "lokasi": {
+      "lokasi": "Banten",
+      "titik": {
         "latitude": -6.75,
         "longitude": 105.35
       },
@@ -46,7 +48,8 @@
     {
       "id": 3,
       "nama_tempat": "Taman Nasional Komodo",
-      "lokasi": {
+      "lokasi": "Nusa Tenggara Timur",
+      "titik": {
         "latitude": -8.5782,
         "longitude": 119.4411
       },
@@ -65,7 +68,8 @@
     {
       "id": 4,
       "nama_tempat": "Taman Nasional Lorentz",
-      "lokasi": {
+      "lokasi": "Papua",
+      "titik": {
         "latitude": -4.092,
         "longitude": 137.212
       },
@@ -84,7 +88,8 @@
     {
       "id": 5,
       "nama_tempat": "Taman Nasional Bromo Tengger Semeru",
-      "lokasi": {
+      "lokasi": "Jawa Timur",
+      "titik": {
         "latitude": -7.9425,
         "longitude": 112.9533
       },
