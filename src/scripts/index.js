@@ -1,35 +1,26 @@
 import "../styles/style.css";
-import ceritaData from "../data/Cerita.json"; // Impor data JSON
-import ekowisataData from "../data/Ekowisata.json"; // Impor data JSON Ekowisata
+import ceritaData from "../data/Cerita.json";
+import ekowisataData from "../data/Ekowisata.json";
 import spesiesData from "../data/Spesies.json";
-import edukasiData from "../data/Edukasi.json"; // Import the education data JSON
+import edukasiData from "../data/Edukasi.json";
 
-// Memilih elemen destinasi-section
 const destinasiSection = document.querySelector(".destinasi-section");
 
-// Mengecek apakah elemen destinasi-section ditemukan
 if (destinasiSection) {
-  // Mendapatkan div dengan class row di dalam destinasi-section
   const destinasiRow = destinasiSection.querySelector(".row");
 
-  // Fungsi untuk menampilkan tiga destinasi ekowisata
   function tampilkanDestinasi() {
-    // Kosongkan div row sebelum menambahkan destinasi baru
     destinasiRow.innerHTML = "";
 
-    // Ambil tiga destinasi acak dari data JSON
     const destinasiAcak = getRandomDestinations(
       ekowisataData.ekowisata_hutan,
       3
     );
 
-    // Loop melalui tiga destinasi acak
     destinasiAcak.forEach((destinasi) => {
-      // Membuat elemen div untuk setiap destinasi
       const destinasiCol = document.createElement("div");
       destinasiCol.classList.add("col-md-4");
 
-      // Membuat konten destinasi ekowisata
       const destinasiContent = `
         <div class="image-container">
           <img src="${destinasi.gambar}" alt="${destinasi.nama_tempat}" class="img-fluid" />
@@ -41,18 +32,15 @@ if (destinasiSection) {
         </div>
       `;
 
-      // Menambahkan konten destinasi ke dalam elemen destinasiCol
       destinasiCol.innerHTML = destinasiContent;
 
-      // Menambahkan elemen destinasiCol ke dalam div row
       destinasiRow.appendChild(destinasiCol);
     });
   }
 
-  // Fungsi untuk mengambil destinasi acak dari array destinasi
   function getRandomDestinations(destinasiArray, jumlah) {
     const destinasiAcak = [];
-    const copyDestinasiArray = [...destinasiArray]; // Copy array destinasi untuk menghindari perubahan pada array asli
+    const copyDestinasiArray = [...destinasiArray];
 
     for (let i = 0; i < jumlah; i++) {
       const randomIndex = Math.floor(Math.random() * copyDestinasiArray.length);
@@ -62,39 +50,29 @@ if (destinasiSection) {
     return destinasiAcak;
   }
 
-  // Panggil fungsi tampilkanDestinasi untuk pertama kali
   tampilkanDestinasi();
 
-  // Set interval untuk memperbarui destinasi setiap 10 detik
   setInterval(tampilkanDestinasi, 10000);
 }
 
-// Memilih elemen carousel
 const carouselElement = document.querySelector("#ceritaCarousel");
 
-// Mengecek apakah elemen carousel ditemukan
 if (carouselElement) {
-  // Inisialisasi carousel dengan menggunakan Bootstrap
   const carousel = new bootstrap.Carousel(carouselElement, {
-    pause: "hover", // Menjeda carousel saat kursor melayang di atasnya
-    interval: 5000, // Mengatur interval perpindahan slide menjadi 5 detik
+    pause: "hover",
+    interval: 5000,
   });
 
-  // Mendapatkan elemen div dengan class carousel-inner
   const carouselInner = carouselElement.querySelector(".carousel-inner");
 
-  // Loop melalui 3 cerita pertama dalam data JSON
   ceritaData.keterlibatanMasyarakat.slice(0, 3).forEach((cerita, index) => {
-    // Membuat elemen div untuk setiap cerita
     const ceritaItem = document.createElement("div");
     ceritaItem.classList.add("carousel-item");
 
-    // Menandai elemen pertama sebagai aktif
     if (index === 0) {
       ceritaItem.classList.add("active");
     }
 
-    // Membuat konten cerita
     const ceritaContent = `
     <section class="cerita-kita cerita-${index + 1}">
       <blockquote class="blockquote">
@@ -120,14 +98,11 @@ if (carouselElement) {
     </section>
   `;
 
-    // Menambahkan konten cerita ke dalam elemen ceritaItem
     ceritaItem.innerHTML = ceritaContent;
 
-    // Menambahkan elemen ceritaItem ke dalam carouselInner
     carouselInner.appendChild(ceritaItem);
   });
 
-  // Menambahkan event listener untuk tombol "Previous" dan "Next"
   const prevButton = carouselElement.querySelector(".carousel-control-prev");
   const nextButton = carouselElement.querySelector(".carousel-control-next");
 
@@ -140,17 +115,12 @@ if (carouselElement) {
   });
 }
 
-// Memilih elemen spesies-section
 const spesiesSection = document.querySelector(".spesies-section");
 
-// Mengecek apakah elemen spesies-section ditemukan
 if (spesiesSection) {
-  // Fungsi untuk menampilkan data spesies
   function tampilkanSpesies() {
-    // Ambil data spesies dari JSON
     const species = spesiesData.BasisDataSpesies;
 
-    // Populate the images and overlays
     if (species.length >= 5) {
       document.getElementById("image1").src = species[0].gambar;
       document.getElementById("overlay1").innerText = species[0].kelas;
@@ -169,33 +139,23 @@ if (spesiesSection) {
     }
   }
 
-  // Panggil fungsi tampilkanSpesies untuk pertama kali
   tampilkanSpesies();
 }
 
-// Memilih elemen edukasi-section
 const edukasiSection = document.querySelector(".edukasi-section");
 
-// Mengecek apakah elemen edukasi-section ditemukan
 if (edukasiSection) {
-  // Mendapatkan div dengan id edukasiContainer di dalam edukasi-section
   const edukasiContainer = edukasiSection.querySelector("#edukasiContainer");
 
-  // Fungsi untuk menampilkan data edukasi
   function tampilkanEdukasi() {
-    // Kosongkan kontainer sebelum menambahkan edukasi baru
     edukasiContainer.innerHTML = "";
 
-    // Ambil data edukasi dari JSON
     const edukasiDataArray = edukasiData.edukasi_dan_kesadaran_lingkungan_hutan;
 
-    // Loop melalui data edukasi dan ambil hanya dua data pertama
     edukasiDataArray.slice(0, 2).forEach((edukasi, index) => {
-      // Membuat elemen div untuk setiap edukasi
       const edukasiItem = document.createElement("div");
       edukasiItem.classList.add("flex-item");
 
-      // Membuat konten edukasi
       const edukasiContent = `
         <div class="inner-flex-container row${index + 1}">
           <div class="text-container">
@@ -208,14 +168,11 @@ if (edukasiSection) {
         </div>
       `;
 
-      // Menambahkan konten edukasi ke dalam elemen edukasiItem
       edukasiItem.innerHTML = edukasiContent;
 
-      // Menambahkan elemen edukasiItem ke dalam edukasiContainer
       edukasiContainer.appendChild(edukasiItem);
     });
   }
 
-  // Panggil fungsi tampilkanEdukasi untuk pertama kali
   tampilkanEdukasi();
 }

@@ -2,6 +2,81 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #e8eedc;
+  overflow-x: hidden;
+}
+
+.login-box {
+  width: 300px;
+  background-color: #d9d9d9;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+  border-radius: 15px;
+}
+
+.login-box h2 {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.user-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.user-box label {
+  font-size: 14px;
+  color: #676666;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.user-box input {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  color: #000000;
+  border: none;
+  outline: none;
+  background-color: #bababa;
+  border-radius: 5px;
+}
+
+.login-box button {
+  background-color: #56ab2e;
+  color: #ffffff;
+  padding: 8px 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease 0s;
+  border: none;
+}
+
+.login-box button:hover {
+  background-color: #3e8e41;
+}
+
+.login-box p {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.login-box p a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.login-box p a:hover {
+  text-decoration: underline;
 }
 
 section {
@@ -10,12 +85,45 @@ section {
 
 .dropdown-menu {
   background-color: #e8eedc;
+  border: none;
+  min-width: auto !important;
+  width: auto !important;
+  padding: 10px 8px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 1.1rem;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #56ab2e !important;
+  border-radius: 20px;
 }
 
 .navbar {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font-size: 1.3rem;
   background-color: #e8eedc !important;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.navbar-nav .nav-item .nav-link.active,
+.navbar-nav .nav-item .nav-link:focus,
+.navbar-nav .nav-item .nav-link:hover {
+  color: #56ab2e !important;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 15px;
+}
+
+.navbar-collapse {
+  flex-grow: 0;
 }
 
 .nav-link {
@@ -88,17 +196,22 @@ section {
 
 .btn-jelajah {
   background-color: #004225;
+  border: 2px solid #004225;
   color: #eeeeee;
   font-size: 1.5rem;
   border-radius: 10px;
   padding: 10px 20px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .btn-jelajah:hover {
-  background-color: rgb(19, 76, 19) !important;
+  background-color: rgb(13, 43, 13) !important;
+  border: 2px solid #e8eedc;
   color: #eeeeee !important;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .btn-primary {
@@ -109,17 +222,18 @@ section {
   border-radius: 10px;
   padding: 10px 20px;
   text-align: center;
-  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .btn-primary:hover {
   background-color: #e8eedc !important;
   color: #004225 !important;
   border: 3px solid #004225;
+  letter-spacing: 1px;
 }
 
 .btn-link {
-  margin-left: 20px;
+  margin-left: 70px;
   font-size: 1.3rem;
   color: #eeeeee;
   text-decoration: none;
@@ -444,18 +558,19 @@ i.fa-angle-right {
   border-radius: 20px;
   margin-left: 150px;
   margin-right: 150px;
+  padding: 40px 60px;
 }
 
 .cerita-1 {
-  background-color: #ffd9d9; /* Warna pastel untuk cerita pertama */
+  background-color: #ffd9d9;
 }
 
 .cerita-2 {
-  background-color: #c9e4c6; /* Warna pastel untuk cerita kedua */
+  background-color: #c9e4c6;
 }
 
 .cerita-3 {
-  background-color: #e8d6c2; /* Warna pastel untuk cerita ketiga */
+  background-color: #e8d6c2;
 }
 
 .blockquote {
@@ -478,8 +593,8 @@ i.fa-angle-right {
 }
 
 .detail-cerita {
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
   text-align: justify;
 }
 
@@ -510,6 +625,7 @@ footer p {
   color: #eeeeee;
   padding-top: 10px;
   margin-bottom: 0;
+  margin-top: 10px;
 }
 
 footer h5 {
@@ -521,8 +637,10 @@ footer h5 {
 }
 
 footer hr {
-  border-color: #eeeeee;
-  border-width: 2px;
+  border: none;
+  border-top: 2px solid #eeeeee !important;
+  width: 85%;
+  margin: 0 auto;
 }
 
 footer .list-unstyled {

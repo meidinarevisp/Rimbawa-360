@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login - Layanan Masyarakat</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A website focusing on forest conservation and wildlife in Indonesia."
+    />
+    <meta name="theme-color" content="#e8eedc" />
+    <link rel="icon" type="image/png" href="rimbawa-360.png" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      background-image: url("images/login.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+  <body>
+    <div class="login-box">
+      <h2>Login</h2>
+      <form action="depan.html">
+        <div class="user-box">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="user-box">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <center>
+          <button type="submit">Login</button>
+        </center>
+      </form>
+      <p>Belum memiliki akun?</p>
+      <p><a href="register.html">Daftar disini!</a></p>
+    </div>
+  </body>
+</html>
