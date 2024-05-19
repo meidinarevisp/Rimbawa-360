@@ -192,3 +192,28 @@ function setActiveNavLink() {
 
 // Call the function when the page is loaded
 window.onload = setActiveNavLink;
+
+document.addEventListener("DOMContentLoaded", function () {
+  const backButton = document.querySelector(".btn-back-to-top");
+
+  // Tambahkan event listener untuk menggulir ke atas saat tombol diklik
+  if (backButton) {
+    backButton.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+
+    // Tambahkan event listener untuk memeriksa saat pengguna menggulir halaman
+    window.addEventListener("scroll", function () {
+      // Jika pengguna menggulir lebih dari 200px dari atas, tampilkan tombol
+      if (window.scrollY > 200) {
+        backButton.classList.add("show");
+      } else {
+        // Jika tidak, sembunyikan tombol
+        backButton.classList.remove("show");
+      }
+    });
+  }
+});

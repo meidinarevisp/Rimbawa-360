@@ -5,6 +5,32 @@ body {
   overflow-x: hidden;
 }
 
+.btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: none;
+}
+
+/* Animasi muncul saat tombol muncul */
+.btn-back-to-top.show {
+  display: block;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Keyframe untuk animasi muncul */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .login-box {
   width: 300px;
   background-color: #d9d9d9;
@@ -863,6 +889,12 @@ footer .fa-2x {
   padding: 90px 0;
 }
 
+.tim-kami-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 #tim-kami h2 {
   font-size: 2.8rem;
   text-align: center;
@@ -880,28 +912,70 @@ footer .fa-2x {
   border-radius: 30px;
   text-align: center;
   position: relative;
+  overflow: hidden;
 }
 
 .team-member::after {
   content: "";
   position: absolute;
-  bottom: 60px;
+  bottom: 93px;
   left: 0;
   width: 100%;
-  height: 10px;
+  height: 15px;
   background-color: #e8c614;
 }
 
 .team-member h4 {
-  margin-top: 20px;
+  margin-top: 30px;
   padding-bottom: 20px;
   font-weight: 600;
+  font-size: 1.3rem;
 }
 
 .team-img {
   width: 100%;
-  height: 380px;
+  height: 280px;
   border-radius: 30px 30px 0 0;
+  transition: transform 0.5s ease;
+}
+
+.team-member:hover .team-img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #eeeeee;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-member:hover .overlay {
+  opacity: 1;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #eeeeee;
+  font-size: 2.5rem;
+  margin-top: 100px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #e8c614;
 }
 
 /* FAQ Tentang */
@@ -944,6 +1018,11 @@ footer .fa-2x {
   border-radius: 10px;
 }
 
+.accordion.active {
+  background-color: #004225;
+  color: #eeeeee;
+}
+
 .accordion i {
   font-size: 1.6rem;
 }
@@ -952,11 +1031,16 @@ footer .fa-2x {
   padding: 0 2rem 1rem 1.8rem;
   background-color: #e8eedc;
   overflow: hidden;
-  display: none;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+}
+
+.faq.active .pannel {
+  max-height: 200px;
 }
 
 .pannel p {
-  color: rgba(22, 21, 21, 0.7);
+  color: rgba(0, 0, 0, 0.7);
   font-size: 1.2rem;
   line-height: 1.4;
 }
@@ -982,7 +1066,6 @@ footer .fa-2x {
 
 .tentang-kami-page h2 {
   font-size: 50px;
-  padding-top: 50px;
   margin-bottom: 30px;
   margin-left: 110px;
 }
@@ -990,6 +1073,35 @@ footer .fa-2x {
 .tentang-kami-img img {
   width: 450px;
   height: auto;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to elements */
+.animated-text {
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.animated-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Trigger the animation */
+.animated-content.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .edukasi-page {

@@ -92,8 +92,8 @@
     <!-- Tentang Kami Section -->
     <section class="tentang-kami-page" id="tentang-page">
       <div class="container">
-        <h2 style="text-align: center"><strong>Tentang Kami</strong></h2>
-        <div class="content-flex">
+        <h2 class="animated-text"><strong>Tentang Kami</strong></h2>
+        <div class="content-flex animated-content" data-delay="0">
           <div class="tentang-kami-img">
             <img src="rimbawa-360.png" alt="Tentang Kami Image" />
           </div>
@@ -114,40 +114,92 @@
 
     <section class="tim-kami-section" id="tim-kami">
       <div class="container">
-        <h2><strong>Tim Kami</strong></h2>
-        <p>
-          Salah satu alasan Rimbawa 360 dibuat adalah sebagai project capstone
-          untuk SIB Dicoding dan berikut adalah Tim Kami.
+        <h2 class="animated-text"><strong>Tim Kami</strong></h2>
+        <p class="animated-text">
+          Di SIB Dicoding, kami tak hanya belajar, tapi juga berkarya. Rimbawa
+          360 adalah masterpiece kami, buah dari kolaborasi dan tekad tim yang
+          solid.
         </p>
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4 animated-content" data-delay="0">
             <div class="team-member">
               <img
                 src="tim/fikrin.jpg"
                 alt="Team Member 1"
                 class="img-fluid team-img"
               />
-              <h4>Fikrin Werdiansyah</h4>
+              <div class="overlay">
+                <div class="social-icons">
+                  <a href="https://instagram.com/fikrin" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="https://github.com/fikrin" target="_blank">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://linkedin.com/in/fikrin" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </div>
+              </div>
+              <h4>
+                Fikrin<br />
+                Werdiansyah
+              </h4>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 animated-content" data-delay="0.5">
             <div class="team-member">
               <img
                 src="tim/revi.JPG"
                 alt="Team Member 2"
                 class="img-fluid team-img"
               />
-              <h4>Meidina Revi Sandra Pertiwi</h4>
+              <div class="overlay">
+                <div class="social-icons">
+                  <a href="https://instagram.com/meidinarevisp" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="https://github.com/meidinarevisp" target="_blank">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/meidinarevisp"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </div>
+              </div>
+              <h4>
+                Meidina Revi<br />
+                Sandra Pertiwi
+              </h4>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 animated-content" data-delay="1">
             <div class="team-member">
               <img
                 src="tim/abdan.jpg"
                 alt="Team Member 3"
                 class="img-fluid team-img"
               />
-              <h4>Mohammad Rifqi Abdan</h4>
+              <div class="overlay">
+                <div class="social-icons">
+                  <a href="https://instagram.com/abdan" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="https://github.com/abdan" target="_blank">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://linkedin.com/in/abdan" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </div>
+              </div>
+              <h4>
+                Mohammad<br />
+                Rifqi Abdan
+              </h4>
             </div>
           </div>
         </div>
@@ -156,9 +208,9 @@
 
     <!-- FAQ Section -->
     <section class="wrapper">
-      <h2><strong>FAQ</strong></h2>
+      <h2 class="animated-text"><strong>FAQ</strong></h2>
       <br />
-      <div class="faq">
+      <div class="faq animated-content" data-delay="1">
         <button class="accordion">
           Apa yang membuat Rimbawa 360 unik sebagai sumber informasi ekowisata
           hutan di Indonesia?
@@ -172,7 +224,7 @@
           </p>
         </div>
       </div>
-      <div class="faq">
+      <div class="faq animated-content" data-delay="2">
         <button class="accordion">
           Mengapa penting bagi masyarakat untuk mengunjungi destinasi ekowisata
           yang terdaftar di Rimbawa 360?
@@ -186,7 +238,7 @@
           </p>
         </div>
       </div>
-      <div class="faq">
+      <div class="faq animated-content" data-delay="3">
         <button class="accordion">
           Bagaimana Rimbawa 360 meningkatkan kesadaran masyarakat tentang
           isu-isu lingkungan?
@@ -200,7 +252,7 @@
           </p>
         </div>
       </div>
-      <div class="faq">
+      <div class="faq animated-content" data-delay="4">
         <button class="accordion">
           Bagaimana masyarakat dapat terlibat dalam upaya konservasi melalui
           Rimbawa 360?
@@ -213,7 +265,7 @@
           </p>
         </div>
       </div>
-      <div class="faq">
+      <div class="faq animated-content" data-delay="5">
         <button class="accordion">
           Apa fitur utama yang tersedia di Rimbawa 360 untuk membantu pengguna
           dalam mengeksplorasi dan berkontribusi pada upaya konservasi
@@ -233,6 +285,9 @@
     <!-- Footer -->
     <footer class="py-4">
       <div class="container-lg">
+        <button class="btn btn-primary btn-back-to-top">
+          <i class="fas fa-arrow-up"></i>
+        </button>
         <div class="row">
           <div class="col-md-3 text-center">
             <h5>Ikuti Kami</h5>
