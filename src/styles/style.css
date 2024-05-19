@@ -561,15 +561,18 @@ i.fa-angle-right {
 }
 
 .cerita-1 {
-  background-color: #ffd9d9;
+  background-color: #b5e0cd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .cerita-2 {
-  background-color: #c9e4c6;
+  background-color: #b5e0cd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .cerita-3 {
-  background-color: #e8d6c2;
+  background-color: #b5e0cd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .blockquote {
