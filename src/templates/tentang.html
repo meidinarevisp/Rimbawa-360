@@ -155,68 +155,76 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq-section" id="faq">
-      <div class="container">
-        <h2 style="text-align: center"><strong>FAQ</strong></h2>
-        <div class="faq-item">
-          <button onclick="toggleAnswer(1)">
-            Apa yang membuat Rimbawa 360 unik sebagai sumber informasi ekowisata
-            hutan di Indonesia?
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <p class="faq-answer">
+    <section class="wrapper">
+      <h2><strong>FAQ</strong></h2>
+      <br />
+      <div class="faq">
+        <button class="accordion">
+          Apa yang membuat Rimbawa 360 unik sebagai sumber informasi ekowisata
+          hutan di Indonesia?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
             Rimbawa 360 tidak hanya memberikan informasi tentang destinasi
             ekowisata, tetapi juga mengedukasi tentang konservasi lingkungan di
             Indonesia.
           </p>
         </div>
-        <div class="faq-item">
-          <button onclick="toggleAnswer(2)">
-            Mengapa penting bagi masyarakat untuk mengunjungi destinasi
-            ekowisata yang terdaftar di Rimbawa 360?
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <p class="faq-answer">
-            Rimbawa 360 tidak hanya memberikan informasi tentang destinasi
-            ekowisata, tetapi juga mengedukasi tentang konservasi lingkungan di
-            Indonesia.
+      </div>
+      <div class="faq">
+        <button class="accordion">
+          Mengapa penting bagi masyarakat untuk mengunjungi destinasi ekowisata
+          yang terdaftar di Rimbawa 360?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            Kunjungan ke destinasi ekowisata Rimbawa 360 mendukung langsung
+            konservasi lingkungan sambil memberikan pengalaman alam yang
+            berharga.
           </p>
         </div>
-        <div class="faq-item">
-          <button onclick="toggleAnswer(3)">
-            Bagaimana Rimbawa 360 meningkatkan kesadaran masyarakat tentang
-            isu-isu lingkungan?
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <p class="faq-answer">
-            Rimbawa 360 tidak hanya memberikan informasi tentang destinasi
-            ekowisata, tetapi juga mengedukasi tentang konservasi lingkungan di
-            Indonesia.
+      </div>
+      <div class="faq">
+        <button class="accordion">
+          Bagaimana Rimbawa 360 meningkatkan kesadaran masyarakat tentang
+          isu-isu lingkungan?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            Rimbawa 360 menyediakan konten edukatif tentang deforestasi,
+            perburuan liar, dan pemanasan global untuk meningkatkan kesadaran
+            masyarakat tentang lingkungan.
           </p>
         </div>
-        <div class="faq-item">
-          <button onclick="toggleAnswer(4)">
-            Bagaimana masyarakat dapat terlibat dalam upaya konservasi melalui
-            Rimbawa 360?
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <p class="faq-answer">
-            Rimbawa 360 tidak hanya memberikan informasi tentang destinasi
-            ekowisata, tetapi juga mengedukasi tentang konservasi lingkungan di
-            Indonesia.
+      </div>
+      <div class="faq">
+        <button class="accordion">
+          Bagaimana masyarakat dapat terlibat dalam upaya konservasi melalui
+          Rimbawa 360?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            Masyarakat dapat berbagi cerita, pengalaman, dan inisiatif
+            konservasi mereka melalui platform yang disediakan oleh Rimbawa 360.
           </p>
         </div>
-        <div class="faq-item">
-          <button onclick="toggleAnswer(5)">
-            Apa fitur utama yang tersedia di Rimbawa 360 untuk membantu pengguna
-            dalam mengeksplorasi dan berkontribusi pada upaya konservasi
-            lingkungan?
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <p class="faq-answer">
-            Rimbawa 360 tidak hanya memberikan informasi tentang destinasi
-            ekowisata, tetapi juga mengedukasi tentang konservasi lingkungan di
-            Indonesia.
+      </div>
+      <div class="faq">
+        <button class="accordion">
+          Apa fitur utama yang tersedia di Rimbawa 360 untuk membantu pengguna
+          dalam mengeksplorasi dan berkontribusi pada upaya konservasi
+          lingkungan?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            Rimbawa 360 menawarkan peta interaktif, basis data spesies, dan
+            forum diskusi sebagai fitur utama untuk mendukung pengguna dalam
+            upaya konservasi lingkungan.
           </p>
         </div>
       </div>
@@ -275,44 +283,5 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      function toggleAnswer(index) {
-        var answers = document.querySelectorAll(".faq-answer");
-        var buttons = document.querySelectorAll(".faq-item button i");
-        var currentAnswer = answers[index];
-        var currentButton = buttons[index];
-
-        var isOpen = currentAnswer.style.display === "block";
-
-        answers.forEach(function (answer, i) {
-          answer.style.display = "none";
-          buttons[i].classList.remove("fa-chevron-up");
-          buttons[i].classList.add("fa-chevron-down");
-        });
-
-        if (!isOpen) {
-          currentAnswer.style.display = "block";
-          currentButton.classList.remove("fa-chevron-down");
-          currentButton.classList.add("fa-chevron-up");
-        } else {
-          currentAnswer.style.display = "none";
-          currentButton.classList.remove("fa-chevron-up");
-          currentButton.classList.add("fa-chevron-down");
-        }
-      }
-
-      function setupFAQ() {
-        var faqButtons = document.querySelectorAll(".faq-item button");
-        faqButtons.forEach(function (button, index) {
-          button.addEventListener("click", function () {
-            toggleAnswer(index);
-          });
-        });
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        setupFAQ();
-      });
-    </script>
   </body>
 </html>

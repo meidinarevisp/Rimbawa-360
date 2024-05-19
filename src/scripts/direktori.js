@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const destinasiContent = `
               <div class="image-container">
-                <img src="${destinasi.gambar}" alt="${destinasi.nama_tempat}" class="img-fluid" />
+                <img src="${destinasi.gambar}" alt="${destinasi.nama_tempat}" class="img-fluid destinasi-item" data-index="${index}" />
                 <h1>${destinasi.lokasi}</h1>
               </div>
               <div class="text-content">
@@ -88,6 +88,16 @@ document.addEventListener("DOMContentLoaded", () => {
       renderPagination(
         Math.ceil(ekowisataData.ekowisata_hutan.length / itemsPerPage)
       );
+
+      // Add event listener for detail view
+      document.querySelectorAll(".destinasi-item").forEach((item) => {
+        item.addEventListener("click", (e) => {
+          const index = e.target.dataset.index;
+          const destinasi = destinasiData[index];
+          localStorage.setItem("selectedDestinasi", JSON.stringify(destinasi));
+          window.location.href = "detail-direktori.html";
+        });
+      });
     }
 
     renderDestinasi();

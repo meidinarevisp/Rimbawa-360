@@ -15,3 +15,22 @@ function setActiveNavLink() {
 
 // Call the function when the page is loaded
 window.onload = setActiveNavLink;
+
+document.querySelectorAll(".accordion").forEach((button) => {
+  button.addEventListener("click", () => {
+    const panel = button.nextElementSibling;
+    const icon = button.querySelector("i");
+
+    button.classList.toggle("active");
+
+    if (button.classList.contains("active")) {
+      panel.style.display = "block";
+      icon.classList.remove("fa-chevron-down");
+      icon.classList.add("fa-chevron-up");
+    } else {
+      panel.style.display = "none";
+      icon.classList.remove("fa-chevron-up");
+      icon.classList.add("fa-chevron-down");
+    }
+  });
+});
