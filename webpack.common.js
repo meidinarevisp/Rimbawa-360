@@ -10,6 +10,8 @@ module.exports = {
     direktori: path.resolve(__dirname, "src/scripts/direktori.js"),
     tentang: path.resolve(__dirname, "src/scripts/tentang.js"),
     detailDirektori: path.resolve(__dirname, "src/scripts/detail-direktori.js"),
+    edukasi: path.resolve(__dirname, "src/scripts/edukasi.js"),
+    spesies: path.resolve(__dirname, "src/scripts/spesies.js"),
   },
   output: {
     filename: "[name].bundle.js",
@@ -50,12 +52,20 @@ module.exports = {
       template: path.resolve(__dirname, "src/templates/direktori.html"),
     }),
     new HtmlWebpackPlugin({
+      filename: "detail-direktori.html",
+      template: path.resolve(__dirname, "src/templates/detail-direktori.html"),
+    }),
+    new HtmlWebpackPlugin({
       filename: "tentang.html",
       template: path.resolve(__dirname, "src/templates/tentang.html"),
     }),
     new HtmlWebpackPlugin({
-      filename: "detail-direktori.html",
-      template: path.resolve(__dirname, "src/templates/detail-direktori.html"),
+      filename: "edukasi.html",
+      template: path.resolve(__dirname, "src/templates/edukasi.html"),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "spesies.html",
+      template: path.resolve(__dirname, "src/templates/spesies.html"),
     }),
     new CopyWebpackPlugin({
       patterns: [

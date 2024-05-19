@@ -2,7 +2,6 @@ import "../styles/style.css";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
-import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import ekowisataData from "../data/Ekowisata.json";
 
 document.addEventListener("DOMContentLoaded", () => {

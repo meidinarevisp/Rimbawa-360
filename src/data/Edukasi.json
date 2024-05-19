@@ -1,25 +1,52 @@
 {
   "edukasi_dan_kesadaran_lingkungan_hutan": [
     {
+      "id": 1,
       "nama_isu": "Deforestasi",
       "deskripsi": "Deforestasi adalah proses penebangan hutan yang dilakukan untuk membuka lahan bagi pertanian, pemukiman, atau keperluan industri lainnya.",
       "dampak": "Deforestasi menyebabkan hilangnya habitat satwa liar, penurunan keanekaragaman hayati, degradasi tanah, dan peningkatan emisi gas rumah kaca.",
-      "solusi": ["Mengimplementasikan praktik kehutanan berkelanjutan.", "Melindungi kawasan hutan yang tersisa melalui peraturan dan kebijakan konservasi.", "Meningkatkan reboisasi dan penghijauan."],
+      "solusi": [
+        "Mengimplementasikan praktik kehutanan berkelanjutan.",
+        "Melindungi kawasan hutan yang tersisa melalui peraturan dan kebijakan konservasi.",
+        "Meningkatkan reboisasi dan penghijauan."
+      ],
       "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715924150/deforestasi_bdbyc1.jpg"
     },
     {
+      "id": 2,
       "nama_isu": "Perburuan Liar",
       "deskripsi": "Perburuan liar adalah aktivitas penangkapan atau pembunuhan satwa liar secara ilegal, seringkali untuk diambil bagian tubuhnya seperti gading, kulit, atau tanduk.",
       "dampak": "Perburuan liar mengancam kelangsungan hidup spesies tertentu, mengganggu ekosistem, dan dapat menyebabkan kepunahan spesies.",
-      "solusi": ["Memperkuat penegakan hukum terhadap perburuan liar.", "Meningkatkan patroli dan pengawasan di kawasan konservasi.", "Mengedukasi masyarakat tentang pentingnya perlindungan satwa liar."],
+      "solusi": [
+        "Memperkuat penegakan hukum terhadap perburuan liar.",
+        "Meningkatkan patroli dan pengawasan di kawasan konservasi.",
+        "Mengedukasi masyarakat tentang pentingnya perlindungan satwa liar."
+      ],
       "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715924125/perburuan_liar_nz1xua.jpg"
     },
     {
+      "id": 3,
       "nama_isu": "Pemanasan Global",
       "deskripsi": "Pemanasan global adalah peningkatan suhu rata-rata permukaan bumi yang disebabkan oleh peningkatan konsentrasi gas rumah kaca di atmosfer.",
       "dampak": "Pemanasan global menyebabkan perubahan iklim, naiknya permukaan air laut, cuaca ekstrem, dan kerusakan ekosistem.",
-      "solusi": ["Mengurangi emisi gas rumah kaca melalui penggunaan energi terbarukan.", "Meningkatkan efisiensi energi dalam berbagai sektor.", "Menanam pohon dan menjaga hutan sebagai penyerap karbon alami."],
+      "solusi": [
+        "Mengurangi emisi gas rumah kaca melalui penggunaan energi terbarukan.",
+        "Meningkatkan efisiensi energi dalam berbagai sektor.",
+        "Menanam pohon dan menjaga hutan sebagai penyerap karbon alami."
+      ],
       "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715924061/pemanasan_global_hlushl.jpg"
+    },
+    {
+      "id": 4,
+      "nama_isu": "Kebakaran Hutan",
+      "deskripsi": "Kebakaran hutan adalah kejadian terbakarnya vegetasi di hutan secara alami atau disebabkan oleh manusia, seringkali menyebabkan kerusakan lingkungan yang luas.",
+      "dampak": "Kebakaran hutan dapat mengakibatkan kerugian ekosistem, hilangnya habitat bagi satwa liar, penurunan kualitas udara, dan kerugian ekonomi.",
+      "solusi": [
+        "Meningkatkan pemantauan dan deteksi dini kebakaran hutan.",
+        "Memperkuat penegakan hukum terhadap pembakaran hutan ilegal.",
+        "Mengedukasi masyarakat tentang bahaya pembakaran hutan dan pentingnya pelestarian lingkungan."
+      ],
+      "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1716104575/kebakaran_hutan_bamue1.webp"
     }
   ]
 }
