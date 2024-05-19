@@ -34,6 +34,48 @@
       "nama": "Ahmad Fauzi",
       "cerita": "Sebagai pemuda asli dari sekitar Hutan Mangrove di Bali, saya memulai inisiatif untuk membersihkan sampah plastik dari pantai dan hutan mangrove. Kami juga bekerja sama dengan para nelayan untuk mengurangi penggunaan jaring yang dapat merusak ekosistem.",
       "waktu_upload": "2024-05-19T11:30:00Z"
+    },
+    {
+      "id": 6,
+      "foto_profile": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715926410/user_ltszv9.png",
+      "nama": "Rina Pratiwi",
+      "cerita": "Saya adalah seorang aktivis lingkungan yang berfokus pada isu pengelolaan sampah di wilayah perkotaan. Saya mendirikan sebuah komunitas yang mengedukasi masyarakat tentang pentingnya daur ulang dan mengurangi penggunaan plastik sekali pakai.",
+      "waktu_upload": "2024-05-20T14:00:00Z"
+    },
+    {
+      "id": 7,
+      "foto_profile": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715926410/user_ltszv9.png",
+      "nama": "Hendra Wijaya",
+      "cerita": "Sebagai petani organik di dataran tinggi Dieng, saya mempraktikkan metode pertanian ramah lingkungan yang tidak menggunakan pestisida kimia. Saya juga membagikan pengetahuan ini kepada petani lain agar kita dapat menjaga kesuburan tanah dan melestarikan sumber daya alam.",
+      "waktu_upload": "2024-05-21T09:30:00Z"
+    },
+    {
+      "id": 8,
+      "foto_profile": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715926410/user_ltszv9.png",
+      "nama": "Wulan Rahayu",
+      "cerita": "Saya terlibat dalam upaya konservasi keanekaragaman hayati di Kepulauan Seribu. Bersama dengan komunitas nelayan lokal, kami melakukan program transplantasi terumbu karang dan mencegah over-eksploitasi sumber daya laut.",
+      "waktu_upload": "2024-05-22T16:15:00Z"
+    },
+    {
+      "id": 9,
+      "foto_profile": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715926410/user_ltszv9.png",
+      "nama": "Agus Widodo",
+      "cerita": "Saya adalah seorang pecinta alam yang aktif dalam kegiatan tracking dan penjelajahan alam. Saya selalu menekankan pentingnya menjaga kebersihan dan tidak merusak lingkungan saat beraktivitas di alam terbuka.",
+      "waktu_upload": "2024-05-23T11:45:00Z"
+    },
+    {
+      "id": 10,
+      "foto_profile": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715926410/user_ltszv9.png",
+      "nama": "Lina Susanti",
+      "cerita": "Saya adalah seorang guru sekolah dasar yang mengintegrasikan pendidikan lingkungan dalam kurikulum. Saya mengajarkan kepada murid-murid tentang pentingnya melestarikan alam dan mempraktikkan gaya hidup ramah lingkungan sejak dini.",
+      "waktu_upload": "2024-05-24T08:30:00Z"
+    },
+    {
+      "id": 11,
+      "foto_profile": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715926410/user_ltszv9.png",
+      "nama": "Taufik Hidayat",
+      "cerita": "Saya adalah seorang aktivis yang memperjuangkan hak-hak masyarakat adat dalam pengelolaan sumber daya alam. Saya bekerja sama dengan komunitas lokal untuk memastikan bahwa mereka memiliki akses yang adil dan berkelanjutan terhadap hutan dan sumber daya lainnya.",
+      "waktu_upload": "2024-05-25T13:00:00Z"
     }
   ]
 }

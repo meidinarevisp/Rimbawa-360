@@ -12,6 +12,7 @@ module.exports = {
     detailDirektori: path.resolve(__dirname, "src/scripts/detail-direktori.js"),
     edukasi: path.resolve(__dirname, "src/scripts/edukasi.js"),
     spesies: path.resolve(__dirname, "src/scripts/spesies.js"),
+    cerita: path.resolve(__dirname, "src/scripts/cerita.js"),
   },
   output: {
     filename: "[name].bundle.js",
@@ -66,6 +67,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "spesies.html",
       template: path.resolve(__dirname, "src/templates/spesies.html"),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "cerita.html",
+      template: path.resolve(__dirname, "src/templates/cerita.html"),
     }),
     new CopyWebpackPlugin({
       patterns: [

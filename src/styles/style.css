@@ -214,9 +214,9 @@ section {
 }
 
 .btn-primary {
-  background-color: #004225;
-  color: #eeeeee;
-  border: 3px solid #004225;
+  background-color: #004225 !important;
+  color: #eeeeee !important;
+  border: 3px solid #004225 !important;
   font-size: 1.5rem;
   border-radius: 10px;
   padding: 10px 20px;
@@ -227,7 +227,7 @@ section {
 .btn-primary:hover {
   background-color: #e8eedc !important;
   color: #004225 !important;
-  border: 3px solid #004225;
+  border: 3px solid #004225 !important;
   letter-spacing: 1px;
 }
 
@@ -740,6 +740,7 @@ footer .fa-2x {
 .destinasi-page h1 {
   margin-left: 12px;
 }
+
 .destinasi-page .row {
   display: flex;
   flex-wrap: wrap;
@@ -1091,6 +1092,7 @@ footer .fa-2x {
   text-decoration: none;
   font-weight: 500;
   color: #3f7f22;
+  font-size: 1.3rem;
 }
 .spesies-card {
   display: flex;
@@ -1111,6 +1113,7 @@ footer .fa-2x {
   flex: 1;
   overflow: auto; /* Memberikan efek overflow jika teks melebihi ruang yang tersedia */
   text-align: justify;
+  font-size: 1.3rem;
 }
 
 .spesies-page .pagination {
@@ -1131,11 +1134,59 @@ footer .fa-2x {
 
 .spesies-page .pagination button.active {
   background-color: #004225;
-  color: #ffffff;
+  color: #eeeeee;
 }
 
 .spesies-page .pagination button:disabled {
   background-color: #004225;
   color: #eeeeee;
   cursor: not-allowed;
+}
+
+.pagination-item {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 8px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+
+.pagination-item:hover,
+.pagination-item.active {
+  background-color: #004225;
+  color: #eeeeee;
+  border-color: #004225;
+}
+
+.cerita-kita-page .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cerita-kita-page h2 {
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+
+.cerita-kita-page h3 {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.page-cerita {
+  flex: 0 0 calc(33.33% - 20px);
+  max-width: calc(33.33% - 20px);
+  border-radius: 20px;
+  height: 550px;
+  padding-top: 30px;
+}
+
+.cerita-detail {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  text-align: justify;
 }
