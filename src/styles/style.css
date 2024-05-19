@@ -169,13 +169,13 @@ section {
 
 .hero-section .three-sixty {
   color: #ec9c00;
+  font-weight: 500;
 }
 
 .hero-section p {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #d2e0bb !important;
-  color: #527853;
+  color: #eeeeee !important;
 }
 
 .btn-masuk {
