@@ -54,9 +54,6 @@ class NavbarRimbawa extends HTMLElement {
               <a class="nav-link" href="cerita.html">Cerita Kita</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="forum.html">Forum</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="tentang.html">Tentang</a>
             </li>
             <li>

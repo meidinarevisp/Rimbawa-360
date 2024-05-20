@@ -157,7 +157,7 @@ section {
 }
 
 .nav-link:hover {
-  color: #004225;
+  color: #56ab2e !important;
 }
 
 .navbar-brand {
@@ -481,17 +481,22 @@ i.fa-angle-right {
   object-fit: cover;
 }
 
-.overlay {
+.image-container .overlay {
   position: absolute;
   bottom: 0;
-  background: rgba(49, 48, 48, 0.5);
-  color: #eeeeee;
-  width: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
   text-align: center;
-  padding: 5px;
-  font-size: 1.1em;
-  letter-spacing: 1px;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
   border-radius: 0 0 20px 20px;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
 }
 
 .destinasi-section h2 {
@@ -646,7 +651,7 @@ footer ul li a {
 }
 
 footer ul li a:hover {
-  color: #9d9e9f;
+  color: #d2e0bb;
 }
 
 footer p {
@@ -692,7 +697,7 @@ footer .list-inline-item a {
 }
 
 footer .list-inline-item a:hover {
-  color: #9d9e9f;
+  color: #d2e0bb;
 }
 
 footer .fa-2x {
@@ -943,7 +948,7 @@ footer .fa-2x {
   transform: scale(1.1);
 }
 
-.overlay {
+.team-member .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -1075,10 +1080,10 @@ footer .fa-2x {
   height: auto;
 }
 
-@keyframes fadeInUp {
+@keyframes fadeInDown {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
@@ -1086,7 +1091,34 @@ footer .fa-2x {
   }
 }
 
-/* Apply animation to elements */
+.animated-text1 {
+  opacity: 0;
+  animation: fadeInDown 1s ease-in-out forwards;
+}
+
+.animated-content1 {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Trigger the animation */
+.animated-content1.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animated-text {
   opacity: 0;
   animation: fadeInUp 1s ease-in-out forwards;
