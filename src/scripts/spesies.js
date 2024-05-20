@@ -1,5 +1,4 @@
 import SpesiesData from "../data/Spesies.json";
-import "../styles/style.css";
 
 document.addEventListener("DOMContentLoaded", function () {
   const spesiesData = SpesiesData.BasisDataSpesies;

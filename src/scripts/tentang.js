@@ -1,5 +1,3 @@
-import "../styles/style.css";
-
 function setActiveNavLink() {
   const url = window.location.href;
   const navLinks = document.querySelectorAll(".navbar-nav .nav-link");

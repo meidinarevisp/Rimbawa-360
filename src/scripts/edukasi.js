@@ -1,4 +1,3 @@
-import "../styles/style.css";
 import edukasiData from "../data/Edukasi.json";
 
 // Fungsi untuk menampilkan konten edukasi

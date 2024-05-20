@@ -1,4 +1,3 @@
-import "../styles/style.css";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import markerIcon from "leaflet/dist/images/marker-icon.png";

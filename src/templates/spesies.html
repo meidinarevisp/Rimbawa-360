@@ -32,70 +32,7 @@
     <title>Direktori Ekowisata Hutan</title>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-lg">
-        <a class="navbar-brand" href="/">
-          <img src="rimbawa-360.png" alt="Logo" width="70" height="60" />
-          <span class="rimbawa">Rimbawa</span>
-          <span class="three-sixty">360</span>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Beranda</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Jelajahi
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="direktori.html">Destinasi</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="edukasi.html">Edukasi</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="spesies.html">Spesies</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cerita.html">Cerita Kita</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="forum.html">Forum</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="tentang.html">Tentang</a>
-            </li>
-            <li>
-              <a class="nav-link" href="login.html"
-                ><button class="btn btn-masuk">Masuk</button></a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <navbar-rimbawa></navbar-rimbawa>
 
     <section class="spesies-page">
       <div class="container">
@@ -111,61 +48,7 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-4">
-      <div class="container-lg">
-        <button class="btn btn-primary btn-back-to-top">
-          <i class="fas fa-arrow-up"></i>
-        </button>
-        <div class="row">
-          <div class="col-md-3 text-center">
-            <h5>Ikuti Kami</h5>
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-3">
-            <h5>Jelajahi</h5>
-            <ul class="list-unstyled">
-              <li><a href="#">Destinasi</a></li>
-              <li><a href="#">Edukasi</a></li>
-              <li><a href="#">Spesies</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3">
-            <h5>Fitur</h5>
-            <ul class="list-unstyled">
-              <li><a href="#">Cerita Kita</a></li>
-              <li><a href="#">Peta Interaktif</a></li>
-              <li><a href="#">Forum</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3">
-            <h5>Tentang</h5>
-            <ul class="list-unstyled">
-              <li><a href="#">Tentang Kami</a></li>
-              <li><a href="#">Tim Kami</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
-          </div>
-        </div>
-        <hr />
-        <p class="text-center">
-          Copyright &copy; 2024 Rimbawa 360. All rights reserved.
-        </p>
-      </div>
-    </footer>
+    <footer-rimbawa></footer-rimbawa>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </html>

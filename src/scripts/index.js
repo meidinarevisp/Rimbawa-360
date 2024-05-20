@@ -1,4 +1,7 @@
 import "../styles/style.css";
+import "./components/Navbar";
+import "./components/Footer";
+import "./components/Hero";
 import ceritaData from "../data/Cerita.json";
 import ekowisataData from "../data/Ekowisata.json";
 import spesiesData from "../data/Spesies.json";

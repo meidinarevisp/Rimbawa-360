@@ -1,4 +1,3 @@
-import "../styles/style.css";
 import ceritaData from "../data/Cerita.json";
 
 const ceritaContainer = document.getElementById("ceritaContainer");
