@@ -7,8 +7,11 @@ class FooterRimbawa extends HTMLElement {
     this.innerHTML = `
   <footer class="py-4">
       <div class="container-lg">
-        <button class="btn btn-primary btn-back-to-top">
+        <button class="btn btn-up btn-back-to-top">
           <i class="fas fa-arrow-up"></i>
+        </button>
+        <button class="btn btn-comment btn-forum">
+          <i class="fas fa-comment"></i>
         </button>
         <div class="row">
           <div class="col-md-3 text-center">
@@ -59,6 +62,24 @@ class FooterRimbawa extends HTMLElement {
         </p>
       </div>
     </footer>
+    <div class="forum-container">
+  <div class="forum-content">
+    <h2>Forum Diskusi</h2>
+    <form id="forumForm">
+      <div class="mb-3">
+        <label for="forumName" class="form-label">Nama:</label>
+        <input type="text" id="forumName" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="forumMessage" class="form-label">Pesan:</label>
+        <textarea id="forumMessage" class="form-control" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-kirim">Kirim</button>
+    </form>
+    <hr />
+    <div id="forumPosts"></div>
+  </div>
+</div>
     `;
   }
 }

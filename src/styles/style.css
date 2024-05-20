@@ -5,6 +5,40 @@ body {
   overflow-x: hidden;
 }
 
+.btn-up {
+  background-color: #bbe0aa !important;
+  color: #004225 !important;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 18px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.btn-up:hover {
+  background-color: #004225 !important;
+  color: #eeeeee !important;
+  letter-spacing: 1px;
+}
+
+.btn-comment {
+  background-color: #bbe0aa !important;
+  color: #004225 !important;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 16px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.btn-comment:hover {
+  background-color: #004225 !important;
+  color: #eeeeee !important;
+  letter-spacing: 1px;
+}
+
 .btn-back-to-top {
   position: fixed;
   bottom: 20px;
@@ -13,10 +47,133 @@ body {
   display: none;
 }
 
-/* Animasi muncul saat tombol muncul */
 .btn-back-to-top.show {
   display: block;
   animation: fadeInUp 0.5s ease forwards;
+}
+
+.btn-forum {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: none;
+}
+
+.btn-forum.show {
+  display: block;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.forum-container {
+  position: fixed;
+  bottom: 100px;
+  left: 20px;
+  width: 400px;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  display: none;
+  z-index: 10000;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.forum-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  background-color: #004225; /* Warna hijau tua */
+  color: #e8eedc; /* Warna teks putih */
+  padding: 10px; /* Ruang tambahan di sekitar teks */
+  border-radius: 5px; /* Sudut melengkung */
+  text-align: center;
+}
+
+.forum-container.show {
+  display: block;
+}
+
+.forum-content {
+  max-height: 600px;
+  overflow: auto;
+  padding: 15px;
+}
+
+.forum-content::-webkit-scrollbar {
+  width: 0; /* Untuk browser WebKit */
+}
+
+.forum-content {
+  scrollbar-width: none; /* Untuk browser Firefox */
+}
+
+.forum-post {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actions button {
+  margin-right: 5px;
+  padding: 4px 8px;
+  background-color: #5b5959;
+  border: none;
+  color: #eeeeee;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+.actions button:hover {
+  background-color: #004225;
+}
+
+.btn-kirim {
+  background-color: #bbe0aa !important;
+  color: #004225 !important;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 12px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-left: 300px;
+}
+
+.btn-kirim:hover {
+  background-color: #004225 !important;
+  color: #eeeeee !important;
+}
+
+.swal2-popup {
+  font-family: Arial, sans-serif;
+}
+
+.swal2-title {
+  font-size: 1.5rem;
+}
+
+.swal2-content {
+  font-size: 1rem;
+}
+
+.swal2-actions {
+  margin-top: 20px;
+}
+
+.swal2-actions .btn {
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 
 /* Keyframe untuk animasi muncul */
