@@ -271,28 +271,36 @@ section {
   border: none;
   min-width: auto !important;
   width: auto !important;
-  padding: 10px 8px;
+  padding: 10px auto;
   text-align: center;
   line-height: 25px;
   font-size: 1.1rem;
+  padding-top: 20px;
+  left: 50%; /* Set to 50% from the left edge of the parent container */
+  transform: translateX(-5%);
 }
 
 .dropdown-menu .dropdown-item:hover {
   background-color: #bbe0aa !important;
   color: #333433 !important;
-  border-radius: 20px;
 }
 
 .navbar {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font-size: 1.3rem;
   background-color: #e8eedc !important;
+  padding-top: 0;
+  padding-bottom: 0;
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1200;
 }
 
 .navbar-nav {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   height: 100%;
 }
 
@@ -302,7 +310,7 @@ section {
 }
 
 .navbar-nav .nav-item {
-  margin-left: 15px;
+  margin-left: 20px;
 }
 
 .navbar-collapse {
@@ -317,24 +325,50 @@ section {
   color: #56ab2e !important;
 }
 
+.ms-auto {
+  margin-left: auto !important;
+}
+
+.login-btn,
+.daftar-btn {
+  margin-right: 60px;
+  font-size: 1.1rem;
+  padding: 8px 15px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.login-btn {
+  background-color: transparent;
+  border: 2px solid #004225 !important;
+  color: #004225;
+}
+
+.login-btn:hover {
+  background-color: #004225;
+  border: 2px solid #004225 !important;
+  color: #eeeeee;
+}
+
+.daftar-btn {
+  background-color: #004225;
+  border: 2px solid #004225 !important;
+  color: #eeeeee;
+}
+
+.daftar-btn:hover {
+  background-color: transparent;
+  color: #004225;
+  border: 2px solid #004225 !important;
+}
+
 .navbar-brand {
   display: flex;
   align-items: center;
-  font-size: 1.8rem;
-}
-
-.navbar-brand .rimbawa {
-  color: #004225;
-  font-weight: bolder;
-}
-
-.navbar-brand .three-sixty {
-  color: #ec9c00;
-  font-weight: 500;
 }
 
 .navbar-brand img {
-  margin-right: 10px;
+  max-height: 80px;
 }
 
 .hero-section {
@@ -350,31 +384,10 @@ section {
   line-height: 1.5;
 }
 
-.hero-section .three-sixty {
-  color: #ec9c00;
-  font-weight: 500;
-}
-
 .hero-section p {
   font-size: 1.8rem;
   font-weight: 600;
   color: #eeeeee !important;
-}
-
-.btn-masuk {
-  background-color: #004225;
-  color: #eeeeee;
-  border: 3px solid #004225;
-  border-radius: 10px;
-  padding: 8px auto;
-  text-align: center;
-  font-size: 1.2rem;
-}
-
-.btn-masuk:hover {
-  background-color: #e8eedc !important;
-  color: #004225 !important;
-  border: 3px solid #004225;
 }
 
 .btn-jelajah {
@@ -871,11 +884,16 @@ footer .fa-2x {
   position: relative;
 }
 
+.destinasi-page {
+  position: relative;
+}
+
 .destinasi-page:after {
   content: "";
   position: absolute;
-  top: 255px;
-  right: 790px;
+  top: 10%; /* posisi vertikal 50% dari container */
+  right: 53%;
+  transform: translate(50%, -50%); /* geser titik pusat elemen ke tengah */
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -1010,12 +1028,12 @@ footer .fa-2x {
 .destinasi-page:before {
   content: "";
   position: absolute;
-  top: 0;
-  left: -24%;
-  width: 50vw;
-  height: 100%;
+  top: -120px;
+  left: -25%;
+  width: 60%;
+  height: 50%;
   background-color: #e8c614;
-  border-radius: 0 100% 100% 0;
+  border-radius: 50%;
   z-index: -1;
 }
 
@@ -1026,9 +1044,10 @@ footer .fa-2x {
 }
 
 .pagination button {
-  background-color: #c7c4c4;
-  border: none;
-  padding: 9px 15px;
+  background-color: #e8eedc;
+  color: #004225;
+  border: 2px solid #004225;
+  padding: 9px 16px;
   margin: 0 5px;
   cursor: pointer;
   border-radius: 5px;
@@ -1044,6 +1063,12 @@ footer .fa-2x {
   background-color: #004225;
   color: #eeeeee;
   cursor: not-allowed;
+}
+
+.pagination button:hover {
+  background-color: #004225;
+  color: #eeeeee;
+  cursor: pointer;
 }
 
 .tim-kami-section {
@@ -1443,9 +1468,10 @@ footer .fa-2x {
 }
 
 .spesies-page .pagination button {
-  background-color: #c7c4c4;
-  border: none;
-  padding: 9px 15px;
+  background-color: #e8eedc;
+  color: #004225;
+  border: 2px solid #004225;
+  padding: 9px 16px;
   margin: 0 5px;
   cursor: pointer;
   border-radius: 5px;
@@ -1461,6 +1487,12 @@ footer .fa-2x {
   background-color: #004225;
   color: #eeeeee;
   cursor: not-allowed;
+}
+
+.spesies-page .pagination button:hover {
+  background-color: #004225;
+  color: #eeeeee;
+  cursor: pointer;
 }
 
 .pagination-item {
@@ -1512,4 +1544,58 @@ footer .fa-2x {
   word-spacing: -2px;
   font-size: 1.1rem;
   line-height: 30px;
+}
+
+.edit-cerita-page .container {
+  position: relative;
+}
+
+.edit-cerita-page .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.edit-cerita-page h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.edit-cerita-page img {
+  position: absolute;
+  top: -130px;
+  right: 60px;
+  width: 100%;
+  max-width: 500px; /* Ubah sesuai kebutuhan */
+}
+
+.btn-kirim-cerita {
+  background-color: #004225 !important;
+  color: #eeeeee !important;
+  border: 3px solid #004225 !important;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  padding: 6px 12px;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  float: right;
+}
+
+.btn-kirim-cerita:hover {
+  background-color: #e8eedc !important;
+  color: #004225 !important;
+  border: 3px solid #004225 !important;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  padding: 6px 12px;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+.form-group label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
 }

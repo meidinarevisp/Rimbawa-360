@@ -16,8 +16,7 @@ class HeroRimbawa extends HTMLElement {
           <div class="col-md-6">
             <h1>
               <strong>
-                Selamat Datang di<br />Rimbawa<span class="three-sixty"
-                  >360</span
+                Selamat Datang di<br />Rimbawa 360</span
                 >
               </strong>
             </h1>

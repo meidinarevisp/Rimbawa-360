@@ -72,6 +72,18 @@ module.exports = {
       filename: "cerita.html",
       template: path.resolve(__dirname, "src/templates/cerita.html"),
     }),
+    new HtmlWebpackPlugin({
+      filename: "dashboard-cerita.html",
+      template: path.resolve(__dirname, "src/templates/dashboard-cerita.html"),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "edit-cerita.html",
+      template: path.resolve(__dirname, "src/templates/edit-cerita.html"),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "edit-profile.html",
+      template: path.resolve(__dirname, "src/templates/edit-profile.html"),
+    }),
     new CopyWebpackPlugin({
       patterns: [
         {
