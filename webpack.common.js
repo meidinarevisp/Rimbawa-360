@@ -10,6 +10,7 @@ module.exports = {
     direktori: path.resolve(__dirname, "src/scripts/direktori.js"),
     tentang: path.resolve(__dirname, "src/scripts/tentang.js"),
     detailDirektori: path.resolve(__dirname, "src/scripts/detail-direktori.js"),
+    detailSpesies: path.resolve(__dirname, "src/scripts/detail-spesies.js"),
     edukasi: path.resolve(__dirname, "src/scripts/edukasi.js"),
     spesies: path.resolve(__dirname, "src/scripts/spesies.js"),
     cerita: path.resolve(__dirname, "src/scripts/cerita.js"),
@@ -83,6 +84,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "edit-profile.html",
       template: path.resolve(__dirname, "src/templates/edit-profile.html"),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "detail-spesies.html",
+      template: path.resolve(__dirname, "src/templates/detail-spesies.html"),
     }),
     new CopyWebpackPlugin({
       patterns: [
