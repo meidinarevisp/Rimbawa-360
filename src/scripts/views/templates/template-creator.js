@@ -407,7 +407,7 @@ const edukasiTemplate = () => `
           </button>
         </div>
         </section>
-        <section class="edukasi-content" id="edukasi"> 
+        <section class="edukasi-content"> 
             <div class="container">
        <div id="edukasi-content"></div>
       </div>

@@ -22,20 +22,22 @@ const Edukasi = {
       );
 
       const kontenHTML = `
-    <h3>${konten.nama_isu}</h3>
-    <img src="${konten.gambar}" alt="${konten.nama_isu}" class="img-fluid mb-3">
-    <p class="m-5 text-center">${konten.deskripsi}</p>
-    <div class="dampak">
-      <h4>Dampak</h4>
-      <p>${konten.dampak}</p>
-    </div>
-    <div class="solusi">
-      <h4>Solusi</h4>
-      <ul>
-        ${konten.solusi.map((solusi) => `<li>${solusi}</li>`).join("")}
-      </ul>
-    </div>
-  `;
+        <h3>${konten.nama_isu}</h3>
+        <img src="${konten.gambar}" alt="${
+        konten.nama_isu
+      }" class="img-fluid mb-3">
+        <p class="m-5 text-center">${konten.deskripsi}</p>
+        <div class="dampak">
+          <h4>Dampak</h4>
+          <p>${konten.dampak}</p>
+        </div>
+        <div class="solusi">
+          <h4>Solusi</h4>
+          <ul>
+            ${konten.solusi.map((solusi) => `<li>${solusi}</li>`).join("")}
+          </ul>
+        </div>
+      `;
 
       document.getElementById("edukasi-content").innerHTML = kontenHTML;
 
@@ -75,9 +77,12 @@ const Edukasi = {
         tampilkanKontenEdukasi(idEdukasi);
         tandaiMenuAktif(id);
 
-        const edukasiSection = document.getElementById("edukasi");
+        const edukasiSection = document.querySelector(".edukasi-content");
         if (edukasiSection) {
-          edukasiSection.scrollIntoView({ behavior: "smooth", block: "start" });
+          window.scrollTo({
+            top: edukasiSection.offsetTop - 50, // Sesuaikan dengan kebutuhan
+            behavior: "smooth",
+          });
         }
       });
     });
@@ -95,28 +100,3 @@ const Edukasi = {
 };
 
 export default Edukasi;
-
-document.addEventListener("DOMContentLoaded", function () {
-  const backButton = document.querySelector(".btn-back-to-top");
-
-  // Tambahkan event listener untuk menggulir ke atas saat tombol diklik
-  if (backButton) {
-    backButton.addEventListener("click", function () {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    });
-
-    // Tambahkan event listener untuk memeriksa saat pengguna menggulir halaman
-    window.addEventListener("scroll", function () {
-      // Jika pengguna menggulir lebih dari 200px dari atas, tampilkan tombol
-      if (window.scrollY > 200) {
-        backButton.classList.add("show");
-      } else {
-        // Jika tidak, sembunyikan tombol
-        backButton.classList.remove("show");
-      }
-    });
-  }
-});

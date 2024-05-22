@@ -66,23 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const forumForm = document.getElementById("forumForm");
   const forumPosts = document.getElementById("forumPosts");
 
-  if (backButton) {
-    backButton.addEventListener("click", function () {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    });
-
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 200) {
-        backButton.classList.add("show");
-      } else {
-        backButton.classList.remove("show");
-      }
-    });
-  }
-
   if (forumButton && forumContainer) {
     forumButton.classList.add("show"); // Ensure the button is displayed initially
 
