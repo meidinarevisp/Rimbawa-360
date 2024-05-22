@@ -13,7 +13,7 @@ const berandaTemplate = () => `
         <br />
         <div class="flex-container" id="edukasiContainer"></div>
         <center>
-          <a href="edukasi.html" class="btn btn-primary mt-3">Selengkapnya</a>
+          <a href="/#/edukasi" class="btn btn-primary mt-3">Selengkapnya</a>
         </center>
       </div>
     </section>
@@ -82,7 +82,7 @@ const berandaTemplate = () => `
           </div>
         </div>
         <center>
-          <a href="spesies.html" class="btn btn-primary mt-3">Selengkapnya</a>
+          <a href="/#/spesies" class="btn btn-primary mt-3">Selengkapnya</a>
         </center>
       </div>
     </section>
@@ -99,7 +99,7 @@ const berandaTemplate = () => `
         <br />
         <div class="row"></div>
         <center>
-          <a href="direktori.html" class="btn btn-primary mt-3">Selengkapnya</a>
+          <a href="/#/direktori" class="btn btn-primary mt-3">Selengkapnya</a>
         </center>
       </div>
     </section>
@@ -130,7 +130,7 @@ const berandaTemplate = () => `
           </button>
         </div>
         <div class="text-center mt-5">
-          <a href="cerita.html" class="link-cerita"
+          <a href="/#/cerita" class="link-cerita"
             >Simak Cerita Lainnya <i class="fas fa-arrow-right m-lg-2"></i
           ></a>
         </div>

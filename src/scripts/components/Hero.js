@@ -26,7 +26,7 @@ class HeroRimbawa extends HTMLElement {
               Menyatukan Jejak
               <span style="color: #d2e0bb"><strong>Hijau.</strong></span>
             </p>
-            <a class="btn btn-jelajah" href="direktori.html"
+            <a class="btn btn-jelajah" href="/#/direktori"
               >Jelajahi Sekarang</a
             >
             <a href="#tentang-kami" class="btn btn-link"
