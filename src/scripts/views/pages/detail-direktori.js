@@ -105,6 +105,11 @@ const detailDirektori = {
         `<b>${selectedDestinasi.nama_tempat}</b><br>${selectedDestinasi.deskripsi}`
       );
     }
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   },
 };
 

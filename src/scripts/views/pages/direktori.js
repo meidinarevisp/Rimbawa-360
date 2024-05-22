@@ -134,6 +134,11 @@ const Direktori = {
         marker.bindPopup(`<b>${place.nama_tempat}</b><br>${place.deskripsi}`);
       });
     }
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   },
 };
 

@@ -93,6 +93,11 @@ const Cerita = {
     // Tampilkan cerita dan pagination saat halaman dimuat
     displayCerita(currentPage);
     setupPagination();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   },
 };
 

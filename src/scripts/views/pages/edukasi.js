@@ -11,7 +11,11 @@ const Edukasi = {
   },
 
   async afterRender() {
-    // Fungsi untuk menampilkan konten edukasi
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
     function tampilkanKontenEdukasi(id, tombolAktifId = null) {
       const konten = edukasiData.edukasi_dan_kesadaran_lingkungan_hutan.find(
         (item) => item.id === id

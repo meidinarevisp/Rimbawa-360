@@ -1,9 +1,8 @@
-// src/scripts/index.js
 import "regenerator-runtime";
 import "../styles/style.css";
 import "../scripts/components/Navbar";
 import "../scripts/components/Footer";
-import App from "./views/app"; // Perbaikan: mengimpor App dari path yang benar
+import App from "./views/app";
 import swRegister from "../utils/sw-register";
 
 const app = new App({
@@ -20,11 +19,14 @@ window.addEventListener("load", () => {
 });
 
 function setActiveNavLink() {
-  const url = window.location.href;
+  const currentUrl = window.location.href.toLowerCase();
   const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
   navLinks.forEach((link) => {
-    if (link.href === url) {
+    const linkHref = link.href.toLowerCase();
+
+    // Add 'active' class only if the entire URL matches
+    if (linkHref === currentUrl) {
       link.classList.add("active");
     } else {
       link.classList.remove("active");
@@ -34,6 +36,7 @@ function setActiveNavLink() {
 
 // Call the function when the page is loaded
 window.onload = setActiveNavLink;
+window.addEventListener("hashchange", setActiveNavLink);
 
 document.addEventListener("DOMContentLoaded", function () {
   const backButton = document.querySelector(".btn-back-to-top");

@@ -43,6 +43,11 @@ const detailSpesies = {
 
     const backButton = document.getElementById("backButton");
     backButton.addEventListener("click", goBack);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   },
 };
 

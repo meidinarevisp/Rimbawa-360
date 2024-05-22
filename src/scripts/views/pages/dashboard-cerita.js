@@ -54,6 +54,11 @@ const dashboardCerita = {
         deleteCerita(id);
       });
     });
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   },
 };
 

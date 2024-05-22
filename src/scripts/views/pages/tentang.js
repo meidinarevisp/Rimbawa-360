@@ -17,7 +17,7 @@ const Tentang = {
         const panel = button.nextElementSibling;
         const icon = button.querySelector("i");
 
-        button.classList.toggle("active"); // Tambahkan atau hapus kelas "active" pada tombol
+        button.classList.toggle("active");
 
         if (button.classList.contains("active")) {
           panel.style.maxHeight = panel.scrollHeight + "px";
@@ -29,6 +29,11 @@ const Tentang = {
           icon.classList.add("fa-chevron-down");
         }
       });
+    });
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
     });
   },
 };

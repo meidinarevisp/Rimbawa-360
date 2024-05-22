@@ -12,7 +12,12 @@ const editProfile = {
     return renderedTemplate;
   },
 
-  async afterRender() {},
+  async afterRender() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  },
 };
 
 export default editProfile;
