@@ -7,16 +7,7 @@ module.exports = {
     app: path.resolve(__dirname, "src/scripts/index.js"),
     login: path.resolve(__dirname, "src/scripts/login.js"),
     register: path.resolve(__dirname, "src/scripts/register.js"),
-    direktori: path.resolve(__dirname, "src/scripts/direktori.js"),
-    tentang: path.resolve(__dirname, "src/scripts/tentang.js"),
-    detailDirektori: path.resolve(__dirname, "src/scripts/detail-direktori.js"),
-    detailSpesies: path.resolve(__dirname, "src/scripts/detail-spesies.js"),
-    dashboardCerita: path.resolve(__dirname, "src/scripts/dashboard-cerita.js"),
-    editProfile: path.resolve(__dirname, "src/scripts/edit-profile.js"),
-    editCerita: path.resolve(__dirname, "src/scripts/edit-cerita.js"),
-    edukasi: path.resolve(__dirname, "src/scripts/edukasi.js"),
-    spesies: path.resolve(__dirname, "src/scripts/spesies.js"),
-    cerita: path.resolve(__dirname, "src/scripts/cerita.js"),
+    sw: path.resolve(__dirname, "src/utils/sw-register.js"),
   },
   output: {
     filename: "[name].bundle.js",
@@ -51,46 +42,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "register.html",
       template: path.resolve(__dirname, "src/templates/register.html"),
-    }),
-    new HtmlWebpackPlugin({
-      filename: "direktori.html",
-      template: path.resolve(__dirname, "src/templates/direktori.html"),
-    }),
-    new HtmlWebpackPlugin({
-      filename: "detail-direktori.html",
-      template: path.resolve(__dirname, "src/templates/detail-direktori.html"),
-    }),
-    new HtmlWebpackPlugin({
-      filename: "tentang.html",
-      template: path.resolve(__dirname, "src/templates/tentang.html"),
-    }),
-    new HtmlWebpackPlugin({
-      filename: "edukasi.html",
-      template: path.resolve(__dirname, "src/templates/edukasi.html"),
-    }),
-    new HtmlWebpackPlugin({
-      filename: "spesies.html",
-      template: path.resolve(__dirname, "src/templates/spesies.html"),
-    }),
-    new HtmlWebpackPlugin({
-      filename: "cerita.html",
-      template: path.resolve(__dirname, "src/templates/cerita.html"),
-    }),
-    new HtmlWebpackPlugin({
-      filename: "dashboard-cerita.html",
-      template: path.resolve(__dirname, "src/templates/dashboard-cerita.html"),
-    }),
-    new HtmlWebpackPlugin({
-      filename: "edit-cerita.html",
-      template: path.resolve(__dirname, "src/templates/edit-cerita.html"),
-    }),
-    new HtmlWebpackPlugin({
-      filename: "edit-profile.html",
-      template: path.resolve(__dirname, "src/templates/edit-profile.html"),
-    }),
-    new HtmlWebpackPlugin({
-      filename: "detail-spesies.html",
-      template: path.resolve(__dirname, "src/templates/detail-spesies.html"),
     }),
     new CopyWebpackPlugin({
       patterns: [

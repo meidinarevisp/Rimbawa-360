@@ -985,6 +985,7 @@ footer .fa-2x {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .destinasi-page .row .col-md-4 .image-container h1 {

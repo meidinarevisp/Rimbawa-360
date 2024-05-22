@@ -38,21 +38,21 @@ class NavbarRimbawa extends HTMLElement {
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" href="direktori.html">Destinasi</a>
+              <a class="dropdown-item" href="/#/direktori">Destinasi</a>
             </li>
             <li>
-              <a class="dropdown-item" href="edukasi.html">Edukasi</a>
+              <a class="dropdown-item" href="/#/edukasi">Edukasi</a>
             </li>
             <li>
-              <a class="dropdown-item" href="spesies.html">Spesies</a>
+              <a class="dropdown-item" href="/#/spesies">Spesies</a>
             </li>
             <li>
-              <a class="dropdown-item" href="cerita.html">Cerita Kita</a>
+              <a class="dropdown-item" href="/#/cerita">Cerita Kita</a>
             </li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="tentang.html">Tentang</a>
+          <a class="nav-link" href="/#/tentang">Tentang</a>
         </li>
       </ul>
     </div>
