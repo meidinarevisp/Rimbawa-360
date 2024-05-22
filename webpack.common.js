@@ -12,6 +12,8 @@ module.exports = {
     detailDirektori: path.resolve(__dirname, "src/scripts/detail-direktori.js"),
     detailSpesies: path.resolve(__dirname, "src/scripts/detail-spesies.js"),
     dashboardCerita: path.resolve(__dirname, "src/scripts/dashboard-cerita.js"),
+    editProfile: path.resolve(__dirname, "src/scripts/edit-profile.js"),
+    editCerita: path.resolve(__dirname, "src/scripts/edit-cerita.js"),
     edukasi: path.resolve(__dirname, "src/scripts/edukasi.js"),
     spesies: path.resolve(__dirname, "src/scripts/spesies.js"),
     cerita: path.resolve(__dirname, "src/scripts/cerita.js"),

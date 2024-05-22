@@ -1776,3 +1776,31 @@ footer .fa-2x {
   background-color: #e8eedc; /* Warna biru yang lebih gelap saat di-hover */
   border-color: #004225;
 }
+
+.edit-profile h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.btn-ubah {
+  background-color: #004225; /* Warna biru sesuai tema Bootstrap */
+  border-color: #e8eedc;
+  color: #eeeeee;
+  float: right;
+  margin-bottom: 20px;
+}
+
+.btn-ubah:hover {
+  background-color: #e8eedc; /* Warna biru yang lebih gelap saat di-hover */
+  border-color: #004225;
+}
+
+.profile-picture {
+  width: 80%; /* Sesuaikan ukuran maksimum yang diinginkan */
+  margin-top: -60px;
+  float: left;
+}
+
+.edit-profile .form-control {
+  width: 100%;
+}
