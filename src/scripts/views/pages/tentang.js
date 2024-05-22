@@ -12,6 +12,24 @@ const Tentang = {
 
   async afterRender() {
     observeAnimatedElements();
+    document.querySelectorAll(".accordion").forEach((button) => {
+      button.addEventListener("click", () => {
+        const panel = button.nextElementSibling;
+        const icon = button.querySelector("i");
+
+        button.classList.toggle("active"); // Tambahkan atau hapus kelas "active" pada tombol
+
+        if (button.classList.contains("active")) {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+          icon.classList.remove("fa-chevron-down");
+          icon.classList.add("fa-chevron-up");
+        } else {
+          panel.style.maxHeight = 0;
+          icon.classList.remove("fa-chevron-up");
+          icon.classList.add("fa-chevron-down");
+        }
+      });
+    });
   },
 };
 
