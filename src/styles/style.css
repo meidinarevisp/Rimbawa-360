@@ -1698,3 +1698,81 @@ footer .fa-2x {
   background-color: #d2e0bb;
   color: #004225;
 }
+
+#cerita-kamu {
+  padding: 50px 0;
+}
+
+#cerita-kamu h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+#cerita-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.col-md-4 {
+  flex: 0 0 calc(33.333% - 20px); /* Lebar masing-masing kolom */
+  max-width: calc(33.333% - 20px); /* Lebar maksimum masing-masing kolom */
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  position: relative; /* Tambahkan agar bisa menempatkan tombol secara absolut */
+  background-color: #004225;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-text .text-muted {
+  color: #eeeeee !important;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #eeeeee;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #eeeeee;
+  text-align: justify;
+}
+
+.card-body .btn {
+  float: right;
+  margin-left: 10px;
+}
+
+/* Mengatur warna tombol edit */
+.edit-button,
+.delete-button {
+  background-color: #004225; /* Warna biru sesuai tema Bootstrap */
+  border-color: #e8eedc;
+  color: #eeeeee;
+}
+
+.delete-button:hover,
+.edit-button:hover {
+  background-color: #e8eedc; /* Warna biru yang lebih gelap saat di-hover */
+  border-color: #004225;
+}
