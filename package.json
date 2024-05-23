@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
+    "gsap": "^3.12.5",
     "hapi": "^18.1.0",
     "idb": "^7.0.1",
     "leaflet": "^1.9.4",

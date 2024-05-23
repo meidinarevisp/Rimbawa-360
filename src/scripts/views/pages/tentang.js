@@ -1,5 +1,9 @@
 import UrlParser from "../../routes/url-parser";
 import { tentangTemplate } from "../templates/template-creator";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Tentang = {
   async render() {
@@ -11,7 +15,90 @@ const Tentang = {
   },
 
   async afterRender() {
-    observeAnimatedElements();
+    // Animasi untuk elemen-elemen saat halaman dimuat
+    gsap.from(".tentang-kami-page h2", {
+      duration: 1,
+      opacity: 0,
+      y: -50,
+      ease: "power2.out",
+    });
+
+    gsap.from(".tentang-kami-page .tentang-kami-img img", {
+      duration: 1,
+      opacity: 0,
+      x: -50,
+      ease: "power2.out",
+      delay: 0.5,
+    });
+
+    gsap.from(".tentang-kami-page .text p", {
+      duration: 1,
+      opacity: 0,
+      x: 50,
+      ease: "power2.out",
+      delay: 0.5,
+      stagger: 0.3,
+    });
+
+    gsap.from(".tim-kami-section h2", {
+      scrollTrigger: {
+        trigger: ".tim-kami-section h2",
+        start: "top 80%",
+      },
+      duration: 1,
+      opacity: 0,
+      y: -50,
+      ease: "power2.out",
+    });
+
+    gsap.from(".tim-kami-section p", {
+      scrollTrigger: {
+        trigger: ".tim-kami-section p",
+        start: "top 80%",
+      },
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      delay: 0.5,
+    });
+
+    gsap.from(".tim-kami-section .team-member", {
+      scrollTrigger: {
+        trigger: ".tim-kami-section .team-member",
+        start: "top 80%",
+      },
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      stagger: 0.3,
+    });
+
+    gsap.from(".wrapper h2", {
+      scrollTrigger: {
+        trigger: ".wrapper h2",
+        start: "top 80%",
+      },
+      duration: 1,
+      opacity: 0,
+      y: -50,
+      ease: "power2.out",
+    });
+
+    gsap.from(".faq", {
+      scrollTrigger: {
+        trigger: ".faq",
+        start: "top 80%",
+      },
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      stagger: 0.3,
+    });
+
+    // Animasi untuk accordion pada FAQ section
     document.querySelectorAll(".accordion").forEach((button) => {
       button.addEventListener("click", () => {
         const panel = button.nextElementSibling;
@@ -20,13 +107,25 @@ const Tentang = {
         button.classList.toggle("active");
 
         if (button.classList.contains("active")) {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-          icon.classList.remove("fa-chevron-down");
-          icon.classList.add("fa-chevron-up");
+          gsap.to(panel, {
+            duration: 0.5,
+            maxHeight: panel.scrollHeight + "px",
+            ease: "power2.out",
+          });
+          gsap.to(icon, {
+            rotation: 180,
+            ease: "power2.out",
+          });
         } else {
-          panel.style.maxHeight = 0;
-          icon.classList.remove("fa-chevron-up");
-          icon.classList.add("fa-chevron-down");
+          gsap.to(panel, {
+            duration: 0.5,
+            maxHeight: 0,
+            ease: "power2.out",
+          });
+          gsap.to(icon, {
+            rotation: 0,
+            ease: "power2.out",
+          });
         }
       });
     });
@@ -39,28 +138,3 @@ const Tentang = {
 };
 
 export default Tentang;
-
-function observeAnimatedElements() {
-  const animatedElements = document.querySelectorAll(
-    ".animated-content, .animated-text"
-  );
-
-  const observerOptions = {
-    threshold: 0.1,
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const delay = entry.target.getAttribute("data-delay") || "0s";
-        entry.target.style.setProperty("--animation-delay", `${delay}s`);
-        entry.target.classList.add("animate");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  animatedElements.forEach((el) => {
-    observer.observe(el);
-  });
-}

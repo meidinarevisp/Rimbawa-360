@@ -4,6 +4,20 @@ import ceritaData from "../../../data/Cerita.json";
 import ekowisataData from "../../../data/Ekowisata.json";
 import spesiesData from "../../../data/Spesies.json";
 import edukasiData from "../../../data/Edukasi.json";
+import { gsap } from "gsap";
+import { TweenMax, Power4 } from "gsap";
+
+import { CustomEase } from "gsap/CustomEase";
+import { RoughEase, ExpoScaleEase, SlowMo } from "gsap/EasePack";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(
+  CustomEase,
+  RoughEase,
+  ExpoScaleEase,
+  SlowMo,
+  ScrollTrigger
+);
 
 const Beranda = {
   async render() {
@@ -14,6 +28,93 @@ const Beranda = {
   },
 
   async afterRender() {
+    gsap.from(".hero-image", {
+      duration: 1.5,
+      opacity: 0,
+      scale: 1.1,
+      ease: "power4.out",
+    });
+
+    gsap.from(".hero-section h1", {
+      duration: 1,
+      opacity: 0,
+      x: -50,
+      ease: "power4.out",
+      delay: 0.5,
+    });
+
+    gsap.from(".hero-section p", {
+      duration: 1,
+      opacity: 0,
+      x: 50,
+      ease: "power4.out",
+      delay: 0.7,
+    });
+
+    gsap.from(".btn-jelajah", {
+      duration: 1,
+      opacity: 0,
+      scale: 0.8,
+      ease: "back.out(1.7)",
+      delay: 1,
+    });
+
+    gsap.from(".btn-link", {
+      duration: 1,
+      opacity: 0,
+      scale: 0.8,
+      ease: "back.out(1.7)",
+      delay: 1.2,
+    });
+
+    gsap.from(".tentang-kami-section h2", {
+      scrollTrigger: {
+        trigger: ".tentang-kami-section h2",
+        start: "top 100%",
+        once: true,
+        visibility: 0,
+        toggleActions: "play none none none",
+      },
+      duration: 2,
+      opacity: 0,
+      scale: 0.8,
+      ease: "back.out(1.7)",
+      delay: 1.2,
+    });
+    gsap.from(".tentang-kami-section .image-tentang img", {
+      scrollTrigger: {
+        trigger: ".tentang-kami-section .image-tentang img",
+        start: "top 100%",
+        once: true,
+        visibility: 0,
+        toggleActions: "play none none none",
+      },
+      duration: 2,
+      opacity: 0,
+      x: -60,
+      rotation: 10,
+      scale: 0.8,
+      ease: "power2.out",
+      delay: 0.5,
+    });
+
+    gsap.from(".tentang-kami-section .text p", {
+      scrollTrigger: {
+        trigger: ".tentang-kami-section .text p",
+        start: "top 100%",
+        once: true,
+        visibility: 0,
+        toggleActions: "play none none none",
+      },
+      duration: 2,
+      opacity: 0,
+      x: 60,
+      scale: 0.8,
+      ease: "power2.out",
+      delay: 0.5,
+      stagger: 0.3,
+    });
+
     const destinasiSection = document.querySelector(".destinasi-section");
 
     if (destinasiSection) {
@@ -194,11 +295,6 @@ const Beranda = {
 
       tampilkanEdukasi();
     }
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
   },
 };
 

@@ -2,7 +2,6 @@ import "../../components/Hero";
 
 const berandaTemplate = () => `
   <hero-rimbawa></hero-rimbawa>
-    <!-- Edukasi Section -->
     <section class="edukasi-section">
       <div class="container">
         <h2>
@@ -18,7 +17,6 @@ const berandaTemplate = () => `
       </div>
     </section>
 
-    <!-- Tentang Kami Section -->
     <section class="tentang-kami-section" id="tentang-kami">
       <div class="container">
         <h2 style="text-align: center"><strong>Tentang Kami</strong></h2>
@@ -41,7 +39,6 @@ const berandaTemplate = () => `
       </div>
     </section>
 
-    <!-- Spesies Section -->
     <section class="spesies-section">
       <div class="container">
         <h2>
@@ -432,12 +429,12 @@ const spesiesTemplate = () => `
 const tentangTemplate = () => `
  <section class="tentang-kami-page" id="tentang-page">
       <div class="container">
-        <h2 class="animated-text1"><strong>Tentang Kami</strong></h2>
+        <h2><strong>Tentang Kami</strong></h2>
         <div class="content-flex">
-          <div class="tentang-kami-img animated-content" data-delay="1">
+          <div class="tentang-kami-img">
             <img src="rimbawa-360.png" alt="Tentang Kami Image" />
           </div>
-          <div class="text animated-content" data-delay="2">
+          <div class="text">
             <p><strong>Apa Itu Rimbawa 360?</strong></p>
             <p>
               Rimbawa 360 adalah sebuah platform yang berkomitmen untuk
@@ -454,14 +451,14 @@ const tentangTemplate = () => `
 
     <section class="tim-kami-section" id="tim-kami">
       <div class="container">
-        <h2 class="animated-text1" data-delay="1"><strong>Tim Kami</strong></h2>
-        <p class="animated-text1" data-delay="0">
+        <h2><strong>Tim Kami</strong></h2>
+        <p>
           Di SIB Dicoding, kami tak hanya belajar, tapi juga berkarya. Rimbawa
           360 adalah masterpiece kami, buah dari kolaborasi dan tekad tim yang
           solid.
         </p>
         <div class="row">
-          <div class="col-md-4 animated-content" data-delay="0">
+          <div class="col-md-4">
             <div class="team-member">
               <img
                 src="tim/fikrin.jpg"
@@ -496,7 +493,7 @@ const tentangTemplate = () => `
               </h4>
             </div>
           </div>
-          <div class="col-md-4 animated-content" data-delay="0.5">
+          <div class="col-md-4">
             <div class="team-member">
               <img
                 src="tim/revi.png"
@@ -525,7 +522,7 @@ const tentangTemplate = () => `
               </h4>
             </div>
           </div>
-          <div class="col-md-4 animated-content" data-delay="1">
+          <div class="col-md-4">
             <div class="team-member">
               <img
                 src="tim/abdan.png"
@@ -561,9 +558,9 @@ const tentangTemplate = () => `
     <!-- FAQ Section -->
     <div class="container">
       <section class="wrapper">
-        <h2 class="animated-text1"><strong>FAQ</strong></h2>
+        <h2><strong>FAQ</strong></h2>
         <br />
-        <div class="faq animated-content" data-delay="1">
+        <div class="faq">
           <button class="accordion">
             Apa yang membuat Rimbawa 360 unik sebagai sumber informasi ekowisata
             hutan di Indonesia?
@@ -577,7 +574,7 @@ const tentangTemplate = () => `
             </p>
           </div>
         </div>
-        <div class="faq animated-content" data-delay="2">
+        <div class="faq">
           <button class="accordion">
             Mengapa penting bagi masyarakat untuk mengunjungi destinasi
             ekowisata yang terdaftar di Rimbawa 360?
@@ -591,7 +588,7 @@ const tentangTemplate = () => `
             </p>
           </div>
         </div>
-        <div class="faq animated-content" data-delay="3">
+        <div class="faq">
           <button class="accordion">
             Bagaimana Rimbawa 360 meningkatkan kesadaran masyarakat tentang
             isu-isu lingkungan?
@@ -605,7 +602,7 @@ const tentangTemplate = () => `
             </p>
           </div>
         </div>
-        <div class="faq animated-content" data-delay="4">
+        <div class="faq">
           <button class="accordion">
             Bagaimana masyarakat dapat terlibat dalam upaya konservasi melalui
             Rimbawa 360?
@@ -619,7 +616,7 @@ const tentangTemplate = () => `
             </p>
           </div>
         </div>
-        <div class="faq animated-content" data-delay="5">
+        <div class="faq">
           <button class="accordion">
             Apa fitur utama yang tersedia di Rimbawa 360 untuk membantu pengguna
             dalam mengeksplorasi dan berkontribusi pada upaya konservasi
