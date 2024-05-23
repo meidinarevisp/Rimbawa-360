@@ -5,7 +5,6 @@ import ekowisataData from "../../../data/Ekowisata.json";
 import spesiesData from "../../../data/Spesies.json";
 import edukasiData from "../../../data/Edukasi.json";
 import { gsap } from "gsap";
-import { TweenMax, Power4 } from "gsap";
 
 import { CustomEase } from "gsap/CustomEase";
 import { RoughEase, ExpoScaleEase, SlowMo } from "gsap/EasePack";
@@ -65,6 +64,46 @@ const Beranda = {
       scale: 0.8,
       ease: "back.out(1.7)",
       delay: 1.2,
+    });
+    gsap.from(".edukasi-section h2", {
+      scrollTrigger: {
+        trigger: ".edukasi-section h2",
+        start: "top 90%", // Adjusted start position
+        once: true,
+        toggleActions: "play none none none",
+      },
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+    });
+
+    gsap.from(".edukasi-section .flex-container", {
+      scrollTrigger: {
+        trigger: ".edukasi-section .flex-container",
+        start: "top 90%", // Adjusted start position
+        once: true,
+        toggleActions: "play none none none",
+      },
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      delay: 0.5,
+    });
+
+    gsap.from(".edukasi-section .btn", {
+      scrollTrigger: {
+        trigger: ".edukasi-section .btn",
+        start: "top 90%", // Adjusted start position
+        once: true,
+        toggleActions: "play none none none",
+      },
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      delay: 1,
     });
 
     gsap.from(".tentang-kami-section h2", {
