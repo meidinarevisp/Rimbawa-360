@@ -2,6 +2,7 @@ import "../../components/Hero";
 
 const berandaTemplate = () => `
   <hero-rimbawa></hero-rimbawa>
+  
     <section class="edukasi-section">
       <div class="container">
         <h2>
@@ -417,7 +418,7 @@ const spesiesTemplate = () => `
         <h2>
           <strong>
             Semua yg ingin Kamu <br />ketahui tentang
-            <span style="color: #527853">Spesies</span>
+            <span style="color: #56ab2e">Spesies</span>
           </strong>
         </h2>
         <br />

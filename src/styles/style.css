@@ -880,24 +880,12 @@ footer .fa-2x {
   background-color: #004225;
   opacity: 100%;
   margin-left: 13px;
-  width: 45%;
+  width: 42%;
   position: relative;
 }
 
 .destinasi-page {
   position: relative;
-}
-
-.destinasi-page:after {
-  content: "";
-  position: absolute;
-  top: 10%; /* posisi vertikal 50% dari container */
-  right: 53%;
-  transform: translate(50%, -50%); /* geser titik pusat elemen ke tengah */
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #ec9c00;
 }
 
 .peta-interaktif-section h2 {
@@ -1385,32 +1373,26 @@ footer .fa-2x {
 
 .edukasi-content img {
   width: 60%;
-  height: auto;
+  height: 400px;
   display: block;
   margin: 0 auto;
 }
 
-.dampak {
-  background-color: #d2e0bb;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease; /* Menambahkan efek transisi */
-}
-
+.dampak,
 .solusi {
   background-color: #d2e0bb;
   padding: 20px;
+  margin-bottom: 30px;
   border-radius: 20px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease; /* Menambahkan efek transisi */
+  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
 }
 
 /* Efek hover */
 .dampak:hover,
 .solusi:hover {
-  box-shadow: 0px 0px 10px rgba(22, 62, 14, 0.3); /* Mengubah bayangan pada hover */
+  background-color: #004225;
+  color: #eeeeee;
+  box-shadow: 0px 0px 15px rgba(22, 62, 14, 0.4);
 }
 
 /* Spesies Page */
@@ -1662,11 +1644,11 @@ footer .fa-2x {
 }
 
 .spesies-detail-text hr {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .spesies-detail-text p {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .spesies-detail-text p strong {
@@ -1683,7 +1665,6 @@ footer .fa-2x {
 .detail-spesies .btn-back {
   display: inline-block;
   padding: 10px 20px;
-  margin: 20px 0;
   background-color: #004225;
   color: white;
   border: none;
@@ -1692,12 +1673,15 @@ footer .fa-2x {
   text-align: center;
   text-decoration: none;
   font-weight: 600;
-  margin-right: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 2px solid #004225;
 }
 
 .detail-spesies .btn-back:hover {
-  background-color: #d2e0bb;
+  background-color: #e8eedc;
   color: #004225;
+  border: 2px solid #004225;
 }
 
 #cerita-kamu {
