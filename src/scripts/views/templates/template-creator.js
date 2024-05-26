@@ -641,16 +641,16 @@ const loginTemplate = () => `
       <div class="col-md-4">
         <div class="card p-3">
           <div class="card-body">
-            <h2 class="text-center">Login</h2>
+            <h2 class="text-center">Masuk</h2>
             <form>
               <div class="form-group mb-2">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" placeholder="Masukkan email" required>
               </div>
               <div class="form-group mb-2">
-                <label for="password">Password</label>
+                <label for="password">Kata Sandi</label>
                 <div class="input-group">
-                  <input type="password" class="form-control" id="password" placeholder="Masukkan password" required>
+                  <input type="password" class="form-control" id="password" placeholder="Masukkan kata sandi" required>
                   <div class="input-group-append">
                     <div class="input-group-text">
                       <span id="showPasswordIcon" class="fa fa-eye"></span>
@@ -658,11 +658,11 @@ const loginTemplate = () => `
                   </div>
                 </div>
                 <div class="lupa-password">
-                <p><a href="/#/login">Lupa password?</a></p>
+                <p><a href="/#/login">Lupa kata sandi?</a></p>
                 </div>
               </div>
               <div class="text-center">
-                <button type="submit" class="btn btn-login">Login</button>
+                <button type="submit" class="btn btn-login">Masuk</button>
               </div>
             </form>
             <p>Belum memiliki akun?<a href="/#/register"> Daftar disini!</a></p>
@@ -678,23 +678,33 @@ const registerTemplate = () => `
 <section class="register-section">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-4">
+      <div class="col-md-6">
         <div class="card p-3">
           <div class="card-body">
-            <h2 class="text-center">Register</h2>
+            <h2 class="text-center">Daftar</h2>
             <form>
-            <div class="form-group">
-                <label for="name">Nama Lengkap</label>
-                <input type="text" class="form-control" id="name" placeholder="Masukkan nama lengkap" required>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="name" placeholder="Masukkan nama lengkap" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="username">Nama Pengguna</label>
+                    <input type="text" class="form-control" id="username" placeholder="Masukkan nama pengguna" required>
+                  </div>
+                </div>
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" placeholder="Masukkan email" required>
               </div>
               <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password">Kata Sandi</label>
                 <div class="input-group">
-                  <input type="password" class="form-control" id="password" placeholder="Masukkan password" required>
+                  <input type="password" class="form-control" id="password" placeholder="Masukkan kata sandi" required>
                   <div class="input-group-append">
                     <div class="input-group-text">
                       <span id="showPasswordIcon" class="fa fa-eye"></span>
@@ -703,9 +713,9 @@ const registerTemplate = () => `
                 </div>
               </div>
               <div class="form-group">
-                <label for="password1">Konfirmasi Password</label>
+                <label for="password1">Konfirmasi Kata Sandi</label>
                 <div class="input-group">
-                  <input type="password" class="form-control" id="password1" placeholder="Konfirmasi password" required>
+                  <input type="password" class="form-control" id="password1" placeholder="Konfirmasi kata sandi" required>
                   <div class="input-group-append">
                     <div class="input-group-text">
                       <span id="showPasswordIcon" class="fa fa-eye"></span>
@@ -717,7 +727,7 @@ const registerTemplate = () => `
                 <button type="submit" class="btn btn-register">Daftar</button>
               </div>
             </form>
-            <p>Sudah memiliki akun?<a href="/#/login"> Login disini!</a></p>
+            <p>Sudah memiliki akun?<a href="/#/login"> Masuk disini!</a></p>
           </div>
         </div>
       </div>

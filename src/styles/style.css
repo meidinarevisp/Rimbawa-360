@@ -22,7 +22,7 @@ body {
 
 .login-logo {
   position: absolute;
-  top: 20px;
+  top: 30px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -153,14 +153,13 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: #004225;
-  border: 2px solid #004225;
   color: #eeeeee;
+  width: 100%;
 }
 
 .btn-register:hover {
-  background-color: rgba(231, 228, 228, 0.722);
-  border: 2px solid #004225;
-  color: #004225;
+  background-color: #527853 !important;
+  color: #eeeeee !important;
 }
 
 .btn-up {

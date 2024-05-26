@@ -9,9 +9,12 @@ const app = new App({
   content: document.querySelector("#mainContent"),
 });
 
-function isSpecialPage() {
-  const currentHash = window.location.hash.toLowerCase();
-  return currentHash.includes("login") || currentHash.includes("register");
+function isLoginPage() {
+  return window.location.hash.toLowerCase().includes("login");
+}
+
+function isRegisterPage() {
+  return window.location.hash.toLowerCase().includes("register");
 }
 
 function setActiveNavLink() {
@@ -34,6 +37,7 @@ window.addEventListener("hashchange", () => {
   app.renderPage();
   setActiveNavLink();
   toggleNavFooter();
+  removeSpecialPageImages();
 });
 
 window.addEventListener("load", () => {
@@ -41,19 +45,32 @@ window.addEventListener("load", () => {
   swRegister();
   setActiveNavLink();
   toggleNavFooter();
+  removeSpecialPageImages();
 });
 
 function toggleNavFooter() {
   const navbar = document.getElementById("navbar");
   const footer = document.getElementById("footer");
 
-  if (isSpecialPage()) {
+  if (isLoginPage() || isRegisterPage()) {
     if (navbar) navbar.style.display = "none";
     if (footer) footer.style.display = "none";
   } else {
     if (navbar) navbar.style.display = "block";
     if (footer) footer.style.display = "block";
   }
+}
+
+function removeSpecialPageImages() {
+  const loginBackground = document.querySelector(".login-background");
+  const loginLogo = document.querySelector(".login-logo");
+  const registerBackground = document.querySelector(".register-background");
+  const registerLogo = document.querySelector(".register-logo");
+
+  if (!isLoginPage() && loginBackground) loginBackground.remove();
+  if (!isLoginPage() && loginLogo) loginLogo.remove();
+  if (!isRegisterPage() && registerBackground) registerBackground.remove();
+  if (!isRegisterPage() && registerLogo) registerLogo.remove();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
