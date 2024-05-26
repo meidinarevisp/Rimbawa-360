@@ -9,14 +9,10 @@ const app = new App({
   content: document.querySelector("#mainContent"),
 });
 
-window.addEventListener("hashchange", () => {
-  app.renderPage();
-});
-
-window.addEventListener("load", () => {
-  app.renderPage();
-  swRegister();
-});
+function isSpecialPage() {
+  const currentHash = window.location.hash.toLowerCase();
+  return currentHash.includes("login") || currentHash.includes("register");
+}
 
 function setActiveNavLink() {
   const currentUrl = window.location.href.toLowerCase();
@@ -34,9 +30,31 @@ function setActiveNavLink() {
   });
 }
 
-// Call the function when the page is loaded
-window.onload = setActiveNavLink;
-window.addEventListener("hashchange", setActiveNavLink);
+window.addEventListener("hashchange", () => {
+  app.renderPage();
+  setActiveNavLink();
+  toggleNavFooter();
+});
+
+window.addEventListener("load", () => {
+  app.renderPage();
+  swRegister();
+  setActiveNavLink();
+  toggleNavFooter();
+});
+
+function toggleNavFooter() {
+  const navbar = document.getElementById("navbar");
+  const footer = document.getElementById("footer");
+
+  if (isSpecialPage()) {
+    if (navbar) navbar.style.display = "none";
+    if (footer) footer.style.display = "none";
+  } else {
+    if (navbar) navbar.style.display = "block";
+    if (footer) footer.style.display = "block";
+  }
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   const backButton = document.querySelector(".btn-back-to-top");

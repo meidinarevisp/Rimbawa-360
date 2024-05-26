@@ -9,9 +9,13 @@ import editProfile from "../views/pages/edit-profile";
 import Edukasi from "../views/pages/edukasi";
 import Spesies from "../views/pages/spesies";
 import Tentang from "../views/pages/tentang";
+import Login from "../views/pages/login";
+import Register from "../views/pages/register";
 
 const routes = {
-  "/": Beranda, // default page
+  "/": Beranda,
+  "/login": Login,
+  "/register": Register,
   "/cerita": Cerita,
   "/dashboard-cerita": dashboardCerita,
   "/detail-direktori": detailDirektori,

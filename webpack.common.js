@@ -5,8 +5,6 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
   entry: {
     app: path.resolve(__dirname, "src/scripts/index.js"),
-    login: path.resolve(__dirname, "src/scripts/login.js"),
-    register: path.resolve(__dirname, "src/scripts/register.js"),
     sw: path.resolve(__dirname, "src/utils/sw-register.js"),
   },
   output: {
@@ -34,14 +32,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: path.resolve(__dirname, "src/templates/index.html"),
-    }),
-    new HtmlWebpackPlugin({
-      filename: "login.html",
-      template: path.resolve(__dirname, "src/templates/login.html"),
-    }),
-    new HtmlWebpackPlugin({
-      filename: "register.html",
-      template: path.resolve(__dirname, "src/templates/register.html"),
     }),
     new CopyWebpackPlugin({
       patterns: [

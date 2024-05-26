@@ -102,7 +102,6 @@ const berandaTemplate = () => `
       </div>
     </section>
 
-    <!-- Cerita Kita Section -->
     <section class="cerita-kita-section">
       <div class="container">
         <center><h2 class="mb-5">Apa Cerita Kamu?</h2></center>
@@ -384,7 +383,6 @@ const editProfileTemplate = () => `
     </section>
 `;
 const edukasiTemplate = () => `
- <!-- Edukasi Section -->
     <section class="edukasi-page">
       <div class="container">
         <h2 class="mb-4">Jelajahi</h2>
@@ -557,8 +555,8 @@ const tentangTemplate = () => `
     </section>
 
     <!-- FAQ Section -->
-    <div class="container">
-      <section class="wrapper">
+    <section class="section-faq">
+      <div class="wrapper">
         <h2><strong>FAQ</strong></h2>
         <br />
         <div class="faq">
@@ -632,8 +630,100 @@ const tentangTemplate = () => `
             </p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+`;
+
+const loginTemplate = () => `
+<section class="login-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="card p-3">
+          <div class="card-body">
+            <h2 class="text-center">Login</h2>
+            <form>
+              <div class="form-group mb-2">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Masukkan email" required>
+              </div>
+              <div class="form-group mb-2">
+                <label for="password">Password</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="password" placeholder="Masukkan password" required>
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span id="showPasswordIcon" class="fa fa-eye"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="lupa-password">
+                <p><a href="/#/login">Lupa password?</a></p>
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-login">Login</button>
+              </div>
+            </form>
+            <p>Belum memiliki akun?<a href="/#/register"> Daftar disini!</a></p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+`;
+
+const registerTemplate = () => `
+<section class="register-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="card p-3">
+          <div class="card-body">
+            <h2 class="text-center">Register</h2>
+            <form>
+            <div class="form-group">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" class="form-control" id="name" placeholder="Masukkan nama lengkap" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Masukkan email" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="password" placeholder="Masukkan password" required>
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span id="showPasswordIcon" class="fa fa-eye"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="password1">Konfirmasi Password</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="password1" placeholder="Konfirmasi password" required>
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span id="showPasswordIcon" class="fa fa-eye"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-register">Daftar</button>
+              </div>
+            </form>
+            <p>Sudah memiliki akun?<a href="/#/login"> Login disini!</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 `;
 
 export {
@@ -648,4 +738,6 @@ export {
   edukasiTemplate,
   spesiesTemplate,
   tentangTemplate,
+  loginTemplate,
+  registerTemplate,
 };

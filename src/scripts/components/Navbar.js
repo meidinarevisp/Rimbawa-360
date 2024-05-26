@@ -57,8 +57,8 @@ class NavbarRimbawa extends HTMLElement {
       </ul>
     </div>
     <div class="d-flex ms-auto">
-      <a class="btn btn-outline-primary me-2 login-btn" href="login.html">Login</a>
-      <a class="btn btn-daftar daftar-btn" href="register.html">Daftar</a>
+      <a class="btn btn-outline-primary me-2 login-btn" href="/#/login">Login</a>
+      <a class="btn btn-daftar daftar-btn" href="/#/register">Daftar</a>
     </div>
   </div>
 </nav>
