@@ -990,14 +990,14 @@ footer .fa-2x {
 }
 
 .detail-direktori-section {
-  padding: 40px 0;
+  padding: 50px 0;
   background-color: #eeeeee;
 }
 
 .detail-direktori-section:after {
   content: "";
   position: absolute;
-  top: 149px;
+  top: 142px;
   right: 1355px;
   width: 40px;
   height: 40px;
@@ -1685,8 +1685,8 @@ footer .fa-2x {
   max-width: 1200px;
   margin: auto;
   background-color: #f9f9f9;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-bottom: 30px;
   border-radius: 10px;
 }
 
@@ -1782,13 +1782,13 @@ footer .fa-2x {
 }
 
 #cerita-kamu {
-  padding: 50px 0;
+  padding: 30px 0;
 }
 
 #cerita-kamu h2 {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   font-weight: bold;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
