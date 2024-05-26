@@ -5,8 +5,12 @@ body {
   overflow-x: hidden;
 }
 
+#mainContent {
+  padding-top: 70px;
+}
+
 .login-section {
-  margin-top: 110px;
+  margin-top: 50px;
   padding: 10px 0;
 }
 
@@ -94,7 +98,7 @@ body {
 }
 
 .register-section {
-  margin-top: 90px;
+  margin-top: 20px;
   padding: 10px 0;
 }
 
@@ -257,11 +261,11 @@ body {
 }
 
 .forum-content::-webkit-scrollbar {
-  width: 0; /* Untuk browser WebKit */
+  width: 0;
 }
 
 .forum-content {
-  scrollbar-width: none; /* Untuk browser Firefox */
+  scrollbar-width: none;
 }
 
 .forum-post {
@@ -359,7 +363,7 @@ section {
   line-height: 25px;
   font-size: 1.1rem;
   padding-top: 20px;
-  left: 50%; /* Set to 50% from the left edge of the parent container */
+  left: 50%;
   transform: translateX(-5%);
 }
 
@@ -374,10 +378,10 @@ section {
   background-color: #e8eedc !important;
   padding-top: 0;
   padding-bottom: 0;
-  position: -webkit-sticky; /* For Safari */
-  position: sticky;
+  position: fixed; /* Mengubah position dari sticky ke fixed */
   top: 0;
-  z-index: 1200;
+  width: 100%; /* Pastikan navbar mengisi seluruh lebar layar */
+  z-index: 2000;
 }
 
 .navbar-nav {
@@ -458,7 +462,11 @@ section {
   padding: 0;
   position: relative;
   width: 100%;
-  z-index: 2;
+  height: 660px;
+}
+
+.hero-section .container {
+  margin-top: -15px;
 }
 
 .hero-section h1 {
@@ -668,8 +676,6 @@ i.fa-angle-right {
 
 .spesies-section {
   position: relative;
-  z-index: 2;
-  background-color: #e8eedc;
 }
 
 .spesies-section:before {
@@ -753,11 +759,6 @@ i.fa-angle-right {
 
 .image-container:hover .overlay {
   opacity: 1;
-}
-
-.destinasi-section {
-  z-index: 2;
-  background-color: #e8eedc;
 }
 
 .destinasi-section h2 {
@@ -1153,7 +1154,7 @@ footer .fa-2x {
 
 .tim-kami-section {
   background-color: #e8eedc;
-  padding: 90px 0;
+  padding: 50px 0;
 }
 
 .tim-kami-section .container {
@@ -1180,6 +1181,7 @@ footer .fa-2x {
   text-align: center;
   position: relative;
   overflow: hidden;
+  margin-bottom: 50px;
 }
 
 .team-member::after {
@@ -1247,7 +1249,7 @@ footer .fa-2x {
 
 /* FAQ Tentang */
 .section-faq {
-  background-color: #e8eedc;
+  background-color: #eeeeee;
 }
 
 .wrapper {
@@ -1300,7 +1302,7 @@ footer .fa-2x {
 
 .pannel {
   padding: 0 2rem 1rem 1.8rem;
-  background-color: #e8eedc;
+  background-color: #eeeeee;
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.4s ease;
@@ -1332,7 +1334,7 @@ footer .fa-2x {
 
 .tentang-kami-page {
   background-color: #eeeeee;
-  padding-bottom: 65px;
+  padding-bottom: 30px;
 }
 
 .tentang-kami-page h2 {
