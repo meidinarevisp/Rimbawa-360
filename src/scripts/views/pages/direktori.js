@@ -13,7 +13,6 @@ const Direktori = {
   },
 
   async afterRender() {
-    // Panggil fungsi setelah DOM selesai dimuat
     const destinasiSection = document.querySelector(".destinasi-page");
 
     if (destinasiSection) {
@@ -75,7 +74,7 @@ const Direktori = {
 
               const destinasiContent = `
                 <div class="image-container">
-                  <img src="${destinasi.gambar}" alt="${destinasi.nama_tempat}" class="img-fluid destinasi-item" data-index="${index}" />
+                  <img src="${destinasi.gambar}" alt="${destinasi.nama_tempat}" class="img-fluid destinasi-item" data-index="${index}" title="klik gambar untuk melihat detail ${destinasi.nama_tempat}" />
                   <h1>${destinasi.lokasi}</h1>
                 </div>
                 <div class="text-content">
@@ -96,7 +95,6 @@ const Direktori = {
           Math.ceil(ekowisataData.ekowisata_hutan.length / itemsPerPage)
         );
 
-        // Add event listener for detail view
         document.querySelectorAll(".destinasi-item").forEach((item) => {
           item.addEventListener("click", (e) => {
             const index = e.target.dataset.index;
@@ -122,9 +120,9 @@ const Direktori = {
 
       const customIcon = L.icon({
         iconUrl: markerIcon,
-        iconSize: [25, 41], // size of the icon
-        iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
-        popupAnchor: [1, -34], // point from which the popup should open relative to the iconAnchor
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
       });
 
       ekowisataData.ekowisata_hutan.forEach((place) => {

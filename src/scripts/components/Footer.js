@@ -34,15 +34,15 @@ class FooterRimbawa extends HTMLElement {
           <div class="col-md-3">
             <h5>Jelajahi</h5>
             <ul class="list-unstyled">
-              <li><a href="#">Destinasi</a></li>
-              <li><a href="#">Edukasi</a></li>
-              <li><a href="#">Spesies</a></li>
+              <li><a href="/#/direktori">Destinasi</a></li>
+              <li><a href="/#/edukasi">Edukasi</a></li>
+              <li><a href="/#/spesies">Spesies</a></li>
             </ul>
           </div>
           <div class="col-md-3">
             <h5>Fitur</h5>
             <ul class="list-unstyled">
-              <li><a href="#">Cerita Kita</a></li>
+              <li><a href="/#/cerita">Cerita Kita</a></li>
               <li><a href="#">Peta Interaktif</a></li>
               <li><a href="#">Forum</a></li>
             </ul>
@@ -50,7 +50,7 @@ class FooterRimbawa extends HTMLElement {
           <div class="col-md-3">
             <h5>Tentang</h5>
             <ul class="list-unstyled">
-              <li><a href="#">Tentang Kami</a></li>
+              <li><a href="/#/tentang">Tentang Kami</a></li>
               <li><a href="#">Tim Kami</a></li>
               <li><a href="#">FAQ</a></li>
             </ul>

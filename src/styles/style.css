@@ -968,8 +968,8 @@ footer .fa-2x {
 
 .destinasi-page hr {
   border: none;
-  height: 6px;
-  background-color: #004225;
+  height: 4px;
+  background-color: #242524;
   opacity: 100%;
   margin-left: 13px;
   width: 42%;
@@ -1112,7 +1112,7 @@ footer .fa-2x {
   top: -120px;
   left: -25%;
   width: 60%;
-  height: 50%;
+  height: 40%;
   background-color: #e8c614;
   border-radius: 50%;
   z-index: -1;
@@ -1857,6 +1857,7 @@ footer .fa-2x {
 .card-body .edit-button:hover {
   background-color: #e8eedc; /* Warna biru yang lebih gelap saat di-hover */
   border-color: #004225;
+  color: #004225;
 }
 
 .edit-profile h2 {

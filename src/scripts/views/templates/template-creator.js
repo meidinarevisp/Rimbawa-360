@@ -266,7 +266,6 @@ const direktoriTemplate = () => `
       </div>
     </section>
 
-    <!-- Peta Interaktif Section -->
     <section class="peta-interaktif-section">
       <div class="container">
         <h2 style="text-align: center" class="mb-lg-5">
