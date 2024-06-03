@@ -213,6 +213,7 @@ body {
   animation: fadeInUp 0.5s ease forwards;
 }
 
+/* Forum Diskusi */
 .btn-forum {
   position: fixed;
   bottom: 20px;
@@ -231,7 +232,7 @@ body {
   bottom: 100px;
   left: 20px;
   width: 400px;
-  background-color: #fff;
+  background-color: #e8eedc;
   border-top: 1px solid #ccc;
   border-right: 1px solid #ccc;
   display: none;
@@ -242,6 +243,7 @@ body {
 
 .forum-content h2 {
   font-size: 1.5rem;
+  position: sticky;
   margin-bottom: 15px;
   background-color: #004225; /* Warna hijau tua */
   color: #e8eedc; /* Warna teks putih */
@@ -261,18 +263,64 @@ body {
 }
 
 .forum-content::-webkit-scrollbar {
-  width: 0;
+  width: 0; /* Untuk browser WebKit */
 }
 
 .forum-content {
-  scrollbar-width: none;
+  scrollbar-width: none; /* Untuk browser Firefox */
+}
+
+.form-label {
+  margin-bottom: 0.1rem;
 }
 
 .forum-post {
-  margin-bottom: 10px;
+  margin-top: 20px;
   padding: 10px;
   border: 1px solid #ccc;
+  background-color: #ffffff;
   border-radius: 5px;
+  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.1); /* Atur box-shadow */
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+}
+
+.post-header .user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.post-header .user-info h4 {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.post-header .user-icon {
+  height: 30px;
+  width: 30px;
+  position: relative;
+  margin-right: 5px;
+  top: -10px;
+}
+.post-header small {
+  font-size: 0.65rem;
+}
+
+.user-mid h6 {
+  padding: none;
+  margin-top: 5px;
+  font-size: 1.4;
+}
+
+.user-mid p {
+  color: #212529;
+  padding: 0;
+  margin: 0;
+  font-size: 0.75rem;
 }
 
 .actions {
@@ -300,14 +348,15 @@ body {
 .btn-kirim {
   background-color: #bbe0aa !important;
   color: #004225 !important;
-  font-size: 1.1rem;
+  font-size: 1rem;
   border: none;
-  border-radius: 10px;
-  padding: 5px 12px;
+  border-radius: 8px;
+  padding: 4px 8px;
   text-align: center;
   letter-spacing: 1px;
-  font-weight: 600;
-  margin-left: 300px;
+  font-weight: 400;
+  margin-left: 290px;
+  margin-top: -10px;
 }
 
 .btn-kirim:hover {

@@ -4,6 +4,7 @@ import "../scripts/components/Navbar";
 import "../scripts/components/Footer";
 import App from "./views/app";
 import swRegister from "../utils/sw-register";
+import userIcon from "../public/images/user.png";
 
 const app = new App({
   content: document.querySelector("#mainContent"),
@@ -94,37 +95,39 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const backButton = document.querySelector(".btn-back-to-top");
+document.addEventListener("DOMContentLoaded", () => {
   const forumButton = document.querySelector(".btn-forum");
   const forumContainer = document.querySelector(".forum-container");
   const forumForm = document.getElementById("forumForm");
-  const forumPosts = document.getElementById("forumPosts");
+  const forumPosts = document.querySelector("#forumPosts");
 
   if (forumButton && forumContainer) {
     forumButton.classList.add("show"); // Ensure the button is displayed initially
 
-    forumButton.addEventListener("click", function () {
+    forumButton.addEventListener("click", () => {
       forumContainer.classList.toggle("show");
       if (forumContainer.classList.contains("show")) {
+        // eslint-disable-next-line no-use-before-define
         loadPosts();
       }
     });
 
-    forumForm.addEventListener("submit", function (event) {
+    forumForm.addEventListener("submit", (event) => {
       event.preventDefault();
       const name = document.getElementById("forumName").value;
-      const message = document.getElementById("forumMessage").value;
-
-      if (name && message) {
+      const title = document.getElementById("forumTitle").value;
+      const deskripsi = document.getElementById("forumDeskripsi").value;
+      if (name && title && deskripsi) {
         const post = {
           name,
-          message,
+          title,
+          deskripsi,
           time: new Date().toLocaleString("id-ID"),
         };
         savePost(post);
         document.getElementById("forumName").value = "";
-        document.getElementById("forumMessage").value = "";
+        document.getElementById("forumTitle").value = "";
+        document.getElementById("forumDeskripsi").value = "";
         loadPosts();
       }
     });
@@ -143,29 +146,35 @@ document.addEventListener("DOMContentLoaded", function () {
       const postElement = document.createElement("div");
       postElement.classList.add("forum-post");
       postElement.innerHTML = `
-      <div>
-        <h4>${post.name}</h4>
-        <p>${post.message}</p>
-      </div>
-        <small>${post.time}</small>
-        <div class="actions">
-          <button class="btn-edit" data-index="${index}">Edit</button>
-          <button class="btn-delete" data-index="${index}">Delete</button>
+      <div class="post-header">
+        <img class="user-icon" src="${userIcon}" alt="User Icon">
+        <div class="user-info">
+          <h4>${post.name}</h4>
+          <small>${post.time}</small>
         </div>
+      </div>
+      <div class="user-mid">
+        <h6>${post.title}</h6>
+        <p>${post.deskripsi}</p>
+      </div>
+      <div class="actions">
+        <button class="btn-edit" data-index="${index}">Edit</button>
+        <button class="btn-delete" data-index="${index}">Delete</button>
+      </div>
     `;
       forumPosts.appendChild(postElement);
     });
   }
 
-  forumPosts.addEventListener("click", function (event) {
+  forumPosts.addEventListener("click", (event) => {
     const posts = JSON.parse(localStorage.getItem("forumPosts")) || [];
     if (event.target.classList.contains("btn-edit")) {
-      const index = event.target.dataset.index;
+      const { index } = event.target.dataset;
       const post = posts[index];
       Swal.fire({
-        title: "Edit pesan:",
+        title: "Edit Deskripsi:",
         input: "textarea",
-        inputValue: post.message,
+        inputValue: post.deskripsi,
         showCancelButton: true,
         confirmButtonText: "Simpan",
         cancelButtonText: "Batal",
@@ -175,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       }).then((result) => {
         if (result.isConfirmed) {
-          post.message = result.value;
+          post.deskripsi = result.value;
           posts[index] = post;
           localStorage.setItem("forumPosts", JSON.stringify(posts));
           loadPosts();
@@ -199,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       }).then((result) => {
         if (result.isConfirmed) {
-          const index = event.target.dataset.index;
+          const { index } = event.target.dataset;
           posts.splice(index, 1);
           localStorage.setItem("forumPosts", JSON.stringify(posts));
           loadPosts();

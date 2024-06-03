@@ -1,3 +1,5 @@
+import "../../scripts/components/Forum";
+
 class FooterRimbawa extends HTMLElement {
   constructor() {
     super();
@@ -62,24 +64,7 @@ class FooterRimbawa extends HTMLElement {
         </p>
       </div>
     </footer>
-    <div class="forum-container">
-  <div class="forum-content">
-    <h2>Forum Diskusi</h2>
-    <form id="forumForm">
-      <div class="mb-3">
-        <label for="forumName" class="form-label">Nama:</label>
-        <input type="text" id="forumName" class="form-control" required />
-      </div>
-      <div class="mb-3">
-        <label for="forumMessage" class="form-label">Pesan:</label>
-        <textarea id="forumMessage" class="form-control" rows="3" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-kirim">Kirim</button>
-    </form>
-    <hr />
-    <div id="forumPosts"></div>
-  </div>
-</div>
+    <forum-rimbawa></forum-rimbawa>
     `;
   }
 }
