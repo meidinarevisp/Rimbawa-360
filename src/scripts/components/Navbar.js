@@ -4,6 +4,7 @@ class NavbarRimbawa extends HTMLElement {
   }
 
   connectedCallback() {
+    const currentPath = window.location.hash.slice(2) || "/";
     this.innerHTML = `
    <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-lg">
@@ -24,35 +25,38 @@ class NavbarRimbawa extends HTMLElement {
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/">Beranda</a>
+           <a class="nav-link ${
+             currentPath === "/" ? "active" : ""
+           }" href="/">Beranda</a>
         </li>
         <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Jelajahi
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item" href="/#/direktori">Destinasi</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="/#/edukasi">Edukasi</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="/#/spesies">Spesies</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="/#/cerita">Cerita Kita</a>
-            </li>
+           <a class="nav-link dropdown-toggle ${
+             ["direktori", "edukasi", "spesies", "cerita"].includes(currentPath)
+               ? "active"
+               : ""
+           }" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Jelajahi
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item ${
+                    currentPath === "direktori" ? "active" : ""
+                  }" href="/#/direktori">Destinasi</a></li>
+                  <li><a class="dropdown-item ${
+                    currentPath === "edukasi" ? "active" : ""
+                  }" href="/#/edukasi">Edukasi</a></li>
+                  <li><a class="dropdown-item ${
+                    currentPath === "spesies" ? "active" : ""
+                  }" href="/#/spesies">Spesies</a></li>
+                  <li><a class="dropdown-item ${
+                    currentPath === "cerita" ? "active" : ""
+                  }" href="/#/cerita">Cerita Kita</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/#/tentang">Tentang</a>
+          <a class="nav-link ${
+            currentPath === "tentang" ? "active" : ""
+          }" href="/#/tentang">Tentang</a>
+              </li>
         </li>
       </ul>
     </div>

@@ -2,6 +2,8 @@ import UrlParser from "../../routes/url-parser";
 import { loginTemplate } from "../templates/template-creator";
 import loginImage from "../../../public/images/login.png";
 import logoImage from "../../../public/rimbawa-360.png";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 
 const Login = {
   async render() {

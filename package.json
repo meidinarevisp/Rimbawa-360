@@ -6,7 +6,8 @@
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "serve": "http-server dist",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "server": "node src/config/server.js"
   },
   "keywords": [],
   "author": "your_name <your_email@gmail.com>",
@@ -37,12 +38,21 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
     "gsap": "^3.12.5",
     "hapi": "^18.1.0",
     "idb": "^7.0.1",
     "leaflet": "^1.9.4",
+    "multer": "^1.4.5-lts.1",
     "mysql": "^2.18.1",
+    "mysql2": "^3.10.0",
     "regenerator-runtime": "^0.13.9",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.11.0",
     "toastr": "^2.1.4",
     "workbox-window": "^6.6.0"
   },

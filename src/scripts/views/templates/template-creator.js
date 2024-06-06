@@ -1,8 +1,10 @@
 import "../../components/Hero";
+import "../../components/Navbar";
+import "../../components/Footer";
 
 const berandaTemplate = () => `
+ <navbar-rimbawa id="navbar"></navbar-rimbawa>
   <hero-rimbawa></hero-rimbawa>
-  
     <section class="edukasi-section">
       <div class="container">
         <h2>
@@ -133,9 +135,11 @@ const berandaTemplate = () => `
         </div>
       </div>
     </section>
+    <footer-rimbawa id="footer"></footer-rimbawa>
 `;
 
 const ceritaTemplate = () => `
+ <navbar-rimbawa id="navbar"></navbar-rimbawa>
   <section class="cerita-kita-page">
       <div class="container">
         <center>
@@ -147,17 +151,21 @@ const ceritaTemplate = () => `
         <div class="carousel-inner row" id="ceritaContainer"></div>
       </div>
     </section>
+    <footer-rimbawa id="footer"></footer-rimbawa>
 `;
 
 const dashboardCeritaTemplate = () => `
+ <navbar-rimbawa id="navbar"></navbar-rimbawa>
  <section id="cerita-kamu" class="container my-5">
       <h2>Cerita <span style="color: #56ab2e">Kamu</span></h2>
       <div id="cerita-list" class="row">
         <!-- Daftar cerita akan di-render di sini -->
       </div>
     </section>
+    <footer-rimbawa id="footer"></footer-rimbawa>
 `;
 const detailDirektoriTemplate = () => `
+ <navbar-rimbawa id="navbar"></navbar-rimbawa>
  <section class="detail-direktori-section">
       <div class="container">
         <h2 id="place-name" class="mb-4"></h2>
@@ -197,8 +205,10 @@ const detailDirektoriTemplate = () => `
         <div id="map"></div>
       </div>
     </section>
+    <footer-rimbawa id="footer"></footer-rimbawa>
 `;
 const detailSpesiesTemplate = () => `
+ <navbar-rimbawa id="navbar"></navbar-rimbawa>
  <section class="detail-spesies">
       <div class="spesies-detail-container">
         <div class="spesies-image-container">
@@ -248,8 +258,10 @@ const detailSpesiesTemplate = () => `
       </div>
       <button class="btn-back" id="backButton">Kembali</button>
     </section>
+    <footer-rimbawa id="footer"></footer-rimbawa>
 `;
 const direktoriTemplate = () => `
+ <navbar-rimbawa id="navbar"></navbar-rimbawa>
  <section class="destinasi-page">
       <div class="container">
         <h2>Jelajahi</h2>
@@ -274,8 +286,10 @@ const direktoriTemplate = () => `
         <div id="map"></div>
       </div>
     </section>
+    <footer-rimbawa id="footer"></footer-rimbawa>
 `;
 const editCeritaTemplate = () => `
+ <navbar-rimbawa id="navbar"></navbar-rimbawa>
  <section class="edit-cerita-page">
       <div class="container">
         <div class="row">
@@ -319,8 +333,10 @@ const editCeritaTemplate = () => `
         </div>
       </div>
     </section>
+    <footer-rimbawa id="footer"></footer-rimbawa>
 `;
 const editProfileTemplate = () => `
+ <navbar-rimbawa id="navbar"></navbar-rimbawa>
  <section class="container mt-5 edit-profile">
       <div class="row justify-content-end">
         <div class="col-md-6">
@@ -380,8 +396,10 @@ const editProfileTemplate = () => `
         </div>
       </div>
     </section>
+    <footer-rimbawa id="footer"></footer-rimbawa>
 `;
 const edukasiTemplate = () => `
+ <navbar-rimbawa id="navbar"></navbar-rimbawa>
     <section class="edukasi-page">
       <div class="container">
         <h2 class="mb-4">Jelajahi</h2>
@@ -408,8 +426,10 @@ const edukasiTemplate = () => `
       </div>
       </div>
       </section>
+      <footer-rimbawa id="footer"></footer-rimbawa>
 `;
 const spesiesTemplate = () => `
+ <navbar-rimbawa id="navbar"></navbar-rimbawa>
  <section class="spesies-page">
       <div class="container">
         <h2>
@@ -423,8 +443,10 @@ const spesiesTemplate = () => `
         <div class="pagination"></div>
       </div>
     </section>
+    <footer-rimbawa id="footer"></footer-rimbawa>
 `;
 const tentangTemplate = () => `
+ <navbar-rimbawa id="navbar"></navbar-rimbawa>
  <section class="tentang-kami-page" id="tentang-page">
       <div class="container">
         <h2><strong>Tentang Kami</strong></h2>
@@ -631,6 +653,7 @@ const tentangTemplate = () => `
         </div>
       </div>
     </section>
+    <footer-rimbawa id="footer"></footer-rimbawa>
 `;
 
 const loginTemplate = () => `
@@ -643,8 +666,8 @@ const loginTemplate = () => `
             <h2 class="text-center">Masuk</h2>
             <form>
               <div class="form-group mb-2">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Masukkan email" required>
+                <label for="loginInput">Email atau Nama Pengguna</label>
+                <input type="text" class="form-control" id="loginInput" placeholder="Masukkan email atau nama pengguna" required>
               </div>
               <div class="form-group mb-2">
                 <label for="password">Kata Sandi</label>
@@ -652,19 +675,19 @@ const loginTemplate = () => `
                   <input type="password" class="form-control" id="password" placeholder="Masukkan kata sandi" required>
                   <div class="input-group-append">
                     <div class="input-group-text">
-                      <span id="showPasswordIcon" class="fa fa-eye"></span>
+                      <span id="showPasswordIcon" class="fa fa-eye" aria-label="Show password"></span>
                     </div>
                   </div>
                 </div>
                 <div class="lupa-password">
-                <p><a href="/#/login">Lupa kata sandi?</a></p>
+                  <p><a href="/#/forgot-password">Lupa kata sandi?</a></p>
                 </div>
               </div>
               <div class="text-center">
                 <button type="submit" class="btn btn-login">Masuk</button>
               </div>
             </form>
-            <p>Belum memiliki akun?<a href="/#/register"> Daftar disini!</a></p>
+            <p class="text-center mt-3">Belum memiliki akun?<a href="/#/register"> Daftar disini!</a></p>
           </div>
         </div>
       </div>
@@ -706,7 +729,7 @@ const registerTemplate = () => `
                   <input type="password" class="form-control" id="password" placeholder="Masukkan kata sandi" required>
                   <div class="input-group-append">
                     <div class="input-group-text">
-                      <span id="showPasswordIcon" class="fa fa-eye"></span>
+                      <span id="showPasswordIcon" class="fa fa-eye" aria-label="Show password"></span>
                     </div>
                   </div>
                 </div>
@@ -717,7 +740,7 @@ const registerTemplate = () => `
                   <input type="password" class="form-control" id="password1" placeholder="Konfirmasi kata sandi" required>
                   <div class="input-group-append">
                     <div class="input-group-text">
-                      <span id="showPasswordIcon" class="fa fa-eye"></span>
+                      <span id="showConfirmPasswordIcon" class="fa fa-eye" aria-label="Show confirm password"></span>
                     </div>
                   </div>
                 </div>
@@ -726,12 +749,665 @@ const registerTemplate = () => `
                 <button type="submit" class="btn btn-register">Daftar</button>
               </div>
             </form>
-            <p>Sudah memiliki akun?<a href="/#/login"> Masuk disini!</a></p>
+            <p class="text-center mt-3">Sudah memiliki akun?<a href="/#/login"> Masuk disini!</a></p>
           </div>
         </div>
       </div>
     </div>
   </div>
+</section>
+`;
+const dashboardAdminTemplate = () => `
+<style>
+#mainContent {
+  padding-top: 0;
+}
+
+section {
+  padding: 0;
+}
+</style>
+   <section class="dashboard-section">
+  <div class="background-animate"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1>Selamat Datang di Dashboard!</h1>
+      </div>
+      <div class="col-12 text-center mt-4">
+        <img src="rimbawa-360.png" alt="Rimbawa 360" style="max-width: 500px;">
+      </div>
+      <div class="col-12 text-center mt-4">
+        <a href="/#/dashboard-direktori" class="btn btn-dashboard btn-lg me-3">Ekowisata</a>
+        <a href="/#/dashboard-spesies" class="btn btn-dashboard btn-lg me-3">Spesies</a>
+        <a href="/#/dashboard-edukasi" class="btn btn-dashboard btn-lg">Edukasi</a>
+      </div>
+      <button class="btn-offcanvas"><a href="#/logout" class="btn btn-logout"><i class="fas fa-sign-out-alt"></i></a></button>
+    </div>
+  </div>
+</section>
+`;
+const dashboardDirektoriTemplate = () => `
+<style>
+body {
+  background-color: #f6f2f2;
+}
+
+#mainContent {
+  padding-top: 0;
+}
+
+section {
+  padding: 0;
+}
+</style>
+<section class="dashboard-direktori">
+   <div class="container mt-4">
+        <div class="row">
+            <div class="col-10">
+                <a href="/#/dashboard-admin">
+                  <img src="rimbawa-360.png" alt="Logo Rimbawa 360" class="logo">
+                </a>
+                <div class="dropdown d-flex justify-content-between align-items-center">
+                    <h1 class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Direktori Ekowisata Hutan
+                    </h1>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="/#/dashboard-edukasi">Edukasi</a></li>
+                        <li><a class="dropdown-item" href="/#/dashboard-spesies">Spesies</a></li>
+                    </ul>
+                    <a href="/#/form-direktori"><button class="btn btn-tambah rounded-circle"><i class="fas fa-plus"></i></button></a>
+                </div>
+                <section id="dashboard-direktori" class="mt-4">
+                </section>
+            </div>
+        </div>
+    </div>
+    </section>
+`;
+const dashboardEdukasiTemplate = () => `
+<style>
+body {
+  background-color: #f6f2f2;
+}
+
+#mainContent {
+  padding-top: 0;
+}
+
+section {
+  padding: 0;
+}
+</style>
+  <section class="dashboard-edukasi">
+   <div class="container mt-4">
+        <div class="row">
+            <div class="col-10">
+                <a href="/#/dashboard">
+                  <img src="rimbawa-360.png" alt="Logo Rimbawa 360" class="logo">
+                </a>
+                <div class="dropdown d-flex justify-content-between align-items-center">
+                    <h1 class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Edukasi
+                    </h1>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="/#/dashboard-direktori">Direktori Ekowisata Hutan</a></li>
+                        <li><a class="dropdown-item" href="/#/dashboard-spesies">Spesies</a></li>
+                    </ul>
+                    <a href="/#/form-edukasi"><button class="btn btn-tambah rounded-circle"><i class="fas fa-plus"></i></button></a>
+                </div>
+                <section id="dashboard-edukasi" class="mt-4">
+                </section>
+            </div>
+        </div>
+    </div>
+    </section>
+`;
+const dashboardSpesiesTemplate = () => `
+<style>
+body {
+  background-color: #f6f2f2;
+}
+
+#mainContent {
+  padding-top: 0;
+}
+
+section {
+  padding: 0;
+}
+</style>
+  <section class="dashboard-spesies">
+   <div class="container mt-4">
+        <div class="row">
+            <div class="col-10">
+                <a href="/#/dashboard">
+                  <img src="rimbawa-360.png" alt="Logo Rimbawa 360" class="logo">
+                </a>
+                <div class="dropdown d-flex justify-content-between align-items-center">
+                    <h1 class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Spesies
+                    </h1>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="/#/dashboard-direktori">Direktori Ekowisata Hutan</a></li>
+                        <li><a class="dropdown-item" href="/#/dashboard-edukasi">Edukasi</a></li>
+                    </ul>
+                    <a href="/#/form-spesies"><button class="btn btn-tambah rounded-circle"><i class="fas fa-plus"></i></button></a>
+                </div>
+                <section id="dashboard-spesies" class="mt-4">
+                </section>
+            </div>
+        </div>
+    </div>
+    </section>
+`;
+const formDirektoriTemplate = () => `
+<style>
+#mainContent {
+  padding-top: 0;
+}
+
+section {
+  padding: 0;
+}
+</style>
+<section class="form-direktori">
+  <img src="rimbawa-360.png" alt="Logo Rimbawa 360" class="logo">
+  <h2>Form Direktori Ekowisata Hutan</h2>
+  <form id="direktoriForm" enctype="multipart/form-data" method="post">
+    <div class="form-container">
+      <div class="form-column">
+        <div class="form-group">
+          <label for="nama_tempat">Nama:</label>
+          <input type="text" id="nama_tempat" name="nama_tempat" required>
+        </div>
+        <div class="form-group">
+          <label for="lokasi">Lokasi:</label>
+          <input type="text" id="lokasi" name="lokasi" required>
+        </div>
+        <div class="form-group">
+          <label for="deskripsi">Deskripsi:</label>
+          <textarea class="mb-2" id="deskripsi" name="deskripsi" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="aktivitas">Aktivitas:</label>
+          <input type="text" id="aktivitas" name="aktivitas" required>
+        </div>
+      </div>
+      <div class="form-column">
+        <div class="form-group">
+          <label for="fasilitas">Fasilitas:</label>
+          <input type="text" id="fasilitas" name="fasilitas" required>
+        </div>
+        <div class="form-group">
+          <label for="akses">Akses:</label>
+          <input type="text" id="akses" name="akses" required>
+        </div>
+        <div class="form-group">
+          <label for="latitude">Latitude:</label>
+          <input type="text" id="latitude" name="latitude" required>
+        </div>
+        <div class="form-group">
+          <label for="longitude">Longitude:</label>
+          <input type="text" id="longitude" name="longitude" required>
+        </div>
+        <div class="form-group">
+          <label for="gambar">Gambar:</label>
+          <input type="file" id="gambar" name="gambar" accept="image/*">
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <a href="/#/dashboard-direktori"><button type="button" class="btn-batal">Batal</button></a>
+      <button type="submit" class="btn-simpan">Simpan</button>
+    </div>
+  </form>
+</section>
+`;
+const formEdukasiTemplate = () => `
+<style>
+#mainContent {
+  padding-top: 0;
+}
+
+section {
+  padding: 0;
+}
+</style>
+<section class="form-edukasi">
+  <img src="rimbawa-360.png" alt="Logo Rimbawa 360" class="logo">
+  <h2>Form Edukasi</h2>
+  <form id="edukasiForm" enctype="multipart/form-data" method="post">
+    <div class="form-group">
+      <label for="nama_isu">Nama Isu:</label>
+      <input type="text" id="nama_isu" name="nama_isu" required>
+    </div>
+    <div class="form-group">
+      <label for="deskripsi">Deskripsi:</label>
+      <textarea id="deskripsi" name="deskripsi" rows="4" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="dampak">Dampak:</label>
+      <textarea id="dampak" name="dampak" rows="3" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="solusi">Solusi:</label>
+      <textarea id="solusi" name="solusi" rows="3" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="gambar">Gambar:</label>
+      <input type="file" id="gambar" name="gambar" accept="image/*" required>
+    </div>
+    <div class="buttons">
+    <a href="/#/dashboard-edukasi"><button type="button" class="btn-batal">Batal</button></a>
+    <button type="submit" class="btn-simpan">Simpan</button>
+  </div>
+  </form>
+</section>
+`;
+const editFormEdukasiTemplate = (data) => `
+<style>
+#mainContent {
+  padding-top: 0;
+}
+
+section {
+  padding: 0;
+}
+</style>
+  <section class="form-edukasi">
+  <img src="rimbawa-360.png" alt="Logo Rimbawa 360" class="logo">
+  <h2>Form Edit Edukasi</h2>
+  <form id="edukasiForm" enctype="multipart/form-data" method="put">
+    <div class="form-group">
+      <label for="nama_isu">Nama Isu:</label>
+      <input type="text" id="nama_isu" name="nama_isu" value="${data.nama_isu}" required>
+    </div>
+    <div class="form-group">
+      <label for="deskripsi">Deskripsi:</label>
+      <textarea id="deskripsi" name="deskripsi" rows="4" required>${data.deskripsi}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="dampak">Dampak:</label>
+      <textarea id="dampak" name="dampak" rows="3" required>${data.dampak}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="solusi">Solusi:</label>
+      <textarea id="solusi" name="solusi" rows="3" required>${data.solusi}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="gambar">Gambar:</label>
+      <input type="file" id="gambar" name="gambar" accept="image/*">
+      <span id="file-name">${data.gambar}</span>
+    </div>
+    <div class="buttons">
+    <a href="/#/dashboard-edukasi"><button type="button" class="btn-batal">Batal</button></a>
+    <button type="submit" class="btn-simpan">Simpan</button>
+  </div>
+  </form>
+</section>
+`;
+const formSpesiesTemplate = () => `
+<style>
+#mainContent {
+  padding-top: 0;
+}
+
+section {
+  padding: 0;
+}
+</style>
+  <section class="form-spesies">
+  <img src="rimbawa-360.png" alt="Logo Rimbawa 360" class="logo">
+  <h2>Form Spesies</h2>
+  <form id="spesiesForm" enctype="multipart/form-data" method="put">
+    <div class="form-container">
+      <div class="form-column">
+        <div class="form-group">
+          <label for="namaSpesies">Nama:</label>
+          <input type="text" id="namaSpesies" name="namaSpesies" required>
+        </div>
+        <div class="form-group">
+          <label for="deskripsi">Deskripsi:</label>
+          <textarea id="deskripsi" name="deskripsi" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="kerajaan">Kerajaan:</label>
+          <select id="kerajaan" name="kerajaan" required>
+            <option value="">Pilih jenis kerajaan</option>
+            <option value="-">-</option>
+            <option value="Animalia">Animalia</option>
+            <option value="Plantae">Plantae</option>
+            <option value="Fungi">Fungi</option>
+            <option value="Protista">Protista</option>
+            <option value="Archaea">Archaea</option>
+            <option value="Bacteria">Bacteria</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="kelas">Kelas:</label>
+          <select id="kelas" name="kelas" required>
+            <option value="">Pilih jenis kelas</option>
+            <option value="-">-</option>
+            <option value="Mammalia">Mammalia</option>
+            <option value="Aves">Aves</option>
+            <option value="Reptilia">Reptilia</option>
+            <option value="Amphibia">Amphibia</option>
+            <option value="Actinopterygii">Actinopterygii</option>
+            <option value="Insecta">Insecta</option>
+            <option value="Arachnida">Arachnida</option>
+            <option value="Magnoliopsida">Magnoliopsida (Dikotil)</option>
+            <option value="Liliopsida">Liliopsida (Monokotil)</option>
+            <option value="Bryopsida">Bryopsida (Lumut Daun)</option>
+            <option value="Pteridopsida">Pteridopsida (Pakis)</option>
+            <option value="Ascomycota">Ascomycota (Jamur Kantung)</option>
+            <option value="Basidiomycota">Basidiomycota (Jamur Basidium)</option>
+            <option value="Chlorophyta">Chlorophyta (Alga Hijau)</option>
+            <option value="Ciliophora">Ciliophora (Ciliata)</option>
+            <option value="Euryarchaeota">Euryarchaeota</option>
+            <option value="Crenarchaeota">Crenarchaeota</option>
+            <option value="Proteobacteria">Proteobacteria</option>
+            <option value="Firmicutes">Firmicutes</option>
+        </select>
+        </div>
+      </div>
+      <div class="form-column">
+        <div class="form-group">
+          <label for="statusKonservasi">Status Konservasi:</label>
+          <select id="statusKonservasi" name="statusKonservasi" required>
+            <option value="">Pilih jenis status konservasi</option>
+            <option value="-">-</option>
+            <option value="Punah">Extinct (EX) - Punah</option>
+            <option value="Punah di Alam Liar">Extinct in the Wild (EW) - Punah di Alam Liar</option>
+            <option value="Kritis">Critically Endangered (CR) - Kritis</option>
+            <option value="Terancam">Endangered (EN) - Terancam</option>
+            <option value="Rentan">Vulnerable (VU) - Rentan</option>
+            <option value="Hampir Terancam">Near Threatened (NT) - Hampir Terancam</option>
+            <option value="Risiko Rendah">Least Concern (LC) - Risiko Rendah</option>
+            <option value="Data Kurang">Data Deficient (DD) - Data Kurang</option>
+            <option value="Belum Dievaluasi">Not Evaluated (NE) - Belum Dievaluasi</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="ordo">Ordo:</label>
+          <select id="ordo" name="ordo" required>
+            <option value="">Pilih jenis ordo</option>
+            <option value="-">-</option>
+            <option value="Primates">Primates</option>
+            <option value="Carnivora">Carnivora</option>
+            <option value="Cetacea">Cetacea</option>
+            <option value="Rodentia">Rodentia</option>
+            <option value="Chiroptera">Chiroptera</option>
+            <option value="Passeriformes">Passeriformes</option>
+            <option value="Accipitriformes">Accipitriformes</option>
+            <option value="Strigiformes">Strigiformes</option>
+            <option value="Anseriformes">Anseriformes</option>
+            <option value="Psittaciformes">Psittaciformes</option>
+            <option value="Squamata">Squamata</option>
+            <option value="Testudines">Testudines</option>
+            <option value="Crocodylia">Crocodylia</option>
+            <option value="Anura">Anura</option>
+            <option value="Caudata">Caudata</option>
+            <option value="Gymnophiona">Gymnophiona</option>
+            <option value="Coleoptera">Coleoptera</option>
+            <option value="Lepidoptera">Lepidoptera</option>
+            <option value="Diptera">Diptera</option>
+            <option value="Hymenoptera">Hymenoptera</option>
+            <option value="Orthoptera">Orthoptera</option>
+        </select>
+        </div>
+        <div class="form-group">
+          <label for="spesies">Spesies:</label>
+          <input type="text" id="spesies" name="spesies" required>
+        </div>
+        <div class="form-group">
+          <label for="populasi">Populasi:</label>
+          <input type="text" id="populasi" name="populasi" required>
+        </div>
+        <div class="form-group">
+          <label for="rentanganHidup">Rentangan Hidup:</label>
+          <input type="text" id="rentanganHidup" name="rentanganHidup" required>
+        </div>
+      </div>
+      <div class="form-column">
+        <div class="form-group">
+          <label for="panjang">Panjang:</label>
+          <input type="text" id="panjang" name="panjang" required>
+        </div>
+        <div class="form-group">
+          <label for="berat">Berat:</label>
+          <input type="text" id="berat" name="berat" required>
+        </div>
+        <div class="form-group">
+          <label for="kecepatanTertinggi">Kecepatan Tertinggi:</label>
+          <input type="text" id="kecepatanTertinggi" name="kecepatanTertinggi" required>
+        </div>
+        <div class="form-group">
+          <label for="gambar">Gambar:</label>
+          <input type="file" id="gambar" name="gambar" accept="image/*" required>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+    <a href="/#/dashboard-spesies"><button type="button" class="btn-batal">Batal</button></a>
+    <button type="submit" class="btn-simpan">Simpan</button>
+  </div>
+  </form>
+</section>
+`;
+
+const editFormDirektoriTemplate = (data) => `
+<style>
+#mainContent {
+  padding-top: 0;
+}
+
+section {
+  padding: 0;
+}
+</style>
+<section class="edit-form-direktori">
+  <img src="rimbawa-360.png" alt="Logo Rimbawa 360" class="logo">
+  <h2>Edit Form Direktori Ekowisata Hutan</h2>
+  <form id="direktoriForm" enctype="multipart/form-data" method="put">
+    <div class="form-container">
+      <div class="form-column">
+        <div class="form-group">
+          <label for="nama_tempat">Nama:</label>
+          <input type="text" id="nama_tempat" name="nama_tempat" value="${data.nama_tempat}" required>
+        </div>
+        <div class="form-group">
+          <label for="lokasi">Lokasi:</label>
+          <input type="text" id="lokasi" name="lokasi" value="${data.lokasi}" required>
+        </div>
+        <div class="form-group">
+          <label for="deskripsi">Deskripsi:</label>
+          <textarea class="mb-2" id="deskripsi" name="deskripsi" rows="4" required>${data.deskripsi}</textarea>
+        </div>
+        <div class="form-group">
+          <label for="aktivitas">Aktivitas:</label>
+          <input type="text" id="aktivitas" name="aktivitas" value="${data.aktivitas}" required>
+        </div>
+      </div>
+      <div class="form-column">
+        <div class="form-group">
+          <label for="fasilitas">Fasilitas:</label>
+          <input type="text" id="fasilitas" name="fasilitas" value="${data.fasilitas}" required>
+        </div>
+        <div class="form-group">
+          <label for="akses">Akses:</label>
+          <input type="text" id="akses" name="akses" value="${data.akses}" required>
+        </div>
+        <div class="form-group">
+          <label for="latitude">Latitude:</label>
+          <input type="text" id="latitude" name="latitude" value="${data.latitude}" required>
+        </div>
+        <div class="form-group">
+          <label for="longitude">Longitude:</label>
+          <input type="text" id="longitude" name="longitude" value="${data.longitude}" required>
+        </div>
+        <div class="form-group">
+          <label for="gambar">Gambar:</label>
+          <input type="file" id="gambar" name="gambar" accept="image/*">
+          <span id="file-name">${data.gambar}</span>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <a href="/#/dashboard-direktori"><button type="button" class="btn-batal">Batal</button></a>
+      <button type="submit" class="btn-simpan">Simpan</button>
+    </div>
+  </form>
+</section>
+`;
+
+const editFormSpesiesTemplate = (data) => `
+<style>
+#mainContent {
+  padding-top: 0;
+}
+
+section {
+  padding: 0;
+}
+</style>
+<section class="form-spesies">
+  <img src="rimbawa-360.png" alt="Logo Rimbawa 360" class="logo">
+  <h2>Form Spesies</h2>
+  <form id="spesiesForm" enctype="multipart/form-data" method="put">
+    <div class="form-container">
+      <div class="form-column">
+        <div class="form-group">
+          <label for="namaSpesies">Nama:</label>
+          <input type="text" id="namaSpesies" name="namaSpesies" value="${data.namaSpesies}" required>
+        </div>
+        <div class="form-group">
+          <label for="deskripsi">Deskripsi:</label>
+          <textarea id="deskripsi" name="deskripsi" rows="4" required>${data.deskripsi}</textarea>
+        </div>
+        <div class="form-group">
+          <label for="kerajaan">Kerajaan:</label>
+          <select id="kerajaan" name="kerajaan" required>
+            <option value="${data.kerajaan}">${data.kerajaan}</option>
+            <option value="-">-</option>
+            <option value="Animalia">Animalia</option>
+            <option value="Plantae">Plantae</option>
+            <option value="Fungi">Fungi</option>
+            <option value="Protista">Protista</option>
+            <option value="Archaea">Archaea</option>
+            <option value="Bacteria">Bacteria</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="kelas">Kelas:</label>
+          <select id="kelas" name="kelas" required>
+            <option value="${data.kelas}">${data.kelas}</option>
+            <option value="-">-</option>
+            <option value="Mammalia">Mammalia</option>
+            <option value="Aves">Aves</option>
+            <option value="Reptilia">Reptilia</option>
+            <option value="Amphibia">Amphibia</option>
+            <option value="Actinopterygii">Actinopterygii</option>
+            <option value="Insecta">Insecta</option>
+            <option value="Arachnida">Arachnida</option>
+            <option value="Magnoliopsida">Magnoliopsida (Dikotil)</option>
+            <option value="Liliopsida">Liliopsida (Monokotil)</option>
+            <option value="Bryopsida">Bryopsida (Lumut Daun)</option>
+            <option value="Pteridopsida">Pteridopsida (Pakis)</option>
+            <option value="Ascomycota">Ascomycota (Jamur Kantung)</option>
+            <option value="Basidiomycota">Basidiomycota (Jamur Basidium)</option>
+            <option value="Chlorophyta">Chlorophyta (Alga Hijau)</option>
+            <option value="Ciliophora">Ciliophora (Ciliata)</option>
+            <option value="Euryarchaeota">Euryarchaeota</option>
+            <option value="Crenarchaeota">Crenarchaeota</option>
+            <option value="Proteobacteria">Proteobacteria</option>
+            <option value="Firmicutes">Firmicutes</option>
+        </select>
+        </div>
+      </div>
+      <div class="form-column">
+        <div class="form-group">
+          <label for="statusKonservasi">Status Konservasi:</label>
+          <select id="statusKonservasi" name="statusKonservasi" required>
+            <option value="${data.statusKonservasi}">${data.statusKonservasi}</option>
+            <option value="-">-</option>
+            <option value="Punah">Extinct (EX) - Punah</option>
+            <option value="Punah di Alam Liar">Extinct in the Wild (EW) - Punah di Alam Liar</option>
+            <option value="Kritis">Critically Endangered (CR) - Kritis</option>
+            <option value="Terancam">Endangered (EN) - Terancam</option>
+            <option value="Rentan">Vulnerable (VU) - Rentan</option>
+            <option value="Hampir Terancam">Near Threatened (NT) - Hampir Terancam</option>
+            <option value="Risiko Rendah">Least Concern (LC) - Risiko Rendah</option>
+            <option value="Data Kurang">Data Deficient (DD) - Data Kurang</option>
+            <option value="Belum Dievaluasi">Not Evaluated (NE) - Belum Dievaluasi</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="ordo">Ordo:</label>
+          <select id="ordo" name="ordo" required>
+            <option value="${data.ordo}">${data.ordo}</option>
+            <option value="-">-</option>
+            <option value="Primates">Primates</option>
+            <option value="Carnivora">Carnivora</option>
+            <option value="Cetacea">Cetacea</option>
+            <option value="Rodentia">Rodentia</option>
+            <option value="Chiroptera">Chiroptera</option>
+            <option value="Passeriformes">Passeriformes</option>
+            <option value="Accipitriformes">Accipitriformes</option>
+            <option value="Strigiformes">Strigiformes</option>
+            <option value="Anseriformes">Anseriformes</option>
+            <option value="Psittaciformes">Psittaciformes</option>
+            <option value="Squamata">Squamata</option>
+            <option value="Testudines">Testudines</option>
+            <option value="Crocodylia">Crocodylia</option>
+            <option value="Anura">Anura</option>
+            <option value="Caudata">Caudata</option>
+            <option value="Gymnophiona">Gymnophiona</option>
+            <option value="Coleoptera">Coleoptera</option>
+            <option value="Lepidoptera">Lepidoptera</option>
+            <option value="Diptera">Diptera</option>
+            <option value="Hymenoptera">Hymenoptera</option>
+            <option value="Orthoptera">Orthoptera</option>
+        </select>
+        </div>
+        <div class="form-group">
+          <label for="spesies">Spesies:</label>
+          <input type="text" id="spesies" name="spesies" value="${data.spesies}" required>
+        </div>
+        <div class="form-group">
+          <label for="populasi">Populasi:</label>
+          <input type="text" id="populasi" name="populasi" value="${data.populasi}" required>
+        </div>
+        <div class="form-group">
+          <label for="rentanganHidup">Rentangan Hidup:</label>
+          <input type="text" id="rentanganHidup" name="rentanganHidup" value="${data.rentanganHidup}" required>
+        </div>
+      </div>
+      <div class="form-column">
+        <div class="form-group">
+          <label for="panjang">Panjang:</label>
+          <input type="text" id="panjang" name="panjang" value="${data.panjang}" required>
+        </div>
+        <div class="form-group">
+          <label for="berat">Berat:</label>
+          <input type="text" id="berat" name="berat" value="${data.berat}" required>
+        </div>
+        <div class="form-group">
+          <label for="kecepatanTertinggi">Kecepatan Tertinggi:</label>
+          <input type="text" id="kecepatanTertinggi" name="kecepatanTertinggi" value="${data.kecepatanTertinggi}" required>
+        </div>
+        <div class="form-group">
+          <label for="gambar">Gambar:</label>
+          <input type="file" id="gambar" name="gambar" accept="image/*">
+          <span id="file-name">${data.gambar}</span>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+    <a href="/#/dashboard-spesies"><button type="button" class="btn-batal">Batal</button></a>
+    <button type="submit" class="btn-simpan">Simpan</button>
+  </div>
+  </form>
 </section>
 `;
 
@@ -749,4 +1425,14 @@ export {
   tentangTemplate,
   loginTemplate,
   registerTemplate,
+  dashboardAdminTemplate,
+  dashboardDirektoriTemplate,
+  dashboardEdukasiTemplate,
+  dashboardSpesiesTemplate,
+  formDirektoriTemplate,
+  formEdukasiTemplate,
+  formSpesiesTemplate,
+  editFormEdukasiTemplate,
+  editFormDirektoriTemplate,
+  editFormSpesiesTemplate,
 };
