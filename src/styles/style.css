@@ -1669,7 +1669,7 @@ footer .fa-2x {
 .cerita-kita-page .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
 }
 
 .cerita-kita-page h2 {
@@ -1702,7 +1702,7 @@ footer .fa-2x {
 }
 
 .cerita-kita-page .btn-tambah {
-  background-color: #e8eedc;
+  background-color: #f0efeb;
   color: #004225;
   border: 2px solid #004225;
   border-radius: 50%;
@@ -1923,7 +1923,7 @@ footer .fa-2x {
 }
 
 #cerita-kamu .btn-tambah {
-  background-color: #e8eedc;
+  background-color: #f0efeb;
   color: #004225;
   border: 2px solid #004225;
   border-radius: 50%;

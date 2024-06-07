@@ -139,6 +139,11 @@ const berandaTemplate = () => `
 `;
 
 const ceritaTemplate = () => `
+<style>
+body {
+background-color: #f0efeb;
+}
+</style>
  <navbar-rimbawa id="navbar"></navbar-rimbawa>
   <section class="cerita-kita-page">
       <div class="container">
@@ -156,6 +161,10 @@ const ceritaTemplate = () => `
 `;
 
 const dashboardCeritaTemplate = () => `
+<style>
+body {
+background-color: #f0efeb;
+}
 </style>
  <navbar-rimbawa id="navbar"></navbar-rimbawa>
  <section id="cerita-kamu" class="container my-5">
