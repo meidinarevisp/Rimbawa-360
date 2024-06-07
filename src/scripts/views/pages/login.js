@@ -37,6 +37,48 @@ const Login = {
         showPasswordIcon.classList.add("fa-eye");
       }
     });
+
+    // Menangani form submit untuk login
+    const form = document.querySelector("form");
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const loginInput = document.getElementById("loginInput").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const response = await fetch("http://localhost:3000/api/auth/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ login: loginInput, password }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          toastr.success(data.message);
+
+          // Simpan data pengguna di localStorage
+          localStorage.setItem("user", JSON.stringify(data.user));
+          localStorage.setItem("isLoggedIn", "true");
+
+          // Mengarahkan pengguna berdasarkan peran
+          if (data.user.role_id === 1) {
+            window.location.href = "/#/dashboard-admin";
+          } else if (data.user.role_id === 2) {
+            window.location.href = "/";
+          }
+        } else {
+          toastr.error(
+            data.errors ? data.errors.map((e) => e.msg).join(", ") : data.error
+          );
+        }
+      } catch (error) {
+        toastr.error("An error occurred during login.");
+      }
+    });
   },
 };
 

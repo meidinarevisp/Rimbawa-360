@@ -148,6 +148,7 @@ const ceritaTemplate = () => `
           </h2>
         </center>
         <div class="pagination" id="pagination"></div>
+        <a href="/#/form-cerita" class="btn-tambah-container text-decoration-none"><button class="btn btn-tambah rounded-circle"><i class="fas fa-plus"></i></button><span class="tambah-text">Tambah Cerita</span></a>
         <div class="carousel-inner row" id="ceritaContainer"></div>
       </div>
     </section>
@@ -155,9 +156,11 @@ const ceritaTemplate = () => `
 `;
 
 const dashboardCeritaTemplate = () => `
+</style>
  <navbar-rimbawa id="navbar"></navbar-rimbawa>
  <section id="cerita-kamu" class="container my-5">
       <h2>Cerita <span style="color: #56ab2e">Kamu</span></h2>
+       <a href="/#/form-cerita" class="btn-tambah-container text-decoration-none"><button class="btn btn-tambah rounded-circle"><i class="fas fa-plus"></i></button><span class="tambah-text">Tambah Cerita</span></a>
       <div id="cerita-list" class="row">
         <!-- Daftar cerita akan di-render di sini -->
       </div>
@@ -288,6 +291,53 @@ const direktoriTemplate = () => `
     </section>
     <footer-rimbawa id="footer"></footer-rimbawa>
 `;
+const formCeritaTemplate = () => `
+ <navbar-rimbawa id="navbar"></navbar-rimbawa>
+ <section class="edit-cerita-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img
+              src="/images/cerita-kamu.png"
+              alt="Gambarmu"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-md-6">
+            <h2 class="mb-5">
+              Edit Cerita <span style="color: #56ab2e">Kamu</span>
+            </h2>
+            <form action="/submit_cerita" method="POST">
+              <div class="form-group">
+                <label for="nama">Nama :</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nama"
+                  name="nama"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="cerita">Cerita :</label>
+                <textarea
+                  class="form-control"
+                  id="cerita"
+                  name="cerita"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-kirim-cerita">
+                Kirim Cerita
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer-rimbawa id="footer"></footer-rimbawa>
+`;
 const editCeritaTemplate = () => `
  <navbar-rimbawa id="navbar"></navbar-rimbawa>
  <section class="edit-cerita-page">
@@ -358,11 +408,11 @@ const editProfileTemplate = () => `
               </div>
             </div>
             <div class="mb-3 row align-items-center">
-              <label for="password" class="col-md-4 col-form-label"
-                >Password</label
+              <label for="old-password" class="col-md-4 col-form-label"
+                >Old Password</label
               >
               <div class="col-md-8">
-                <input type="password" class="form-control" id="password" />
+                <input type="password" class="form-control" id="old-password" />
               </div>
             </div>
             <div class="mb-3 row align-items-center">
@@ -1418,6 +1468,7 @@ export {
   detailDirektoriTemplate,
   detailSpesiesTemplate,
   direktoriTemplate,
+  formCeritaTemplate,
   editCeritaTemplate,
   editProfileTemplate,
   edukasiTemplate,

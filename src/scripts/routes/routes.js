@@ -4,6 +4,7 @@ import dashboardCerita from "../views/pages/dashboard-cerita";
 import detailDirektori from "../views/pages/detail-direktori";
 import detailSpesies from "../views/pages/detail-spesies";
 import Direktori from "../views/pages/direktori";
+import formCerita from "../views/pages/form-cerita";
 import editCerita from "../views/pages/edit-cerita";
 import editProfile from "../views/pages/edit-profile";
 import Edukasi from "../views/pages/edukasi";
@@ -32,6 +33,7 @@ const routes = {
   "/detail-direktori": detailDirektori,
   "/detail-spesies/:id": detailSpesies,
   "/direktori": Direktori,
+  "/form-cerita": formCerita,
   "/edit-cerita": editCerita,
   "/edit-profile": editProfile,
   "/edukasi": Edukasi,

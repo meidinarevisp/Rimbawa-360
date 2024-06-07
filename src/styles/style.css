@@ -97,6 +97,15 @@ body {
   color: #858383;
 }
 
+.gambar-user {
+  color: #004225;
+  margin-right: 30px;
+}
+
+.gambar-user:hover {
+  color: #4caf50;
+}
+
 .register-section {
   margin-top: 20px;
   padding: 10px 0;
@@ -638,7 +647,7 @@ i.fa-angle-right {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  gap: 20px;
+  gap: 30px;
 }
 
 .flex-item {
@@ -646,6 +655,7 @@ i.fa-angle-right {
   border-radius: 15px;
   overflow: hidden;
   display: flex;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
 }
 
 .inner-flex-container {
@@ -822,7 +832,7 @@ i.fa-angle-right {
 .destinasi-section .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   padding-bottom: 20px;
 }
 
@@ -840,6 +850,7 @@ i.fa-angle-right {
   flex-direction: column;
   justify-content: space-between;
   height: 500px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
 }
 
 .destinasi-section .row .col-md-4 .image-container {
@@ -1041,6 +1052,8 @@ footer .fa-2x {
 #map {
   height: 500px;
   width: 100%;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .detail-direktori-section {
@@ -1087,8 +1100,8 @@ footer .fa-2x {
 .destinasi-page .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  padding-bottom: 20px;
+  gap: 25px;
+  padding-bottom: 10px;
 }
 
 .destinasi-page .row .col-md-4 {
@@ -1104,6 +1117,7 @@ footer .fa-2x {
   display: flex;
   flex-direction: column;
   left: 25px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
 }
 
 .destinasi-page .row .col-md-4 .image-container {
@@ -1236,6 +1250,10 @@ footer .fa-2x {
   position: relative;
   overflow: hidden;
   margin-bottom: 50px;
+}
+
+.col-md-4 .team-member {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .team-member::after {
@@ -1536,6 +1554,7 @@ footer .fa-2x {
   margin-bottom: 30px;
   border-radius: 20px;
   transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Efek hover */
@@ -1577,8 +1596,9 @@ footer .fa-2x {
   display: flex;
   background-color: #d2e0bb;
   border-radius: 10px;
-  margin-bottom: 20px; /* Menambahkan jarak antara kartu */
+  margin-bottom: 30px; /* Menambahkan jarak antara kartu */
   padding: 20px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
 }
 
 .spesies-image {
@@ -1662,6 +1682,42 @@ footer .fa-2x {
   font-weight: bold;
 }
 
+.cerita-kita-page .btn-tambah-container {
+  display: flex;
+  align-items: center; /* Membuat item berada di tengah secara vertikal */
+}
+
+.cerita-kita-page .tambah-text {
+  display: none;
+  background-color: #004225;
+  color: #e8eedc;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 5px; /* Memberikan jarak antara tombol dan teks */
+  margin-bottom: 15px;
+}
+
+.cerita-kita-page .btn-tambah-container:hover .tambah-text {
+  display: block;
+}
+
+.cerita-kita-page .btn-tambah {
+  background-color: #e8eedc;
+  color: #004225;
+  border: 2px solid #004225;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.cerita-kita-page .btn-tambah:hover {
+  background-color: #004225;
+  color: #e8eedc;
+  border: 2px solid #004225;
+}
+
 .page-cerita {
   flex: 0 0 calc(33.33% - 20px);
   max-width: calc(33.33% - 20px);
@@ -1742,6 +1798,7 @@ footer .fa-2x {
   margin-top: 50px;
   margin-bottom: 30px;
   border-radius: 10px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
 }
 
 .spesies-detail-container {
@@ -1846,6 +1903,42 @@ footer .fa-2x {
   text-align: center;
 }
 
+#cerita-kamu .btn-tambah-container {
+  display: flex;
+  align-items: center; /* Membuat item berada di tengah secara vertikal */
+}
+
+#cerita-kamu .tambah-text {
+  display: none;
+  background-color: #004225;
+  color: #e8eedc;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 5px; /* Memberikan jarak antara tombol dan teks */
+  margin-bottom: 15px;
+}
+
+#cerita-kamu .btn-tambah-container:hover .tambah-text {
+  display: block;
+}
+
+#cerita-kamu .btn-tambah {
+  background-color: #e8eedc;
+  color: #004225;
+  border: 2px solid #004225;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+#cerita-kamu .btn-tambah:hover {
+  background-color: #004225;
+  color: #e8eedc;
+  border: 2px solid #004225;
+}
+
 #cerita-list {
   display: flex;
   flex-wrap: wrap;
@@ -1860,10 +1953,10 @@ footer .fa-2x {
 #cerita-list .card {
   border: none;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 8px rgba(95, 94, 94, 0.1), 0 -5px 8px rgba(95, 94, 94, 0.1);
   transition: transform 0.2s;
   position: relative; /* Tambahkan agar bisa menempatkan tombol secara absolut */
-  background-color: #004225;
+  background-color: #e8eedc;
 }
 
 #cerita-list .card:hover {
@@ -1878,19 +1971,19 @@ footer .fa-2x {
 }
 
 #cerita-list .card-text .text-muted {
-  color: #eeeeee !important;
+  color: #004225 !important;
 }
 
 #cerita-list .card-title {
   font-size: 1.25rem;
   margin-bottom: 10px;
-  color: #eeeeee;
+  color: #004225;
 }
 
 #cerita-list .card-text {
   font-size: 1rem;
   margin-bottom: 15px;
-  color: #eeeeee;
+  color: #004225;
   text-align: justify;
 }
 
@@ -1986,6 +2079,7 @@ footer .fa-2x {
   background-color: #e8eedc;
   position: relative;
   overflow: hidden;
+  z-index: 2;
 }
 
 .background-animate {

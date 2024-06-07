@@ -3,7 +3,7 @@ const Logout = {
 
   async afterRender() {
     localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("userRole");
+    localStorage.removeItem("user");
     window.location.hash = "#/";
   },
 };

@@ -51,7 +51,7 @@ const createDatabaseAndTable = `
     );
 
     CREATE TABLE IF NOT EXISTS auth (
-        id INT PRIMARY KEY AUTO_INCREMENT,
+        id_user INT PRIMARY KEY AUTO_INCREMENT,
         nama_pengguna VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
         username VARCHAR(255) NOT NULL,
@@ -59,6 +59,25 @@ const createDatabaseAndTable = `
         role_id INT(11) NOT NULL,
         gambar VARCHAR(255), 
         date_created DATE NOT NULL
+    );
+
+        CREATE TABLE IF NOT EXISTS cerita (
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        id_user INT NOT NULL,
+        nama VARCHAR(255) NOT NULL,
+        cerita VARCHAR(255) NOT NULL,
+        date_created DATE NOT NULL,
+        FOREIGN KEY (id_user) REFERENCES auth(id_user)
+    );
+
+        CREATE TABLE IF NOT EXISTS forum (
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        id_user INT NOT NULL,
+        nama VARCHAR(255) NOT NULL,
+        judul VARCHAR(255) NOT NULL,
+        deskripsi VARCHAR(255) NOT NULL,
+        date_created DATE NOT NULL,
+        FOREIGN KEY (id_user) REFERENCES auth(id_user)
     );
 
     INSERT INTO auth (nama_pengguna, email, username, password, role_id, gambar, date_created)
