@@ -449,6 +449,14 @@ nav .dropdown-menu .dropdown-item:hover {
   height: 100%;
 }
 
+.dropdown-toggle::after {
+  transition: transform 0.3s;
+}
+
+.dropdown-toggle[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
 .dropdown-menu .dropdown-item.active {
   background-color: #bbe0aa !important;
   color: #333433 !important;
@@ -1656,7 +1664,6 @@ footer .fa-2x {
   padding: 8px 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 25px;
 }
 
 .pagination-item:hover,
@@ -1899,7 +1906,6 @@ footer .fa-2x {
 #cerita-kamu h2 {
   font-size: 2.6rem;
   font-weight: bold;
-  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -2026,13 +2032,16 @@ footer .fa-2x {
 }
 
 .profile-picture {
-  width: 80%;
-  margin-top: -60px;
-  float: left;
+  width: 60%;
+  margin-left: 90px;
 }
 
 .edit-profile .form-control {
   width: 100%;
+}
+
+.edit-profile {
+  width: 85%;
 }
 
 /* Dashboard Admin */

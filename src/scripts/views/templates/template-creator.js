@@ -394,7 +394,58 @@ const editCeritaTemplate = () => `
     </section>
     <footer-rimbawa id="footer"></footer-rimbawa>
 `;
-const editProfileTemplate = () => `
+const editProfileTemplate = (user) => `
+ <navbar-rimbawa id="navbar"></navbar-rimbawa>
+ <section class="container mt-5 edit-profile">
+      <div class="row justify-content-end">
+        <div class="col-md-6">
+          <img
+            src="${user.gambar}"
+            alt="Profile Picture"
+            class="img-fluid profile-picture"
+          />
+        </div>
+        <div class="col-md-6">
+          <h2>Edit Profile</h2>
+          <form id="editProfileForm" enctype="multipart/form-data" method="post">
+            <div class="mb-3 row align-items-center">
+              <label for="name" class="col-md-4 col-form-label">Nama</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="name" value="${user.name}" />
+              </div>
+            </div>
+            <div class="mb-3 row align-items-center">
+              <label for="username" class="col-md-4 col-form-label">Username</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="username" value="${user.username}" />
+              </div>
+            </div>
+            <div class="mb-3 row align-items-center">
+              <label for="email" class="col-md-4 col-form-label">Email</label>
+              <div class="col-md-8">
+                <input type="email" class="form-control" id="email" value="${user.email}" />
+              </div>
+            </div>
+            <div class="mb-3 row align-items-center">
+              <label for="profile-picture" class="col-md-4 col-form-label">Upload Foto Profil</label>
+              <div class="col-md-8">
+                <input type="file" class="form-control" id="profile-picture" accept="image/*" />
+                <span id="file-name">${user.gambar}</span>
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <div class="col-md-4"></div>
+              <div class="col-md-8">
+                <button type="submit" class="btn btn-ubah">Ubah</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer-rimbawa id="footer"></footer-rimbawa>
+`;
+const gantiPasswordTemplate = () => `
  <navbar-rimbawa id="navbar"></navbar-rimbawa>
  <section class="container mt-5 edit-profile">
       <div class="row justify-content-end">
@@ -406,43 +457,18 @@ const editProfileTemplate = () => `
           />
         </div>
         <div class="col-md-6">
-          <h2>Edit Profile</h2>
-          <form>
+          <h2>Ganti Password</h2>
+          <form id="gantiPasswordForm" method="post">
             <div class="mb-3 row align-items-center">
-              <label for="username" class="col-md-4 col-form-label"
-                >Username</label
-              >
+              <label for="current-password" class="col-md-4 col-form-label">Password Saat Ini</label>
               <div class="col-md-8">
-                <input type="text" class="form-control" id="username" />
+                <input type="password" class="form-control" id="current-password" />
               </div>
             </div>
             <div class="mb-3 row align-items-center">
-              <label for="old-password" class="col-md-4 col-form-label"
-                >Old Password</label
-              >
-              <div class="col-md-8">
-                <input type="password" class="form-control" id="old-password" />
-              </div>
-            </div>
-            <div class="mb-3 row align-items-center">
-              <label for="new-password" class="col-md-4 col-form-label"
-                >New Password</label
-              >
+              <label for="new-password" class="col-md-4 col-form-label">Password Baru</label>
               <div class="col-md-8">
                 <input type="password" class="form-control" id="new-password" />
-              </div>
-            </div>
-            <div class="mb-3 row align-items-center">
-              <label for="profile-picture" class="col-md-4 col-form-label"
-                >Upload Profile Picture</label
-              >
-              <div class="col-md-8">
-                <input
-                  type="file"
-                  class="form-control"
-                  id="profile-picture"
-                  accept="image/*"
-                />
               </div>
             </div>
             <div class="mb-3 row">
@@ -1480,6 +1506,7 @@ export {
   formCeritaTemplate,
   editCeritaTemplate,
   editProfileTemplate,
+  gantiPasswordTemplate,
   edukasiTemplate,
   spesiesTemplate,
   tentangTemplate,

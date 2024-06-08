@@ -1,21 +1,63 @@
 import UrlParser from "../../routes/url-parser";
 import { editProfileTemplate } from "../templates/template-creator";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 
 const editProfile = {
   async render() {
-    // Mendapatkan informasi dari URL menggunakan UrlParser
-    const urlParams = UrlParser.parseActiveUrlWithoutCombiner();
-
-    // Memanggil fungsi berandaTemplate dengan data tertentu
-    const renderedTemplate = editProfileTemplate(urlParams);
-
+    const user = JSON.parse(localStorage.getItem("user"));
+    const renderedTemplate = editProfileTemplate(user);
     return renderedTemplate;
   },
 
   async afterRender() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    const form = document.getElementById("editProfileForm");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const newUsername = document.getElementById("username").value; // Tambah ini
+      const profilePicture =
+        document.getElementById("profile-picture").files[0];
+
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("newUsername", newUsername); // Tambah ini
+      if (profilePicture) formData.append("image", profilePicture);
+
+      try {
+        const user = JSON.parse(localStorage.getItem("user"));
+        const response = await fetch(
+          `http://localhost:3000/api/auth/update-profile/${user.username}`,
+          {
+            method: "PUT",
+            body: formData,
+          }
+        );
+
+        const data = await response.json();
+
+        if (response.ok) {
+          const updatedUser = {
+            ...user,
+            name,
+            email,
+            username: newUsername, // Tambah ini
+            gambar: data.gambar,
+          };
+          localStorage.setItem("user", JSON.stringify(updatedUser));
+          toastr.success(data.message).css("margin-top", "90px");
+        } else {
+          throw new Error(data.error);
+        }
+      } catch (error) {
+        console.error("Error updating profile:", error);
+        toastr.error(error.message).css("margin-top", "90px");
+      }
     });
   },
 };

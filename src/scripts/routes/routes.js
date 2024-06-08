@@ -7,6 +7,7 @@ import Direktori from "../views/pages/direktori";
 import formCerita from "../views/pages/form-cerita";
 import editCerita from "../views/pages/edit-cerita";
 import editProfile from "../views/pages/edit-profile";
+import gantiPassword from "../views/pages/ganti-password";
 import Edukasi from "../views/pages/edukasi";
 import Spesies from "../views/pages/spesies";
 import Tentang from "../views/pages/tentang";
@@ -36,6 +37,7 @@ const routes = {
   "/form-cerita": formCerita,
   "/edit-cerita": editCerita,
   "/edit-profile": editProfile,
+  "/ganti-password": gantiPassword,
   "/edukasi": Edukasi,
   "/spesies": Spesies,
   "/tentang": Tentang,

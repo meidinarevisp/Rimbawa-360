@@ -125,6 +125,7 @@ router.post(
           id_user: user.id_user,
           name: user.nama_pengguna,
           email: user.email,
+          username: user.username, // tambahkan username
           role_id: user.role_id,
           gambar: user.gambar,
         },
@@ -139,16 +140,23 @@ router.post(
 
 // Update user profile endpoint
 router.put(
-  "/update-profile",
+  "/update-profile/:username",
   [
     body("name").notEmpty().withMessage("Nama lengkap diperlukan."),
-    body("username").notEmpty().withMessage("Nama pengguna diperlukan."),
     body("email").isEmail().withMessage("Email tidak valid."),
-    body("old-password").notEmpty().withMessage("Password lama diperlukan."),
-    body("new-password")
-      .optional()
-      .isLength({ min: 6 })
-      .withMessage("Password baru minimal 6 karakter."),
+    body("newUsername")
+      .notEmpty()
+      .withMessage("Username baru diperlukan.")
+      .custom(async (value, { req }) => {
+        const [existingUsers] = await pool.query(
+          "SELECT * FROM auth WHERE username = ? AND username != ?",
+          [value, req.params.username]
+        );
+        if (existingUsers.length > 0) {
+          throw new Error("Username sudah digunakan.");
+        }
+        return true;
+      }),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -156,62 +164,155 @@ router.put(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, username, email, oldPassword, newPassword } = req.body;
-    const userId = req.userId; // Assuming you have middleware to get the user ID from the request
+    const { name, email, newUsername } = req.body;
+    const username = req.params.username;
 
     try {
-      // Check if email or username already exists for another user
-      const [userExists] = await pool.query(
-        "SELECT id FROM auth WHERE (email = ? OR username = ?) AND id_user != ?",
-        [email, username, userId]
+      const [users] = await pool.query(
+        "SELECT * FROM auth WHERE username = ?",
+        [username]
       );
-      if (userExists.length > 0) {
-        return res
-          .status(400)
-          .json({ error: "Email atau Nama pengguna sudah terdaftar." });
+      if (users.length === 0) {
+        return res.status(404).json({ error: "Pengguna tidak ditemukan." });
       }
 
-      // Get the current user's password
-      const [currentUser] = await pool.query(
-        "SELECT password FROM auth WHERE id_user = ?",
-        [userId]
-      );
-      const currentPassword = currentUser[0].password;
+      const user = users[0];
 
-      // Verify the old password
-      const match = await bcrypt.compare(oldPassword, currentPassword);
-      if (!match) {
-        return res.status(401).json({ error: "Password lama salah." });
+      const isDataChanged =
+        name !== user.nama_pengguna ||
+        email !== user.email ||
+        newUsername !== user.username ||
+        (req.files && req.files.image);
+
+      if (!isDataChanged) {
+        return res.status(400).json({ error: "Ubah dulu yaa!" });
       }
 
-      let hashedNewPassword = null;
-      if (newPassword) {
-        hashedNewPassword = await bcrypt.hash(newPassword, 10);
-      }
-
-      // Handle image upload
-      let imagePathToUpdate = null;
+      let gambar = user.gambar;
       if (req.files && req.files.image) {
         const image = req.files.image;
         const fileName = `${Date.now()}_${image.name}`;
         const uploadPath = path.join(
           __dirname,
-          "../../public/profiles/",
+          "../../public/profiles",
           fileName
         );
+
+        // Hapus gambar lama jika bukan gambar default
+        if (user.gambar && user.gambar !== "/images/user.png") {
+          const oldImagePath = path.join(
+            __dirname,
+            "../../public",
+            user.gambar
+          );
+          fs.unlink(oldImagePath, (err) => {
+            if (err) console.error("Error deleting old image:", err);
+          });
+        }
+
         await image.mv(uploadPath);
-        imagePathToUpdate = `/profiles/${fileName}`;
+        gambar = `/profiles/${fileName}`;
       }
 
-      // Update user data in the database
       const [result] = await pool.query(
-        "UPDATE auth SET nama_pengguna = ?, email = ?, username = ?, password = COALESCE(?, password), gambar = COALESCE(?, gambar) WHERE id_user = ?",
-        [name, email, username, hashedNewPassword, imagePathToUpdate, userId]
+        "UPDATE auth SET nama_pengguna = ?, email = ?, gambar = ?, username = ? WHERE username = ?",
+        [name, email, gambar, newUsername, username]
       );
 
-      res.status(200).json({ message: "Profile updated successfully!" });
+      res
+        .status(200)
+        .json({ message: "Profile updated successfully!", gambar });
     } catch (error) {
       console.error("Error updating user profile:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  }
+);
+
+// Change password endpoint
+router.put(
+  "/change-password/:username",
+  [
+    body("currentPassword")
+      .notEmpty()
+      .withMessage("Kata sandi saat ini diperlukan."),
+    body("newPassword")
+      .notEmpty()
+      .withMessage("Kata sandi baru diperlukan.")
+      .isLength({ min: 6 })
+      .withMessage("Kata sandi baru minimal 6 karakter."),
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      const errorMessages = errors.array().map((error) => error.msg);
+
+      // Periksa apakah kedua field kosong
+      if (
+        errorMessages.includes("Kata sandi saat ini diperlukan.") &&
+        errorMessages.includes("Kata sandi baru diperlukan.")
+      ) {
+        return res.status(400).json({ error: "Ubah dulu yaa!" });
+      }
+
+      // Periksa apakah hanya field kata sandi baru yang kosong
+      if (
+        !errorMessages.includes("Kata sandi saat ini diperlukan.") &&
+        errorMessages.includes("Kata sandi baru diperlukan.")
+      ) {
+        return res.status(400).json({ error: "Ubah dulu yaa!" });
+      }
+
+      // Periksa apakah kata sandi baru kurang dari 6 karakter
+      if (errorMessages.includes("Kata sandi baru minimal 6 karakter.")) {
+        return res
+          .status(400)
+          .json({ error: "Kata sandi baru minimal 6 karakter." });
+      }
+
+      return res.status(400).json({ errors: errorMessages });
+    }
+
+    const { currentPassword, newPassword } = req.body;
+    const username = req.params.username;
+
+    try {
+      const [users] = await pool.query(
+        "SELECT * FROM auth WHERE username = ?",
+        [username]
+      );
+      if (users.length === 0) {
+        return res.status(404).json({ error: "Pengguna tidak ditemukan." });
+      }
+      const user = users[0];
+
+      const isPasswordValid = await bcrypt.compare(
+        currentPassword,
+        user.password
+      );
+      if (!isPasswordValid) {
+        return res.status(400).json({ error: "Kata sandi saat ini salah." });
+      }
+
+      // Periksa apakah kata sandi baru sama dengan kata sandi saat ini
+      const isNewPasswordSame = await bcrypt.compare(
+        newPassword,
+        user.password
+      );
+      if (isNewPasswordSame) {
+        return res.status(400).json({ error: "Ubah dulu yaa!" });
+      }
+
+      const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+      const [result] = await pool.query(
+        "UPDATE auth SET password = ? WHERE username = ?",
+        [hashedPassword, username]
+      );
+
+      res.status(200).json({ message: "Password changed successfully!" });
+    } catch (error) {
+      console.error("Error changing password:", error);
       res.status(500).json({ error: "Internal Server Error" });
     }
   }
