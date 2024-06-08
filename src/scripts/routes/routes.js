@@ -31,7 +31,7 @@ const routes = {
   "/register": Register,
   "/cerita": Cerita,
   "/dashboard-cerita": dashboardCerita,
-  "/detail-direktori": detailDirektori,
+  "/detail-direktori/:id": detailDirektori,
   "/detail-spesies/:id": detailSpesies,
   "/direktori": Direktori,
   "/form-cerita": formCerita,

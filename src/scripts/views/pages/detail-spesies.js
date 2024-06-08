@@ -1,6 +1,5 @@
 import UrlParser from "../../routes/url-parser";
 import { detailSpesiesTemplate } from "../templates/template-creator";
-import SpesiesData from "../../../data/Spesies.json";
 
 const detailSpesies = {
   async render() {
@@ -11,14 +10,20 @@ const detailSpesies = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const spesiesId = parseInt(url.id);
 
-    const spesies = SpesiesData.BasisDataSpesies.find(
-      (s) => s.id === spesiesId
-    );
+    try {
+      const response = await fetch(
+        `http://localhost:3000/api/spesies/${spesiesId}`
+      );
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const spesies = await response.json();
 
-    if (spesies) {
-      document.getElementById("spesies-image").src = spesies.gambar;
-      document.getElementById("spesies-image").alt = spesies.namaHewan;
-      document.getElementById("spesies-name").textContent = spesies.namaHewan;
+      document.getElementById(
+        "spesies-image"
+      ).src = `/uploads/${spesies.gambar}`;
+      document.getElementById("spesies-image").alt = spesies.namaSpesies;
+      document.getElementById("spesies-name").textContent = spesies.namaSpesies;
       document.getElementById("spesies-description").textContent =
         spesies.deskripsi;
       document.getElementById("spesies-kerajaan").textContent =
@@ -36,7 +41,8 @@ const detailSpesies = {
       document.getElementById("spesies-berat").textContent = spesies.berat;
       document.getElementById("spesies-kecepatan-tertinggi").textContent =
         spesies.kecepatanTertinggi;
-    } else {
+    } catch (error) {
+      console.error("Error fetching spesies data:", error);
       document.getElementById("main-content").innerHTML =
         "<p>Spesies tidak ditemukan.</p>";
     }

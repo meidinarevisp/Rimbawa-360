@@ -45,6 +45,15 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/isu-lingkungan", async (req, res) => {
+  try {
+    const [rows, fields] = await pool.query("SELECT id, nama_isu FROM edukasi");
+    res.json(rows);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 router.get("/:id", async (req, res) => {
   try {
     const [rows, fields] = await pool.query(

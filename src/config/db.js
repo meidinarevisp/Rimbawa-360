@@ -17,26 +17,26 @@ const createDatabaseAndTable = `
         lokasi VARCHAR(255) NOT NULL,
         latitude VARCHAR(255) NOT NULL,
         longitude VARCHAR(255) NOT NULL,
-        deskripsi VARCHAR(255) NOT NULL,
-        aktivitas VARCHAR(255) NOT NULL,
-        akses VARCHAR(255) NOT NULL,
-        fasilitas VARCHAR(255) NOT NULL,
+        deskripsi TEXT NOT NULL,
+        aktivitas TEXT NOT NULL,
+        akses TEXT NOT NULL,
+        fasilitas TEXT NOT NULL,
         gambar VARCHAR(255) NOT NULL
     );
 
     CREATE TABLE IF NOT EXISTS edukasi (
         id INT PRIMARY KEY AUTO_INCREMENT,
         nama_isu VARCHAR(255) NOT NULL,
-        deskripsi VARCHAR(255) NOT NULL,
-        dampak VARCHAR(255) NOT NULL,
-        solusi VARCHAR(255) NOT NULL,
+        deskripsi TEXT NOT NULL,
+        dampak TEXT NOT NULL,
+        solusi TEXT NOT NULL,
         gambar VARCHAR(255) NOT NULL
     );
 
     CREATE TABLE IF NOT EXISTS spesies (
         id INT PRIMARY KEY AUTO_INCREMENT,
         namaSpesies VARCHAR(255) NOT NULL,
-        deskripsi VARCHAR(255) NOT NULL,
+        deskripsi TEXT NOT NULL,
         kerajaan VARCHAR(255) NOT NULL,
         kelas VARCHAR(255) NOT NULL,
         statusKonservasi VARCHAR(255) NOT NULL,

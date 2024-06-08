@@ -12,104 +12,97 @@ const detailDirektori = {
   },
 
   async afterRender() {
-    const selectedDestinasi = JSON.parse(
-      localStorage.getItem("selectedDestinasi")
-    );
+    const urlParams = UrlParser.parseActiveUrlWithoutCombiner();
+    const id = urlParams.id;
 
-    // Check if selectedDestinasi exists and all required DOM elements are available
-    if (selectedDestinasi) {
-      const placeName = document.getElementById("place-name");
-      const placeImage = document.getElementById("place-image");
-      const placeLocation = document.getElementById("place-location");
-      const placeDescription = document.getElementById("place-description");
-      const placeActivities = document.getElementById("place-activities");
-      const placeAccess = document.getElementById("place-access");
-      const placeFacilities = document.getElementById("place-facilities");
+    try {
+      const response = await fetch(`http://localhost:3000/api/direktori/${id}`);
+      const selectedDestinasi = await response.json();
 
-      // Update DOM elements with selected destination data
-      placeName.textContent = selectedDestinasi.nama_tempat;
-      placeImage.src = selectedDestinasi.gambar;
-      placeImage.alt = selectedDestinasi.nama_tempat;
-      placeLocation.textContent = selectedDestinasi.lokasi;
-      placeDescription.textContent = selectedDestinasi.deskripsi;
+      if (selectedDestinasi) {
+        const placeName = document.getElementById("place-name");
+        const placeImage = document.getElementById("place-image");
+        const placeLocation = document.getElementById("place-location");
+        const placeDescription = document.getElementById("place-description");
+        const placeActivities = document.getElementById("place-activities");
+        const placeAccess = document.getElementById("place-access");
+        const placeFacilities = document.getElementById("place-facilities");
 
-      // Adding margin left to location, description, and access
-      placeLocation.style.marginLeft = "30px";
-      placeDescription.style.marginLeft = "30px";
-      placeAccess.style.marginLeft = "30px";
+        placeName.textContent = selectedDestinasi.nama_tempat;
+        placeImage.src = `/uploads/${selectedDestinasi.gambar}`;
+        placeImage.alt = selectedDestinasi.nama_tempat;
+        placeLocation.textContent = selectedDestinasi.lokasi;
+        placeDescription.textContent = selectedDestinasi.deskripsi;
 
-      // Set image size
-      placeImage.style.width = "auto"; // You can adjust the width as needed
-      placeImage.style.height = "400px"; // You can adjust the height as needed
-      placeImage.style.borderRadius = "8px";
+        placeLocation.style.marginLeft = "30px";
+        placeDescription.style.marginLeft = "30px";
+        placeAccess.style.marginLeft = "30px";
 
-      // Activities
-      if (
-        selectedDestinasi.aktivitas &&
-        selectedDestinasi.aktivitas.length > 0
-      ) {
-        selectedDestinasi.aktivitas.forEach((activity) => {
-          const activityItem = document.createElement("li");
-          activityItem.innerHTML = `&bull; ${activity}`; // Changed to bullet point
-          activityItem.style.marginLeft = "30px"; // Added left margin
-          placeActivities.appendChild(activityItem);
-        });
-      } else {
-        placeActivities.innerHTML = "<li>N/A</li>";
-      }
+        placeImage.style.width = "auto";
+        placeImage.style.height = "400px";
+        placeImage.style.borderRadius = "8px";
 
-      // Facilities
-      if (
-        selectedDestinasi.fasilitas &&
-        selectedDestinasi.fasilitas.length > 0
-      ) {
-        selectedDestinasi.fasilitas.forEach((facility) => {
-          const facilityItem = document.createElement("li");
-          facilityItem.innerHTML = `&bull; ${facility}`; // Changed to bullet point
-          facilityItem.style.marginLeft = "20px"; // Added left margin
-          placeFacilities.appendChild(facilityItem);
-        });
-      } else {
-        placeFacilities.innerHTML = "<li>N/A</li>";
-      }
-
-      // Access
-      placeAccess.textContent = selectedDestinasi.akses || "N/A"; // Ensure you have these fields in your JSON data
-
-      // Create Map with selected destination
-      const map = L.map("map").setView(
-        [selectedDestinasi.titik.latitude, selectedDestinasi.titik.longitude],
-        13
-      );
-
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      }).addTo(map);
-
-      const customIcon = L.icon({
-        iconUrl: markerIcon,
-        iconSize: [25, 41], // size of the icon
-        iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
-        popupAnchor: [1, -34], // point from which the popup should open relative to the iconAnchor
-      });
-
-      const marker = L.marker(
-        [selectedDestinasi.titik.latitude, selectedDestinasi.titik.longitude],
-        {
-          icon: customIcon,
+        // Activities
+        placeActivities.innerHTML = "";
+        if (selectedDestinasi.aktivitas) {
+          const activities = selectedDestinasi.aktivitas.split(",");
+          activities.forEach((activity) => {
+            const activityItem = document.createElement("li");
+            activityItem.innerHTML = `&bull; ${activity.trim()}`;
+            activityItem.style.marginLeft = "30px";
+            placeActivities.appendChild(activityItem);
+          });
+        } else {
+          placeActivities.innerHTML = "<li>N/A</li>";
         }
-      ).addTo(map);
 
-      marker.bindPopup(
-        `<b>${selectedDestinasi.nama_tempat}</b><br>${selectedDestinasi.deskripsi}`
-      );
+        // Facilities
+        placeFacilities.innerHTML = "";
+        if (selectedDestinasi.fasilitas) {
+          const facilities = selectedDestinasi.fasilitas.split(",");
+          facilities.forEach((facility) => {
+            const facilityItem = document.createElement("li");
+            facilityItem.innerHTML = `&bull; ${facility.trim()}`;
+            facilityItem.style.marginLeft = "20px";
+            placeFacilities.appendChild(facilityItem);
+          });
+        } else {
+          placeFacilities.innerHTML = "<li>N/A</li>";
+        }
+
+        placeAccess.textContent = selectedDestinasi.akses || "N/A";
+
+        const map = L.map("map").setView(
+          [selectedDestinasi.latitude, selectedDestinasi.longitude],
+          13
+        );
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
+        const customIcon = L.icon({
+          iconUrl: markerIcon,
+          iconSize: [25, 41],
+          iconAnchor: [12, 41],
+          popupAnchor: [1, -34],
+        });
+
+        const marker = L.marker(
+          [selectedDestinasi.latitude, selectedDestinasi.longitude],
+          { icon: customIcon }
+        ).addTo(map);
+
+        marker.bindPopup(
+          `<b>${selectedDestinasi.nama_tempat}</b><br>${selectedDestinasi.lokasi}`
+        );
+      }
+    } catch (error) {
+      console.error("Error fetching detail data:", error);
     }
 
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   },
 };
 

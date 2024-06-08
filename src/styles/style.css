@@ -1072,7 +1072,7 @@ footer .fa-2x {
 .detail-direktori-section:after {
   content: "";
   position: absolute;
-  top: 128px;
+  top: 127px;
   left: 65px;
   width: 40px;
   height: 40px;
@@ -1894,7 +1894,7 @@ footer .fa-2x {
 }
 
 .detail-spesies .btn-back:hover {
-  background-color: #e8eedc;
+  background-color: #fff;
   color: #004225;
   border: 2px solid #004225;
 }

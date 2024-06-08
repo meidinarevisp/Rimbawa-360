@@ -464,34 +464,25 @@ const gantiPasswordTemplate = () => `
     <footer-rimbawa id="footer"></footer-rimbawa>
 `;
 const edukasiTemplate = () => `
- <navbar-rimbawa id="navbar"></navbar-rimbawa>
-    <section class="edukasi-page">
-      <div class="container">
-        <h2 class="mb-4">Jelajahi</h2>
-        <p class="judul-edukasi">
-          Sudahkah Kamu Berkontribusi Dalam Upaya
-          <br /><span class="text-green">Pelestarian Hutan?</span>
-        </p>
-        <div>
-          <button class="edukasi-btn" data-id="deforestasi">Deforestasi</button>
-          <button class="edukasi-btn" data-id="perburuan-liar">
-            Perburuan Liar
-          </button>
-          <button class="edukasi-btn" data-id="pemanasan-global">
-            Pemanasan Global
-          </button>
-          <button class="edukasi-btn" data-id="kebakaran-hutan">
-            Kebakaran Hutan
-          </button>
-        </div>
-        </section>
-        <section class="edukasi-content"> 
-            <div class="container">
-       <div id="edukasi-content"></div>
+  <navbar-rimbawa id="navbar"></navbar-rimbawa>
+  <section class="edukasi-page">
+    <div class="container">
+      <h2 class="mb-4">Jelajahi</h2>
+      <p class="judul-edukasi">
+        Sudahkah Kamu Berkontribusi Dalam Upaya
+        <br /><span class="text-green">Pelestarian Hutan?</span>
+      </p>
+      <div class="edukasi-buttons">
+        <!-- Tombol isu lingkungan akan ditambahkan di sini secara dinamis -->
       </div>
-      </div>
-      </section>
-      <footer-rimbawa id="footer"></footer-rimbawa>
+    </div>
+  </section>
+  <section class="edukasi-content"> 
+    <div class="container">
+      <div id="edukasi-content"></div>
+    </div>
+  </section>
+  <footer-rimbawa id="footer"></footer-rimbawa>
 `;
 const spesiesTemplate = () => `
  <navbar-rimbawa id="navbar"></navbar-rimbawa>

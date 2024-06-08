@@ -1,6 +1,5 @@
 import UrlParser from "../../routes/url-parser";
 import { spesiesTemplate } from "../templates/template-creator";
-import SpesiesData from "../../../data/Spesies.json";
 
 const Spesies = {
   async render() {
@@ -10,15 +9,26 @@ const Spesies = {
   },
 
   async afterRender() {
-    const spesiesData = SpesiesData.BasisDataSpesies;
+    async function fetchSpesiesData() {
+      try {
+        const response = await fetch("http://localhost:3000/api/spesies");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return await response.json();
+      } catch (error) {
+        console.error("Error fetching spesies data:", error);
+        return [];
+      }
+    }
 
     function createSpesiesCard(spesies) {
       const card = document.createElement("div");
       card.classList.add("spesies-card");
 
       const img = document.createElement("img");
-      img.src = spesies.gambar;
-      img.alt = spesies.namaHewan;
+      img.src = `/uploads/${spesies.gambar}`;
+      img.alt = spesies.namaSpesies;
       img.classList.add("spesies-image");
 
       const textContainer = document.createElement("div");
@@ -27,7 +37,7 @@ const Spesies = {
       const text = document.createElement("div");
       text.classList.add("spesies-text");
       text.innerHTML = `
-      <h3>${spesies.namaHewan}</h3>
+      <h3>${spesies.namaSpesies}</h3>
       <hr>
       <p>${spesies.deskripsi}</p>
     `;
@@ -48,10 +58,11 @@ const Spesies = {
       return card;
     }
 
-    function showSpesies(pageNumber) {
+    async function showSpesies(pageNumber) {
       const container = document.getElementById("dataContainer");
       container.innerHTML = "";
 
+      const spesiesData = await fetchSpesiesData();
       const start = (pageNumber - 1) * 5;
       const end = pageNumber * 5;
 
@@ -61,7 +72,6 @@ const Spesies = {
         container.appendChild(spesiesCard);
       }
 
-      // Otomatis scroll ke atas halaman
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
@@ -94,6 +104,7 @@ const Spesies = {
       });
     }
 
+    const spesiesData = await fetchSpesiesData();
     showSpesies(1);
     createPagination();
   },
