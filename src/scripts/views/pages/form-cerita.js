@@ -1,13 +1,13 @@
 import UrlParser from "../../routes/url-parser";
-import { editCeritaTemplate } from "../templates/template-creator";
+import { formCeritaTemplate } from "../templates/template-creator";
 
-const editCerita = {
+const formCerita = {
   async render() {
     // Mendapatkan informasi dari URL menggunakan UrlParser
     const urlParams = UrlParser.parseActiveUrlWithoutCombiner();
 
     // Memanggil fungsi berandaTemplate dengan data tertentu
-    const renderedTemplate = editCeritaTemplate(urlParams);
+    const renderedTemplate = formCeritaTemplate(urlParams);
 
     return renderedTemplate;
   },
@@ -20,4 +20,4 @@ const editCerita = {
   },
 };
 
-export default editCerita;
+export default formCerita;

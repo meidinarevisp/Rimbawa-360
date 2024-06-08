@@ -4,6 +4,8 @@ const direktoriRoutes = require("../config/routes/direktori");
 const edukasiRoutes = require("../config/routes/edukasi");
 const spesiesRoutes = require("../config/routes/spesies");
 const authRoutes = require("../config/routes/auth");
+//const ceritaRoutes = require("../config/routes/cerita");
+//const forumRoutes = require("../config/routes/forum");
 const cors = require("cors");
 const path = require("path");
 
@@ -28,6 +30,8 @@ app.use("/api/direktori", direktoriRoutes);
 app.use("/api/edukasi", edukasiRoutes);
 app.use("/api/spesies", spesiesRoutes);
 app.use("/api/auth", authRoutes);
+//app.use("/api/cerita", ceritaRoutes);
+//app.use("/api/forum", forumRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

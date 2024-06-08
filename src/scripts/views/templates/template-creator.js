@@ -313,27 +313,17 @@ const formCeritaTemplate = () => `
             />
           </div>
           <div class="col-md-6">
-            <h2 class="mb-5">
-              Edit Cerita <span style="color: #56ab2e">Kamu</span>
+            <h2>
+              Form Cerita <span style="color: #56ab2e">Kamu</span>
             </h2>
-            <form action="/submit_cerita" method="POST">
+            <form method="POST">
               <div class="form-group">
-                <label for="nama">Nama :</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nama"
-                  name="nama"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="cerita">Cerita :</label>
+                <label for="cerita"></label>
                 <textarea
                   class="form-control"
                   id="cerita"
                   name="cerita"
-                  rows="5"
+                  rows="7"
                   required
                 ></textarea>
               </div>
@@ -360,27 +350,17 @@ const editCeritaTemplate = () => `
             />
           </div>
           <div class="col-md-6">
-            <h2 class="mb-5">
+            <h2>
               Edit Cerita <span style="color: #56ab2e">Kamu</span>
             </h2>
-            <form action="/submit_cerita" method="POST">
+            <form method="POST">
               <div class="form-group">
-                <label for="nama">Nama :</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nama"
-                  name="nama"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="cerita">Cerita :</label>
+                <label for="cerita"></label>
                 <textarea
                   class="form-control"
                   id="cerita"
                   name="cerita"
-                  rows="5"
+                  rows="7"
                   required
                 ></textarea>
               </div>

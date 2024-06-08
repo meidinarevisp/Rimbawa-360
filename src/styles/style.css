@@ -355,22 +355,22 @@ body {
 }
 
 .btn-kirim {
-  background-color: #bbe0aa !important;
+  background-color: #ffffff !important;
   color: #004225 !important;
   font-size: 1rem;
-  border: none;
+  border: 1px solid #b8bab9 !important;
   border-radius: 8px;
   padding: 4px 8px;
   text-align: center;
-  letter-spacing: 1px;
   font-weight: 400;
-  margin-left: 290px;
+  margin-left: 295px;
   margin-top: -10px;
 }
 
 .btn-kirim:hover {
   background-color: #004225 !important;
   color: #eeeeee !important;
+  border: 1px solid #004225 !important;
 }
 
 .swal2-popup {

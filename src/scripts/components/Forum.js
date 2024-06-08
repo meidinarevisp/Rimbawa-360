@@ -29,10 +29,6 @@ class ForumRimbawa extends HTMLElement {
         <h2>Forum Diskusi</h2>
         <form id="forumForm">
           <div class="mb-3">
-            <label for="forumName" class="form-label">Nama</label>
-            <input type="text" id="forumName" class="form-control" required />
-          </div>
-          <div class="mb-3">
             <label for="forumName" class="form-label">Judul</label>
             <input type="text" id="forumTitle" class="form-control" required />
           </div>
