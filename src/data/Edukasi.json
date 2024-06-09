@@ -23,30 +23,6 @@
         "Mengedukasi masyarakat tentang pentingnya perlindungan satwa liar."
       ],
       "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715924125/perburuan_liar_nz1xua.jpg"
-    },
-    {
-      "id": 3,
-      "nama_isu": "Pemanasan Global",
-      "deskripsi": "Pemanasan global adalah peningkatan suhu rata-rata permukaan bumi yang disebabkan oleh peningkatan konsentrasi gas rumah kaca di atmosfer.",
-      "dampak": "Pemanasan global menyebabkan perubahan iklim, naiknya permukaan air laut, cuaca ekstrem, dan kerusakan ekosistem.",
-      "solusi": [
-        "Mengurangi emisi gas rumah kaca melalui penggunaan energi terbarukan.",
-        "Meningkatkan efisiensi energi dalam berbagai sektor.",
-        "Menanam pohon dan menjaga hutan sebagai penyerap karbon alami."
-      ],
-      "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715924061/pemanasan_global_hlushl.jpg"
-    },
-    {
-      "id": 4,
-      "nama_isu": "Kebakaran Hutan",
-      "deskripsi": "Kebakaran hutan adalah kejadian terbakarnya vegetasi di hutan secara alami atau disebabkan oleh manusia, seringkali menyebabkan kerusakan lingkungan yang luas.",
-      "dampak": "Kebakaran hutan dapat mengakibatkan kerugian ekosistem, hilangnya habitat bagi satwa liar, penurunan kualitas udara, dan kerugian ekonomi.",
-      "solusi": [
-        "Meningkatkan pemantauan dan deteksi dini kebakaran hutan.",
-        "Memperkuat penegakan hukum terhadap pembakaran hutan ilegal.",
-        "Mengedukasi masyarakat tentang bahaya pembakaran hutan dan pentingnya pelestarian lingkungan."
-      ],
-      "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1716104575/kebakaran_hutan_bamue1.webp"
     }
   ]
 }

@@ -1,11 +1,7 @@
 import UrlParser from "../../routes/url-parser";
 import { berandaTemplate } from "../templates/template-creator";
 import ceritaData from "../../../data/Cerita.json";
-import ekowisataData from "../../../data/Ekowisata.json";
-import spesiesData from "../../../data/Spesies.json";
-import edukasiData from "../../../data/Edukasi.json";
 import { gsap } from "gsap";
-
 import { CustomEase } from "gsap/CustomEase";
 import { RoughEase, ExpoScaleEase, SlowMo } from "gsap/EasePack";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -159,13 +155,29 @@ const Beranda = {
     if (destinasiSection) {
       const destinasiRow = destinasiSection.querySelector(".row");
 
-      function tampilkanDestinasi() {
+      async function fetchDestinasiData() {
+        try {
+          const response = await fetch("http://localhost:3000/api/direktori");
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return await response.json();
+        } catch (error) {
+          console.error("Error fetching ekowisata data:", error);
+          return [];
+        }
+      }
+
+      function truncateText(text, maxLength) {
+        if (text.length <= maxLength) return text;
+        return text.substr(0, maxLength - 3) + "...";
+      }
+
+      async function tampilkanDestinasi() {
         destinasiRow.innerHTML = "";
 
-        const destinasiAcak = getRandomDestinations(
-          ekowisataData.ekowisata_hutan,
-          3
-        );
+        const destinasiData = await fetchDestinasiData();
+        const destinasiAcak = getRandomDestinations(destinasiData, 3);
 
         destinasiAcak.forEach((destinasi) => {
           const destinasiCol = document.createElement("div");
@@ -173,12 +185,14 @@ const Beranda = {
 
           const destinasiContent = `
             <div class="image-container">
-              <img src="${destinasi.gambar}" alt="${destinasi.nama_tempat}" class="img-fluid" />
+              <img src="/uploads/${destinasi.gambar}" alt="${
+            destinasi.nama_tempat
+          }" class="img-fluid" />
               <h1>${destinasi.lokasi}</h1>
             </div>
             <div class="text-content">
               <h4>${destinasi.nama_tempat}</h4>
-              <p>${destinasi.deskripsi}</p>
+              <p>${truncateText(destinasi.deskripsi, 120)}</p>
             </div>
           `;
 
@@ -274,23 +288,46 @@ const Beranda = {
     const spesiesSection = document.querySelector(".spesies-section");
 
     if (spesiesSection) {
-      function tampilkanSpesies() {
-        const species = spesiesData.BasisDataSpesies;
+      async function fetchSpesiesData() {
+        try {
+          const response = await fetch("http://localhost:3000/api/spesies");
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return await response.json();
+        } catch (error) {
+          console.error("Error fetching spesies data:", error);
+          return [];
+        }
+      }
+
+      async function tampilkanSpesies() {
+        const species = await fetchSpesiesData();
 
         if (species.length >= 5) {
-          document.getElementById("image1").src = species[0].gambar;
+          document.getElementById(
+            "image1"
+          ).src = `/uploads/${species[0].gambar}`;
           document.getElementById("overlay1").innerText = species[0].kelas;
 
-          document.getElementById("image2").src = species[1].gambar;
+          document.getElementById(
+            "image2"
+          ).src = `/uploads/${species[1].gambar}`;
           document.getElementById("overlay2").innerText = species[1].kelas;
 
-          document.getElementById("image3").src = species[2].gambar;
+          document.getElementById(
+            "image3"
+          ).src = `/uploads/${species[2].gambar}`;
           document.getElementById("overlay3").innerText = species[2].kelas;
 
-          document.getElementById("image4").src = species[3].gambar;
+          document.getElementById(
+            "image4"
+          ).src = `/uploads/${species[3].gambar}`;
           document.getElementById("overlay4").innerText = species[3].kelas;
 
-          document.getElementById("image5").src = species[4].gambar;
+          document.getElementById(
+            "image5"
+          ).src = `/uploads/${species[4].gambar}`;
           document.getElementById("overlay5").innerText = species[4].kelas;
         }
       }
@@ -304,11 +341,23 @@ const Beranda = {
       const edukasiContainer =
         edukasiSection.querySelector("#edukasiContainer");
 
-      function tampilkanEdukasi() {
+      async function fetchEdukasiData() {
+        try {
+          const response = await fetch("http://localhost:3000/api/edukasi");
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return await response.json();
+        } catch (error) {
+          console.error("Error fetching edukasi data:", error);
+          return [];
+        }
+      }
+
+      async function tampilkanEdukasi() {
         edukasiContainer.innerHTML = "";
 
-        const edukasiDataArray =
-          edukasiData.edukasi_dan_kesadaran_lingkungan_hutan;
+        const edukasiDataArray = await fetchEdukasiData();
 
         edukasiDataArray.slice(0, 2).forEach((edukasi, index) => {
           const edukasiItem = document.createElement("div");
@@ -320,9 +369,9 @@ const Beranda = {
                 <h3 style="font-size: 1.8rem">${edukasi.nama_isu}</h3>
                 <div class="text">${edukasi.deskripsi} ${edukasi.dampak}</div>
               </div>
-              <div class="image-edukasi"><img src="${edukasi.gambar}" alt="${
-            edukasi.nama_isu
-          }" /></div>
+              <div class="image-edukasi"><img src="/uploads/${
+                edukasi.gambar
+              }" alt="${edukasi.nama_isu}" /></div>
             </div>
           `;
 
