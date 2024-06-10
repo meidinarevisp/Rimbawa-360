@@ -28,7 +28,11 @@ const Direktori = {
         try {
           const response = await fetch("http://localhost:3000/api/direktori");
           const data = await response.json();
-          destinasiData = data;
+          if (Array.isArray(data)) {
+            destinasiData = data;
+          } else {
+            console.error("Data is not an array:", data);
+          }
           renderDestinasi();
         } catch (error) {
           console.error("Error fetching data:", error);

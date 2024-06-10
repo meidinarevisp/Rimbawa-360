@@ -41,8 +41,10 @@ const upload = multer({
 router.get("/", async (req, res) => {
   try {
     const [rows, fields] = await pool.query("SELECT * FROM direktori");
+    console.log("Fetched direktori data:", rows);
     res.json(rows);
   } catch (err) {
+    console.error("Error fetching direktori:", err);
     res.status(500).json({ error: err.message });
   }
 });

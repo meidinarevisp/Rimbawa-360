@@ -38,9 +38,12 @@ const upload = multer({
 
 router.get("/", async (req, res) => {
   try {
+    console.log("Trying to fetch spesies data...");
     const [rows, fields] = await pool.query("SELECT * FROM spesies");
+    console.log("Fetched spesies data:", rows);
     res.json(rows);
   } catch (err) {
+    console.error("Error fetching spesies:", err);
     res.status(500).json({ error: err.message });
   }
 });

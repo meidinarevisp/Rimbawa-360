@@ -38,9 +38,12 @@ const upload = multer({
 
 router.get("/", async (req, res) => {
   try {
+    console.log("Trying to fetch edukasi data...");
     const [rows, fields] = await pool.query("SELECT * FROM edukasi");
+    console.log("Fetched edukasi data:", rows);
     res.json(rows);
   } catch (err) {
+    console.error("Error fetching edukasi:", err);
     res.status(500).json({ error: err.message });
   }
 });
