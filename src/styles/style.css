@@ -292,9 +292,44 @@ body {
   box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.1); /* Atur box-shadow */
 }
 
+.burger-menu {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.burger-dot {
+  width: 4px;
+  height: 4px;
+  background-color: #4e5250;
+  border-radius: 50%;
+  margin: 2px;
+}
+
+.actions {
+  position: absolute;
+  margin-top: 5px;
+  right: 25px;
+  background-color: #fff;
+  border: 1px solid #efe8e8;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  padding-left: 10px;
+  padding-right: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.actions.show {
+  display: block;
+}
+
 .post-header {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .post-header .user-info {
@@ -304,54 +339,51 @@ body {
 }
 
 .post-header .user-info h4 {
-  font-size: 1.4rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-left: 10px;
 }
 
 .post-header .user-icon {
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
   position: relative;
   margin-right: 5px;
-  top: -10px;
+  top: -5px;
 }
 .post-header small {
   font-size: 0.65rem;
+  margin-left: 10px;
 }
 
 .user-mid h6 {
   padding: none;
-  margin-top: 5px;
-  font-size: 1.4;
+  font-size: 1rem;
 }
 
 .user-mid p {
   color: #212529;
   padding: 0;
   margin: 0;
-  font-size: 0.75rem;
-}
-
-.actions {
-  display: flex;
-  justify-content: flex-end;
+  font-size: 1rem;
 }
 
 .actions button {
   margin-right: 5px;
   padding: 4px 8px;
-  background-color: #5b5959;
-  border: none;
+  background-color: #004225;
+  border: 1px solid #004225;
   color: #eeeeee;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 3px;
   transition: background-color 0.3s;
   font-size: 0.8rem;
-  margin-top: 10px;
 }
 
 .actions button:hover {
-  background-color: #004225;
+  background-color: #ffffff;
+  color: #004225;
+  border: 1px solid #004225;
 }
 
 .btn-kirim {
@@ -373,26 +405,47 @@ body {
   border: 1px solid #004225 !important;
 }
 
-.swal2-popup {
-  font-family: Arial, sans-serif;
-}
-
 .swal2-title {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
 }
-
-.swal2-content {
-  font-size: 1rem;
-}
-
-.swal2-actions {
-  margin-top: 20px;
-}
-
-.swal2-actions .btn {
-  margin: 5px;
-  padding: 10px 20px;
+.swal2-input,
+.swal2-textarea {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
   border-radius: 5px;
+  resize: vertical;
+}
+.swal2-input:focus,
+.swal2-textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+.swal2-cancel,
+.swal2-confirm {
+  font-size: 1rem;
+  padding: 8px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.swal2-confirm {
+  background-color: #007bff !important;
+  color: #fff !important;
+}
+.swal2-confirm:hover {
+  background-color: #0056b3;
+}
+.swal2-cancel {
+  background-color: #e72e2e !important;
+  color: #333;
+}
+.swal2-cancel:hover {
+  background-color: #f23434 !important;
 }
 
 /* Keyframe untuk animasi muncul */

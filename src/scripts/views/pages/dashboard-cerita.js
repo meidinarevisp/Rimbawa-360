@@ -1,6 +1,8 @@
 import UrlParser from "../../routes/url-parser";
 import { dashboardCeritaTemplate } from "../templates/template-creator";
-import ceritaData from "../../../data/Cerita.json";
+import Swal from "sweetalert2";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 
 const dashboardCerita = {
   async render() {
@@ -12,53 +14,115 @@ const dashboardCerita = {
   async afterRender() {
     const ceritaList = document.getElementById("cerita-list");
 
-    // Loop through the imported JSON data and create HTML elements
-    ceritaData.keterlibatanMasyarakat.forEach((cerita) => {
-      const ceritaCard = document.createElement("div");
-      ceritaCard.className = "col-md-4 mb-4";
+    try {
+      const response = await fetch("http://localhost:3000/api/cerita/user", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`, // Asumsikan token disimpan di localStorage
+        },
+      });
 
-      ceritaCard.innerHTML = `
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">${cerita.nama}</h5>
-            <p class="card-text">${cerita.cerita}</p>
-            <p class="card-text"><small class="text-muted">Uploaded on ${new Date(
-              cerita.waktu_upload
-            ).toLocaleDateString()}</small></p>
-            <div class="button-group">
-              <button class="btn edit-button" data-id="${cerita.id}">
-                <i class="fas fa-edit"></i>
-              </button>
-              <button class="btn delete-button" data-id="${cerita.id}">
-                <i class="fas fa-trash"></i>
-              </button>
+      const ceritaData = await response.json();
+
+      // Loop through the imported JSON data and create HTML elements
+      ceritaData.forEach((cerita) => {
+        const ceritaCard = document.createElement("div");
+        ceritaCard.className = "col-md-4 mb-4";
+
+        ceritaCard.innerHTML = `
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">${cerita.username}</h5>
+              <p class="card-text">${cerita.cerita}</p>
+              <p class="card-text"><small class="text-muted">Uploaded on ${new Date(
+                cerita.date_created
+              ).toLocaleDateString()}</small></p>
+              <div class="button-group">
+                <button class="btn edit-button" data-id="${cerita.id}">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="btn delete-button" data-id="${cerita.id}">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      `;
+        `;
 
-      ceritaList.appendChild(ceritaCard);
-    });
-
-    // Add event listeners for edit and delete buttons
-    ceritaList.querySelectorAll(".edit-button").forEach((button) => {
-      button.addEventListener("click", (event) => {
-        const id = event.target.dataset.id;
-        editCerita(id);
+        ceritaList.appendChild(ceritaCard);
       });
-    });
 
-    ceritaList.querySelectorAll(".delete-button").forEach((button) => {
-      button.addEventListener("click", (event) => {
-        const id = event.target.dataset.id;
-        deleteCerita(id);
+      // Add event listeners for edit and delete buttons
+      ceritaList.querySelectorAll(".edit-button").forEach((button) => {
+        button.addEventListener("click", (event) => {
+          const id = event.currentTarget.dataset.id;
+          window.location.href = `#/edit-cerita/${id}`;
+        });
       });
-    });
 
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+      const deleteCerita = async (id) => {
+        // Tampilkan peringatan menggunakan SweetAlert sebelum menghapus
+        Swal.fire({
+          title: "Anda yakin?",
+          text: "Anda tidak akan dapat mengembalikan ini!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Ya, hapus!",
+          cancelButtonText: "Batal",
+        }).then(async (result) => {
+          if (result.isConfirmed) {
+            try {
+              const response = await fetch(
+                `http://localhost:3000/api/cerita/${id}`,
+                {
+                  method: "DELETE",
+                  headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${localStorage.getItem("token")}`, // Asumsikan token disimpan di localStorage
+                  },
+                }
+              );
+
+              const result = await response.json();
+              if (response.ok) {
+                localStorage.setItem(
+                  "toastMessage",
+                  "Cerita berhasil dihapus!"
+                );
+                window.location.reload(); // Me-refresh halaman setelah menghapus cerita
+              } else {
+                throw new Error(result.message); // Melemparkan error jika terjadi kesalahan
+              }
+            } catch (error) {
+              console.error("Failed to delete story:", error);
+            }
+          }
+        });
+      };
+
+      const toastMessage = localStorage.getItem("toastMessage");
+      if (toastMessage) {
+        toastr.success(toastMessage).css("margin-top", "90px");
+        localStorage.removeItem("toastMessage"); // Hapus pesan toast setelah ditampilkan
+      }
+
+      ceritaList.querySelectorAll(".delete-button").forEach((button) => {
+        button.addEventListener("click", (event) => {
+          const id = event.currentTarget.dataset.id;
+          deleteCerita(id);
+        });
+      });
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } catch (error) {
+      console.error("Failed to fetch user stories:", error);
+    }
   },
 };
 

@@ -60,7 +60,8 @@ const Login = {
         if (response.ok) {
           toastr.success(data.message);
 
-          // Simpan data pengguna di localStorage
+          // Simpan token dan data pengguna di localStorage
+          localStorage.setItem("token", data.token);
           localStorage.setItem("user", JSON.stringify(data.user));
           localStorage.setItem("isLoggedIn", "true");
 

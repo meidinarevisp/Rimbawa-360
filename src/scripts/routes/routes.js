@@ -35,7 +35,7 @@ const routes = {
   "/detail-spesies/:id": detailSpesies,
   "/direktori": Direktori,
   "/form-cerita": formCerita,
-  "/edit-cerita": editCerita,
+  "/edit-cerita/:id": editCerita,
   "/edit-profile": editProfile,
   "/ganti-password": gantiPassword,
   "/edukasi": Edukasi,

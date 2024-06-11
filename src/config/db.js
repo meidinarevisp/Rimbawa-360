@@ -66,6 +66,7 @@ const createDatabaseAndTable = `
         id_user INT NOT NULL,
         username VARCHAR(255) NOT NULL,
         cerita VARCHAR(255) NOT NULL,
+        gambar VARCHAR(255), 
         date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (id_user) REFERENCES auth(id_user)
     );
@@ -73,9 +74,10 @@ const createDatabaseAndTable = `
         CREATE TABLE IF NOT EXISTS forum (
         id INT PRIMARY KEY AUTO_INCREMENT,
         id_user INT NOT NULL,
-        nama VARCHAR(255) NOT NULL,
+        username VARCHAR(255) NOT NULL,
         judul VARCHAR(255) NOT NULL,
         deskripsi VARCHAR(255) NOT NULL,
+        gambar VARCHAR(255) NOT NULL, 
         date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (id_user) REFERENCES auth(id_user)
     );

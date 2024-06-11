@@ -1,7 +1,7 @@
-// src/scripts/views/pages/cerita.js
 import UrlParser from "../../routes/url-parser";
 import { ceritaTemplate } from "../templates/template-creator";
-import ceritaData from "../../../data/Cerita.json";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 
 const Cerita = {
   async render() {
@@ -20,51 +20,60 @@ const Cerita = {
     const itemsPerPage = 3; // Jumlah cerita per halaman
     let currentPage = 1;
 
-    function displayCerita(page) {
+    async function fetchCeritaData() {
+      try {
+        const response = await fetch("http://localhost:3000/api/cerita"); // Sesuaikan endpoint jika perlu
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error("Error fetching cerita data:", error);
+        return [];
+      }
+    }
+
+    async function displayCerita(page, ceritaData) {
       ceritaContainer.innerHTML = ""; // Bersihkan kontainer cerita sebelum menambahkan cerita baru
 
       const start = (page - 1) * itemsPerPage;
       const end = start + itemsPerPage;
-      const ceritaSlice = ceritaData.keterlibatanMasyarakat.slice(start, end);
+      const ceritaSlice = ceritaData.slice(start, end);
 
       ceritaSlice.forEach((cerita, index) => {
         const ceritaItem = document.createElement("div");
         ceritaItem.classList.add("page-cerita", `cerita-${index + 1}`);
 
         const ceritaContent = `
-      <blockquote class="blockquote">
-        <center>
-          <img
-            class="mb-3"
-            src="${cerita.foto_profile}"
-            alt="${cerita.nama}"
-            class="profil-image"
-            width="120"
-            height="120"
-          />
-          <h3>${cerita.nama}</h3>
-          <p class="waktu-unggah">${new Date(
-            cerita.waktu_upload
-          ).toLocaleString("id-ID", {
-            dateStyle: "medium",
-            timeStyle: "short",
-          })}</p>
-        </center>
-        <p class="cerita-detail">${cerita.cerita}</p>
-      </blockquote>
-    `;
+          <blockquote class="blockquote">
+            <center>
+              <img
+                class="mb-3"
+                src="${cerita.gambar}"
+                alt="${cerita.username}"
+                class="profil-image"
+                width="120"
+                height="120"
+              />
+              <h3>${cerita.username}</h3>
+              <p class="waktu-unggah">${new Date(
+                cerita.date_created
+              ).toLocaleString("id-ID", {
+                dateStyle: "medium",
+                timeStyle: "short",
+              })}</p>
+            </center>
+            <p class="cerita-detail">${cerita.cerita}</p>
+          </blockquote>
+        `;
 
         ceritaItem.innerHTML = ceritaContent;
         ceritaContainer.appendChild(ceritaItem);
       });
     }
 
-    function setupPagination() {
+    async function setupPagination(ceritaData) {
       paginationContainer.innerHTML = ""; // Bersihkan kontainer pagination sebelum membuat pagination baru
 
-      const totalPages = Math.ceil(
-        ceritaData.keterlibatanMasyarakat.length / itemsPerPage
-      );
+      const totalPages = Math.ceil(ceritaData.length / itemsPerPage);
 
       for (let i = 1; i <= totalPages; i++) {
         const paginationItem = document.createElement("span");
@@ -75,9 +84,9 @@ const Cerita = {
           paginationItem.classList.add("active");
         }
 
-        paginationItem.addEventListener("click", () => {
+        paginationItem.addEventListener("click", async () => {
           currentPage = i;
-          displayCerita(currentPage);
+          await displayCerita(currentPage, ceritaData);
 
           // Hapus kelas 'active' dari semua pagination item, dan tambahkan 'active' hanya pada pagination item yang sedang aktif
           document.querySelectorAll(".pagination-item").forEach((item) => {
@@ -90,40 +99,21 @@ const Cerita = {
       }
     }
 
-    // Tampilkan cerita dan pagination saat halaman dimuat
-    displayCerita(currentPage);
-    setupPagination();
+    const ceritaData = await fetchCeritaData();
+    await displayCerita(currentPage, ceritaData);
+    setupPagination(ceritaData);
 
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
+
+    const toastMessage = localStorage.getItem("toastMessage");
+    if (toastMessage) {
+      toastr.success(toastMessage).css("margin-top", "90px");
+      localStorage.removeItem("toastMessage"); // Hapus pesan toast setelah ditampilkan
+    }
   },
 };
 
 export default Cerita;
-
-document.addEventListener("DOMContentLoaded", function () {
-  const backButton = document.querySelector(".btn-back-to-top");
-
-  // Tambahkan event listener untuk menggulir ke atas saat tombol diklik
-  if (backButton) {
-    backButton.addEventListener("click", function () {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    });
-
-    // Tambahkan event listener untuk memeriksa saat pengguna menggulir halaman
-    window.addEventListener("scroll", function () {
-      // Jika pengguna menggulir lebih dari 200px dari atas, tampilkan tombol
-      if (window.scrollY > 200) {
-        backButton.classList.add("show");
-      } else {
-        // Jika tidak, sembunyikan tombol
-        backButton.classList.remove("show");
-      }
-    });
-  }
-});

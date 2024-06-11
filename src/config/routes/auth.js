@@ -2,6 +2,7 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const pool = require("../db");
 const { body, validationResult } = require("express-validator");
+const jwt = require("jsonwebtoken");
 const router = express.Router();
 const path = require("path");
 const fs = require("fs");
@@ -12,6 +13,8 @@ const gambar = path.join(__dirname, "../../public/images/user.png");
 // Role constants
 const USER_ROLE = 2;
 const ADMIN_ROLE = 1;
+
+const SECRET_KEY = "capstone"; // Replace with your secret key
 
 router.use(fileUpload());
 
@@ -90,7 +93,6 @@ router.post(
     const { login, password } = req.body;
 
     try {
-      // Find user by email or username
       const [users] = await pool.query(
         "SELECT * FROM auth WHERE email = ? OR username = ?",
         [login, login]
@@ -101,14 +103,19 @@ router.post(
       }
 
       const user = users[0];
-
-      // Compare the password
       const match = await bcrypt.compare(password, user.password);
       if (!match) {
         return res.status(401).json({ error: "Kata sandi salah." });
       }
 
-      // Determine where to redirect based on role
+      const token = jwt.sign(
+        { id: user.id_user, username: user.username, gambar: user.gambar },
+        SECRET_KEY,
+        {
+          expiresIn: 86400, // 24 hours
+        }
+      );
+
       let redirectUrl;
       if (user.role_id === ADMIN_ROLE) {
         redirectUrl = "/#/dashboard-admin";
@@ -118,18 +125,18 @@ router.post(
         return res.status(403).json({ error: "Role pengguna tidak valid." });
       }
 
-      // Respond with user information and redirect URL
       res.status(200).json({
         message: "Login berhasil!",
         user: {
           id_user: user.id_user,
           name: user.nama_pengguna,
           email: user.email,
-          username: user.username, // tambahkan username
+          username: user.username,
           role_id: user.role_id,
           gambar: user.gambar,
         },
         redirectUrl,
+        token,
       });
     } catch (error) {
       console.error("Error during login:", error);
@@ -138,9 +145,29 @@ router.post(
   }
 );
 
+// Middleware to verify token
+const verifyToken = (req, res, next) => {
+  const token = req.headers["authorization"];
+  if (!token) {
+    return res.status(403).json({ error: "No token provided." });
+  }
+
+  jwt.verify(token.split(" ")[1], SECRET_KEY, (err, decoded) => {
+    if (err) {
+      return res.status(500).json({ error: "Failed to authenticate token." });
+    }
+    req.userId = decoded.id;
+    req.username = decoded.username; // tambahkan username ke req
+    next();
+  });
+};
+
+module.exports = verifyToken;
+
 // Update user profile endpoint
 router.put(
   "/update-profile/:username",
+  verifyToken,
   [
     body("name").notEmpty().withMessage("Nama lengkap diperlukan."),
     body("email").isEmail().withMessage("Email tidak valid."),
@@ -198,7 +225,6 @@ router.put(
           fileName
         );
 
-        // Hapus gambar lama jika bukan gambar default
         if (user.gambar && user.gambar !== "/images/user.png") {
           const oldImagePath = path.join(
             __dirname,
@@ -229,9 +255,9 @@ router.put(
   }
 );
 
-// Change password endpoint
 router.put(
   "/change-password/:username",
+  verifyToken,
   [
     body("currentPassword")
       .notEmpty()
@@ -247,7 +273,6 @@ router.put(
     if (!errors.isEmpty()) {
       const errorMessages = errors.array().map((error) => error.msg);
 
-      // Periksa apakah kedua field kosong
       if (
         errorMessages.includes("Kata sandi saat ini diperlukan.") &&
         errorMessages.includes("Kata sandi baru diperlukan.")
@@ -255,22 +280,21 @@ router.put(
         return res.status(400).json({ error: "Ubah dulu yaa!" });
       }
 
-      // Periksa apakah hanya field kata sandi baru yang kosong
       if (
         !errorMessages.includes("Kata sandi saat ini diperlukan.") &&
         errorMessages.includes("Kata sandi baru diperlukan.")
       ) {
-        return res.status(400).json({ error: "Ubah dulu yaa!" });
+        return res.status(400).json({ error: "Password baru diperlukan!" });
       }
 
-      // Periksa apakah kata sandi baru kurang dari 6 karakter
-      if (errorMessages.includes("Kata sandi baru minimal 6 karakter.")) {
-        return res
-          .status(400)
-          .json({ error: "Kata sandi baru minimal 6 karakter." });
+      if (
+        errorMessages.includes("Kata sandi saat ini diperlukan.") &&
+        !errorMessages.includes("Kata sandi baru diperlukan.")
+      ) {
+        return res.status(400).json({ error: "Password saat ini diperlukan!" });
       }
 
-      return res.status(400).json({ errors: errorMessages });
+      return res.status(400).json({ error: "Password minimal 6 karakter!" });
     }
 
     const { currentPassword, newPassword } = req.body;
@@ -281,34 +305,22 @@ router.put(
         "SELECT * FROM auth WHERE username = ?",
         [username]
       );
+
       if (users.length === 0) {
         return res.status(404).json({ error: "Pengguna tidak ditemukan." });
       }
+
       const user = users[0];
-
-      const isPasswordValid = await bcrypt.compare(
-        currentPassword,
-        user.password
-      );
-      if (!isPasswordValid) {
-        return res.status(400).json({ error: "Kata sandi saat ini salah." });
-      }
-
-      // Periksa apakah kata sandi baru sama dengan kata sandi saat ini
-      const isNewPasswordSame = await bcrypt.compare(
-        newPassword,
-        user.password
-      );
-      if (isNewPasswordSame) {
-        return res.status(400).json({ error: "Ubah dulu yaa!" });
+      const match = await bcrypt.compare(currentPassword, user.password);
+      if (!match) {
+        return res.status(401).json({ error: "Password saat ini salah!" });
       }
 
       const hashedPassword = await bcrypt.hash(newPassword, 10);
-
-      const [result] = await pool.query(
-        "UPDATE auth SET password = ? WHERE username = ?",
-        [hashedPassword, username]
-      );
+      await pool.query("UPDATE auth SET password = ? WHERE username = ?", [
+        hashedPassword,
+        username,
+      ]);
 
       res.status(200).json({ message: "Password changed successfully!" });
     } catch (error) {

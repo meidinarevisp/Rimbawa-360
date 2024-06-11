@@ -301,78 +301,64 @@ const direktoriTemplate = () => `
     <footer-rimbawa id="footer"></footer-rimbawa>
 `;
 const formCeritaTemplate = () => `
- <navbar-rimbawa id="navbar"></navbar-rimbawa>
- <section class="edit-cerita-page">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <img
-              src="/images/cerita-kamu.png"
-              alt="Gambarmu"
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-md-6">
-            <h2>
-              Form Cerita <span style="color: #56ab2e">Kamu</span>
-            </h2>
-            <form method="POST">
-              <div class="form-group">
-                <label for="cerita"></label>
-                <textarea
-                  class="form-control"
-                  id="cerita"
-                  name="cerita"
-                  rows="7"
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" class="btn btn-kirim-cerita">
-                Kirim Cerita
-              </button>
-            </form>
-          </div>
+  <navbar-rimbawa id="navbar"></navbar-rimbawa>
+  <section class="edit-cerita-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="/images/cerita-kamu.png" alt="Gambarmu" class="img-fluid" />
+        </div>
+        <div class="col-md-6">
+          <h2>
+            Form Cerita <span style="color: #56ab2e">Kamu</span>
+          </h2>
+          <form method="POST" id="ceritaForm">
+            <div class="form-group">
+              <label for="cerita"></label>
+              <textarea
+                class="form-control"
+                id="cerita"
+                name="cerita"
+                rows="7"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-kirim-cerita">
+              Kirim Cerita
+            </button>
+          </form>
         </div>
       </div>
-    </section>
-    <footer-rimbawa id="footer"></footer-rimbawa>
+    </div>
+  </section>
+  <footer-rimbawa id="footer"></footer-rimbawa>
 `;
-const editCeritaTemplate = () => `
- <navbar-rimbawa id="navbar"></navbar-rimbawa>
- <section class="edit-cerita-page">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <img
-              src="/images/cerita-kamu.png"
-              alt="Gambarmu"
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-md-6">
-            <h2>
-              Edit Cerita <span style="color: #56ab2e">Kamu</span>
-            </h2>
-            <form method="POST">
-              <div class="form-group">
-                <label for="cerita"></label>
-                <textarea
-                  class="form-control"
-                  id="cerita"
-                  name="cerita"
-                  rows="7"
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" class="btn btn-kirim-cerita">
-                Kirim Cerita
-              </button>
-            </form>
-          </div>
+const editCeritaTemplate = (ceritaId) => `
+  <navbar-rimbawa id="navbar"></navbar-rimbawa>
+  <section class="edit-cerita-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="/images/cerita-kamu.png" alt="Gambarmu" class="img-fluid" />
+        </div>
+        <div class="col-md-6">
+          <h2>
+            Edit Cerita <span style="color: #56ab2e">Kamu</span>
+          </h2>
+          <form method="POST" id="ceritaForm" data-id="${ceritaId}">
+            <div class="form-group">
+              <label for="cerita"></label>
+              <textarea class="form-control" id="cerita" name="cerita" rows="7" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-kirim-cerita">
+              Perbarui Cerita
+            </button>
+          </form>
         </div>
       </div>
-    </section>
-    <footer-rimbawa id="footer"></footer-rimbawa>
+    </div>
+  </section>
+  <footer-rimbawa id="footer"></footer-rimbawa>
 `;
 const editProfileTemplate = (user) => `
  <navbar-rimbawa id="navbar"></navbar-rimbawa>

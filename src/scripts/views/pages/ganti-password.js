@@ -29,10 +29,15 @@ const gantiPassword = {
 
       try {
         const user = JSON.parse(localStorage.getItem("user"));
+        const token = localStorage.getItem("token");
+
         const response = await fetch(
-          `http://localhost:3000/api/auth/change-password/${user.username}`, // Menggunakan endpoint yang tepat untuk mengganti password
+          `http://localhost:3000/api/auth/change-password/${user.username}`,
           {
             method: "PUT",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
             body: formData,
           }
         );

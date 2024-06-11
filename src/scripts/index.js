@@ -17,7 +17,9 @@ const userPages = [
   "#/detail-spesies",
   "#/direktori",
   "#/edit-cerita",
+  "#/form-cerita",
   "#/edit-profile",
+  "#/ganti-password",
   "#/edukasi",
   "#/spesies",
   "#/tentang",
@@ -72,16 +74,17 @@ function checkPageAccess() {
   } else if (adminPages.includes(currentPage)) {
     if (!isAdmin()) {
       toastr
-        .error("Anda tidak memiliki akses ke halaman itu!")
+        .error("Kamu tidak memiliki akses ke halaman itu!")
         .css("margin-top", "90px");
       window.location.hash = "/";
       return false;
     }
   } else if (
     (currentPage === "#/login" || currentPage === "#/register") &&
-    isUser()
+    isLoggedIn()
   ) {
-    window.location.hash = "/";
+    // Jika pengguna telah login, alihkan ke halaman yang sesuai
+    window.location.hash = isAdmin() ? "#/dashboard-admin" : "/";
     return false;
   }
 

@@ -19,22 +19,27 @@ const editProfile = {
 
       const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
-      const newUsername = document.getElementById("username").value; // Tambah ini
+      const newUsername = document.getElementById("username").value;
       const profilePicture =
         document.getElementById("profile-picture").files[0];
 
       const formData = new FormData();
       formData.append("name", name);
       formData.append("email", email);
-      formData.append("newUsername", newUsername); // Tambah ini
+      formData.append("newUsername", newUsername);
       if (profilePicture) formData.append("image", profilePicture);
 
       try {
         const user = JSON.parse(localStorage.getItem("user"));
+        const token = localStorage.getItem("token");
+
         const response = await fetch(
           `http://localhost:3000/api/auth/update-profile/${user.username}`,
           {
             method: "PUT",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
             body: formData,
           }
         );
@@ -46,7 +51,7 @@ const editProfile = {
             ...user,
             name,
             email,
-            username: newUsername, // Tambah ini
+            username: newUsername,
             gambar: data.gambar,
           };
           localStorage.setItem("user", JSON.stringify(updatedUser));
