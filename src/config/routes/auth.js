@@ -379,7 +379,7 @@ router.post(
 
       const mailOptions = {
         to: email,
-        from: process.env.EMAIL_USERNAME,
+        from: `Rimbawa 360 <${process.env.EMAIL_USERNAME}>`,
         subject: "Reset Kata Sandi",
         html: `
         <p style="color: #000;">Anda menerima email ini karena Anda (atau orang lain) telah meminta untuk mereset kata sandi akun Anda.</p>

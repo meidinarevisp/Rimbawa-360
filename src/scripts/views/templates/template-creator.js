@@ -699,10 +699,10 @@ const loginTemplate = () => `
               <div class="form-group mb-2">
                 <label for="password">Kata Sandi</label>
                 <div class="input-group">
-                  <input type="password" class="form-control" id="password" placeholder="Masukkan kata sandi" required>
+                  <input type="password" class="form-control" style="border-radius: 5px;" id="password" placeholder="Masukkan kata sandi" required>
                   <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span id="showPasswordIcon" class="fa fa-eye" aria-label="Show password"></span>
+                    <div class="input-group-text show-password-icon" id="showPasswordIcon" style="cursor: pointer;">
+                      <span class="fa fa-eye" aria-label="Show password"></span>
                     </div>
                   </div>
                 </div>
@@ -819,10 +819,10 @@ const registerTemplate = () => `
               <div class="form-group">
                 <label for="password">Kata Sandi</label>
                 <div class="input-group">
-                  <input type="password" class="form-control" id="password" placeholder="Masukkan kata sandi" required>
+                  <input type="password" class="form-control" style="border-radius: 5px;" id="password" placeholder="Masukkan kata sandi" required>
                   <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span id="showPasswordIcon" class="fa fa-eye" aria-label="Show password"></span>
+                    <div class="input-group-text show-password-icon" id="showPasswordIcon" style="cursor: pointer;">
+                      <span class="fa fa-eye" aria-label="Show password"></span>
                     </div>
                   </div>
                 </div>
@@ -830,10 +830,10 @@ const registerTemplate = () => `
               <div class="form-group">
                 <label for="password1">Konfirmasi Kata Sandi</label>
                 <div class="input-group">
-                  <input type="password" class="form-control" id="password1" placeholder="Konfirmasi kata sandi" required>
+                  <input type="password" class="form-control" style="border-radius: 5px;" id="password1" placeholder="Konfirmasi kata sandi" required>
                   <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span id="showConfirmPasswordIcon" class="fa fa-eye" aria-label="Show confirm password"></span>
+                    <div class="input-group-text show-password-icon" id="showConfirmPasswordIcon" style="cursor: pointer;">
+                      <span class="fa fa-eye" aria-label="Show password"></span>
                     </div>
                   </div>
                 </div>

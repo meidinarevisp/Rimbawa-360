@@ -25,17 +25,18 @@ const Login = {
     document.body.appendChild(logoElement);
 
     const showPasswordIcon = document.getElementById("showPasswordIcon");
-    showPasswordIcon.addEventListener("click", () => {
-      const passwordField = document.getElementById("password");
-      if (passwordField.type === "password") {
-        passwordField.type = "text";
-        showPasswordIcon.classList.remove("fa-eye");
-        showPasswordIcon.classList.add("fa-eye-slash");
-      } else {
-        passwordField.type = "password";
-        showPasswordIcon.classList.remove("fa-eye-slash");
-        showPasswordIcon.classList.add("fa-eye");
-      }
+    const passwordField = document.getElementById("password");
+
+    showPasswordIcon.addEventListener("mousedown", () => {
+      passwordField.type = "text";
+    });
+
+    showPasswordIcon.addEventListener("mouseup", () => {
+      passwordField.type = "password";
+    });
+
+    showPasswordIcon.addEventListener("mouseleave", () => {
+      passwordField.type = "password";
     });
 
     const form = document.querySelector("form");

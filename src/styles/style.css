@@ -87,14 +87,22 @@ body {
   color: #eeeeee !important;
 }
 
-.input-group-append {
+.show-password-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #666;
+  background-color: transparent;
+  border: none;
 }
 
-.fa-eye,
-.fa-eye-slash {
-  font-size: 1.5rem;
-  color: #858383;
+.fa-eye {
+  font-size: 1.3rem;
 }
 
 .gambar-user {

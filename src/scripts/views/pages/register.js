@@ -28,26 +28,33 @@ const Register = {
     const showConfirmPasswordIcon = document.getElementById(
       "showConfirmPasswordIcon"
     );
+    const passwordField = document.getElementById("password");
+    const confirmPasswordField = document.getElementById("password1");
 
-    const togglePasswordVisibility = (iconId, fieldId) => {
-      const icon = document.getElementById(iconId);
-      const passwordField = document.getElementById(fieldId);
+    // Add event listeners
+    showPasswordIcon.addEventListener("mousedown", () => {
+      passwordField.type = "text";
+    });
 
-      icon.addEventListener("click", () => {
-        if (passwordField.type === "password") {
-          passwordField.type = "text";
-          icon.classList.remove("fa-eye");
-          icon.classList.add("fa-eye-slash");
-        } else {
-          passwordField.type = "password";
-          icon.classList.remove("fa-eye-slash");
-          icon.classList.add("fa-eye");
-        }
-      });
-    };
+    showPasswordIcon.addEventListener("mouseup", () => {
+      passwordField.type = "password";
+    });
 
-    togglePasswordVisibility("showPasswordIcon", "password");
-    togglePasswordVisibility("showConfirmPasswordIcon", "password1");
+    showPasswordIcon.addEventListener("mouseleave", () => {
+      passwordField.type = "password";
+    });
+
+    showConfirmPasswordIcon.addEventListener("mousedown", () => {
+      confirmPasswordField.type = "text";
+    });
+
+    showConfirmPasswordIcon.addEventListener("mouseup", () => {
+      confirmPasswordField.type = "password";
+    });
+
+    showConfirmPasswordIcon.addEventListener("mouseleave", () => {
+      confirmPasswordField.type = "password";
+    });
 
     const form = document.querySelector("form");
     form.addEventListener("submit", async (event) => {
