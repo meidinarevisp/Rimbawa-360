@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nama_isu": "Deforestasi",
-      "deskripsi": "Deforestasi adalah proses penebangan hutan yang dilakukan untuk membuka lahan bagi pertanian, pemukiman, atau keperluan industri lainnya.",
+      "deskripsi": "Deforestasi dapat dikatakan sebagai peristiwa menghilangnya tutupan dari suatu hutan. Selanjutnya, dapat berdampak terhadap menghilangnya fungsi serta struktur dari hutan tersebut. Secara sederhana, peristiwa deforestasi merupakan menghilangnya kawasan hutan dan berubah menjadi kawasan lain. Itu berarti jumlah lahan hutan menjadi berkurang, bahkan bisa sampai hilang. Sebagian dari lahan hutan yang awalnya berisi berbagai vegetasi hutan beserta ekosistemnya, kehilangan fungsinya karena tergeser oleh fungsi lain. Bisa dikatakan bahwa deforestasi adalah mengubah kawasan hutan menjadi kawasan bukan hutan. Perubahan tersebut terjadi secara permanen. Fungsi hutan yang awalnya untuk melestarikan lingkungan beserta ekosistemnya, mulai berubah menjadi fungsi lain untuk keperluan suatu kelompok manusia. Biasanya, deforestasi dapat terjadi ketika suatu hutan berlokasi di kawasan yang secara langsung berbatasan dengan berbagai aktivitas manusia. Sebagai contoh, aktivitas pertanian atau perkebunan.",
       "dampak": "Deforestasi menyebabkan hilangnya habitat satwa liar, penurunan keanekaragaman hayati, degradasi tanah, dan peningkatan emisi gas rumah kaca.",
       "solusi": [
         "Mengimplementasikan praktik kehutanan berkelanjutan.",
@@ -15,7 +15,7 @@
     {
       "id": 2,
       "nama_isu": "Perburuan Liar",
-      "deskripsi": "Perburuan liar adalah aktivitas penangkapan atau pembunuhan satwa liar secara ilegal, seringkali untuk diambil bagian tubuhnya seperti gading, kulit, atau tanduk.",
+      "deskripsi": "Perburuan liar atau penangkapan satwa liar secara illegal adalah salah satu ancaman terbesar dan paling kejam terhadap keanekaragaman hayati dan mengancam kelangsungan hidup spesies yang tak terhitung jumlahnya. Ini adalah industri bernilai jutaan hingga miliaran dolar, dijalankan oleh jaringan internasional yang memperdagangkan hewan di seluruh dunia untuk diambil bagiannya, obat-obatan tradisional, perdagangan hewan peliharaan, dan berbagai aktivitas jahat lainnya.",
       "dampak": "Perburuan liar mengancam kelangsungan hidup spesies tertentu, mengganggu ekosistem, dan dapat menyebabkan kepunahan spesies.",
       "solusi": [
         "Memperkuat penegakan hukum terhadap perburuan liar.",

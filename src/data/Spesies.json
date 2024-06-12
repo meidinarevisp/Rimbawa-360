@@ -17,7 +17,7 @@
       "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715924521/harimau_kf0aia.jpg"
     },
     {
-      "id": 3,
+      "id": 2,
       "namaHewan": "Kupu-Kupu Monarch",
       "deskripsi": "Kupu-Kupu Monarch adalah salah satu spesies kupu-kupu yang paling dikenal di Amerika Utara. Mereka terkenal karena migrasi tahunan mereka yang panjang dari Kanada ke Meksiko.",
       "kerajaan": "Animalia",
@@ -33,7 +33,7 @@
       "gambar": "https://th.bing.com/th/id/OIP.Ioqo6v9I-jixlf0Qdu7tqgHaE8?w=2264&h=1510&rs=1&pid=ImgDetMain"
     },
     {
-      "id": 4,
+      "id": 3,
       "namaHewan": "Burung Cenderawasih",
       "deskripsi": "Burung Cenderawasih adalah burung yang terkenal karena bulu-bulu indah dan perilaku kawin yang spektakuler. Mereka ditemukan di hutan-hutan Papua.",
       "kerajaan": "Animalia",
@@ -79,54 +79,6 @@
       "berat": "hingga 70 kg",
       "kecepatanTertinggi": "hingga 20 km/h",
       "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715929339/komodo_jkorjy.jpg"
-    },
-    {
-      "id": 6,
-      "namaHewan": "Badak Jawa",
-      "deskripsi": "Badak Jawa adalah salah satu spesies badak yang sangat langka. Mereka ditemukan di Jawa, Indonesia, dan memiliki ciri khas sebuah tanduk di atas hidungnya.",
-      "kerajaan": "Animalia",
-      "kelas": "Mammalia",
-      "statusKonservasi": "Kritis (Critically Endangered)",
-      "ordo": "Perissodactyla",
-      "spesies": "Rhinoceros sondaicus",
-      "populasi": "kurang dari 70 individu dewasa",
-      "rentanganHidup": "35-45 tahun",
-      "panjang": "hingga 3.2 meter",
-      "berat": "hingga 2,300 kg",
-      "kecepatanTertinggi": "hingga 56 km/h",
-      "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715929339/badak_jawa_zutn4b.jpg"
-    },
-    {
-      "id": 7,
-      "namaHewan": "Harimau Jawa",
-      "deskripsi": "Harimau Jawa adalah subspesies harimau yang hanya ditemukan di Pulau Jawa, Indonesia. Mereka merupakan salah satu kucing besar paling langka di dunia.",
-      "kerajaan": "Animalia",
-      "kelas": "Mammalia",
-      "statusKonservasi": "Kritis (Critically Endangered)",
-      "ordo": "Carnivora",
-      "spesies": "Panthera tigris sondaica",
-      "populasi": "kurang dari 400 individu dewasa",
-      "rentanganHidup": "10-15 tahun",
-      "panjang": "2-2.5 meter",
-      "berat": "100-140 kg",
-      "kecepatanTertinggi": "hingga 60 km/h",
-      "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715929339/harimau_jawa_qlh1uv.jpg"
-    },
-    {
-      "id": 8,
-      "namaHewan": "Orangutan Kalimantan",
-      "deskripsi": "Orangutan Kalimantan adalah primata besar yang hanya ditemukan di Pulau Borneo. Mereka dikenal karena kecerdasan mereka dan kemampuan menggunakan alat sederhana.",
-      "kerajaan": "Animalia",
-      "kelas": "Mammalia",
-      "statusKonservasi": "Kritis (Critically Endangered)",
-      "ordo": "Primates",
-      "spesies": "Pongo pygmaeus",
-      "populasi": "sekitar 104,700 individu",
-      "rentanganHidup": "35-45 tahun",
-      "panjang": "1.2-1.5 meter",
-      "berat": "30-100 kg",
-      "kecepatanTertinggi": "2-4 km/h (berayun di pepohonan)",
-      "gambar": "https://res.cloudinary.com/dwxoqt0ra/image/upload/v1715924521/orangutan_vrjesg.jpg"
     }
   ]
 }

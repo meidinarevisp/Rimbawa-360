@@ -20,7 +20,7 @@ gsap.registerPlugin(
 
 const Beranda = {
   async render() {
-    const urlParams = UrlParser.parseActiveUrlWithoutCombiner(); // Perbaikan: Gunakan metode yang sesuai
+    const urlParams = UrlParser.parseActiveUrlWithoutCombiner();
     const renderedTemplate = berandaTemplate(urlParams);
 
     return renderedTemplate;
@@ -68,7 +68,7 @@ const Beranda = {
     gsap.from(".edukasi-section h2", {
       scrollTrigger: {
         trigger: ".edukasi-section h2",
-        start: "top 90%", // Adjusted start position
+        start: "top 90%",
         once: true,
         toggleActions: "play none none none",
       },
@@ -81,7 +81,7 @@ const Beranda = {
     gsap.from(".edukasi-section .flex-container", {
       scrollTrigger: {
         trigger: ".edukasi-section .flex-container",
-        start: "top 90%", // Adjusted start position
+        start: "top 90%",
         once: true,
         toggleActions: "play none none none",
       },
@@ -95,7 +95,7 @@ const Beranda = {
     gsap.from(".edukasi-section .btn", {
       scrollTrigger: {
         trigger: ".edukasi-section .btn",
-        start: "top 90%", // Adjusted start position
+        start: "top 90%",
         once: true,
         toggleActions: "play none none none",
       },
@@ -171,16 +171,21 @@ const Beranda = {
           const destinasiCol = document.createElement("div");
           destinasiCol.classList.add("col-md-4");
 
+          const deskripsiPendek =
+            destinasi.deskripsi.length > 200
+              ? destinasi.deskripsi.substring(0, 200) + "..."
+              : destinasi.deskripsi;
+
           const destinasiContent = `
-            <div class="image-container">
-              <img src="${destinasi.gambar}" alt="${destinasi.nama_tempat}" class="img-fluid" />
-              <h1>${destinasi.lokasi}</h1>
-            </div>
-            <div class="text-content">
-              <h4>${destinasi.nama_tempat}</h4>
-              <p>${destinasi.deskripsi}</p>
-            </div>
-          `;
+        <div class="image-container">
+          <img src="${destinasi.gambar}" alt="${destinasi.nama_tempat}" class="img-fluid" />
+          <h1>${destinasi.lokasi}</h1>
+        </div>
+        <div class="text-content">
+          <h4>${destinasi.nama_tempat}</h4>
+          <p>${deskripsiPendek}</p>
+        </div>
+      `;
 
           destinasiCol.innerHTML = destinasiContent;
 
@@ -304,6 +309,12 @@ const Beranda = {
       const edukasiContainer =
         edukasiSection.querySelector("#edukasiContainer");
 
+      function truncateText(text, maxLength) {
+        return text.length > maxLength
+          ? text.substring(0, maxLength) + "..."
+          : text;
+      }
+
       function tampilkanEdukasi() {
         edukasiContainer.innerHTML = "";
 
@@ -314,17 +325,19 @@ const Beranda = {
           const edukasiItem = document.createElement("div");
           edukasiItem.classList.add("flex-item");
 
+          const truncatedDeskripsi = truncateText(edukasi.deskripsi, 450);
+
           const edukasiContent = `
-            <div class="inner-flex-container row${index + 1}">
-              <div class="text-container">
-                <h3 style="font-size: 1.8rem">${edukasi.nama_isu}</h3>
-                <div class="text">${edukasi.deskripsi} ${edukasi.dampak}</div>
-              </div>
-              <div class="image-edukasi"><img src="${edukasi.gambar}" alt="${
+        <div class="inner-flex-container row${index + 1}">
+          <div class="text-container">
+            <h3 style="font-size: 1.8rem">${edukasi.nama_isu}</h3>
+            <div class="text">${truncatedDeskripsi}</div>
+          </div>
+          <div class="image-edukasi"><img src="${edukasi.gambar}" alt="${
             edukasi.nama_isu
           }" /></div>
-            </div>
-          `;
+        </div>
+      `;
 
           edukasiItem.innerHTML = edukasiContent;
 

@@ -1,4 +1,3 @@
-// form-direktori.js
 import UrlParser from "../../routes/url-parser";
 import { formDirektoriTemplate } from "../templates/template-creator";
 import toastr from "toastr";
@@ -20,21 +19,18 @@ const formDirektori = {
 
       const formData = new FormData(form);
 
-      // Periksa apakah file gambar telah dipilih
       const gambarFile = formData.get("gambar");
       if (!gambarFile || gambarFile.size === 0) {
         toastr.error("Silakan pilih file gambar!");
         return;
       }
 
-      // Periksa jenis file gambar
       const allowedFileTypes = ["image/jpeg", "image/png", "image/gif"];
       if (!allowedFileTypes.includes(gambarFile.type)) {
         toastr.error("Hanya file gambar (jpg, jpeg, png, gif) yang diizinkan!");
         return;
       }
 
-      // Log data yang akan dikirim
       for (let [key, value] of formData.entries()) {
         console.log(key, value);
       }
@@ -52,13 +48,12 @@ const formDirektori = {
           throw new Error(result.error || "Network response was not ok");
         }
 
-        // SweetAlert2 untuk pemberitahuan berhasil
         Swal.fire({
           icon: "success",
           title: "Success!",
           text: result.message,
         }).then(() => {
-          window.location.href = "/#/dashboard-direktori"; // Redirect to the directory page
+          window.location.href = "/#/dashboard-direktori";
         });
       } catch (error) {
         console.error("Error:", error);

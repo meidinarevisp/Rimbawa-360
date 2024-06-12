@@ -56,6 +56,10 @@ const editProfile = {
           };
           localStorage.setItem("user", JSON.stringify(updatedUser));
           toastr.success(data.message).css("margin-top", "90px");
+
+          setTimeout(() => {
+            window.location.href = "/";
+          }, 1000);
         } else {
           throw new Error(data.error);
         }

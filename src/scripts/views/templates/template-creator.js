@@ -19,7 +19,6 @@ const berandaTemplate = () => `
         </center>
       </div>
     </section>
-
     <section class="tentang-kami-section" id="tentang-kami">
       <div class="container">
         <h2 style="text-align: center"><strong>Tentang Kami</strong></h2>
@@ -41,7 +40,6 @@ const berandaTemplate = () => `
         </div>
       </div>
     </section>
-
     <section class="spesies-section">
       <div class="container">
         <h2>
@@ -63,8 +61,7 @@ const berandaTemplate = () => `
             </div>
           </div>
           <div
-            class="col-md-6 d-flex align-items-center justify-content-center"
-          >
+            class="col-md-6 d-flex align-items-center justify-content-center">
             <div class="image-container full-height">
               <img src="" alt="Spesies 3" class="img-fluid" id="image3" />
               <div class="overlay" id="overlay3"></div>
@@ -86,7 +83,6 @@ const berandaTemplate = () => `
         </center>
       </div>
     </section>
-
     <section class="destinasi-section">
       <div class="container">
         <h2>
@@ -103,7 +99,6 @@ const berandaTemplate = () => `
         </center>
       </div>
     </section>
-
     <section class="cerita-kita-section">
       <div class="container">
         <center><h2 class="mb-5">Apa Cerita Kamu?</h2></center>
@@ -137,7 +132,6 @@ const berandaTemplate = () => `
     </section>
     <footer-rimbawa id="footer"></footer-rimbawa>
 `;
-
 const ceritaTemplate = () => `
 <style>
 body {
@@ -159,7 +153,6 @@ background-color: #f0efeb;
     </section>
     <footer-rimbawa id="footer"></footer-rimbawa>
 `;
-
 const dashboardCeritaTemplate = () => `
 <style>
 body {
@@ -171,7 +164,6 @@ background-color: #f0efeb;
       <h2>Cerita <span style="color: #56ab2e">Kamu</span></h2>
        <a href="/#/form-cerita" class="btn-tambah-container text-decoration-none"><button class="btn btn-tambah rounded-circle"><i class="fas fa-plus"></i></button><span class="tambah-text">Tambah Cerita</span></a>
       <div id="cerita-list" class="row">
-        <!-- Daftar cerita akan di-render di sini -->
       </div>
     </section>
     <footer-rimbawa id="footer"></footer-rimbawa>
@@ -190,7 +182,6 @@ const detailDirektoriTemplate = () => `
             <p id="place-location"></p>
             <h4><i class="fas fa-info-circle"></i> Deskripsi</h4>
             <p id="place-description"></p>
-
             <div class="row">
               <div class="col-md-6">
                 <h4><i class="fas fa-tasks"></i> Aktivitas</h4>
@@ -207,8 +198,6 @@ const detailDirektoriTemplate = () => `
         </div>
       </div>
     </section>
-
-    <!-- Peta Interaktif Section -->
     <section class="peta-interaktif-section">
       <div class="container">
         <h2 style="text-align: center" class="mb-lg-5">
@@ -289,9 +278,8 @@ const direktoriTemplate = () => `
         <div class="pagination"></div>
       </div>
     </section>
-
     <section class="peta-interaktif-section">
-      <div class="container">
+      <div class="container" id="peta">
         <h2 style="text-align: center" class="mb-lg-5">
           <strong>Peta Interaktif Ekowisata</strong>
         </h2>
@@ -320,6 +308,7 @@ const formCeritaTemplate = () => `
                 id="cerita"
                 name="cerita"
                 rows="7"
+                maxlength="345"
                 required
               ></textarea>
             </div>
@@ -348,7 +337,7 @@ const editCeritaTemplate = (ceritaId) => `
           <form method="POST" id="ceritaForm" data-id="${ceritaId}">
             <div class="form-group">
               <label for="cerita"></label>
-              <textarea class="form-control" id="cerita" name="cerita" rows="7" required></textarea>
+              <textarea class="form-control" id="cerita" name="cerita" rows="7" maxlength="345" required></textarea>
             </div>
             <button type="submit" class="btn btn-kirim-cerita">
               Perbarui Cerita
@@ -365,8 +354,8 @@ const editProfileTemplate = (user) => `
  <section class="container mt-5 edit-profile">
       <div class="row justify-content-end">
         <div class="col-md-6">
-          <img
-            src="${user.gambar}"
+         <img
+            src="/images/edit.png"
             alt="Profile Picture"
             class="img-fluid profile-picture"
           />
@@ -396,7 +385,7 @@ const editProfileTemplate = (user) => `
               <label for="profile-picture" class="col-md-4 col-form-label">Upload Foto Profil</label>
               <div class="col-md-8">
                 <input type="file" class="form-control" id="profile-picture" accept="image/*" />
-                <span id="file-name">${user.gambar}</span>
+                <span id="file-name" class="" style="font-size: 0.8em;">${user.gambar}</span>
               </div>
             </div>
             <div class="mb-3 row">
@@ -459,7 +448,6 @@ const edukasiTemplate = () => `
         <br /><span class="text-green">Pelestarian Hutan?</span>
       </p>
       <div class="edukasi-buttons">
-        <!-- Tombol isu lingkungan akan ditambahkan di sini secara dinamis -->
       </div>
     </div>
   </section>
@@ -511,8 +499,8 @@ const tentangTemplate = () => `
       </div>
     </section>
 
-    <section class="tim-kami-section" id="tim-kami">
-      <div class="container">
+    <section class="tim-kami-section">
+      <div class="container" id="tim-kami">
         <h2><strong>Tim Kami</strong></h2>
         <p>
           Di SIB Dicoding, kami tak hanya belajar, tapi juga berkarya. Rimbawa
@@ -616,10 +604,8 @@ const tentangTemplate = () => `
         </div>
       </div>
     </section>
-
-    <!-- FAQ Section -->
     <section class="section-faq">
-      <div class="wrapper">
+      <div class="wrapper" id="faq">
         <h2><strong>FAQ</strong></h2>
         <br />
         <div class="faq">
@@ -697,7 +683,6 @@ const tentangTemplate = () => `
     </section>
     <footer-rimbawa id="footer"></footer-rimbawa>
 `;
-
 const loginTemplate = () => `
 <section class="login-section">
   <div class="container">
@@ -722,11 +707,11 @@ const loginTemplate = () => `
                   </div>
                 </div>
                 <div class="lupa-password">
-                  <p><a href="/#/forgot-password">Lupa kata sandi?</a></p>
+                  <p><a href="/#/email-reset">Lupa kata sandi?</a></p>
                 </div>
               </div>
               <div class="text-center">
-                <button type="submit" class="btn btn-login">Masuk</button>
+                <button type="submit" class="btn btn-login" style="width: 350px;">Masuk</button>
               </div>
             </form>
             <p class="text-center mt-3">Belum memiliki akun?<a href="/#/register"> Daftar disini!</a></p>
@@ -737,7 +722,73 @@ const loginTemplate = () => `
   </div>
 </section>
 `;
-
+const emailResetTemplate = () => `
+<section class="email-reset-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="card p-3">
+          <div class="card-body">
+            <h2 class="text-center">Reset Kata Sandi</h2>
+            <p class="text-center mt-3">Masukkan Email untuk Reset Kata Sandi</p>
+            <form>
+              <div class="form-group mb-2">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Masukkan email" required>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-email-reset" style="width: 350px;">Reset Kata Sandi</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+const forgotPasswordTemplate = () => `
+<section class="reset-password-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="card p-3">
+          <div class="card-body">
+            <h2 class="text-center">Reset Kata Sandi</h2>
+            <form>
+              <div class="form-group mb-2">
+                <label for="password">Kata Sandi Baru</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="password" placeholder="Masukkan kata sandi" required>
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span id="showPasswordIcon" class="fa fa-eye" aria-label="Show password"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                <label for="password1">Konfirmasi Kata Sandi</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="password1" placeholder="Konfirmasi kata sandi" required>
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span id="showConfirmPasswordIcon" class="fa fa-eye" aria-label="Show confirm password"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-reset-password" style="width: 350px;">Reset Kata Sandi</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
 const registerTemplate = () => `
 <section class="register-section">
   <div class="container">
@@ -1468,6 +1519,8 @@ export {
   spesiesTemplate,
   tentangTemplate,
   loginTemplate,
+  emailResetTemplate,
+  forgotPasswordTemplate,
   registerTemplate,
   dashboardAdminTemplate,
   dashboardDirektoriTemplate,

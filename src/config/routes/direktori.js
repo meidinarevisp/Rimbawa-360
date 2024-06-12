@@ -2,23 +2,19 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../../config/db");
 const multer = require("multer");
-
 const path = require("path");
 const fs = require("fs");
-
-// Gunakan __dirname untuk mendapatkan direktori saat ini
 const currentDir = path.dirname(__filename);
 const projectRoot = path.join(currentDir, "../../");
 const uploadDir = path.join(projectRoot, "public", "uploads");
 
-// Buat direktori jika belum ada
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, uploadDir); // Gunakan uploadDir yang sudah kita definisikan
+    cb(null, uploadDir);
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + "-" + file.originalname);
@@ -28,7 +24,7 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage: storage,
   limits: {
-    fileSize: 5 * 1024 * 1024, // 5 MB
+    fileSize: 5 * 1024 * 1024,
   },
   fileFilter: function (req, file, cb) {
     if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {

@@ -38,7 +38,6 @@ const Login = {
       }
     });
 
-    // Menangani form submit untuk login
     const form = document.querySelector("form");
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -60,12 +59,10 @@ const Login = {
         if (response.ok) {
           toastr.success(data.message);
 
-          // Simpan token dan data pengguna di localStorage
           localStorage.setItem("token", data.token);
           localStorage.setItem("user", JSON.stringify(data.user));
           localStorage.setItem("isLoggedIn", "true");
 
-          // Mengarahkan pengguna berdasarkan peran
           if (data.user.role_id === 1) {
             window.location.href = "/#/dashboard-admin";
           } else if (data.user.role_id === 2) {

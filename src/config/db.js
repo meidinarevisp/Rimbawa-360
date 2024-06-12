@@ -58,14 +58,16 @@ const createDatabaseAndTable = `
         password VARCHAR(255) NOT NULL,
         role_id INT(11) NOT NULL,
         gambar VARCHAR(255), 
-        date_created DATE NOT NULL
+        date_created DATE NOT NULL,
+        reset_password_token VARCHAR(255) NULL,
+        reset_password_expires VARCHAR(255) NULL
     );
 
         CREATE TABLE IF NOT EXISTS cerita (
         id INT PRIMARY KEY AUTO_INCREMENT,
         id_user INT NOT NULL,
         username VARCHAR(255) NOT NULL,
-        cerita VARCHAR(255) NOT NULL,
+        cerita TEXT NOT NULL,
         gambar VARCHAR(255), 
         date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (id_user) REFERENCES auth(id_user)
@@ -76,7 +78,7 @@ const createDatabaseAndTable = `
         id_user INT NOT NULL,
         username VARCHAR(255) NOT NULL,
         judul VARCHAR(255) NOT NULL,
-        deskripsi VARCHAR(255) NOT NULL,
+        deskripsi TEXT NOT NULL,
         gambar VARCHAR(255) NOT NULL, 
         date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (id_user) REFERENCES auth(id_user)

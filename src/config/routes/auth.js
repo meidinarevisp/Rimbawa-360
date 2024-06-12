@@ -7,14 +7,16 @@ const router = express.Router();
 const path = require("path");
 const fs = require("fs");
 const fileUpload = require("express-fileupload");
+const nodemailer = require("nodemailer");
+const crypto = require("crypto");
+require("dotenv").config();
 
 const gambar = path.join(__dirname, "../../public/images/user.png");
 
-// Role constants
 const USER_ROLE = 2;
 const ADMIN_ROLE = 1;
 
-const SECRET_KEY = "capstone"; // Replace with your secret key
+const SECRET_KEY = "capstone";
 
 router.use(fileUpload());
 
@@ -35,7 +37,6 @@ router.post(
     }
     const { name, username, email, password } = req.body;
     try {
-      // Check if email or username already exists
       const [userExists] = await pool.query(
         "SELECT id_user FROM auth WHERE email = ? OR username = ?",
         [email, username]
@@ -45,11 +46,9 @@ router.post(
           .status(400)
           .json({ error: "Email atau Nama pengguna sudah terdaftar." });
       }
-      // Hash the password
       const hashedPassword = await bcrypt.hash(password, 10);
 
-      // Handle image upload or set default image
-      let gambar = "/images/user.png"; // Default image URL
+      let gambar = "/images/user.png";
       if (req.files && req.files.image) {
         const image = req.files.image;
         const fileName = `${Date.now()}_${image.name}`;
@@ -62,7 +61,6 @@ router.post(
         gambar = `/images/${fileName}`;
       }
 
-      // Insert new user into the database
       const [result] = await pool.query(
         "INSERT INTO auth (nama_pengguna, email, username, password, role_id, date_created, gambar) VALUES (?, ?, ?, ?, ?, ?, ?)",
         [name, email, username, hashedPassword, USER_ROLE, new Date(), gambar]
@@ -75,7 +73,6 @@ router.post(
   }
 );
 
-// Login endpoint
 router.post(
   "/login",
   [
@@ -112,7 +109,7 @@ router.post(
         { id: user.id_user, username: user.username, gambar: user.gambar },
         SECRET_KEY,
         {
-          expiresIn: 86400, // 24 hours
+          expiresIn: 86400,
         }
       );
 
@@ -145,7 +142,6 @@ router.post(
   }
 );
 
-// Middleware to verify token
 const verifyToken = (req, res, next) => {
   const token = req.headers["authorization"];
   if (!token) {
@@ -157,14 +153,13 @@ const verifyToken = (req, res, next) => {
       return res.status(500).json({ error: "Failed to authenticate token." });
     }
     req.userId = decoded.id;
-    req.username = decoded.username; // tambahkan username ke req
+    req.username = decoded.username;
     next();
   });
 };
 
 module.exports = verifyToken;
 
-// Update user profile endpoint
 router.put(
   "/update-profile/:username",
   verifyToken,
@@ -238,6 +233,16 @@ router.put(
 
         await image.mv(uploadPath);
         gambar = `/profiles/${fileName}`;
+
+        await pool.query("UPDATE cerita SET gambar = ? WHERE id_user = ?", [
+          gambar,
+          user.id_user,
+        ]);
+
+        await pool.query("UPDATE forum SET gambar = ? WHERE id_user = ?", [
+          gambar,
+          user.id_user,
+        ]);
       }
 
       const [result] = await pool.query(
@@ -325,6 +330,118 @@ router.put(
       res.status(200).json({ message: "Password changed successfully!" });
     } catch (error) {
       console.error("Error changing password:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  }
+);
+
+const transporter = nodemailer.createTransport({
+  service: "Gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.EMAIL_USERNAME,
+    pass: process.env.EMAIL_PASSWORD,
+  },
+});
+
+router.post(
+  "/forgot-password",
+  [body("email").isEmail().withMessage("Email tidak valid.")],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { email } = req.body;
+
+    try {
+      const [users] = await pool.query("SELECT * FROM auth WHERE email = ?", [
+        email,
+      ]);
+
+      if (users.length === 0) {
+        return res.status(404).json({ error: "Pengguna tidak ditemukan." });
+      }
+
+      const user = users[0];
+      const token = crypto.randomBytes(20).toString("hex");
+
+      const expirationTime = Date.now() + 3600000;
+      await pool.query(
+        "UPDATE auth SET reset_password_token = ?, reset_password_expires = ? WHERE email = ?",
+        [token, expirationTime, email]
+      );
+
+      const resetUrl = `${process.env.BASE_URL}/#/reset-password/${token}`;
+
+      const mailOptions = {
+        to: email,
+        from: process.env.EMAIL_USERNAME,
+        subject: "Reset Kata Sandi",
+        html: `
+        <p style="color: #000;">Anda menerima email ini karena Anda (atau orang lain) telah meminta untuk mereset kata sandi akun Anda.</p>
+        <p style="color: #000;">Silakan klik tombol di bawah ini atau salin dan tempel URL ke browser Anda untuk menyelesaikan prosesnya dalam waktu satu jam setelah menerimanya:</p>
+        <a href="${resetUrl}" style="display: inline-block; padding: 8px 20px; background-color: #007bff; color: #ffffff; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;">Reset Kata Sandi</a>
+        <p style="color: #ff0000;">Jika Anda tidak meminta ini, silakan abaikan email ini dan kata sandi Anda akan tetap tidak berubah.</p>
+      `,
+      };
+
+      transporter.sendMail(mailOptions, (err) => {
+        if (err) {
+          console.error("Error sending the email:", err);
+          return res.status(500).json({ error: "Error sending the email." });
+        }
+        res.status(200).json({
+          message: "Email berhasil dikirim. Silakan periksa email Kamu!",
+        });
+      });
+    } catch (error) {
+      console.error("Error during forgot password:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  }
+);
+
+router.post(
+  "/reset-password/:token",
+  [
+    body("password")
+      .isLength({ min: 6 })
+      .withMessage("Kata sandi minimal 6 karakter."),
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { token } = req.params;
+    const { password } = req.body;
+
+    try {
+      const [users] = await pool.query(
+        "SELECT * FROM auth WHERE reset_password_token = ? AND reset_password_expires > ?",
+        [token, Date.now()]
+      );
+
+      if (users.length === 0) {
+        return res.status(400).json({ error: "Token invalid or has expired." });
+      }
+
+      const user = users[0];
+      const hashedPassword = await bcrypt.hash(password, 10);
+
+      await pool.query(
+        "UPDATE auth SET password = ?, reset_password_token = NULL, reset_password_expires = NULL WHERE id_user = ?",
+        [hashedPassword, user.id_user]
+      );
+
+      res.status(200).json({ message: "Kata sandi berhasil diubah." });
+    } catch (error) {
+      console.error("Error resetting password:", error);
       res.status(500).json({ error: "Internal Server Error" });
     }
   }

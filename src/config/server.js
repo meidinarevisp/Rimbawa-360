@@ -8,7 +8,6 @@ const ceritaRoutes = require("../config/routes/cerita");
 const forumRoutes = require("../config/routes/forum");
 const cors = require("cors");
 const path = require("path");
-
 const app = express();
 
 app.use(
@@ -18,14 +17,12 @@ app.use(
     credentials: true,
   })
 );
-
 app.use(
   "/uploads",
   express.static(path.join(__dirname, "src", "public", "uploads"))
 );
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use("/api/direktori", direktoriRoutes);
 app.use("/api/edukasi", edukasiRoutes);
 app.use("/api/spesies", spesiesRoutes);

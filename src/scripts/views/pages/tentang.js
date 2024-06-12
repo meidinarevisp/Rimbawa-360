@@ -15,7 +15,6 @@ const Tentang = {
   },
 
   async afterRender() {
-    // Animasi untuk elemen-elemen saat halaman dimuat
     gsap.from(".tentang-kami-page h2", {
       duration: 1,
       opacity: 0,
@@ -98,7 +97,6 @@ const Tentang = {
       stagger: 0.3,
     });
 
-    // Animasi untuk accordion pada FAQ section
     document.querySelectorAll(".accordion").forEach((button) => {
       button.addEventListener("click", () => {
         const panel = button.nextElementSibling;

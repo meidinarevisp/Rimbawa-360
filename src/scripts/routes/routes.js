@@ -12,6 +12,8 @@ import Edukasi from "../views/pages/edukasi";
 import Spesies from "../views/pages/spesies";
 import Tentang from "../views/pages/tentang";
 import Login from "../views/pages/login";
+import emailReset from "../views/pages/email-reset";
+import forgotPassword from "../views/pages/reset-password";
 import Register from "../views/pages/register";
 import DashboardAdmin from "../views/pages/dashboard-admin";
 import DashboardDirektori from "../views/pages/dashboard-direktori";
@@ -26,32 +28,91 @@ import editFormDirektori from "../views/pages/edit-form-direktori";
 import Logout from "../views/pages/logout";
 
 const routes = {
-  "/": Beranda,
-  "/login": Login,
-  "/register": Register,
-  "/cerita": Cerita,
-  "/dashboard-cerita": dashboardCerita,
-  "/detail-direktori/:id": detailDirektori,
-  "/detail-spesies/:id": detailSpesies,
-  "/direktori": Direktori,
-  "/form-cerita": formCerita,
-  "/edit-cerita/:id": editCerita,
-  "/edit-profile": editProfile,
-  "/ganti-password": gantiPassword,
-  "/edukasi": Edukasi,
-  "/spesies": Spesies,
-  "/tentang": Tentang,
-  "/dashboard-admin": DashboardAdmin,
-  "/dashboard-direktori": DashboardDirektori,
-  "/dashboard-edukasi": DashboardEdukasi,
-  "/dashboard-spesies": DashboardSpesies,
-  "/form-direktori": formDirektori,
-  "/form-edukasi": formEdukasi,
-  "/form-spesies": formSpesies,
-  "/edit-form-edukasi/:id": editFormEdukasi,
-  "/edit-form-spesies/:id": editFormSpesies,
-  "/edit-form-direktori/:id": editFormDirektori,
-  "/logout": Logout,
+  "/": { page: Beranda, title: "Rimbawa 360 - Beranda" },
+  "/login": { page: Login, title: "Rimbawa 360 - Login" },
+  "/reset-password/:id": {
+    page: forgotPassword,
+    title: "Rimbawa 360 - Reset Kata Sandi",
+  },
+  "/email-reset": {
+    page: emailReset,
+    title: "Rimbawa 360 - Reset Kata Sandi",
+  },
+  "/register": { page: Register, title: "Rimbawa 360 - Register" },
+  "/cerita": { page: Cerita, title: "Cerita" },
+  "/dashboard-cerita": {
+    page: dashboardCerita,
+    title: "Rimbawa 360 - Dashboard Cerita",
+  },
+  "/detail-direktori/:id": {
+    page: detailDirektori,
+    title: "Rimbawa 360 - Detail Direktori",
+  },
+  "/detail-spesies/:id": {
+    page: detailSpesies,
+    title: "Rimbawa 360 - Detail Spesies",
+  },
+  "/direktori": { page: Direktori, title: "Rimbawa 360 - Direktori" },
+  "/direktori#peta": {
+    page: Tentang,
+    title: "Rimbawa 360 - Direktori",
+    hash: "peta",
+  },
+  "/form-cerita": { page: formCerita, title: "Rimbawa 360 - Form Cerita" },
+  "/edit-cerita/:id": { page: editCerita, title: "Rimbawa 360 - Edit Cerita" },
+  "/edit-profile": { page: editProfile, title: "Rimbawa 360 - Edit Profile" },
+  "/ganti-password": {
+    page: gantiPassword,
+    title: "Rimbawa 360 - Ganti Password",
+  },
+  "/edukasi": { page: Edukasi, title: "Rimbawa 360 - Edukasi" },
+  "/spesies": { page: Spesies, title: "Rimbawa 360 - Spesies" },
+  "/tentang": { page: Tentang, title: "Rimbawa 360 - Tentang" },
+  "/tentang#tim-kami": {
+    page: Tentang,
+    title: "Rimbawa 360 - Tentang",
+    hash: "tim-kami",
+  },
+  "/tentang#faq": {
+    page: Tentang,
+    title: "Rimbawa 360 - Tentang",
+    hash: "faq",
+  },
+  "/dashboard-admin": {
+    page: DashboardAdmin,
+    title: "Rimbawa 360 - Dashboard Admin",
+  },
+  "/dashboard-direktori": {
+    page: DashboardDirektori,
+    title: "Rimbawa 360 - Direktori",
+  },
+  "/dashboard-edukasi": {
+    page: DashboardEdukasi,
+    title: "Rimbawa 360 - Edukasi",
+  },
+  "/dashboard-spesies": {
+    page: DashboardSpesies,
+    title: "Rimbawa 360 - Spesies",
+  },
+  "/form-direktori": {
+    page: formDirektori,
+    title: "Rimbawa 360 - Form Direktori",
+  },
+  "/form-edukasi": { page: formEdukasi, title: "Rimbawa 360 - Form Edukasi" },
+  "/form-spesies": { page: formSpesies, title: "Rimbawa 360 - Form Spesies" },
+  "/edit-form-edukasi/:id": {
+    page: editFormEdukasi,
+    title: "Rimbawa 360 - Edit Form Edukasi",
+  },
+  "/edit-form-spesies/:id": {
+    page: editFormSpesies,
+    title: "Rimbawa 360 - Edit Form Spesies",
+  },
+  "/edit-form-direktori/:id": {
+    page: editFormDirektori,
+    title: "Rimbawa 360 - Edit Form Direktori",
+  },
+  "/logout": { page: Logout, title: "Rimbawa 360 - Logout" },
 };
 
 export default routes;

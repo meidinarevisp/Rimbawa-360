@@ -13,7 +13,7 @@ const DashboardSpesies = {
     const spesiesContainer = document.querySelector("#dashboard-spesies");
 
     try {
-      const response = await fetch("http://localhost:3000/api/spesies"); // Adjust this URL to match your API endpoint
+      const response = await fetch("http://localhost:3000/api/spesies");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -42,7 +42,6 @@ const DashboardSpesies = {
 
         spesiesContainer.appendChild(itemElement);
 
-        // Add event listener for delete button
         const deleteButton = itemElement.querySelector(".btn-hapus");
         deleteButton.addEventListener("click", async () => {
           const id = deleteButton.getAttribute("data-id");

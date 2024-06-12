@@ -6,10 +6,7 @@ import "toastr/build/toastr.min.css";
 const Cerita = {
   async render() {
     const urlParams = UrlParser.parseActiveUrlWithoutCombiner();
-
-    // Memanggil fungsi ceritaTemplate dengan data tertentu
     const renderedTemplate = ceritaTemplate(urlParams);
-
     return renderedTemplate;
   },
 
@@ -17,12 +14,12 @@ const Cerita = {
     const ceritaContainer = document.getElementById("ceritaContainer");
     const paginationContainer = document.getElementById("pagination");
 
-    const itemsPerPage = 3; // Jumlah cerita per halaman
+    const itemsPerPage = 3;
     let currentPage = 1;
 
     async function fetchCeritaData() {
       try {
-        const response = await fetch("http://localhost:3000/api/cerita"); // Sesuaikan endpoint jika perlu
+        const response = await fetch("http://localhost:3000/api/cerita");
         const data = await response.json();
         return data;
       } catch (error) {
@@ -32,7 +29,7 @@ const Cerita = {
     }
 
     async function displayCerita(page, ceritaData) {
-      ceritaContainer.innerHTML = ""; // Bersihkan kontainer cerita sebelum menambahkan cerita baru
+      ceritaContainer.innerHTML = "";
 
       const start = (page - 1) * itemsPerPage;
       const end = start + itemsPerPage;
@@ -46,7 +43,7 @@ const Cerita = {
           <blockquote class="blockquote">
             <center>
               <img
-                class="mb-3"
+                class="mb-3 rounded-circle"
                 src="${cerita.gambar}"
                 alt="${cerita.username}"
                 class="profil-image"
@@ -71,7 +68,7 @@ const Cerita = {
     }
 
     async function setupPagination(ceritaData) {
-      paginationContainer.innerHTML = ""; // Bersihkan kontainer pagination sebelum membuat pagination baru
+      paginationContainer.innerHTML = "";
 
       const totalPages = Math.ceil(ceritaData.length / itemsPerPage);
 
@@ -88,7 +85,6 @@ const Cerita = {
           currentPage = i;
           await displayCerita(currentPage, ceritaData);
 
-          // Hapus kelas 'active' dari semua pagination item, dan tambahkan 'active' hanya pada pagination item yang sedang aktif
           document.querySelectorAll(".pagination-item").forEach((item) => {
             item.classList.remove("active");
           });
@@ -111,7 +107,7 @@ const Cerita = {
     const toastMessage = localStorage.getItem("toastMessage");
     if (toastMessage) {
       toastr.success(toastMessage).css("margin-top", "90px");
-      localStorage.removeItem("toastMessage"); // Hapus pesan toast setelah ditampilkan
+      localStorage.removeItem("toastMessage");
     }
   },
 };

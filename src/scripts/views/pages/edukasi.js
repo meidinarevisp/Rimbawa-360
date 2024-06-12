@@ -10,11 +10,6 @@ const Edukasi = {
   },
 
   async afterRender() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-
     async function tampilkanKontenEdukasi(id) {
       try {
         const response = await fetch(`http://localhost:3000/api/edukasi/${id}`);
@@ -70,7 +65,6 @@ const Edukasi = {
           )
           .join("");
 
-        // Tambahkan event listener untuk tombol edukasi
         const tombolEdukasi = document.querySelectorAll(".edukasi-btn");
         tombolEdukasi.forEach((tombol) => {
           tombol.addEventListener("click", () => {
@@ -87,7 +81,6 @@ const Edukasi = {
           });
         });
 
-        // Tampilkan konten edukasi pertama
         if (isuLingkungan.length > 0) {
           tampilkanKontenEdukasi(isuLingkungan[0].id);
         }
@@ -105,8 +98,9 @@ const Edukasi = {
         }
       });
     }
-
     buatTombolIsuLingkungan();
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
   },
 };
 

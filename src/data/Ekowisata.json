@@ -206,7 +206,7 @@
       }
     },
     {
-      "id": 11,
+      "id": 10,
       "nama_tempat": "Taman Nasional Baluran",
       "lokasi": "Jawa Timur",
       "deskripsi": "Taman Nasional Baluran adalah kawasan savana yang indah di ujung timur Jawa yang merupakan habitat bagi berbagai spesies satwa liar.",
@@ -223,106 +223,6 @@
       "titik": {
         "latitude": -7.8936,
         "longitude": 114.3783
-      }
-    },
-    {
-      "id": 12,
-      "nama_tempat": "Taman Nasional Bukit Tigapuluh",
-      "lokasi": "Jambi dan Riau",
-      "deskripsi": "Taman Nasional Bukit Tigapuluh adalah kawasan hutan yang penting bagi konservasi gajah Sumatera dan harimau Sumatera.",
-      "aktivitas": [
-        "Safari",
-        "Trekking",
-        "Pengamatan Satwa",
-        "Konservasi Gajah"
-      ],
-      "akses": "Dapat diakses dari Jambi atau Pekanbaru dengan perjalanan darat.",
-      "fasilitas": [
-        "Pusat Informasi",
-        "Penginapan",
-        "Pemandu Wisata",
-        "Area Camping"
-      ],
-      "link_google_maps": "https://maps.google.com/?q=Taman+Nasional+Bukit+Tigapuluh",
-      "gambar": "https://th.bing.com/th/id/R.a91f344cff614c66bf4c928d11202e8b?rik=9qCBfzj8QDF1AQ&riu=http%3a%2f%2finfocongo.org%2fwp-content%2fuploads%2f2017%2f02%2fistock-497148125.png&ehk=xtieoCrxSV8KTlAMDD4foj%2bdztXc%2bbmXLcADNf4ikJk%3d&risl=&pid=ImgRaw&r=0",
-      "titik": {
-        "latitude": -0.8141,
-        "longitude": 102.583
-      }
-    },
-    {
-      "id": 13,
-      "nama_tempat": "Taman Nasional Danau Sentarum",
-      "lokasi": "Kalimantan Barat",
-      "deskripsi": "Taman Nasional Danau Sentarum adalah kawasan hutan rawa air tawar yang penting bagi keanekaragaman hayati Kalimantan Barat.",
-      "aktivitas": [
-        "Wisata Air",
-        "Pengamatan Satwa",
-        "Fotografi Alam",
-        "Ekspedisi Penelitian"
-      ],
-      "akses": "Dapat diakses dari Pontianak dengan perjalanan darat dan perahu.",
-      "fasilitas": [
-        "Pusat Informasi",
-        "Penginapan",
-        "Pemandu Wisata",
-        "Area Camping"
-      ],
-      "link_google_maps": "https://maps.google.com/?q=Taman+Nasional+Danau+Sentarum",
-      "gambar": "https://i0.wp.com/rimbakita.com/wp-content/uploads/2019/07/danau-sentarum.jpg",
-      "titik": {
-        "latitude": 0.2581,
-        "longitude": 111.9631
-      }
-    },
-    {
-      "id": 14,
-      "nama_tempat": "Taman Nasional Gunung Rinjani",
-      "lokasi": "Nusa Tenggara Barat",
-      "deskripsi": "Taman Nasional Gunung Rinjani adalah rumah bagi gunung berapi aktif dan Danau Segara Anak yang indah.",
-      "aktivitas": [
-        "Trekking",
-        "Pengamatan Alam",
-        "Fotografi Alam",
-        "Ekspedisi Gunung"
-      ],
-      "akses": "Dapat diakses dari Mataram dengan perjalanan darat.",
-      "fasilitas": [
-        "Pusat Informasi",
-        "Penginapan",
-        "Pemandu Wisata",
-        "Area Camping"
-      ],
-      "link_google_maps": "https://maps.google.com/?q=Taman+Nasional+Gunung+Rinjani",
-      "gambar": "https://www.trekkingrinjani.com/rinjanitrekking/images/gunung-rinjani2.jpg",
-      "titik": {
-        "latitude": -8.4188,
-        "longitude": 116.426
-      }
-    },
-    {
-      "id": 15,
-      "nama_tempat": "Taman Nasional Manusela",
-      "lokasi": "Maluku",
-      "deskripsi": "Taman Nasional Manusela adalah kawasan hutan pegunungan yang kaya akan keanekaragaman hayati, termasuk burung-burung langka.",
-      "aktivitas": [
-        "Trekking",
-        "Birdwatching",
-        "Pengamatan Satwa",
-        "Fotografi Alam"
-      ],
-      "akses": "Dapat diakses dari Ambon dengan perjalanan darat dan perahu.",
-      "fasilitas": [
-        "Pusat Informasi",
-        "Penginapan",
-        "Pemandu Wisata",
-        "Area Camping"
-      ],
-      "link_google_maps": "https://maps.google.com/?q=Taman+Nasional+Manusela",
-      "gambar": "https://www.celebes.co/maluku/wp-content/uploads/2022/04/Fasilitas-di-Kawasan-Wisata.jpg",
-      "titik": {
-        "latitude": -3.3245,
-        "longitude": 128.4445
       }
     }
   ]

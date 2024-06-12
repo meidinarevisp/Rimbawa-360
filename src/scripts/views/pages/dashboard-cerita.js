@@ -19,13 +19,12 @@ const dashboardCerita = {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`, // Asumsikan token disimpan di localStorage
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
 
       const ceritaData = await response.json();
 
-      // Loop through the imported JSON data and create HTML elements
       ceritaData.forEach((cerita) => {
         const ceritaCard = document.createElement("div");
         ceritaCard.className = "col-md-4 mb-4";
@@ -53,7 +52,6 @@ const dashboardCerita = {
         ceritaList.appendChild(ceritaCard);
       });
 
-      // Add event listeners for edit and delete buttons
       ceritaList.querySelectorAll(".edit-button").forEach((button) => {
         button.addEventListener("click", (event) => {
           const id = event.currentTarget.dataset.id;
@@ -62,7 +60,6 @@ const dashboardCerita = {
       });
 
       const deleteCerita = async (id) => {
-        // Tampilkan peringatan menggunakan SweetAlert sebelum menghapus
         Swal.fire({
           title: "Anda yakin?",
           text: "Anda tidak akan dapat mengembalikan ini!",
@@ -81,7 +78,7 @@ const dashboardCerita = {
                   method: "DELETE",
                   headers: {
                     "Content-Type": "application/json",
-                    Authorization: `Bearer ${localStorage.getItem("token")}`, // Asumsikan token disimpan di localStorage
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
                   },
                 }
               );
@@ -92,9 +89,9 @@ const dashboardCerita = {
                   "toastMessage",
                   "Cerita berhasil dihapus!"
                 );
-                window.location.reload(); // Me-refresh halaman setelah menghapus cerita
+                window.location.reload();
               } else {
-                throw new Error(result.message); // Melemparkan error jika terjadi kesalahan
+                throw new Error(result.message);
               }
             } catch (error) {
               console.error("Failed to delete story:", error);
@@ -106,7 +103,7 @@ const dashboardCerita = {
       const toastMessage = localStorage.getItem("toastMessage");
       if (toastMessage) {
         toastr.success(toastMessage).css("margin-top", "90px");
-        localStorage.removeItem("toastMessage"); // Hapus pesan toast setelah ditampilkan
+        localStorage.removeItem("toastMessage");
       }
 
       ceritaList.querySelectorAll(".delete-button").forEach((button) => {

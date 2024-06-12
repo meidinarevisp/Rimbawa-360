@@ -45,6 +45,14 @@ function isRegisterPage() {
   return window.location.hash.toLowerCase().includes("register");
 }
 
+function isEmailResetPage() {
+  return window.location.hash.toLowerCase().includes("email-reset");
+}
+
+function isResetPasswordPage() {
+  return window.location.hash.toLowerCase().includes("reset-password");
+}
+
 function isLoggedIn() {
   return localStorage.getItem("isLoggedIn") === "true";
 }
@@ -129,6 +137,10 @@ function removeSpecialPageImages() {
 
   if (!isLoginPage() && loginBackground) loginBackground.remove();
   if (!isLoginPage() && loginLogo) loginLogo.remove();
+  if (!isEmailResetPage() && loginBackground) loginBackground.remove();
+  if (!isEmailResetPage() && loginLogo) loginLogo.remove();
+  if (!isResetPasswordPage() && loginBackground) loginBackground.remove();
+  if (!isResetPasswordPage() && loginLogo) loginLogo.remove();
   if (!isRegisterPage() && registerBackground) registerBackground.remove();
   if (!isRegisterPage() && registerLogo) registerLogo.remove();
 }

@@ -46,6 +46,10 @@ const gantiPassword = {
 
         if (response.ok) {
           toastr.success(data.message).css("margin-top", "90px");
+
+          setTimeout(() => {
+            window.location.href = "/";
+          }, 1000);
         } else {
           throw new Error(data.error);
         }

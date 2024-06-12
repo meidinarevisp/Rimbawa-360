@@ -42,7 +42,6 @@ const detailDirektori = {
         placeImage.style.height = "400px";
         placeImage.style.borderRadius = "8px";
 
-        // Activities
         placeActivities.innerHTML = "";
         if (selectedDestinasi.aktivitas) {
           const activities = selectedDestinasi.aktivitas.split(",");
@@ -56,7 +55,6 @@ const detailDirektori = {
           placeActivities.innerHTML = "<li>N/A</li>";
         }
 
-        // Facilities
         placeFacilities.innerHTML = "";
         if (selectedDestinasi.fasilitas) {
           const facilities = selectedDestinasi.fasilitas.split(",");

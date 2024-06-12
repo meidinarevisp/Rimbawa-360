@@ -1,23 +1,21 @@
 const express = require("express");
 const router = express.Router();
-const pool = require("../db"); // Ubah path jika berbeda
-const verifyToken = require("./auth"); // Impor fungsi verifyToken
-const jwt = require("jsonwebtoken"); // Import jsonwebtoken
+const pool = require("../db");
+const verifyToken = require("./auth");
+const jwt = require("jsonwebtoken");
 
-const SECRET_KEY = "capstone"; // Ganti dengan kunci rahasia Anda
+const SECRET_KEY = "capstone";
 
 router.post("/", verifyToken, async (req, res) => {
   try {
     const { cerita } = req.body;
-    const token = req.headers.authorization.split(" ")[1]; // Mendapatkan token dari header
+    const token = req.headers.authorization.split(" ")[1];
 
-    // Memverifikasi dan mendekode token
     const decoded = jwt.verify(token, SECRET_KEY);
     const userId = decoded.id;
     const username = decoded.username;
-    const gambar = decoded.gambar; // Mendapatkan gambar dari token
+    const gambar = decoded.gambar;
 
-    // Simpan cerita ke database
     const [result] = await pool.query(
       "INSERT INTO cerita (id_user, username, cerita, gambar, date_created) VALUES (?, ?, ?, ?, NOW())",
       [userId, username, cerita, gambar]
@@ -76,20 +74,17 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// Memperbarui cerita
 router.put("/:id", verifyToken, async (req, res) => {
   try {
     const ceritaId = req.params.id;
     const { cerita } = req.body;
-    const token = req.headers.authorization.split(" ")[1]; // Mendapatkan token dari header
+    const token = req.headers.authorization.split(" ")[1];
 
-    // Memverifikasi dan mendekode token
     const decoded = jwt.verify(token, SECRET_KEY);
     const userId = decoded.id;
     const username = decoded.username;
-    const gambar = decoded.gambar; // Mendapatkan gambar dari token
+    const gambar = decoded.gambar;
 
-    // Memperbarui cerita di database
     const [result] = await pool.query(
       "UPDATE cerita SET cerita = ?, gambar = ? WHERE id = ? AND id_user = ?",
       [cerita, gambar, ceritaId, userId]
@@ -109,13 +104,11 @@ router.put("/:id", verifyToken, async (req, res) => {
 router.delete("/:id", verifyToken, async (req, res) => {
   try {
     const ceritaId = req.params.id;
-    const token = req.headers.authorization.split(" ")[1]; // Mendapatkan token dari header
+    const token = req.headers.authorization.split(" ")[1];
 
-    // Memverifikasi dan mendekode token
     const decoded = jwt.verify(token, SECRET_KEY);
     const userId = decoded.id;
 
-    // Menghapus cerita dari database
     const [result] = await pool.query(
       "DELETE FROM cerita WHERE id = ? AND id_user = ?",
       [ceritaId, userId]

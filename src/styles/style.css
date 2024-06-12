@@ -106,6 +106,86 @@ body {
   color: #4caf50;
 }
 
+.email-reset-section {
+  margin-top: 50px;
+  padding: 10px 0;
+}
+
+.email-reset-section .card {
+  background-color: rgba(231, 228, 228, 0.722);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 10px;
+  margin-top: 25px;
+}
+
+.email-reset-section h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #56ab2e;
+}
+
+.email-reset-section label {
+  color: #4d4d4d !important;
+}
+
+.email-reset-section ::placeholder {
+  color: #9f9d9d;
+}
+
+.btn-email-reset {
+  margin-top: 20px;
+  background-color: #004225;
+  color: #eeeeee;
+  margin-bottom: 20px;
+  width: 305px;
+}
+
+.btn-email-reset:hover {
+  background-color: #527853 !important;
+  color: #eeeeee !important;
+}
+
+.reset-password-section {
+  margin-top: 50px;
+  padding: 10px 0;
+}
+
+.reset-password-section .card {
+  background-color: rgba(231, 228, 228, 0.722);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 10px;
+  margin-top: 25px;
+}
+
+.reset-password-section h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #56ab2e;
+}
+
+.reset-password-section label {
+  color: #4d4d4d !important;
+}
+
+.reset-password-section ::placeholder {
+  color: #9f9d9d;
+}
+
+.btn-reset-password {
+  margin-top: 20px;
+  background-color: #004225;
+  color: #eeeeee;
+  margin-bottom: 20px;
+  width: 305px;
+}
+
+.btn-reset-password:hover {
+  background-color: #527853 !important;
+  color: #eeeeee !important;
+}
+
 .register-section {
   margin-top: 20px;
   padding: 10px 0;
@@ -222,7 +302,6 @@ body {
   animation: fadeInUp 0.5s ease forwards;
 }
 
-/* Forum Diskusi */
 .btn-forum {
   position: fixed;
   bottom: 20px;
@@ -254,10 +333,10 @@ body {
   font-size: 1.5rem;
   position: sticky;
   margin-bottom: 15px;
-  background-color: #004225; /* Warna hijau tua */
-  color: #e8eedc; /* Warna teks putih */
-  padding: 10px; /* Ruang tambahan di sekitar teks */
-  border-radius: 5px; /* Sudut melengkung */
+  background-color: #004225;
+  color: #e8eedc;
+  padding: 10px;
+  border-radius: 5px;
   text-align: center;
 }
 
@@ -272,11 +351,11 @@ body {
 }
 
 .forum-content::-webkit-scrollbar {
-  width: 0; /* Untuk browser WebKit */
+  width: 0;
 }
 
 .forum-content {
-  scrollbar-width: none; /* Untuk browser Firefox */
+  scrollbar-width: none;
 }
 
 .form-label {
@@ -289,7 +368,7 @@ body {
   border: 1px solid #ccc;
   background-color: #ffffff;
   border-radius: 5px;
-  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.1); /* Atur box-shadow */
+  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .burger-menu {
@@ -448,7 +527,6 @@ body {
   background-color: #f23434 !important;
 }
 
-/* Keyframe untuk animasi muncul */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -1380,7 +1458,6 @@ footer .fa-2x {
   color: #e8c614;
 }
 
-/* FAQ Tentang */
 .section-faq {
   background-color: #eeeeee;
 }
@@ -1503,7 +1580,6 @@ footer .fa-2x {
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
-/* Trigger the animation */
 .animated-content1.animate {
   opacity: 1;
   transform: translateY(0);
@@ -1618,15 +1694,12 @@ footer .fa-2x {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Efek hover */
 .dampak:hover,
 .solusi:hover {
   background-color: #004225;
   color: #eeeeee;
   box-shadow: 0px 0px 15px rgba(22, 62, 14, 0.4);
 }
-
-/* Spesies Page */
 
 .spesies-page:before {
   content: "";
@@ -1657,21 +1730,21 @@ footer .fa-2x {
   display: flex;
   background-color: #d2e0bb;
   border-radius: 10px;
-  margin-bottom: 30px; /* Menambahkan jarak antara kartu */
+  margin-bottom: 30px;
   padding: 20px;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
 }
 
 .spesies-image {
-  align-self: flex-start; /* Menempatkan gambar di pinggiran kiri kartu */
+  align-self: flex-start;
   width: 450px;
   height: auto;
-  border-radius: 10px; /* Membuat sudut gambar melengkung */
+  border-radius: 10px;
 }
 
 .spesies-text {
   flex: 1;
-  overflow: auto; /* Memberikan efek overflow jika teks melebihi ruang yang tersedia */
+  overflow: auto;
   text-align: justify;
   font-size: 1.3rem;
 }
@@ -1744,7 +1817,7 @@ footer .fa-2x {
 
 .cerita-kita-page .btn-tambah-container {
   display: flex;
-  align-items: center; /* Membuat item berada di tengah secara vertikal */
+  align-items: center;
 }
 
 .cerita-kita-page .tambah-text {
@@ -1753,7 +1826,7 @@ footer .fa-2x {
   color: #e8eedc;
   padding: 5px 10px;
   border-radius: 5px;
-  margin-left: 5px; /* Memberikan jarak antara tombol dan teks */
+  margin-left: 5px;
   margin-bottom: 15px;
 }
 
@@ -1816,7 +1889,7 @@ footer .fa-2x {
   top: -130px;
   right: 60px;
   width: 100%;
-  max-width: 500px; /* Ubah sesuai kebutuhan */
+  max-width: 500px;
 }
 
 .btn-kirim-cerita {
@@ -1964,7 +2037,7 @@ footer .fa-2x {
 
 #cerita-kamu .btn-tambah-container {
   display: flex;
-  align-items: center; /* Membuat item berada di tengah secara vertikal */
+  align-items: center;
 }
 
 #cerita-kamu .tambah-text {
@@ -1973,7 +2046,7 @@ footer .fa-2x {
   color: #e8eedc;
   padding: 5px 10px;
   border-radius: 5px;
-  margin-left: 5px; /* Memberikan jarak antara tombol dan teks */
+  margin-left: 5px;
   margin-bottom: 15px;
 }
 
@@ -2005,8 +2078,8 @@ footer .fa-2x {
 }
 
 #cerita-list .col-md-4 {
-  flex: 0 0 calc(33.333% - 20px); /* Lebar masing-masing kolom */
-  max-width: calc(33.333% - 20px); /* Lebar maksimum masing-masing kolom */
+  flex: 0 0 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
 }
 
 #cerita-list .card {
@@ -2014,7 +2087,7 @@ footer .fa-2x {
   border-radius: 10px;
   box-shadow: 0 5px 8px rgba(95, 94, 94, 0.1), 0 -5px 8px rgba(95, 94, 94, 0.1);
   transition: transform 0.2s;
-  position: relative; /* Tambahkan agar bisa menempatkan tombol secara absolut */
+  position: relative;
   background-color: #e8eedc;
 }
 
@@ -2051,17 +2124,16 @@ footer .fa-2x {
   margin-left: 10px;
 }
 
-/* Mengatur warna tombol edit */
 .card-body .edit-button,
 .card-body .delete-button {
-  background-color: #004225; /* Warna biru sesuai tema Bootstrap */
+  background-color: #004225;
   border-color: #e8eedc;
   color: #eeeeee;
 }
 
 .card-body .delete-button:hover,
 .card-body .edit-button:hover {
-  background-color: #e8eedc; /* Warna biru yang lebih gelap saat di-hover */
+  background-color: #e8eedc;
   border-color: #004225;
   color: #004225;
 }
@@ -2072,7 +2144,7 @@ footer .fa-2x {
 }
 
 .btn-ubah {
-  background-color: #004225; /* Warna biru sesuai tema Bootstrap */
+  background-color: #004225;
   border-color: #e8eedc;
   color: #eeeeee;
   float: right;
@@ -2080,24 +2152,28 @@ footer .fa-2x {
 }
 
 .btn-ubah:hover {
-  background-color: #e8eedc; /* Warna biru yang lebih gelap saat di-hover */
+  background-color: #e8eedc;
   border-color: #004225;
 }
 
 .profile-picture {
-  width: 60%;
+  width: 75%;
   margin-left: 90px;
+  margin-top: -80px;
 }
 
 .edit-profile .form-control {
   width: 100%;
+  color: #4f4d4d;
 }
 
 .edit-profile {
   width: 85%;
 }
 
-/* Dashboard Admin */
+.edit-profile #file-name {
+  color: #928989;
+}
 
 .btn-offcanvas {
   background-color: #004225;
@@ -2108,8 +2184,8 @@ footer .fa-2x {
   position: absolute;
   bottom: -10px;
   right: -110px;
-  display: flex; /* Tambahkan */
-  justify-content: center; /* Tambahkan */
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -2187,8 +2263,6 @@ footer .fa-2x {
   border: 2px solid #004225;
   color: #eeeeee;
 }
-
-/* Dashboard Direktori */
 
 .dashboard-direktori {
   padding-bottom: 30px;

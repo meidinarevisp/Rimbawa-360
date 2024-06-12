@@ -13,7 +13,7 @@ const DashboardDirektori = {
     const direktoriContainer = document.querySelector("#dashboard-direktori");
 
     try {
-      const response = await fetch("http://localhost:3000/api/direktori"); // Adjust this URL to match your API endpoint
+      const response = await fetch("http://localhost:3000/api/direktori");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -46,7 +46,6 @@ const DashboardDirektori = {
 
         direktoriContainer.appendChild(itemElement);
 
-        // Add event listener for delete button
         const deleteButton = itemElement.querySelector(".btn-hapus");
         deleteButton.addEventListener("click", async () => {
           const id = deleteButton.getAttribute("data-id");

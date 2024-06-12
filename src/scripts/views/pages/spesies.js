@@ -107,6 +107,8 @@ const Spesies = {
     const spesiesData = await fetchSpesiesData();
     showSpesies(1);
     createPagination();
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
   },
 };
 

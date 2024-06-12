@@ -13,7 +13,7 @@ const DashboardEdukasi = {
     const edukasiContainer = document.querySelector("#dashboard-edukasi");
 
     try {
-      const response = await fetch("http://localhost:3000/api/edukasi"); // Adjust this URL to match your API endpoint
+      const response = await fetch("http://localhost:3000/api/edukasi");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }

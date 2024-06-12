@@ -1,27 +1,24 @@
 const express = require("express");
 const router = express.Router();
-const pool = require("../db"); // Ubah path jika berbeda
-const verifyToken = require("./auth"); // Impor fungsi verifyToken
-const jwt = require("jsonwebtoken"); // Import jsonwebtoken
+const pool = require("../db");
+const verifyToken = require("./auth");
+const jwt = require("jsonwebtoken");
 
-const SECRET_KEY = "capstone"; // Ganti dengan kunci rahasia Anda
+const SECRET_KEY = "capstone";
 
 router.post("/", verifyToken, async (req, res) => {
   try {
     const { judul, deskripsi } = req.body;
-    // Check if authorization header exists
     if (!req.headers.authorization) {
       return res.status(401).json({ message: "Unauthorized" });
     }
-    const token = req.headers.authorization.split(" ")[1]; // Mendapatkan token dari header
+    const token = req.headers.authorization.split(" ")[1];
 
-    // Memverifikasi dan mendekode token
     const decoded = jwt.verify(token, SECRET_KEY);
     const userId = decoded.id;
     const username = decoded.username;
-    const gambar = decoded.gambar; // Mendapatkan gambar dari token
+    const gambar = decoded.gambar;
 
-    // Simpan cerita ke database
     const [result] = await pool.query(
       "INSERT INTO forum (id_user, username, judul, deskripsi, gambar, date_created) VALUES (?, ?, ?, ?, ?, NOW())",
       [userId, username, judul, deskripsi, gambar]
@@ -64,7 +61,6 @@ router.put("/:id", verifyToken, async (req, res) => {
   }
 });
 
-// Menghapus forum
 router.delete("/:id", verifyToken, async (req, res) => {
   try {
     const { id } = req.params;

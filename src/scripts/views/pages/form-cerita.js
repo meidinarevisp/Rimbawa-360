@@ -14,17 +14,14 @@ const formCerita = {
       behavior: "smooth",
     });
 
-    // Menambahkan event listener untuk form submit
     const formCerita = document.getElementById("ceritaForm");
     formCerita.addEventListener("submit", async (e) => {
       e.preventDefault();
       const ceritaInput = document.getElementById("cerita");
       const cerita = ceritaInput.value;
 
-      // Mendapatkan token dari localStorage
       const token = localStorage.getItem("token");
 
-      // Mengirim data cerita ke server
       const response = await fetch("http://localhost:3000/api/cerita", {
         method: "POST",
         headers: {
@@ -35,11 +32,9 @@ const formCerita = {
       });
 
       if (response.ok) {
-        // Berhasil mengirim cerita
         localStorage.setItem("toastMessage", "Cerita berhasil dikirim!");
-        window.location.href = "#/cerita"; // Redirect ke halaman cerita
+        window.location.href = "#/cerita";
       } else {
-        // Gagal mengirim cerita
         const error = await response.json();
         toastr
           .error(`Gagal mengirim cerita: ${error.message}`)
