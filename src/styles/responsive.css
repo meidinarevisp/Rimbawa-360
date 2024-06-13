@@ -348,6 +348,8 @@
 
   .detail-direktori-section h2 {
     font-size: 1.75rem;
+    padding-top: 20px;
+    text-align: center;
   }
 
   .detail-direktori-section h4 {
@@ -357,5 +359,9 @@
 
   .detail-direktori-section p {
     font-size: 13px;
+  }
+
+  .email-reset-section .btn {
+    max-width: 328px;
   }
 }

@@ -10,7 +10,8 @@ body {
 
 .login-section {
   margin-top: 50px;
-  padding: 10px 0;
+  padding: 20px;
+  text-align: center;
 }
 
 .login-background {
@@ -33,32 +34,56 @@ body {
   height: auto;
 }
 
-.login-section .card {
-  background-color: rgba(231, 228, 228, 0.722);
+.card {
+  background-color: rgba(231, 228, 228, 0.9);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: none;
   border-radius: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.login-section h2 {
-  font-size: 2.5rem;
+h2 {
+  font-size: 2rem;
   font-weight: 800;
   color: #56ab2e;
+  margin-bottom: 20px;
 }
 
-.login-section label {
-  color: #4d4d4d !important;
+label {
+  color: #4d4d4d;
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.login-section input[type="text"],
+.login-section input[type="password"] {
+  font-size: 14px;
+}
+
+.input-group .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 16px;
+  color: #ccc;
 }
 
 .login-section ::placeholder {
   color: #9f9d9d;
 }
 
-.login-section p {
+p {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.login-section a {
+a {
   text-decoration: none;
   color: #56ab2e;
 }
@@ -66,19 +91,30 @@ body {
 .lupa-password p {
   text-align: left;
   font-size: 0.9rem;
-  margin-top: 7px;
+  margin-top: 10px;
 }
 
 .lupa-password a {
   color: #56ab2e;
 }
 
+.email-reset-section .btn {
+  max-width: 290px;
+}
+
 .btn-login {
   margin-top: 20px;
   background-color: #004225;
   color: #eeeeee;
-  margin-bottom: 20px;
-  width: 305px;
+  width: 100%;
+  max-width: 290px;
+  padding: 12px;
+  box-sizing: border-box;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  border-radius: 5px;
 }
 
 .btn-login:hover {
@@ -993,13 +1029,9 @@ i.fa-angle-right {
   color: #fff;
   text-align: center;
   padding: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 0 0 20px 20px;
-}
-
-.image-container:hover .overlay {
   opacity: 1;
+  transition: none;
+  border-radius: 0 0 20px 20px;
 }
 
 .destinasi-section h2 {
