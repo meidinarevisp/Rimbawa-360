@@ -24,6 +24,38 @@ const forgotPassword = {
     logoElement.classList.add("login-logo");
     document.body.appendChild(logoElement);
 
+    const showPasswordIcon = document.getElementById("showPasswordIcon");
+    const showConfirmPasswordIcon = document.getElementById(
+      "showConfirmPasswordIcon"
+    );
+    const passwordField = document.getElementById("password");
+    const confirmPasswordField = document.getElementById("password1");
+
+    // Add event listeners
+    showPasswordIcon.addEventListener("mousedown", () => {
+      passwordField.type = "text";
+    });
+
+    showPasswordIcon.addEventListener("mouseup", () => {
+      passwordField.type = "password";
+    });
+
+    showPasswordIcon.addEventListener("mouseleave", () => {
+      passwordField.type = "password";
+    });
+
+    showConfirmPasswordIcon.addEventListener("mousedown", () => {
+      confirmPasswordField.type = "text";
+    });
+
+    showConfirmPasswordIcon.addEventListener("mouseup", () => {
+      confirmPasswordField.type = "password";
+    });
+
+    showConfirmPasswordIcon.addEventListener("mouseleave", () => {
+      confirmPasswordField.type = "password";
+    });
+
     const form = document.querySelector("form");
     form.addEventListener("submit", async (event) => {
       event.preventDefault();

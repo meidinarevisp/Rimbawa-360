@@ -70,7 +70,9 @@ const Login = {
             window.location.href = "/";
           }
         } else {
-          toastr.error(data.errors ? data.errors.map((e) => e.msg).join(", ") : data.error);
+          toastr.error(
+            data.errors ? data.errors.map((e) => e.msg).join(", ") : data.error
+          );
         }
       } catch (error) {
         toastr.error("An error occurred during login.");

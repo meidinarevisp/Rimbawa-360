@@ -1,9 +1,5 @@
 import UrlParser from "../../routes/url-parser";
 import { berandaTemplate } from "../templates/template-creator";
-import ceritaData from "../../../data/Cerita.json";
-import ekowisataData from "../../../data/Ekowisata.json";
-import spesiesData from "../../../data/Spesies.json";
-import edukasiData from "../../../data/Edukasi.json";
 import { gsap } from "gsap";
 
 import { CustomEase } from "gsap/CustomEase";
@@ -159,38 +155,39 @@ const Beranda = {
     if (destinasiSection) {
       const destinasiRow = destinasiSection.querySelector(".row");
 
-      function tampilkanDestinasi() {
-        destinasiRow.innerHTML = "";
+      async function tampilkanDestinasi() {
+        try {
+          const response = await fetch("http://localhost:3000/api/direktori");
+          const data = await response.json();
+          const destinasiAcak = getRandomDestinations(data, 3);
 
-        const destinasiAcak = getRandomDestinations(
-          ekowisataData.ekowisata_hutan,
-          3
-        );
+          destinasiRow.innerHTML = "";
+          destinasiAcak.forEach((destinasi) => {
+            const destinasiCol = document.createElement("div");
+            destinasiCol.classList.add("col-md-4");
 
-        destinasiAcak.forEach((destinasi) => {
-          const destinasiCol = document.createElement("div");
-          destinasiCol.classList.add("col-md-4");
+            const deskripsiPendek =
+              destinasi.deskripsi.length > 200
+                ? destinasi.deskripsi.substring(0, 200) + "..."
+                : destinasi.deskripsi;
 
-          const deskripsiPendek =
-            destinasi.deskripsi.length > 200
-              ? destinasi.deskripsi.substring(0, 200) + "..."
-              : destinasi.deskripsi;
+            const destinasiContent = `
+              <div class="image-container">
+                <img src="uploads/${destinasi.gambar}" alt="${destinasi.nama_tempat}" class="img-fluid" />
+                <h1>${destinasi.lokasi}</h1>
+              </div>
+              <div class="text-content">
+                <h4>${destinasi.nama_tempat}</h4>
+                <p>${deskripsiPendek}</p>
+              </div>
+            `;
 
-          const destinasiContent = `
-        <div class="image-container">
-          <img src="${destinasi.gambar}" alt="${destinasi.nama_tempat}" class="img-fluid" />
-          <h1>${destinasi.lokasi}</h1>
-        </div>
-        <div class="text-content">
-          <h4>${destinasi.nama_tempat}</h4>
-          <p>${deskripsiPendek}</p>
-        </div>
-      `;
-
-          destinasiCol.innerHTML = destinasiContent;
-
-          destinasiRow.appendChild(destinasiCol);
-        });
+            destinasiCol.innerHTML = destinasiContent;
+            destinasiRow.appendChild(destinasiCol);
+          });
+        } catch (error) {
+          console.error("Error fetching ekowisata data:", error);
+        }
       }
 
       function getRandomDestinations(destinasiArray, jumlah) {
@@ -207,8 +204,7 @@ const Beranda = {
         return destinasiAcak;
       }
 
-      tampilkanDestinasi();
-
+      await tampilkanDestinasi();
       setInterval(tampilkanDestinasi, 10000);
     }
 
@@ -222,43 +218,52 @@ const Beranda = {
 
       const carouselInner = carouselElement.querySelector(".carousel-inner");
 
-      ceritaData.keterlibatanMasyarakat.slice(0, 3).forEach((cerita, index) => {
-        const ceritaItem = document.createElement("div");
-        ceritaItem.classList.add("carousel-item");
-
-        if (index === 0) {
-          ceritaItem.classList.add("active");
+      try {
+        const response = await fetch("http://localhost:3000/api/cerita"); // Ganti dengan endpoint API yang sesuai
+        if (!response.ok) {
+          throw new Error("Jaringan bermasalah");
         }
+        const ceritaData = await response.json();
 
-        const ceritaContent = `
-          <section class="cerita-kita cerita-${index + 1}">
-            <blockquote class="blockquote">
-              <center>
-                <img
-                  class="mb-3"
-                  src="${cerita.foto_profile}"
-                  alt="${cerita.nama}"
-                  class="profil-image"
-                  width="120"
-                  height="120"
-                />
-                <h3>${cerita.nama}</h3>
-                <p class="waktu-unggah">${new Date(
-                  cerita.waktu_upload
-                ).toLocaleString("id-ID", {
-                  dateStyle: "medium",
-                  timeStyle: "short",
-                })}</p>
-              </center>
-              <p class="detail-cerita">${cerita.cerita}</p>
-            </blockquote>
-          </section>
-        `;
+        ceritaData.slice(0, 3).forEach((cerita, index) => {
+          const ceritaItem = document.createElement("div");
+          ceritaItem.classList.add("carousel-item");
 
-        ceritaItem.innerHTML = ceritaContent;
+          if (index === 0) {
+            ceritaItem.classList.add("active");
+          }
 
-        carouselInner.appendChild(ceritaItem);
-      });
+          const ceritaContent = `
+            <section class="cerita-kita cerita-${index + 1}">
+              <blockquote class="blockquote">
+                <center>
+                  <img
+                    class="mb-3 rounded-circle profil-image"
+                    src="${cerita.gambar}" 
+                    alt="${cerita.username}"
+                    width="120"
+                    height="120"
+                  />
+                  <h3>${cerita.username}</h3>
+                  <p class="waktu-unggah">${new Date(
+                    cerita.date_created
+                  ).toLocaleString("id-ID", {
+                    dateStyle: "medium",
+                    timeStyle: "short",
+                  })}</p>
+                </center>
+                <p class="detail-cerita">${cerita.cerita}</p>
+              </blockquote>
+            </section>
+          `;
+
+          ceritaItem.innerHTML = ceritaContent;
+
+          carouselInner.appendChild(ceritaItem);
+        });
+      } catch (error) {
+        console.error("Gagal memuat data cerita:", error);
+      }
 
       const prevButton = carouselElement.querySelector(
         ".carousel-control-prev"
@@ -279,28 +284,26 @@ const Beranda = {
     const spesiesSection = document.querySelector(".spesies-section");
 
     if (spesiesSection) {
-      function tampilkanSpesies() {
-        const species = spesiesData.BasisDataSpesies;
+      async function tampilkanSpesies() {
+        try {
+          const response = await fetch("http://localhost:3000/api/spesies");
+          const species = await response.json();
 
-        if (species.length >= 5) {
-          document.getElementById("image1").src = species[0].gambar;
-          document.getElementById("overlay1").innerText = species[0].kelas;
-
-          document.getElementById("image2").src = species[1].gambar;
-          document.getElementById("overlay2").innerText = species[1].kelas;
-
-          document.getElementById("image3").src = species[2].gambar;
-          document.getElementById("overlay3").innerText = species[2].kelas;
-
-          document.getElementById("image4").src = species[3].gambar;
-          document.getElementById("overlay4").innerText = species[3].kelas;
-
-          document.getElementById("image5").src = species[4].gambar;
-          document.getElementById("overlay5").innerText = species[4].kelas;
+          if (species.length >= 5) {
+            for (let index = 0; index < species.length; index++) {
+              var elId = index + 1;
+              document.getElementById("image" + elId).src =
+                "uploads/" + species[index].gambar;
+              document.getElementById("overlay" + elId).innerText =
+                species[index].kelas;
+            }
+          }
+        } catch (error) {
+          console.error("Failed to fetch species data:", error);
         }
       }
 
-      tampilkanSpesies();
+      await tampilkanSpesies();
     }
 
     const edukasiSection = document.querySelector(".edukasi-section");
@@ -309,35 +312,45 @@ const Beranda = {
       const edukasiContainer =
         edukasiSection.querySelector("#edukasiContainer");
 
+      async function fetchEdukasiData() {
+        try {
+          const response = await fetch("http://localhost:3000/api/edukasi");
+          const edukasiData = await response.json();
+          return edukasiData;
+        } catch (error) {
+          console.error("Error fetching edukasi data:", error);
+          return [];
+        }
+      }
+
       function truncateText(text, maxLength) {
         return text.length > maxLength
           ? text.substring(0, maxLength) + "..."
           : text;
       }
 
-      function tampilkanEdukasi() {
+      async function tampilkanEdukasi() {
         edukasiContainer.innerHTML = "";
 
-        const edukasiDataArray =
-          edukasiData.edukasi_dan_kesadaran_lingkungan_hutan;
+        const edukasiDataArray = await fetchEdukasiData();
 
         edukasiDataArray.slice(0, 2).forEach((edukasi, index) => {
           const edukasiItem = document.createElement("div");
           edukasiItem.classList.add("flex-item");
 
-          const truncatedDeskripsi = truncateText(edukasi.deskripsi, 450);
+          const truncatedDeskripsi = truncateText(edukasi.deskripsi, 200);
 
           const edukasiContent = `
-        <div class="inner-flex-container row${index + 1}">
-          <div class="text-container">
-            <h3 style="font-size: 1.8rem">${edukasi.nama_isu}</h3>
-            <div class="text">${truncatedDeskripsi}</div>
-          </div>
-          <div class="image-edukasi"><img src="${edukasi.gambar}" alt="${
-            edukasi.nama_isu
-          }" /></div>
-        </div>
-      `;
+            <div class="inner-flex-container row${index + 1}">
+              <div class="text-container">
+                <h3 style="font-size: 1.8rem">${edukasi.nama_isu}</h3>
+                <div class="text">${truncatedDeskripsi}</div>
+              </div>
+              <div class="image-edukasi"><img src="/uploads/${
+                edukasi.gambar
+              }" alt="${edukasi.nama_isu}" /></div>
+            </div>
+          `;
 
           edukasiItem.innerHTML = edukasiContent;
 
@@ -345,7 +358,7 @@ const Beranda = {
         });
       }
 
-      tampilkanEdukasi();
+      await tampilkanEdukasi();
     }
   },
 };

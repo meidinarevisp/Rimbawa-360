@@ -43,10 +43,9 @@ const Cerita = {
           <blockquote class="blockquote">
             <center>
               <img
-                class="mb-3 rounded-circle"
+                class="mb-3 rounded-circle profil-image"
                 src="${cerita.gambar}"
                 alt="${cerita.username}"
-                class="profil-image"
                 width="120"
                 height="120"
               />

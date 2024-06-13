@@ -27,7 +27,7 @@ const berandaTemplate = () => `
             <img src="images/pohon.png" alt="Tentang Kami Image" />
           </div>
           <div class="text">
-            <h1><strong>Apa Itu Rimbawa 360?</strong></h1>
+            <p style="font-size: 1.8rem;"><strong>Apa Itu Rimbawa 360?</strong></p>
             <p>
               Rimbawa 360 adalah sebuah platform yang berkomitmen untuk
               mengedukasi masyarakat tentang pentingnya menjaga kelestarian
@@ -485,7 +485,7 @@ const tentangTemplate = () => `
             <img src="rimbawa-360.png" alt="Tentang Kami Image" />
           </div>
           <div class="text">
-            <h1><strong>Apa Itu Rimbawa 360?</strong></h1>
+            <p style="font-size: 1.8rem;"><strong>Apa Itu Rimbawa 360?</strong></p>
             <p>
               Rimbawa 360 adalah sebuah platform yang berkomitmen untuk
               mengedukasi masyarakat tentang pentingnya menjaga kelestarian
@@ -711,10 +711,10 @@ const loginTemplate = () => `
                 </div>
               </div>
               <div class="text-center">
-                <button type="submit" class="btn btn-login" style="width: 350px;">Masuk</button>
+                <button type="submit" class="btn btn-login">Masuk</button>
               </div>
             </form>
-            <p class="text-center mt-3">Belum memiliki akun?<a href="/#/register"> Daftar disini!</a></p>
+            <p class="text-center mt-4">Belum memiliki akun?<a href="/#/register"> Daftar disini!</a></p>
           </div>
         </div>
       </div>
@@ -737,7 +737,7 @@ const emailResetTemplate = () => `
                 <input type="email" class="form-control" id="email" placeholder="Masukkan email" required>
               </div>
               <div class="text-center">
-                <button type="submit" class="btn btn-email-reset" style="width: 350px;">Reset Kata Sandi</button>
+                <button type="submit" class="btn btn-email-reset">Reset Kata Sandi</button>
               </div>
             </form>
           </div>
@@ -759,27 +759,27 @@ const forgotPasswordTemplate = () => `
               <div class="form-group mb-2">
                 <label for="password">Kata Sandi Baru</label>
                 <div class="input-group">
-                  <input type="password" class="form-control" id="password" placeholder="Masukkan kata sandi" required>
+                  <input type="password" class="form-control" style="border-radius: 5px;" id="password" placeholder="Masukkan kata sandi" required>
                   <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span id="showPasswordIcon" class="fa fa-eye" aria-label="Show password"></span>
+                    <div class="input-group-text show-password-icon" id="showPasswordIcon" style="cursor: pointer;">
+                      <span class="fa fa-eye" aria-label="Show password"></span>
                     </div>
                   </div>
                 </div>
                 <div class="form-group mt-3">
                 <label for="password1">Konfirmasi Kata Sandi</label>
                 <div class="input-group">
-                  <input type="password" class="form-control" id="password1" placeholder="Konfirmasi kata sandi" required>
+                  <input type="password" class="form-control" style="border-radius: 5px;" id="password1" placeholder="Konfirmasi kata sandi" required>
                   <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span id="showConfirmPasswordIcon" class="fa fa-eye" aria-label="Show confirm password"></span>
+                    <div class="input-group-text show-password-icon" id="showConfirmPasswordIcon" style="cursor: pointer;">
+                      <span class="fa fa-eye" aria-label="Show password"></span>
                     </div>
                   </div>
                 </div>
               </div>
               </div>
               <div class="text-center">
-                <button type="submit" class="btn btn-reset-password" style="width: 350px;">Reset Kata Sandi</button>
+                <button type="submit" class="btn btn-reset-password">Reset Kata Sandi</button>
               </div>
             </form>
           </div>
@@ -842,7 +842,7 @@ const registerTemplate = () => `
                 <button type="submit" class="btn btn-register">Daftar</button>
               </div>
             </form>
-            <p class="text-center mt-3">Sudah memiliki akun?<a href="/#/login"> Masuk disini!</a></p>
+            <p class="text-center mt-2">Sudah memiliki akun?<a href="/#/login"> Masuk disini!</a></p>
           </div>
         </div>
       </div>

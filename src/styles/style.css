@@ -1,5 +1,6 @@
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #e8eedc;
   overflow-x: hidden;
 }
@@ -34,19 +35,19 @@ body {
   height: auto;
 }
 
-.card {
-  background-color: rgba(231, 228, 228, 0.9);
+.login-section .card {
+  background-color: rgba(231, 228, 228, 0.722);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: none;
   border-radius: 10px;
-  max-width: 400px;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
+  max-width: 400px;
 }
 
-.login h2 {
-  font-size: 2rem;
+.login-section h2 {
+  font-size: 2.5rem;
   font-weight: 800;
   color: #56ab2e;
   margin-bottom: 20px;
@@ -78,14 +79,14 @@ label {
   color: #9f9d9d;
 }
 
-.login p {
+.login-section p {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.login a {
-  text-decoration: none;
-  color: #56ab2e;
+.login-section a {
+  text-decoration: none !important;
+  color: #56ab2e !important;
 }
 
 .lupa-password p {
@@ -98,17 +99,13 @@ label {
   color: #56ab2e;
 }
 
-.email-reset-section .btn {
-  max-width: 290px;
-}
-
 .btn-login {
   margin-top: 20px;
   background-color: #004225;
   color: #eeeeee;
   width: 100%;
-  max-width: 290px;
-  padding: 12px;
+  max-width: 335px;
+  padding: 7px;
   box-sizing: border-box;
   display: block;
   margin-left: auto;
@@ -159,7 +156,10 @@ label {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: none;
   border-radius: 10px;
-  margin-top: 25px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 400px;
 }
 
 .email-reset-section h2 {
@@ -181,7 +181,7 @@ label {
   background-color: #004225;
   color: #eeeeee;
   margin-bottom: 20px;
-  width: 305px;
+  width: 335px;
 }
 
 .btn-email-reset:hover {
@@ -199,7 +199,10 @@ label {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: none;
   border-radius: 10px;
-  margin-top: 25px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 400px;
 }
 
 .reset-password-section h2 {
@@ -221,7 +224,7 @@ label {
   background-color: #004225;
   color: #eeeeee;
   margin-bottom: 20px;
-  width: 305px;
+  width: 335px;
 }
 
 .btn-reset-password:hover {
@@ -230,7 +233,7 @@ label {
 }
 
 .register-section {
-  margin-top: 20px;
+  margin-top: 28px;
   padding: 10px 0;
 }
 
@@ -259,6 +262,10 @@ label {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: none;
   border-radius: 10px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 550px;
 }
 
 .register-section h2 {
@@ -876,11 +883,6 @@ i.fa-angle-right {
   margin-left: 20px;
 }
 
-.tentang-kami-section h1 {
-  font-size: 1.5rem;
-  padding-bottom: 5px;
-}
-
 .edukasi-section .text {
   text-align: justify;
   font-size: 1.2em;
@@ -891,8 +893,8 @@ i.fa-angle-right {
 
 .image-edukasi img {
   display: block;
-  width: 100%;
-  height: 100%;
+  height: 280px;
+  width: 450px;
   object-fit: cover;
 }
 
@@ -900,8 +902,6 @@ i.fa-angle-right {
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex: 1;
 }
 
 .edukasi-section h3 {
@@ -1006,21 +1006,21 @@ i.fa-angle-right {
   margin-top: 20px;
 }
 
-.image-container {
+.spesies-section .image-container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.image-container img {
+.spesies-section .image-container img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.image-container .overlay {
+.spesies-section .image-container .overlay {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1065,7 +1065,7 @@ i.fa-angle-right {
 .destinasi-section .row .col-md-4 .image-container {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 60%;
   overflow: hidden;
   border-radius: 10px 10px 0 0;
 }
@@ -1091,7 +1091,7 @@ i.fa-angle-right {
 .destinasi-section .row .col-md-4 .text-content {
   background-color: #b5e0cd;
   padding: 15px;
-  height: auto;
+  height: 40%;
   display: flex;
   flex-direction: column;
   text-align: justify;
@@ -1600,7 +1600,7 @@ footer .fa-2x {
 
 .tentang-kami-page .text {
   text-align: justify;
-  font-size: 1.5em;
+  font-size: 1.6em;
   margin-left: 20px;
 }
 
@@ -1611,13 +1611,9 @@ footer .fa-2x {
 
 .tentang-kami-page h2 {
   font-size: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   margin-left: 110px;
-}
-
-.tentang-kami-page h1 {
-  font-size: 1.5rem;
-  padding-bottom: 20px;
+  margin-top: 20px;
 }
 
 .tentang-kami-img img {
@@ -2199,7 +2195,9 @@ footer .fa-2x {
 @media (max-width: 768px) {
   #cerita-list .col-md-4 {
     flex: 1 1 calc(100% - 10px); /* Adjusted column width for smaller screens */
-    max-width: calc(100% - 10px); /* Adjusted maximum column width for smaller screens */
+    max-width: calc(
+      100% - 10px
+    ); /* Adjusted maximum column width for smaller screens */
     margin-left: 10px;
   }
   #cerita-kamu .btn-tambah {
