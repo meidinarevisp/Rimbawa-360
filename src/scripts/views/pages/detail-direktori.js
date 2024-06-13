@@ -39,7 +39,7 @@ const detailDirektori = {
         placeAccess.style.marginLeft = "30px";
 
         placeImage.style.width = "auto";
-        placeImage.style.height = "400px";
+        placeImage.style.height = "auto";
         placeImage.style.borderRadius = "8px";
 
         placeActivities.innerHTML = "";
@@ -70,14 +70,10 @@ const detailDirektori = {
 
         placeAccess.textContent = selectedDestinasi.akses || "N/A";
 
-        const map = L.map("map").setView(
-          [selectedDestinasi.latitude, selectedDestinasi.longitude],
-          13
-        );
+        const map = L.map("map").setView([selectedDestinasi.latitude, selectedDestinasi.longitude], 13);
 
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-          attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         }).addTo(map);
 
         const customIcon = L.icon({
@@ -87,14 +83,9 @@ const detailDirektori = {
           popupAnchor: [1, -34],
         });
 
-        const marker = L.marker(
-          [selectedDestinasi.latitude, selectedDestinasi.longitude],
-          { icon: customIcon }
-        ).addTo(map);
+        const marker = L.marker([selectedDestinasi.latitude, selectedDestinasi.longitude], { icon: customIcon }).addTo(map);
 
-        marker.bindPopup(
-          `<b>${selectedDestinasi.nama_tempat}</b><br>${selectedDestinasi.lokasi}`
-        );
+        marker.bindPopup(`<b>${selectedDestinasi.nama_tempat}</b><br>${selectedDestinasi.lokasi}`);
       }
     } catch (error) {
       console.error("Error fetching detail data:", error);

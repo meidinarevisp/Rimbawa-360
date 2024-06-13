@@ -840,6 +840,11 @@ i.fa-angle-right {
   margin-left: 20px;
 }
 
+.tentang-kami-section h1 {
+  font-size: 1.5rem;
+  padding-bottom: 5px;
+}
+
 .edukasi-section .text {
   text-align: justify;
   font-size: 1.2em;
@@ -1028,7 +1033,7 @@ i.fa-angle-right {
 .destinasi-section .row .col-md-4 .image-container {
   position: relative;
   width: 100%;
-  height: 60%;
+  height: 100%;
   overflow: hidden;
   border-radius: 10px 10px 0 0;
 }
@@ -1054,7 +1059,7 @@ i.fa-angle-right {
 .destinasi-section .row .col-md-4 .text-content {
   background-color: #b5e0cd;
   padding: 15px;
-  height: 40%;
+  height: auto;
   display: flex;
   flex-direction: column;
   text-align: justify;
@@ -1233,17 +1238,6 @@ footer .fa-2x {
   background-color: #eeeeee;
 }
 
-.detail-direktori-section:after {
-  content: "";
-  position: absolute;
-  top: 127px;
-  left: 65px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ec9c00;
-}
-
 .detail-direktori-section h2 {
   font-size: 2.5rem;
   font-weight: bold;
@@ -1324,10 +1318,11 @@ footer .fa-2x {
 .destinasi-page .row .col-md-4 .text-content {
   background-color: #b5e0cd;
   padding: 15px;
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   text-align: justify;
+  width: auto;
+  height: auto;
 }
 
 .destinasi-page .row .col-md-4 .text-content h4,
@@ -1586,6 +1581,11 @@ footer .fa-2x {
   font-size: 50px;
   margin-bottom: 30px;
   margin-left: 110px;
+}
+
+.tentang-kami-page h1 {
+  font-size: 1.5rem;
+  padding-bottom: 20px;
 }
 
 .tentang-kami-img img {

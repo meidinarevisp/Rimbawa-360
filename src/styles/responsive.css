@@ -340,3 +340,22 @@
     padding: 8px 16px;
   }
 }
+
+@media (max-width: 768px) {
+  .detail-direktori-section {
+    padding: 30px 0;
+  }
+
+  .detail-direktori-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .detail-direktori-section h4 {
+    margin-top: 6px;
+    padding-top: 20px;
+  }
+
+  .detail-direktori-section p {
+    font-size: 13px;
+  }
+}
