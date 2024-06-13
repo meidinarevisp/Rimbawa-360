@@ -1,0 +1,306 @@
+/* page edukasi */
+
+@media (max-width: 768px) {
+  .judul-edukasi {
+    font-size: 2rem;
+  }
+
+  .edukasi-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .edukasi-content p,
+  .edukasi-content ul li {
+    font-size: 1rem;
+  }
+}
+
+/* page destinasi */
+@media (max-width: 768px) {
+  .destinasi-page .row {
+    flex-direction: column;
+    padding-right: 20px;
+  }
+
+  .destinasi-page .row .col-md-4 {
+    flex-basis: calc(100% - 20px);
+  }
+}
+
+/* page cerita */
+@media (max-width: 768px) {
+  .cerita-kita-page .row {
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
+  }
+
+  .page-cerita {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: auto;
+    padding-top: 20px;
+  }
+
+  .cerita-detail {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .edit-cerita-page h2 {
+    font-size: 2rem;
+  }
+
+  .edit-cerita-page img {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .btn-tambah {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .cerita-kita-page h2 {
+    font-size: 2rem;
+  }
+
+  .cerita-kita-page h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* page spesies */
+@media (max-width: 768px) {
+  .spesies-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 20px;
+    width: 85%;
+    margin-left: 30px;
+  }
+
+  .spesies-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .spesies-page h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .spesies-text {
+    font-size: 1rem;
+  }
+}
+
+/* Section Tentang Kami */
+@media (min-width: 768px) {
+  .tentang-kami-section h2 {
+    font-size: 3rem;
+    padding-top: 40px;
+  }
+
+  .container .text {
+    font-size: 1.2rem;
+    margin-left: 20px;
+  }
+}
+
+/* Edukasi Section */
+@media (max-width: 768px) {
+  .edukasi-section h2 {
+    text-align: center;
+  }
+  .flex-item {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .inner-flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  }
+
+  .text-container {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+  }
+
+  .image-edukasi {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image-edukasi img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .edukasi-section h3 {
+    margin-left: 0;
+  }
+}
+
+/* Hero */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 400px;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-section p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .btn-jelajah,
+  .btn-primary {
+    font-size: 1.2rem;
+    padding: 8px 16px;
+    margin-left: 20px;
+  }
+
+  .btn-link {
+    margin-left: 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Spesies Section */
+@media (max-width: 768px) {
+  .spesies-section:before {
+    left: -40%;
+    width: 60vw;
+  }
+
+  .spesies-section h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .spesies-section .image-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .spesies-section .large-img,
+  .spesies-section .small-img {
+    height: 200px;
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+/* Destinasi Section */
+@media (max-width: 768px) {
+  .destinasi-section .row .col-md-4 {
+    flex: 1 1 100%;
+    height: auto;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+/* Cerita Section */
+@media (max-width: 768px) {
+  .cerita-kita {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 30px;
+  }
+
+  .detail-cerita {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+/* footer */
+@media (max-width: 768px) {
+  footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 100px;
+  }
+
+  footer .col-md-3 {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+}
+
+/* tentang page - tentang kami */
+@media (max-width: 768px) {
+  .tentang-kami-page h2 {
+    font-size: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+  }
+
+  .tentang-kami-img img {
+    width: 100%;
+    max-width: 580px;
+    display: block;
+    align-items: center;
+  }
+
+  .tentang-kami-page .text {
+    font-size: 1.2em;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+/* tentang page - team kami */
+@media (max-width: 768px) {
+  .team-member {
+    margin-bottom: 30px;
+  }
+
+  .team-member h4 {
+    font-size: 1.1rem;
+  }
+
+  .team-img {
+    height: 200px;
+  }
+
+  .col-md-4 .team-member {
+    flex: 1 1 calc(100% - 20px);
+    max-width: calc(80% - 20px);
+    margin: 0 auto 20px;
+  }
+
+  .social-icons {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .social-icons a {
+    margin-top: 0;
+  }
+}

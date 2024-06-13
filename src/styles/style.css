@@ -579,6 +579,11 @@ nav .dropdown-menu .dropdown-item:hover {
   top: 0;
   width: 100%;
   z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .navbar-nav {
@@ -673,10 +678,38 @@ nav .dropdown-menu .dropdown-item:hover {
   position: relative;
   width: 100%;
   height: 660px;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/src/public/heros/hero-1.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .hero-section .container {
-  margin-top: -15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 .hero-section h1 {
@@ -690,6 +723,11 @@ nav .dropdown-menu .dropdown-item:hover {
   font-size: 1.8rem;
   font-weight: 600;
   color: #eeeeee !important;
+}
+
+.hero-section h1,
+.hero-section p {
+  color: #fff;
 }
 
 .btn-jelajah {
@@ -746,40 +784,6 @@ i.fa-angle-right {
   font-size: 1.5rem;
 }
 
-.hero-image {
-  width: 100%;
-  height: auto;
-  position: relative;
-  z-index: -1;
-}
-
-.hero-section .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-
-.hero-section h1 {
-  color: #fff;
-}
-
-.hero-section p {
-  color: #fff;
-}
-
-.hero-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 0;
-}
-
 .edukasi-section h2 {
   font-size: 2.8rem;
   margin-left: 20px;
@@ -803,6 +807,7 @@ i.fa-angle-right {
   overflow: hidden;
   display: flex;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+  align-items: stretch;
 }
 
 .inner-flex-container {
@@ -840,31 +845,44 @@ i.fa-angle-right {
   text-align: justify;
   font-size: 1.2em;
   line-height: 1.8;
+  overflow: visible; /* Ensure text is fully visible */
+  white-space: normal;
 }
 
 .image-edukasi img {
   display: block;
-  height: 250px;
-  width: 350px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .image-edukasi {
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.edukasi-section h3 {
+  margin-left: 20px;
 }
 
 .tentang-kami-section {
   background-color: #eeeeee;
   padding-bottom: 65px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .tentang-kami-section h2 {
-  font-size: 50px;
-  padding-top: 65px;
+  font-size: 2rem;
+  padding-top: 20px;
+  text-align: center;
 }
 
 .tentang-kami-section .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 15px;
@@ -874,15 +892,22 @@ i.fa-angle-right {
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .container .image-tentang img {
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
   height: auto;
+  margin: 0 auto;
+  display: block;
 }
 
 .container .text {
   flex: 1;
+  text-align: justify;
+  font-size: 1rem;
+  margin: 0 10px;
 }
 
 .spesies-section {
@@ -908,6 +933,7 @@ i.fa-angle-right {
 
 .spesies-section .image-row {
   height: 100%;
+  display: flex;
 }
 
 .spesies-section .full-height {
@@ -1240,6 +1266,7 @@ footer .fa-2x {
   margin-left: 13px;
   padding-bottom: 10px;
 }
+
 .destinasi-page h1 {
   margin-left: 12px;
 }
@@ -1278,6 +1305,7 @@ footer .fa-2x {
 .destinasi-page .row .col-md-4 .image-container img {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
@@ -1686,10 +1714,11 @@ footer .fa-2x {
 }
 
 .edukasi-content img {
-  width: 60%;
-  height: 400px;
+  max-width: 100%; /* Membuat gambar responsif dengan lebar 100% dari kontainer */
+  height: auto; /* Membuat gambar proporsional terhadap perubahan lebar */
   display: block;
   margin: 0 auto;
+  max-height: 100%;
 }
 
 .dampak,
@@ -1738,16 +1767,20 @@ footer .fa-2x {
   display: flex;
   background-color: #d2e0bb;
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 30px; /* Menambahkan jarak antara kartu */
   padding: 20px;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+  justify-content: center; /* Memusatkan kartu secara horizontal */
+  align-items: center;
 }
 
 .spesies-image {
-  align-self: flex-start;
   width: 450px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 10px; /* Membuat sudut gambar melengkung */
+  display: flex; /* Menjadikan gambar sebagai flex container */
+  align-items: center; /* Memusatkan secara vertikal */
+  justify-content: center;
 }
 
 .spesies-text {
@@ -2130,6 +2163,19 @@ footer .fa-2x {
 #cerita-list .card-body .btn {
   float: right;
   margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  #cerita-list .col-md-4 {
+    flex: 1 1 calc(100% - 10px); /* Adjusted column width for smaller screens */
+    max-width: calc(
+      100% - 10px
+    ); /* Adjusted maximum column width for smaller screens */
+    margin-left: 10px;
+  }
+  #cerita-kamu .btn-tambah {
+    margin-left: 10px;
+  }
 }
 
 .card-body .edit-button,
