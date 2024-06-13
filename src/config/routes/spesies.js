@@ -50,10 +50,7 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const [rows, fields] = await pool.query(
-      "SELECT * FROM spesies WHERE id = ?",
-      [req.params.id]
-    );
+    const [rows, fields] = await pool.query("SELECT * FROM spesies WHERE id = ?", [req.params.id]);
     if (rows.length === 0) {
       return res.status(404).json({ message: "Data tidak ditemukan" });
     }
@@ -65,20 +62,7 @@ router.get("/:id", async (req, res) => {
 
 router.post("/", upload.single("gambar"), async (req, res) => {
   try {
-    const {
-      namaSpesies,
-      deskripsi,
-      kerajaan,
-      kelas,
-      statusKonservasi,
-      ordo,
-      spesies,
-      populasi,
-      rentanganHidup,
-      panjang,
-      berat,
-      kecepatanTertinggi,
-    } = req.body;
+    const { namaSpesies, deskripsi, kerajaan, kelas, statusKonservasi, ordo, spesies, populasi, rentanganHidup, panjang, berat, kecepatanTertinggi } = req.body;
 
     let gambar = null;
     if (req.file) {
@@ -89,21 +73,7 @@ router.post("/", upload.single("gambar"), async (req, res) => {
 
     const [result] = await pool.query(
       "INSERT INTO spesies (namaSpesies, deskripsi, kerajaan, kelas, statusKonservasi, ordo, spesies, populasi, rentanganHidup, panjang, berat, kecepatanTertinggi, gambar) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-      [
-        namaSpesies,
-        deskripsi,
-        kerajaan,
-        kelas,
-        statusKonservasi,
-        ordo,
-        spesies,
-        populasi,
-        rentanganHidup,
-        panjang,
-        berat,
-        kecepatanTertinggi,
-        gambar,
-      ]
+      [namaSpesies, deskripsi, kerajaan, kelas, statusKonservasi, ordo, spesies, populasi, rentanganHidup, panjang, berat, kecepatanTertinggi, gambar]
     );
 
     res.status(201).json({
@@ -118,27 +88,12 @@ router.post("/", upload.single("gambar"), async (req, res) => {
 });
 
 router.put("/:id", upload.single("gambar"), async (req, res) => {
-  const {
-    namaSpesies,
-    deskripsi,
-    kerajaan,
-    kelas,
-    statusKonservasi,
-    ordo,
-    spesies,
-    populasi,
-    rentanganHidup,
-    panjang,
-    berat,
-    kecepatanTertinggi,
-  } = req.body;
+  const { namaSpesies, deskripsi, kerajaan, kelas, statusKonservasi, ordo, spesies, populasi, rentanganHidup, panjang, berat, kecepatanTertinggi } = req.body;
 
   let gambar = req.file ? req.file.filename : null;
 
   try {
-    const [rows] = await pool.query("SELECT gambar FROM spesies WHERE id = ?", [
-      req.params.id,
-    ]);
+    const [rows] = await pool.query("SELECT gambar FROM spesies WHERE id = ?", [req.params.id]);
     if (rows.length === 0) {
       return res.status(404).json({ message: "Data tidak ditemukan" });
     }
@@ -156,22 +111,7 @@ router.put("/:id", upload.single("gambar"), async (req, res) => {
 
     const [result] = await pool.query(
       "UPDATE spesies SET namaSpesies = ?, deskripsi = ?, kerajaan = ?, kelas = ?, statusKonservasi = ?, ordo = ?, spesies = ?, populasi = ?, rentanganHidup = ?, panjang = ?, berat = ?, kecepatanTertinggi = ?, gambar = ? WHERE id = ?",
-      [
-        namaSpesies,
-        deskripsi,
-        kerajaan,
-        kelas,
-        statusKonservasi,
-        ordo,
-        spesies,
-        populasi,
-        rentanganHidup,
-        panjang,
-        berat,
-        kecepatanTertinggi,
-        gambar,
-        req.params.id,
-      ]
+      [namaSpesies, deskripsi, kerajaan, kelas, statusKonservasi, ordo, spesies, populasi, rentanganHidup, panjang, berat, kecepatanTertinggi, gambar, req.params.id]
     );
 
     if (result.affectedRows === 0) {
@@ -185,9 +125,7 @@ router.put("/:id", upload.single("gambar"), async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   try {
-    const [rows] = await pool.query("SELECT gambar FROM spesies WHERE id = ?", [
-      req.params.id,
-    ]);
+    const [rows] = await pool.query("SELECT gambar FROM spesies WHERE id = ?", [req.params.id]);
     if (rows.length === 0) {
       return res.status(404).json({ message: "Data tidak ditemukan" });
     }
@@ -198,9 +136,7 @@ router.delete("/:id", async (req, res) => {
       fs.unlinkSync(oldImagePath);
     }
 
-    const [result] = await pool.query("DELETE FROM spesies WHERE id = ?", [
-      req.params.id,
-    ]);
+    const [result] = await pool.query("DELETE FROM spesies WHERE id = ?", [req.params.id]);
 
     if (result.affectedRows === 0) {
       return res.status(404).json({ message: "Data tidak ditemukan" });
