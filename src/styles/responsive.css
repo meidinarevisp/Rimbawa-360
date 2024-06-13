@@ -291,7 +291,11 @@
 
   .col-md-4 .team-member {
     flex: 1 1 calc(100% - 20px);
+<<<<<<< HEAD
     width: 55%;
+=======
+    max-width: calc(80% - 20px);
+>>>>>>> 7859f79b4108e9f71bccf5bddcbdec7d87e5aa4c
     margin: 0 auto 20px;
   }
 
@@ -304,6 +308,7 @@
     margin-top: 0;
   }
 }
+<<<<<<< HEAD
 
 @media (max-width: 768px) {
   .detail-spesies {
@@ -340,3 +345,5 @@
     padding: 8px 16px;
   }
 }
+=======
+>>>>>>> 7859f79b4108e9f71bccf5bddcbdec7d87e5aa4c

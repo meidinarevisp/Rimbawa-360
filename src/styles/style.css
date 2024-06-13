@@ -86,14 +86,22 @@ body {
   color: #eeeeee !important;
 }
 
-.input-group-append {
+.show-password-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #666;
+  background-color: transparent;
+  border: none;
 }
 
-.fa-eye,
-.fa-eye-slash {
-  font-size: 1.5rem;
-  color: #858383;
+.fa-eye {
+  font-size: 1.3rem;
 }
 
 .gambar-user {
@@ -570,11 +578,14 @@ nav .dropdown-menu .dropdown-item:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+<<<<<<< HEAD
 }
 
 .hero-section h1,
 .hero-section p {
   color: #fff;
+=======
+>>>>>>> 7859f79b4108e9f71bccf5bddcbdec7d87e5aa4c
 }
 
 .hero-section h1 {
@@ -586,6 +597,11 @@ nav .dropdown-menu .dropdown-item:hover {
 .hero-section p {
   font-size: 1.8rem;
   font-weight: 600;
+}
+
+.hero-section h1,
+.hero-section p {
+  color: #fff;
 }
 
 .btn-jelajah {
@@ -642,7 +658,10 @@ i.fa-angle-right {
   font-size: 1.5rem;
 }
 
+<<<<<<< HEAD
 /* Edukasi Section */
+=======
+>>>>>>> 7859f79b4108e9f71bccf5bddcbdec7d87e5aa4c
 .edukasi-section h2 {
   font-size: 2.8rem;
   margin-right: 20px;
@@ -666,7 +685,11 @@ i.fa-angle-right {
   overflow: hidden;
   display: flex;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
   align-items: stretch; /* Ensure children stretch to the same height */
+=======
+  align-items: stretch;
+>>>>>>> 7859f79b4108e9f71bccf5bddcbdec7d87e5aa4c
 }
 
 .inner-flex-container {
@@ -699,7 +722,18 @@ i.fa-angle-right {
   font-size: 1.2em;
   line-height: 1.8;
   overflow: visible; /* Ensure text is fully visible */
+<<<<<<< HEAD
   white-space: normal; /* Allow text to wrap */
+=======
+  white-space: normal;
+}
+
+.image-edukasi img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+>>>>>>> 7859f79b4108e9f71bccf5bddcbdec7d87e5aa4c
 }
 
 .image-edukasi {
@@ -707,7 +741,15 @@ i.fa-angle-right {
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
   flex: 1; /* Make the image container flexible */
+=======
+  flex: 1;
+}
+
+.edukasi-section h3 {
+  margin-left: 20px;
+>>>>>>> 7859f79b4108e9f71bccf5bddcbdec7d87e5aa4c
 }
 
 .image-edukasi img {
@@ -1120,6 +1162,7 @@ footer .fa-2x {
   margin-left: 13px;
   padding-bottom: 10px;
 }
+
 .destinasi-page h1 {
   margin-left: 12px;
 }
@@ -1158,7 +1201,11 @@ footer .fa-2x {
 .destinasi-page .row .col-md-4 .image-container img {
   display: block;
   width: 100%;
+<<<<<<< HEAD
   max-width: 100%; /* Menjadikan gambar responsif */
+=======
+  max-width: 100%;
+>>>>>>> 7859f79b4108e9f71bccf5bddcbdec7d87e5aa4c
   height: 100%;
   object-fit: cover;
   cursor: pointer;
@@ -1573,7 +1620,11 @@ footer .fa-2x {
   height: auto; /* Membuat gambar proporsional terhadap perubahan lebar */
   display: block;
   margin: 0 auto;
+<<<<<<< HEAD
   max-height: 100%; /* Membatasi tinggi maksimum gambar agar tidak memanjang terlalu vertikal */
+=======
+  max-height: 100%;
+>>>>>>> 7859f79b4108e9f71bccf5bddcbdec7d87e5aa4c
 }
 
 .dampak,
@@ -1632,7 +1683,11 @@ footer .fa-2x {
   padding: 20px;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
   justify-content: center; /* Memusatkan kartu secara horizontal */
+<<<<<<< HEAD
   align-items: center; /* Memusatkan kartu secara vertikal */
+=======
+  align-items: center;
+>>>>>>> 7859f79b4108e9f71bccf5bddcbdec7d87e5aa4c
 }
 
 .spesies-image {
@@ -1641,7 +1696,11 @@ footer .fa-2x {
   border-radius: 10px; /* Membuat sudut gambar melengkung */
   display: flex; /* Menjadikan gambar sebagai flex container */
   align-items: center; /* Memusatkan secara vertikal */
+<<<<<<< HEAD
   justify-content: center; /* Memusatkan secara horizontal */
+=======
+  justify-content: center;
+>>>>>>> 7859f79b4108e9f71bccf5bddcbdec7d87e5aa4c
 }
 
 .spesies-text {
@@ -2027,11 +2086,20 @@ footer .fa-2x {
   margin-left: 10px;
 }
 
+<<<<<<< HEAD
 /* Responsive Styles */
 @media (max-width: 768px) {
   #cerita-list .col-md-4 {
     flex: 1 1 calc(100% - 10px); /* Adjusted column width for smaller screens */
     max-width: calc(100% - 10px); /* Adjusted maximum column width for smaller screens */
+=======
+@media (max-width: 768px) {
+  #cerita-list .col-md-4 {
+    flex: 1 1 calc(100% - 10px); /* Adjusted column width for smaller screens */
+    max-width: calc(
+      100% - 10px
+    ); /* Adjusted maximum column width for smaller screens */
+>>>>>>> 7859f79b4108e9f71bccf5bddcbdec7d87e5aa4c
     margin-left: 10px;
   }
   #cerita-kamu .btn-tambah {
@@ -2039,7 +2107,10 @@ footer .fa-2x {
   }
 }
 
+<<<<<<< HEAD
 /* Mengatur warna tombol edit */
+=======
+>>>>>>> 7859f79b4108e9f71bccf5bddcbdec7d87e5aa4c
 .card-body .edit-button,
 .card-body .delete-button {
   background-color: #004225; /* Warna biru sesuai tema Bootstrap */
