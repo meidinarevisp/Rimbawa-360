@@ -1,5 +1,4 @@
 /* page edukasi */
-
 @media (max-width: 768px) {
   .judul-edukasi {
     font-size: 2rem;
@@ -15,20 +14,36 @@
   }
 }
 
-/* page destinasi */
+/* Destinasi page */
 @media (max-width: 768px) {
-  .destinasi-page .row {
-    flex-direction: column;
-    padding-right: 20px;
+  .destinasi-page:before {
+    left: -40%;
+    width: 60vw;
   }
 
   .destinasi-page .row .col-md-4 {
-    flex-basis: calc(100% - 20px);
+    flex: 1 1 100%;
+    height: auto;
+    margin-bottom: 20px;
+    margin-left: 20px;
   }
 }
 
 /* page cerita */
 @media (max-width: 768px) {
+  /* dashboard */
+  .btn-offcanvas a {
+    margin-left: 0;
+  }
+  .dashboard-section .btn {
+    margin-top: 20px;
+    margin-right: 0;
+  }
+
+  .dashboard-section img {
+    max-width: 400px;
+  }
+
   .cerita-kita-page .row {
     flex-direction: column;
     gap: 20px;
@@ -116,42 +131,39 @@
   }
 }
 
-/* Edukasi Section */
+/* edukasi section */
 @media (max-width: 768px) {
   .edukasi-section h2 {
     text-align: center;
   }
+
   .flex-item {
-    display: flex;
     flex-direction: column-reverse;
   }
 
   .inner-flex-container {
-    display: flex;
     flex-direction: column;
     align-items: center;
     flex: 1;
   }
 
   .text-container {
-    flex: 1;
     text-align: center;
     padding: 20px;
     margin: 0;
   }
 
   .image-edukasi {
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+    width: 100%;
+    max-width: none;
     justify-content: center;
   }
 
   .image-edukasi img {
-    display: block;
     width: 100%;
     height: auto;
   }
+
   .edukasi-section h3 {
     margin-left: 0;
   }
@@ -213,6 +225,10 @@
 
 /* Destinasi Section */
 @media (max-width: 768px) {
+  .destinasi-section h2 {
+    text-align: center;
+  }
+
   .destinasi-section .row .col-md-4 {
     flex: 1 1 100%;
     height: auto;
@@ -305,6 +321,7 @@
   }
 }
 
+/* detail spesies */
 @media (max-width: 768px) {
   .detail-spesies {
     margin-left: 20px;
@@ -341,6 +358,7 @@
   }
 }
 
+/* detail direktori */
 @media (max-width: 768px) {
   .detail-direktori-section {
     padding: 30px 0;
@@ -363,5 +381,13 @@
 
   .email-reset-section .btn {
     max-width: 328px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-picture {
+    width: 75%;
+    margin-left: 50px;
+    margin-top: -80px;
   }
 }

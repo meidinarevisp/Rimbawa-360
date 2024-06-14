@@ -1,6 +1,5 @@
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #e8eedc;
   overflow-x: hidden;
 }
@@ -873,35 +872,30 @@ i.fa-angle-right {
   flex-direction: column;
   justify-content: center;
   padding: 20px;
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-.tentang-kami-section .text {
-  text-align: justify;
-  font-size: 1.5em;
-  margin-left: 20px;
 }
 
 .edukasi-section .text {
   text-align: justify;
   font-size: 1.2em;
   line-height: 1.8;
-  overflow: visible; /* Ensure text is fully visible */
+  overflow: visible;
   white-space: normal;
+}
+
+.image-edukasi {
+  flex: 0 0 auto;
+  max-width: 25%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .image-edukasi img {
   display: block;
-  height: 280px;
-  width: 450px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
-}
-
-.image-edukasi {
-  overflow: hidden;
-  display: flex;
-  align-items: center;
 }
 
 .edukasi-section h3 {
@@ -913,6 +907,12 @@ i.fa-angle-right {
   padding-bottom: 65px;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.tentang-kami-section .text {
+  text-align: justify;
+  font-size: 1.5em;
+  margin-left: 20px;
 }
 
 .tentang-kami-section h2 {
@@ -1299,8 +1299,8 @@ footer .fa-2x {
 .destinasi-page .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
-  padding-bottom: 10px;
+  gap: 30px;
+  padding-bottom: 20px;
 }
 
 .destinasi-page .row .col-md-4 {
@@ -1309,13 +1309,14 @@ footer .fa-2x {
   padding-left: 0;
   padding-right: 0;
   border-radius: 10px;
-  flex-basis: calc(33.333% - 20px);
+  flex: 1 1 calc(33.333% - 20px);
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
-  left: 25px;
+  justify-content: space-between;
+  height: 500px;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -1330,31 +1331,28 @@ footer .fa-2x {
 .destinasi-page .row .col-md-4 .image-container img {
   display: block;
   width: 100%;
-  max-width: 100%;
   height: 100%;
   object-fit: cover;
-  cursor: pointer;
 }
 
 .destinasi-page .row .col-md-4 .image-container h1 {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
   background-color: #004225;
   color: #fff;
   padding: 5px 10px;
-  border-radius: 0px 0px 0px 10px;
+  border-radius: 0 0 0 10px;
   font-size: 1.1em;
 }
 
 .destinasi-page .row .col-md-4 .text-content {
   background-color: #b5e0cd;
   padding: 15px;
+  height: 40%;
   display: flex;
   flex-direction: column;
   text-align: justify;
-  width: auto;
-  height: auto;
 }
 
 .destinasi-page .row .col-md-4 .text-content h4,
@@ -1371,8 +1369,8 @@ footer .fa-2x {
   text-overflow: ellipsis;
 }
 
-.destinasi-page .row .col-md-4:last-child {
-  margin-right: 0;
+.dashboard-section img {
+  max-width: 500px;
 }
 
 .destinasi-page:before {
@@ -2195,9 +2193,7 @@ footer .fa-2x {
 @media (max-width: 768px) {
   #cerita-list .col-md-4 {
     flex: 1 1 calc(100% - 10px); /* Adjusted column width for smaller screens */
-    max-width: calc(
-      100% - 10px
-    ); /* Adjusted maximum column width for smaller screens */
+    max-width: calc(100% - 10px); /* Adjusted maximum column width for smaller screens */
     margin-left: 10px;
   }
   #cerita-kamu .btn-tambah {
@@ -2259,15 +2255,13 @@ footer .fa-2x {
 .btn-offcanvas {
   background-color: #004225;
   border: 2px solid #004225;
-  border-radius: 5px 0 0 5px;
-  width: 50px;
+  border-radius: 5px;
+  width: 107px;
   height: 50px;
-  position: absolute;
-  bottom: -10px;
-  right: -110px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 20px auto 0;
 }
 
 .btn-offcanvas a {
@@ -2280,6 +2274,7 @@ footer .fa-2x {
   color: #eeeeee !important;
   padding-bottom: 25px !important;
   padding-left: 15px;
+  margin-left: 15px;
   text-decoration: none;
   border: none;
 }
@@ -2287,10 +2282,6 @@ footer .fa-2x {
 .btn-offcanvas:hover {
   background-color: #56ab2e !important;
   border: 2px solid #56ab2e !important;
-  border-radius: 5px 0 0 5px;
-  width: 50px;
-  height: 50px;
-  font-size: 2rem;
 }
 
 .dashboard-section {
@@ -2330,6 +2321,7 @@ footer .fa-2x {
 
 .dashboard-section .btn {
   margin-top: 20px;
+  margin-right: 20px;
 }
 
 .btn-dashboard {
@@ -2399,7 +2391,7 @@ footer .fa-2x {
 .dashboard-direktori .logo {
   position: absolute;
   top: 30px;
-  left: 220px;
+  left: 20px;
   width: 80px;
   height: auto;
 }
@@ -2502,7 +2494,7 @@ footer .fa-2x {
 .dashboard-edukasi .logo {
   position: absolute;
   top: 30px;
-  left: 220px;
+  left: 20px; /* Adjust position */
   width: 80px;
   height: auto;
 }
@@ -2604,7 +2596,7 @@ footer .fa-2x {
 .dashboard-spesies .logo {
   position: absolute;
   top: 30px;
-  left: 220px;
+  left: 20px;
   width: 80px;
   height: auto;
 }

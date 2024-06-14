@@ -17,10 +17,7 @@ app.use(
     credentials: true,
   })
 );
-app.use(
-  "/uploads",
-  express.static(path.join(__dirname, "src", "public", "uploads"))
-);
+app.use("/uploads", express.static(path.join(__dirname, "src", "public", "uploads")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/api/direktori", direktoriRoutes);

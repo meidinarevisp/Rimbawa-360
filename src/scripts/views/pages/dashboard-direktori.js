@@ -22,10 +22,7 @@ const DashboardDirektori = {
       data.forEach((item) => {
         const itemElement = document.createElement("div");
         itemElement.classList.add("card", "mb-3");
-        const truncatedLocation =
-          item.lokasi.length > 50
-            ? item.lokasi.substring(0, 50) + "..."
-            : item.lokasi;
+        const truncatedLocation = item.lokasi.length > 50 ? item.lokasi.substring(0, 50) + "..." : item.lokasi;
         itemElement.innerHTML = `
       <div class="row g-0">
         <div class="col-md-4">
@@ -62,12 +59,9 @@ const DashboardDirektori = {
 
           if (confirmation.isConfirmed) {
             try {
-              const deleteResponse = await fetch(
-                `http://localhost:3000/api/direktori/${id}`,
-                {
-                  method: "DELETE",
-                }
-              );
+              const deleteResponse = await fetch(`http://localhost:3000/api/direktori/${id}`, {
+                method: "DELETE",
+              });
               if (deleteResponse.ok) {
                 itemElement.remove();
                 Swal.fire("Data berhasil dihapus!", "", "success");
@@ -83,8 +77,7 @@ const DashboardDirektori = {
       });
     } catch (err) {
       console.error("Error:", err);
-      direktoriContainer.innerHTML =
-        "<p>Gagal memuat data. Silakan coba lagi nanti.</p>";
+      direktoriContainer.innerHTML = "<p>Gagal memuat data. Silakan coba lagi nanti.</p>";
     }
   },
 };

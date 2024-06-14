@@ -868,7 +868,7 @@ section {
         <h1>Selamat Datang di Dashboard!</h1>
       </div>
       <div class="col-12 text-center mt-4">
-        <img src="rimbawa-360.png" alt="Rimbawa 360" style="max-width: 500px;">
+        <img src="rimbawa-360.png" alt="Rimbawa 360">
       </div>
       <div class="col-12 text-center mt-4">
         <a href="/#/dashboard-direktori" class="btn btn-dashboard btn-lg me-3">Ekowisata</a>
