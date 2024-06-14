@@ -38,7 +38,7 @@ const Spesies = {
       text.classList.add("spesies-text");
       text.innerHTML = `
       <h3>${spesies.namaSpesies}</h3>
-      <hr>
+      <hr class="hr2">
       <p>${spesies.deskripsi}</p>
     `;
 

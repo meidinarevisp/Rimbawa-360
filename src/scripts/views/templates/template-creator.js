@@ -272,7 +272,6 @@ const direktoriTemplate = () => `
             <span style="color: #56ab2e">Hutan</span></strong
           >
         </h1>
-        <hr />
         <br />
         <div class="row"></div>
         <div class="pagination"></div>
@@ -462,6 +461,7 @@ const spesiesTemplate = () => `
  <navbar-rimbawa id="navbar"></navbar-rimbawa>
  <section class="spesies-page">
       <div class="container">
+      <h1>Jelajahi</h1>
         <h2>
           <strong>
             Semua yg ingin Kamu <br />ketahui tentang

@@ -4,6 +4,13 @@
     font-size: 2rem;
   }
 
+  .edukasi-page:before {
+    left: -40%;
+    top: -10px;
+    width: 90vw;
+    height: 90%;
+  }
+
   .edukasi-content h3 {
     font-size: 1.8rem;
   }
@@ -12,13 +19,23 @@
   .edukasi-content ul li {
     font-size: 1rem;
   }
+
+  .edukasi-page h2 {
+    font-size: 1.2rem;
+  }
+
+  .edukasi-page h1 {
+    font-size: 2.5rem;
+  }
 }
 
 /* Destinasi page */
 @media (max-width: 768px) {
   .destinasi-page:before {
     left: -40%;
-    width: 60vw;
+    top: -100px;
+    width: 90vw;
+    height: 30%;
   }
 
   .destinasi-page .row .col-md-4 {
@@ -26,6 +43,13 @@
     height: auto;
     margin-bottom: 20px;
     margin-left: 20px;
+  }
+  .destinasi-page h2 {
+    font-size: 1.2rem;
+  }
+
+  .destinasi-page h1 {
+    font-size: 2rem;
   }
 }
 
@@ -99,7 +123,7 @@
     align-items: flex-start;
     padding: 20px 20px;
     width: 85%;
-    margin-left: 30px;
+    margin-left: 20px;
   }
 
   .spesies-image {
@@ -108,9 +132,23 @@
     margin-bottom: 20px;
   }
 
+  .spesies-page:before {
+    left: -40%;
+    top: -10px;
+    width: 90vw;
+    height: 90%;
+  }
+
   .spesies-page h2 {
-    font-size: 1.5rem;
-    text-align: center;
+    font-size: 2rem;
+    padding-top: 10px;
+    margin-left: 10px;
+  }
+
+  .spesies-page h1 {
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+    margin-left: 10px;
   }
 
   .spesies-page h3 {
@@ -225,7 +263,9 @@
 @media (max-width: 768px) {
   .spesies-section:before {
     left: -40%;
-    width: 60vw;
+    top: -50px;
+    width: 100vw;
+    height: 50%;
   }
 
   .spesies-section h2 {
