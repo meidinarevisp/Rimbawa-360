@@ -119,7 +119,7 @@
 }
 
 /* Section Tentang Kami */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .tentang-kami-section h2 {
     font-size: 3rem;
     padding-top: 40px;

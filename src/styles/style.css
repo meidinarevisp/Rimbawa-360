@@ -1091,7 +1091,7 @@ i.fa-angle-right {
 .destinasi-section .row .col-md-4 .text-content {
   background-color: #b5e0cd;
   padding: 15px;
-  height: 40%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   text-align: justify;
@@ -1349,7 +1349,7 @@ footer .fa-2x {
 .destinasi-page .row .col-md-4 .text-content {
   background-color: #b5e0cd;
   padding: 15px;
-  height: 40%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   text-align: justify;
