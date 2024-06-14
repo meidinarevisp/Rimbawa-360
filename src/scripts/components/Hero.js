@@ -29,7 +29,7 @@ class HeroRimbawa extends HTMLElement {
             <a class="btn btn-jelajah" href="/#/direktori"
               >Jelajahi Sekarang</a
             >
-            <a href="#tentang-kami" class="btn btn-link"
+            <a href="#tentang-kami" id="main-content" class="btn btn-link"
               >Selengkapnya <i class="fas fa-arrow-right m-lg-3"></i
             ></a>
           </div>
@@ -37,6 +37,22 @@ class HeroRimbawa extends HTMLElement {
       </div>
     </section>
     `;
+
+    const mainContent = document.getElementById("main-content");
+    if (mainContent) {
+      mainContent.addEventListener("click", (event) => {
+        event.preventDefault();
+        const exploreContentSection = document.getElementById("tentang-kami");
+        if (exploreContentSection) {
+          const headerHeight = document.querySelector("nav").offsetHeight;
+
+          window.scrollTo({
+            top: exploreContentSection.offsetTop - headerHeight,
+            behavior: "smooth",
+          });
+        }
+      });
+    }
   }
 }
 
