@@ -192,12 +192,20 @@
   .edukasi-section h3 {
     font-size: 1.8rem;
     text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .edukasi-section hr {
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .edukasi-section .text {
     text-align: justify;
     margin-right: 20px;
     font-size: 1rem;
+    margin-top: 20px;
   }
 
   .edukasi-section .inner-flex-container {

@@ -882,6 +882,9 @@ i.fa-angle-right {
   white-space: normal;
 }
 
+.edukasi-section hr {
+}
+
 .image-edukasi {
   flex: 0 0 auto;
   max-width: 25%;
@@ -894,12 +897,13 @@ i.fa-angle-right {
 .image-edukasi img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 190px;
   object-fit: cover;
 }
 
 .edukasi-section h3 {
   font-size: 0.5rem;
+  text-align: center;
 }
 
 .tentang-kami-section {
@@ -1245,16 +1249,6 @@ footer .list-inline-item a:hover {
 
 footer .fa-2x {
   font-size: 2em;
-}
-
-.destinasi-page hr {
-  border: none;
-  height: 4px;
-  background-color: #242524;
-  opacity: 100%;
-  margin-left: 13px;
-  width: 38%;
-  position: relative;
 }
 
 .destinasi-page {
