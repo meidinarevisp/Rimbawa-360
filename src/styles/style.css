@@ -960,12 +960,6 @@ i.fa-angle-right {
   display: block;
 }
 
-.tentang-kami-page .text {
-  flex: 1;
-  text-align: justify;
-  margin: 0 10px;
-}
-
 .spesies-section {
   position: relative;
 }
@@ -1599,8 +1593,10 @@ footer .fa-2x {
 
 .tentang-kami-page .text {
   text-align: justify;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-left: 20px;
+  flex: 1;
+  margin: 0 10px;
 }
 
 .tentang-kami-page {
