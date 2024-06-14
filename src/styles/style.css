@@ -899,7 +899,7 @@ i.fa-angle-right {
 }
 
 .edukasi-section h3 {
-  margin-left: 20px;
+  font-size: 0.5rem;
 }
 
 .tentang-kami-section {
@@ -910,15 +910,23 @@ i.fa-angle-right {
 }
 
 .tentang-kami-section .text {
+  flex: 1;
   text-align: justify;
-  font-size: 1.5em;
-  margin-left: 20px;
+  margin: 0 10px;
 }
 
 .tentang-kami-section h2 {
   font-size: 2rem;
   padding-top: 20px;
   text-align: center;
+}
+
+.tentang-kami-section h1 {
+  font-size: 1.5rem;
+}
+
+.tentang-kami-section p {
+  font-size: 1.2rem;
 }
 
 .tentang-kami-section .container {
@@ -943,10 +951,9 @@ i.fa-angle-right {
   display: block;
 }
 
-.container .text {
+.tentang-kami-page .text {
   flex: 1;
   text-align: justify;
-  font-size: 1rem;
   margin: 0 10px;
 }
 
@@ -1598,7 +1605,7 @@ footer .fa-2x {
 
 .tentang-kami-page .text {
   text-align: justify;
-  font-size: 1.6em;
+  font-size: 1.5rem;
   margin-left: 20px;
 }
 
@@ -1778,6 +1785,11 @@ footer .fa-2x {
   font-size: 50px;
   padding-bottom: 20px;
 }
+
+.spesies-page h3 {
+  text-align: center;
+}
+
 .spesies-card i {
   font-size: 10px;
 }
@@ -1800,12 +1812,13 @@ footer .fa-2x {
 }
 
 .spesies-image {
-  width: 450px;
+  width: 400px;
   height: auto;
   border-radius: 10px; /* Membuat sudut gambar melengkung */
   display: flex; /* Menjadikan gambar sebagai flex container */
   align-items: center; /* Memusatkan secara vertikal */
   justify-content: center;
+  margin-right: 20px;
 }
 
 .spesies-text {

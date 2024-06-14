@@ -321,7 +321,7 @@ const Beranda = {
           const edukasiContent = `
             <div class="inner-flex-container row${index + 1}">
               <div class="text-container">
-                <h3 style="font-size: 1.8rem">${edukasi.nama_isu}</h3>
+                <h3 style="font-size: 1.5rem">${edukasi.nama_isu}</h3>
                 <div class="text">${truncatedDeskripsi}</div>
               </div>
               <div class="image-edukasi"><img src="/uploads/${edukasi.gambar}" alt="${edukasi.nama_isu}" /></div>
