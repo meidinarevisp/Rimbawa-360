@@ -867,10 +867,10 @@ section {
       <div class="col-12 text-center">
         <h1>Selamat Datang di Dashboard!</h1>
       </div>
-      <div class="col-12 text-center mt-4">
+      <div class="col-12 text-center">
         <img src="rimbawa-360.png" alt="Rimbawa 360">
       </div>
-      <div class="col-12 text-center mt-4">
+      <div class="col-12 text-center">
         <a href="/#/dashboard-direktori" class="btn btn-dashboard btn-lg me-3">Ekowisata</a>
         <a href="/#/dashboard-spesies" class="btn btn-dashboard btn-lg me-3">Spesies</a>
         <a href="/#/dashboard-edukasi" class="btn btn-dashboard btn-lg">Edukasi</a>
@@ -936,7 +936,7 @@ section {
    <div class="container mt-4">
         <div class="row">
             <div class="col-10">
-                <a href="/#/dashboard">
+                <a href="/#/dashboard-admin">
                   <img src="rimbawa-360.png" alt="Logo Rimbawa 360" class="logo">
                 </a>
                 <div class="dropdown d-flex justify-content-between align-items-center">
@@ -974,7 +974,7 @@ section {
    <div class="container mt-4">
         <div class="row">
             <div class="col-10">
-                <a href="/#/dashboard">
+                <a href="/#/dashboard-admin">
                   <img src="rimbawa-360.png" alt="Logo Rimbawa 360" class="logo">
                 </a>
                 <div class="dropdown d-flex justify-content-between align-items-center">

@@ -6,7 +6,13 @@ import { CustomEase } from "gsap/CustomEase";
 import { RoughEase, ExpoScaleEase, SlowMo } from "gsap/EasePack";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(CustomEase, RoughEase, ExpoScaleEase, SlowMo, ScrollTrigger);
+gsap.registerPlugin(
+  CustomEase,
+  RoughEase,
+  ExpoScaleEase,
+  SlowMo,
+  ScrollTrigger
+);
 
 const Beranda = {
   async render() {
@@ -160,7 +166,10 @@ const Beranda = {
             const destinasiCol = document.createElement("div");
             destinasiCol.classList.add("col-md-4");
 
-            const deskripsiPendek = destinasi.deskripsi.length > 200 ? destinasi.deskripsi.substring(0, 200) + "..." : destinasi.deskripsi;
+            const deskripsiPendek =
+              destinasi.deskripsi.length > 200
+                ? destinasi.deskripsi.substring(0, 200) + "..."
+                : destinasi.deskripsi;
 
             const destinasiContent = `
               <div class="image-container">
@@ -186,7 +195,9 @@ const Beranda = {
         const copyDestinasiArray = [...destinasiArray];
 
         for (let i = 0; i < jumlah; i++) {
-          const randomIndex = Math.floor(Math.random() * copyDestinasiArray.length);
+          const randomIndex = Math.floor(
+            Math.random() * copyDestinasiArray.length
+          );
           destinasiAcak.push(copyDestinasiArray.splice(randomIndex, 1)[0]);
         }
 
@@ -234,7 +245,9 @@ const Beranda = {
                     height="120"
                   />
                   <h3>${cerita.username}</h3>
-                  <p class="waktu-unggah">${new Date(cerita.date_created).toLocaleString("id-ID", {
+                  <p class="waktu-unggah">${new Date(
+                    cerita.date_created
+                  ).toLocaleString("id-ID", {
                     dateStyle: "medium",
                     timeStyle: "short",
                   })}</p>
@@ -252,8 +265,12 @@ const Beranda = {
         console.error("Gagal memuat data cerita:", error);
       }
 
-      const prevButton = carouselElement.querySelector(".carousel-control-prev");
-      const nextButton = carouselElement.querySelector(".carousel-control-next");
+      const prevButton = carouselElement.querySelector(
+        ".carousel-control-prev"
+      );
+      const nextButton = carouselElement.querySelector(
+        ".carousel-control-next"
+      );
 
       prevButton.addEventListener("click", () => {
         carousel.prev();
@@ -275,8 +292,10 @@ const Beranda = {
           if (species.length >= 5) {
             for (let index = 0; index < species.length; index++) {
               var elId = index + 1;
-              document.getElementById("image" + elId).src = "uploads/" + species[index].gambar;
-              document.getElementById("overlay" + elId).innerText = species[index].kelas;
+              document.getElementById("image" + elId).src =
+                "uploads/" + species[index].gambar;
+              document.getElementById("overlay" + elId).innerText =
+                species[index].kelas;
             }
           }
         } catch (error) {
@@ -290,7 +309,8 @@ const Beranda = {
     const edukasiSection = document.querySelector(".edukasi-section");
 
     if (edukasiSection) {
-      const edukasiContainer = edukasiSection.querySelector("#edukasiContainer");
+      const edukasiContainer =
+        edukasiSection.querySelector("#edukasiContainer");
 
       async function fetchEdukasiData() {
         try {
@@ -304,7 +324,9 @@ const Beranda = {
       }
 
       function truncateText(text, maxLength) {
-        return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
+        return text.length > maxLength
+          ? text.substring(0, maxLength) + "..."
+          : text;
       }
 
       async function tampilkanEdukasi() {
@@ -325,7 +347,9 @@ const Beranda = {
                 <hr>
                 <div class="text">${truncatedDeskripsi}</div>
               </div>
-              <div class="image-edukasi"><img src="/uploads/${edukasi.gambar}" alt="${edukasi.nama_isu}" /></div>
+              <div class="image-edukasi"><img src="/uploads/${
+                edukasi.gambar
+              }" alt="${edukasi.nama_isu}" /></div>
             </div>
           `;
 

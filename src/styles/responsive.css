@@ -29,6 +29,58 @@
   }
 }
 
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 105px; /* Sesuaikan dengan tinggi navbar Anda */
+    left: 0;
+    right: 0;
+    bottom: 250px;
+    background-color: #e8eedc;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-nav .nav-item {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 15px;
+  }
+
+  .navbar-nav .dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    margin-left: 15px;
+  }
+
+  .d-flex {
+    margin-left: 0 !important;
+    margin-top: 20px;
+  }
+
+  .login-btn,
+  .daftar-btn {
+    margin-right: 0;
+    margin-bottom: 10px;
+    margin-top: -12px;
+  }
+
+  .gambar-user {
+    display: none;
+    margin-top: -25px;
+  }
+}
+
 /* Destinasi page */
 @media (max-width: 768px) {
   .destinasi-page:before {
@@ -175,7 +227,7 @@
     margin-left: 20px;
   }
   .tentang-kami-section h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   .tentang-kami-section p {
     font-size: 1rem;
@@ -277,7 +329,7 @@
   }
 
   .spesies-section h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
   }
 
@@ -297,7 +349,7 @@
 /* Destinasi Section */
 @media (max-width: 768px) {
   .destinasi-section h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
   }
 
@@ -313,7 +365,7 @@
 /* Cerita Section */
 @media (max-width: 768px) {
   .cerita-kita-section h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   .cerita-kita {
     margin-left: 10px;
