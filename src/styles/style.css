@@ -608,14 +608,18 @@ nav .dropdown-menu {
   text-align: center;
   line-height: 25px;
   font-size: 1.1rem;
-  padding-top: 20px;
-  left: 50%;
+  padding-top: 8px;
+  margin-top: 25px !important;
+  left: 60%;
+  right: -10px;
   transform: translateX(-5%);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 nav .dropdown-menu .dropdown-item:hover {
-  background-color: #bbe0aa !important;
-  color: #333433 !important;
+  color: #56ab2e !important;
+  background-color: transparent;
 }
 
 .navbar {

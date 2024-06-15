@@ -40,6 +40,7 @@
     z-index: 1000;
     padding: 20px;
     overflow-y: auto;
+    overflow-x: hidden;
     scrollbar-width: none;
     font-size: 1.1rem;
     border-radius: 20px;
@@ -126,6 +127,10 @@
 
   .dropdown-divider {
     border: none;
+  }
+
+  nav .dropdown-menu {
+    box-shadow: 0 0 0;
   }
 
   nav .dropdown-menu .dropdown-item:hover {
