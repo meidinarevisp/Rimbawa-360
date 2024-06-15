@@ -25,9 +25,7 @@ const forgotPassword = {
     document.body.appendChild(logoElement);
 
     const showPasswordIcon = document.getElementById("showPasswordIcon");
-    const showConfirmPasswordIcon = document.getElementById(
-      "showConfirmPasswordIcon"
-    );
+    const showConfirmPasswordIcon = document.getElementById("showConfirmPasswordIcon");
     const passwordField = document.getElementById("password");
     const confirmPasswordField = document.getElementById("password1");
 
@@ -72,16 +70,13 @@ const forgotPassword = {
       }
 
       try {
-        const response = await fetch(
-          `http://localhost:3000/api/auth/reset-password/${token}`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ password }),
-          }
-        );
+        const response = await fetch(`http://localhost:3000/api/auth/reset-password/${token}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ password }),
+        });
 
         const data = await response.json();
 

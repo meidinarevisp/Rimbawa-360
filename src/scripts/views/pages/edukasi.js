@@ -20,9 +20,7 @@ const Edukasi = {
 
         const kontenHTML = `
           <h3>${konten.nama_isu}</h3>
-          <img src="/uploads/${konten.gambar}" alt="${
-          konten.nama_isu
-        }" class="img-fluid mb-3">
+          <img src="/uploads/${konten.gambar}" alt="${konten.nama_isu}" class="img-fluid mb-3">
           <p class="m-5 text-center">${konten.deskripsi}</p>
           <div class="dampak">
             <h4>Dampak</h4>
@@ -48,9 +46,7 @@ const Edukasi = {
 
     async function buatTombolIsuLingkungan() {
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/edukasi/isu-lingkungan"
-        );
+        const response = await fetch("http://localhost:3000/api/edukasi/isu-lingkungan");
         if (!response.ok) {
           throw new Error("Gagal mengambil daftar isu lingkungan");
         }

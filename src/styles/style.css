@@ -641,7 +641,7 @@ nav .dropdown-menu .dropdown-item:hover {
   align-items: center;
   justify-content: center;
   height: 100%;
-  padding-right: 340px;
+  padding-right: 200px;
 }
 
 .dropdown-toggle::after {
