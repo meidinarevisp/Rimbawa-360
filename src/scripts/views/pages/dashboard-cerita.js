@@ -34,9 +34,7 @@ const dashboardCerita = {
             <div class="card-body">
               <h5 class="card-title">${cerita.username}</h5>
               <p class="card-text">${cerita.cerita}</p>
-              <p class="card-text"><small class="text-muted">Uploaded on ${new Date(
-                cerita.date_created
-              ).toLocaleDateString()}</small></p>
+              <p class="card-text"><small class="text-muted">Uploaded on ${new Date(cerita.date_created).toLocaleDateString()}</small></p>
               <div class="button-group">
                 <button class="btn edit-button" data-id="${cerita.id}">
                   <i class="fas fa-edit"></i>
@@ -72,23 +70,17 @@ const dashboardCerita = {
         }).then(async (result) => {
           if (result.isConfirmed) {
             try {
-              const response = await fetch(
-                `http://localhost:3000/api/cerita/${id}`,
-                {
-                  method: "DELETE",
-                  headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${localStorage.getItem("token")}`,
-                  },
-                }
-              );
+              const response = await fetch(`http://localhost:3000/api/cerita/${id}`, {
+                method: "DELETE",
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              });
 
               const result = await response.json();
               if (response.ok) {
-                localStorage.setItem(
-                  "toastMessage",
-                  "Cerita berhasil dihapus!"
-                );
+                localStorage.setItem("toastMessage", "Cerita berhasil dihapus!");
                 window.location.reload();
               } else {
                 throw new Error(result.message);

@@ -1,3 +1,41 @@
+@media (min-width: 768px) {
+  .form-direktori .form-container {
+    flex-wrap: nowrap;
+  }
+
+  .form-direktori .form-column {
+    width: 48%;
+  }
+  .edit-form-direktori .form-column {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-spesies .form-column {
+    width: 100%;
+  }
+  .edit-form-spesies .form-column {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-edukasi {
+    padding: 15px;
+    margin: 30px auto;
+  }
+
+  .form-edukasi h2 {
+    font-size: 2rem;
+  }
+
+  .form-edukasi .btn-batal,
+  .form-edukasi .btn-simpan {
+    padding: 8px 15px;
+  }
+}
+
 @media (max-width: 991.2px) {
   .dashboard-spesies {
     padding-bottom: 15px;
@@ -395,7 +433,7 @@
   .dashboard-direktori h1 {
     margin-top: 30px;
     margin-left: 30px;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   #dashboard-direktori .card-title {
