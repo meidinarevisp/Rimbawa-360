@@ -20,10 +20,7 @@ const DashboardEdukasi = {
       const data = await response.json();
 
       data.forEach((item) => {
-        const truncatedDeskripsi =
-          item.deskripsi.length > 120
-            ? `${item.deskripsi.substring(0, 100)}...`
-            : item.deskripsi;
+        const truncatedDeskripsi = item.deskripsi.length > 120 ? `${item.deskripsi.substring(0, 100)}...` : item.deskripsi;
         const itemElement = document.createElement("div");
         itemElement.classList.add("card", "mb-3");
         itemElement.innerHTML = `
@@ -62,12 +59,9 @@ const DashboardEdukasi = {
 
           if (confirmation.isConfirmed) {
             try {
-              const deleteResponse = await fetch(
-                `http://localhost:3000/api/edukasi/${id}`,
-                {
-                  method: "DELETE",
-                }
-              );
+              const deleteResponse = await fetch(`http://localhost:3000/api/edukasi/${id}`, {
+                method: "DELETE",
+              });
               if (deleteResponse.ok) {
                 itemElement.remove();
                 Swal.fire("Data berhasil dihapus!", "", "success");
@@ -83,8 +77,7 @@ const DashboardEdukasi = {
       });
     } catch (err) {
       console.error("Error:", err);
-      edukasiContainer.innerHTML =
-        "<p>Gagal memuat data. Silakan coba lagi nanti.</p>";
+      edukasiContainer.innerHTML = "<p>Gagal memuat data. Silakan coba lagi nanti.</p>";
     }
   },
 };
