@@ -638,6 +638,7 @@ nav .dropdown-menu .dropdown-item:hover {
   align-items: center;
   justify-content: center;
   height: 100%;
+  padding-right: 340px;
 }
 
 .dropdown-toggle::after {
@@ -715,6 +716,7 @@ nav .dropdown-menu .dropdown-item:hover {
 .navbar-brand {
   display: flex;
   align-items: center;
+  width: 100;
 }
 
 .navbar-brand img {
@@ -926,6 +928,7 @@ i.fa-angle-right {
 .tentang-kami-section h2 {
   font-size: 2.8rem;
   text-align: center;
+  font-weight: 400;
 }
 
 .tentang-kami-section h1 {
@@ -994,7 +997,7 @@ i.fa-angle-right {
 }
 
 .spesies-section h2 {
-  font-size: 50px;
+  font-size: 2.8rem;
   text-align: right;
 }
 
@@ -1124,7 +1127,7 @@ i.fa-angle-right {
 }
 
 .cerita-kita-section h2 {
-  font-weight: bolder;
+  font-weight: bold;
   font-size: 2.5rem;
 }
 
@@ -1704,10 +1707,9 @@ footer .fa-2x {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
   cursor: pointer;
   border-radius: 40px;
-  margin: 8px;
+  margin-right: 8px;
 }
 
 .edukasi-btn:hover {
@@ -1727,6 +1729,7 @@ footer .fa-2x {
   font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 20px;
+  margin-top: -30px;
 }
 
 .edukasi-content p {

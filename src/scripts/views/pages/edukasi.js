@@ -74,7 +74,7 @@ const Edukasi = {
             const edukasiSection = document.querySelector(".edukasi-content");
             if (edukasiSection) {
               window.scrollTo({
-                top: edukasiSection.offsetTop - 50,
+                top: edukasiSection.offsetTop - 90,
                 behavior: "smooth",
               });
             }

@@ -32,14 +32,18 @@
 @media (max-width: 991.98px) {
   .navbar-collapse {
     position: fixed;
-    top: 105px; /* Sesuaikan dengan tinggi navbar Anda */
-    left: 0;
-    right: 0;
-    bottom: 250px;
+    top: 85px; /* Sesuaikan dengan tinggi navbar Anda */
+    left: 500px;
+    right: 10px;
+    bottom: 300px;
     background-color: #e8eedc;
     z-index: 1000;
     padding: 20px;
     overflow-y: auto;
+    scrollbar-width: none;
+    font-size: 1.1rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
 
   .navbar-nav {
@@ -61,23 +65,72 @@
     transform: none;
     box-shadow: none;
     margin-left: 15px;
+    font-size: 1rem;
   }
 
   .d-flex {
     margin-left: 0 !important;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .login-btn,
   .daftar-btn {
     margin-right: 0;
     margin-bottom: 10px;
-    margin-top: -12px;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+
+  .navbar-brand img {
+    width: 65px;
   }
 
   .gambar-user {
-    display: none;
-    margin-top: -25px;
+    width: 35px;
+    height: 35px;
+    padding-left: 30px;
+  }
+
+  .navbar-toggler {
+    padding: 3px 5px; /* Memperkecil ukuran tombol burger */
+    font-size: 0.75rem; /* Memperkecil ikon burger */
+    border: none;
+  }
+
+  .navbar-toggler-icon {
+    width: 2rem;
+    height: 2rem; /* Memperkecil ikon burger */
+  }
+
+  .dropdown .dropdown-menu {
+    left: 30px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+  }
+
+  .dropdown-menu .dropdown-item.active {
+    background-color: #e8eedc !important;
+    color: #56ab2e !important;
+  }
+
+  .dropdown-menu .dropdown-item {
+    text-align: left;
+  }
+
+  .dropdown-menu .dropdown-item-profile {
+    font-size: 1rem;
+    line-height: 0.8;
+    text-decoration: none;
+    color: #333433;
+  }
+
+  .dropdown-divider {
+    border: none;
+  }
+
+  nav .dropdown-menu .dropdown-item:hover {
+    background-color: #e8eedc !important;
+    color: #56ab2e !important;
   }
 }
 

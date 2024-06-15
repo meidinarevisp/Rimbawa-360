@@ -12,7 +12,7 @@ class NavbarRimbawa extends HTMLElement {
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-lg d-flex justify-content-between">
     <a class="navbar-brand" href="/">
-      <img src="rimbawa-360.png" alt="Logo" width="100" />
+      <img src="rimbawa-360.png" alt="Logo" />
     </a>
     <button
       class="navbar-toggler"
@@ -61,33 +61,33 @@ class NavbarRimbawa extends HTMLElement {
           }" href="/#/tentang">Tentang</a>
         </li>
       </ul>
-    </div>
-    <div class="d-flex align-items-center">
-      ${
-        isLoggedIn
-          ? `
-            <div class="dropdown">
-              <a href="#" class="d-flex align-items-center dropdown-toggle gambar-user" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="${user.gambar}" alt="User" width="50" height="50" class="rounded-circle me-2">
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                <li><span class="dropdown-item fw-bold" style="color: #56ab2e;">${user.username}</span></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/#/edit-profile">Edit Profile</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/#/ganti-password">Ganti Password</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/#/dashboard-cerita">Cerita Kamu</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/#/logout">Logout</a></li>
-              </ul>
-            </div>
-          `
-          : `
-            <a class="btn btn-outline-primary me-2 login-btn" href="/#/login">Login</a>
-            <a class="btn btn-daftar daftar-btn" href="/#/register">Daftar</a>
-          `
-      }
+      <div class="d-flex align-items-center ms-auto">
+        ${
+          isLoggedIn
+            ? `
+              <div class="dropdown">
+                <a href="#" class="d-flex align-items-center dropdown-toggle gambar-user" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="${user.gambar}" alt="User" width="50" height="50" class="rounded-circle me-2">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                  <li><span class="dropdown-item dropdown-item-profile fw-bold" style="color: #56ab2e;">${user.username}</span></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item dropdown-item-profile" href="/#/edit-profile">Edit Profile</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item dropdown-item-profile" href="/#/ganti-password">Ganti Password</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item dropdown-item-profile" href="/#/dashboard-cerita">Cerita Kamu</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item dropdown-item-profile" href="/#/logout">Logout</a></li>
+                </ul>
+              </div>
+            `
+            : `
+              <a class="btn btn-outline-primary me-2 login-btn" href="/#/login">Login</a>
+              <a class="btn btn-daftar daftar-btn" href="/#/register">Daftar</a>
+            `
+        }
+      </div>
     </div>
   </div>
 </nav>
