@@ -34,7 +34,7 @@
   .navbar-collapse {
     position: fixed;
     top: 85px; /* Sesuaikan dengan tinggi navbar Anda */
-    width: 200px;
+    width: auto;
     right: 10px;
     background-color: #e8eedc;
     z-index: 1000;
@@ -45,15 +45,19 @@
     font-size: 1.1rem;
     border-radius: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
   }
 
   .navbar-nav {
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
+    left: 0;
+    transform: translateX(0%);
   }
 
   .navbar-nav .nav-item {
-    margin-left: 0;
+    margin-left: -28px;
     margin-bottom: 10px;
   }
 
@@ -90,9 +94,29 @@
   }
 
   .gambar-user {
-    width: 35px;
-    height: 35px;
-    padding-left: 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .btn-outline-secondary {
+    background-color: transparent !important;
+    border: 1px solid #333433;
+    color: #333433;
+    font-size: 1rem;
+    transform: translateX(2%);
+    padding: 8px 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  .btn-outline-secondary:hover {
+    background-color: #004225 !important;
+    border: 1px solid #004225 !important;
+    color: #e8eedc !important;
+  }
+
+  .btn-outline-secondary:focus {
+    color: #56ab2e;
   }
 
   .navbar-toggler {
@@ -121,18 +145,15 @@
 
   .dropdown-menu .dropdown-item {
     text-align: left;
+    margin-left: -15px;
   }
 
   .dropdown-menu .dropdown-item-profile {
-    font-size: 1rem;
-    line-height: 1.2;
+    font-size: 1.05rem;
+    line-height: 1.5;
     text-decoration: none;
     color: #333433;
-  }
-
-  .dropdown-divider {
-    border: none;
-    margin: 10px 0;
+    margin-left: -12px;
   }
 
   nav .dropdown-menu {

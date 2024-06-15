@@ -11,7 +11,20 @@ const app = new App({
 });
 
 const publicPages = ["/", "#/beranda", "#/login", "#/register"];
-const userPages = ["#/cerita", "#/dashboard-cerita", "#/detail-direktori", "#/detail-spesies", "#/direktori", "#/edit-cerita", "#/form-cerita", "#/edit-profile", "#/ganti-password", "#/edukasi", "#/spesies", "#/tentang"];
+const userPages = [
+  "#/cerita",
+  "#/dashboard-cerita",
+  "#/detail-direktori",
+  "#/detail-spesies",
+  "#/direktori",
+  "#/edit-cerita",
+  "#/form-cerita",
+  "#/edit-profile",
+  "#/ganti-password",
+  "#/edukasi",
+  "#/spesies",
+  "#/tentang",
+];
 const adminPages = [
   "#/dashboard-admin",
   "#/dashboard-direktori",
@@ -69,11 +82,16 @@ function checkPageAccess() {
     }
   } else if (adminPages.includes(currentPage)) {
     if (!isAdmin()) {
-      toastr.error("Kamu tidak memiliki akses ke halaman itu!").css("margin-top", "90px");
+      toastr
+        .error("Kamu tidak memiliki akses ke halaman itu!")
+        .css("margin-top", "90px");
       window.location.hash = "/";
       return false;
     }
-  } else if ((currentPage === "#/login" || currentPage === "#/register") && isLoggedIn()) {
+  } else if (
+    (currentPage === "#/login" || currentPage === "#/register") &&
+    isLoggedIn()
+  ) {
     // Jika pengguna telah login, alihkan ke halaman yang sesuai
     window.location.hash = isAdmin() ? "#/dashboard-admin" : "/";
     return false;
