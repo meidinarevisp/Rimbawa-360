@@ -25,7 +25,7 @@ const DashboardSpesies = {
         itemElement.innerHTML = `
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="/uploads/${item.gambar}" class="img-fluid rounded-start" alt="${item.namaHewan}">
+                        <img src="/uploads/${item.gambar}" class="img-fluid" alt="${item.namaHewan}">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">

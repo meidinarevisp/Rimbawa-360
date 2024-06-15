@@ -575,4 +575,655 @@
     margin-left: 50px;
     margin-top: -80px;
   }
+
+  .background-animate {
+    display: none;
+  }
+
+  .dashboard-section img {
+    width: 80%;
+  }
+
+  .dashboard-section h1 {
+    font-size: 2.3rem;
+  }
+
+  .btn-dashboard {
+    padding: 8px 15px;
+    font-size: 1.2rem;
+  }
+
+  .btn-offcanvas {
+    width: 100px;
+  }
+}
+
+@media (max-width: 991.2px) {
+  .dashboard-spesies {
+    padding-bottom: 15px;
+    padding-top: 8px;
+  }
+
+  .dashboard-spesies h1 {
+    margin-left: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .dashboard-spesies .dropdown-menu {
+    background-color: #f6f2f2;
+    border: none;
+    width: 100%; /* Lebar penuh pada mobile */
+  }
+
+  .dashboard-spesies .dropdown-item {
+    font-size: 1.8rem;
+    font-weight: 400;
+    background-color: #f6f2f2;
+    color: #373636;
+  }
+
+  .dashboard-spesies .dropdown-item:hover {
+    color: #56ab2e;
+  }
+
+  #dashboard-spesies {
+    margin-left: 30px;
+    margin-right: 20px;
+    background-color: #e8eedc;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+
+  #dashboard-spesies .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15);
+    background-color: #004225;
+    color: #eeeeee;
+    border-radius: 10px;
+    height: auto; /* Tinggi otomatis agar tidak tetap pada mobile */
+    margin-bottom: 20px; /* Ruang antara kartu pada mobile */
+  }
+
+  #dashboard-spesies .card img {
+    width: 100%; /* Gambar penuh lebar pada mobile */
+    height: 172px !important;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px !important;
+  }
+
+  .dashboard-spesies .logo {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    width: 60px;
+    height: auto;
+  }
+
+  .dashboard-spesies .btn-tambah {
+    width: 40px; /* Ukuran yang lebih kecil untuk mobile */
+    height: 40px; /* Ukuran yang lebih kecil untuk mobile */
+    font-size: 1.3rem;
+    padding-left: 10px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    margin-right: -30px !important;
+  }
+
+  .dashboard-spesies a {
+    text-decoration: none;
+  }
+
+  .dashboard-spesies h1 {
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 2rem;
+  }
+
+  #dashboard-spesies .card-title {
+    margin-left: 0;
+    font-size: 1.3rem; /* Ukuran yang lebih kecil untuk mobile */
+    padding: 10px 0; /* Ruang internal lebih kecil untuk mobile */
+  }
+
+  #dashboard-spesies .card-text {
+    margin-left: 0;
+    font-size: 1.1rem; /* Ukuran yang lebih kecil untuk mobile */
+  }
+
+  .dashboard-spesies .dropdown-menu a {
+    font-size: 1.3rem;
+  }
+
+  #dashboard-spesies .card img {
+    border-radius: 10px 10px 0 0 !important;
+  }
+}
+
+@media (max-width: 767.2px) {
+  .dashboard-spesies {
+    padding-bottom: 15px;
+    padding-top: 8px;
+  }
+
+  .dashboard-spesies h1 {
+    margin-left: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .dashboard-spesies .dropdown-menu {
+    background-color: #f6f2f2;
+    border: none;
+    width: 100%; /* Lebar penuh pada mobile */
+  }
+
+  .dashboard-spesies .dropdown-item {
+    font-size: 1.8rem;
+    font-weight: 400;
+    background-color: #f6f2f2;
+    color: #373636;
+  }
+
+  .dashboard-spesies .dropdown-item:hover {
+    color: #56ab2e;
+  }
+
+  #dashboard-spesies {
+    margin-left: 30px;
+    margin-right: 20px;
+    background-color: #e8eedc;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+
+  #dashboard-spesies .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15);
+    background-color: #004225;
+    color: #eeeeee;
+    border-radius: 10px;
+    height: auto; /* Tinggi otomatis agar tidak tetap pada mobile */
+    margin-bottom: 20px; /* Ruang antara kartu pada mobile */
+  }
+
+  #dashboard-spesies .card img {
+    width: 100%; /* Gambar penuh lebar pada mobile */
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0 !important; /* Biar lebih bagus di mobile */
+  }
+
+  .dashboard-spesies .logo {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    width: 60px;
+    height: auto;
+  }
+
+  .dashboard-spesies .btn-tambah {
+    width: 40px; /* Ukuran yang lebih kecil untuk mobile */
+    height: 40px; /* Ukuran yang lebih kecil untuk mobile */
+    font-size: 1.3rem;
+    padding-left: 10px;
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    margin-right: -30px !important;
+  }
+
+  .dashboard-spesies a {
+    text-decoration: none;
+  }
+
+  .dashboard-spesies h1 {
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 2rem;
+  }
+
+  #dashboard-spesies .card-title {
+    margin-left: 0;
+    font-size: 1.3rem; /* Ukuran yang lebih kecil untuk mobile */
+    padding: 10px 0; /* Ruang internal lebih kecil untuk mobile */
+  }
+
+  #dashboard-spesies .card-text {
+    margin-left: 0;
+    font-size: 1.1rem; /* Ukuran yang lebih kecil untuk mobile */
+  }
+
+  .dashboard-spesies .dropdown-menu a {
+    font-size: 1.3rem;
+  }
+
+  #dashboard-spesies .card img {
+    border-radius: 10px 10px 0 0 !important;
+  }
+}
+
+@media (max-width: 991.2px) {
+  .dashboard-direktori {
+    padding-bottom: 15px;
+    padding-top: 8px;
+  }
+
+  .dashboard-direktori h1 {
+    margin-left: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .dashboard-direktori .dropdown-menu {
+    background-color: #f6f2f2;
+    border: none;
+    width: 100%; /* Lebar penuh pada mobile */
+  }
+
+  .dashboard-direktori .dropdown-item {
+    font-size: 1.8rem;
+    font-weight: 400;
+    background-color: #f6f2f2;
+    color: #373636;
+  }
+
+  .dashboard-direktori .dropdown-item:hover {
+    color: #56ab2e;
+  }
+
+  #dashboard-direktori {
+    margin-left: 30px;
+    margin-right: 20px;
+    background-color: #e8eedc;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+
+  #dashboard-direktori .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15);
+    background-color: #004225;
+    color: #eeeeee;
+    border-radius: 10px;
+    height: auto; /* Tinggi otomatis agar tidak tetap pada mobile */
+    margin-bottom: 20px; /* Ruang antara kartu pada mobile */
+  }
+
+  #dashboard-direktori .card img {
+    width: 100%; /* Gambar penuh lebar pada mobile */
+    height: 172px !important;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px !important;
+  }
+
+  .dashboard-direktori .logo {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    width: 60px;
+    height: auto;
+  }
+
+  .dashboard-direktori .btn-tambah {
+    width: 40px; /* Ukuran yang lebih kecil untuk mobile */
+    height: 40px; /* Ukuran yang lebih kecil untuk mobile */
+    font-size: 1.3rem;
+    padding-left: 10px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    margin-right: -30px !important;
+  }
+
+  .dashboard-direktori a {
+    text-decoration: none;
+  }
+
+  .dashboard-direktori h1 {
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 2rem;
+  }
+
+  #dashboard-direktori .card-title {
+    margin-left: 0;
+    font-size: 1.3rem; /* Ukuran yang lebih kecil untuk mobile */
+    padding: 10px 0; /* Ruang internal lebih kecil untuk mobile */
+  }
+
+  #dashboard-direktori .card-text {
+    margin-left: 0;
+    font-size: 1.1rem; /* Ukuran yang lebih kecil untuk mobile */
+  }
+
+  .dashboard-direktori .dropdown-menu a {
+    font-size: 1.3rem;
+  }
+
+  #dashboard-direktori .card img {
+    border-radius: 10px 10px 0 0 !important;
+  }
+}
+
+@media (max-width: 767.2px) {
+  .dashboard-direktori {
+    padding-bottom: 15px;
+    padding-top: 8px;
+  }
+
+  .dashboard-direktori h1 {
+    margin-left: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .dashboard-direktori .dropdown-menu {
+    background-color: #f6f2f2;
+    border: none;
+    width: 100%; /* Lebar penuh pada mobile */
+  }
+
+  .dashboard-direktori .dropdown-item {
+    font-size: 1.8rem;
+    font-weight: 400;
+    background-color: #f6f2f2;
+    color: #373636;
+  }
+
+  .dashboard-direktori .dropdown-item:hover {
+    color: #56ab2e;
+  }
+
+  #dashboard-direktori {
+    margin-left: 30px;
+    margin-right: 20px;
+    background-color: #e8eedc;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+
+  #dashboard-direktori .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15);
+    background-color: #004225;
+    color: #eeeeee;
+    border-radius: 10px;
+    height: auto; /* Tinggi otomatis agar tidak tetap pada mobile */
+    margin-bottom: 20px; /* Ruang antara kartu pada mobile */
+  }
+
+  #dashboard-direktori .card img {
+    width: 100%; /* Gambar penuh lebar pada mobile */
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0 !important; /* Biar lebih bagus di mobile */
+  }
+
+  .dashboard-direktori .logo {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    width: 60px;
+    height: auto;
+  }
+
+  .dashboard-direktori .btn-tambah {
+    width: 40px; /* Ukuran yang lebih kecil untuk mobile */
+    height: 40px; /* Ukuran yang lebih kecil untuk mobile */
+    font-size: 1.3rem;
+    padding-left: 10px;
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    margin-right: -30px !important;
+  }
+
+  .dashboard-direktori a {
+    text-decoration: none;
+  }
+
+  .dashboard-direktori h1 {
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 2rem;
+  }
+
+  #dashboard-direktori .card-title {
+    margin-left: 0;
+    font-size: 1.3rem; /* Ukuran yang lebih kecil untuk mobile */
+    padding: 10px 0; /* Ruang internal lebih kecil untuk mobile */
+  }
+
+  #dashboard-direktori .card-text {
+    margin-left: 0;
+    font-size: 1.1rem; /* Ukuran yang lebih kecil untuk mobile */
+  }
+
+  .dashboard-direktori .dropdown-menu a {
+    font-size: 1.3rem;
+  }
+
+  #dashboard-direktori .card img {
+    border-radius: 10px 10px 0 0 !important;
+  }
+}
+
+@media (max-width: 991.2px) {
+  .dashboard-edukasi {
+    padding-bottom: 15px;
+    padding-top: 8px;
+  }
+
+  .dashboard-edukasi h1 {
+    margin-left: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .dashboard-edukasi .dropdown-menu {
+    background-color: #f6f2f2;
+    border: none;
+    width: 100%; /* Lebar penuh pada mobile */
+  }
+
+  .dashboard-edukasi .dropdown-item {
+    font-size: 1.8rem;
+    font-weight: 400;
+    background-color: #f6f2f2;
+    color: #373636;
+  }
+
+  .dashboard-edukasi .dropdown-item:hover {
+    color: #56ab2e;
+  }
+
+  #dashboard-edukasi {
+    margin-left: 30px;
+    margin-right: 20px;
+    background-color: #e8eedc;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+
+  #dashboard-edukasi .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15);
+    background-color: #004225;
+    color: #eeeeee;
+    border-radius: 10px;
+    height: auto; /* Tinggi otomatis agar tidak tetap pada mobile */
+    margin-bottom: 20px; /* Ruang antara kartu pada mobile */
+  }
+
+  #dashboard-edukasi .card img {
+    width: 100%; /* Gambar penuh lebar pada mobile */
+    height: 172px !important;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px !important;
+  }
+
+  .dashboard-edukasi .logo {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    width: 60px;
+    height: auto;
+  }
+
+  .dashboard-edukasi .btn-tambah {
+    width: 40px; /* Ukuran yang lebih kecil untuk mobile */
+    height: 40px; /* Ukuran yang lebih kecil untuk mobile */
+    font-size: 1.3rem;
+    padding-left: 10px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    margin-right: -30px !important;
+  }
+
+  .dashboard-edukasi a {
+    text-decoration: none;
+  }
+
+  .dashboard-edukasi h1 {
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 2rem;
+  }
+
+  #dashboard-edukasi .card-title {
+    margin-left: 0;
+    font-size: 1.3rem; /* Ukuran yang lebih kecil untuk mobile */
+    padding: 10px 0; /* Ruang internal lebih kecil untuk mobile */
+  }
+
+  #dashboard-edukasi .card-text {
+    margin-left: 0;
+    font-size: 1.1rem; /* Ukuran yang lebih kecil untuk mobile */
+  }
+
+  .dashboard-edukasi .dropdown-menu a {
+    font-size: 1.3rem;
+  }
+
+  #dashboard-edukasi .card img {
+    border-radius: 10px 10px 0 0 !important;
+  }
+}
+
+@media (max-width: 767.2px) {
+  .dashboard-edukasi {
+    padding-bottom: 15px;
+    padding-top: 8px;
+  }
+
+  .dashboard-edukasi h1 {
+    margin-left: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .dashboard-edukasi .dropdown-menu {
+    background-color: #f6f2f2;
+    border: none;
+    width: 100%; /* Lebar penuh pada mobile */
+  }
+
+  .dashboard-edukasi .dropdown-item {
+    font-size: 1.8rem;
+    font-weight: 400;
+    background-color: #f6f2f2;
+    color: #373636;
+  }
+
+  .dashboard-edukasi .dropdown-item:hover {
+    color: #56ab2e;
+  }
+
+  #dashboard-edukasi {
+    margin-left: 30px;
+    margin-right: 20px;
+    background-color: #e8eedc;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+
+  #dashboard-edukasi .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15);
+    background-color: #004225;
+    color: #eeeeee;
+    border-radius: 10px;
+    height: auto; /* Tinggi otomatis agar tidak tetap pada mobile */
+    margin-bottom: 20px; /* Ruang antara kartu pada mobile */
+  }
+
+  #dashboard-edukasi .card img {
+    width: 100%; /* Gambar penuh lebar pada mobile */
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0 !important; /* Biar lebih bagus di mobile */
+  }
+
+  .dashboard-edukasi .logo {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    width: 60px;
+    height: auto;
+  }
+
+  .dashboard-edukasi .btn-tambah {
+    width: 40px; /* Ukuran yang lebih kecil untuk mobile */
+    height: 40px; /* Ukuran yang lebih kecil untuk mobile */
+    font-size: 1.3rem;
+    padding-left: 10px;
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    margin-right: -30px !important;
+  }
+
+  .dashboard-edukasi a {
+    text-decoration: none;
+  }
+
+  .dashboard-edukasi h1 {
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 2rem;
+  }
+
+  #dashboard-edukasi .card-title {
+    margin-left: 0;
+    font-size: 1.3rem; /* Ukuran yang lebih kecil untuk mobile */
+    padding: 10px 0; /* Ruang internal lebih kecil untuk mobile */
+  }
+
+  #dashboard-edukasi .card-text {
+    margin-left: 0;
+    font-size: 1.1rem; /* Ukuran yang lebih kecil untuk mobile */
+  }
+
+  .dashboard-edukasi .dropdown-menu a {
+    font-size: 1.3rem;
+  }
+
+  #dashboard-edukasi .card img {
+    border-radius: 10px 10px 0 0 !important;
+  }
 }

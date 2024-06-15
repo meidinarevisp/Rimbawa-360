@@ -875,7 +875,7 @@ section {
         <a href="/#/dashboard-spesies" class="btn btn-dashboard btn-lg me-3">Spesies</a>
         <a href="/#/dashboard-edukasi" class="btn btn-dashboard btn-lg">Edukasi</a>
       </div>
-      <button class="btn-offcanvas"><a href="#/logout" class="btn btn-logout"><i class="fas fa-sign-out-alt"></i></a></button>
+      <button class="btn-offcanvas mt-4"><a href="#/logout" class="btn btn-logout"><i class="fas fa-sign-out-alt"></i></a></button>
     </div>
   </div>
 </section>

@@ -1369,10 +1369,6 @@ footer .fa-2x {
   text-overflow: ellipsis;
 }
 
-.dashboard-section img {
-  max-width: 500px;
-}
-
 .destinasi-page:before {
   content: "";
   position: absolute;
@@ -2335,6 +2331,8 @@ footer .fa-2x {
 .dashboard-section img {
   display: block;
   margin: 0 auto;
+  justify-content: center;
+  max-width: 460px;
 }
 
 .dashboard-section .btn {
@@ -2397,19 +2395,20 @@ footer .fa-2x {
   background-color: #004225;
   color: #eeeeee;
   border-radius: 10px;
-  height: 160px;
+  height: 190px;
 }
 
 #dashboard-direktori .card img {
-  width: 200px;
-  height: 160px;
+  width: 220px;
+  height: 190px;
   object-fit: cover;
+  border-radius: 10px 0 0 10px !important;
 }
 
 .dashboard-direktori .logo {
   position: absolute;
   top: 30px;
-  left: 20px;
+  left: 30px;
   width: 80px;
   height: auto;
 }
@@ -2448,12 +2447,10 @@ footer .fa-2x {
 }
 
 #dashboard-direktori .card-title {
-  margin-left: -60px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 #dashboard-direktori .card-text {
-  margin-left: -60px;
   color: #e8c614;
   font-size: 1.2rem;
 }
@@ -2507,12 +2504,13 @@ footer .fa-2x {
   width: 235px;
   height: 188px;
   object-fit: cover;
+  border-radius: 10px 0 0 10px !important;
 }
 
 .dashboard-edukasi .logo {
   position: absolute;
   top: 30px;
-  left: 20px; /* Adjust position */
+  left: 30px;
   width: 80px;
   height: auto;
 }
@@ -2551,12 +2549,12 @@ footer .fa-2x {
 }
 
 #dashboard-edukasi .card-title {
-  margin-left: -30px;
-  font-size: 1.8rem;
+  margin-left: 10px;
+  font-size: 1.6rem;
 }
 
 #dashboard-edukasi .card-text {
-  margin-left: -30px;
+  margin-left: 10px;
   color: #e8c614;
 }
 
@@ -2609,12 +2607,13 @@ footer .fa-2x {
   width: 240px;
   height: 160px;
   object-fit: cover;
+  border-radius: 10px 0 0 10px !important;
 }
 
 .dashboard-spesies .logo {
   position: absolute;
   top: 30px;
-  left: 20px;
+  left: 30px;
   width: 80px;
   height: auto;
 }
@@ -2653,12 +2652,12 @@ footer .fa-2x {
 }
 
 #dashboard-spesies .card-title {
-  margin-left: -25px;
-  font-size: 1.8rem;
+  margin-left: 20px;
+  font-size: 1.6rem;
 }
 
 #dashboard-spesies .card-text {
-  margin-left: -25px;
+  margin-left: 20px;
   color: #e8c614;
 }
 
