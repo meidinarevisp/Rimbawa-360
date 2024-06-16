@@ -93,7 +93,7 @@ const Direktori = {
 
               const destinasiContent = `
                 <div class="image-container">
-                  <img src="/uploads/${destinasi.gambar}" alt="${destinasi.nama_tempat}" class="img-fluid destinasi-item" data-id="${destinasi.id}" title="klik gambar untuk melihat detail ${destinasi.nama_tempat}" />
+                  <img src="/uploads/${destinasi.gambar}" alt="${destinasi.nama_tempat}" class="img-fluid destinasi-item" data-id="${destinasi.id}" title="klik gambar untuk melihat detail ${destinasi.nama_tempat}" style="cursor: pointer;">
                   <h1>${destinasi.lokasi}</h1>
                 </div>
                 <div class="text-content">
