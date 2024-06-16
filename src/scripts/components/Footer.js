@@ -103,10 +103,7 @@ class FooterRimbawa extends HTMLElement {
       });
 
       document.addEventListener("click", function (event) {
-        if (
-          !forumButton.contains(event.target) &&
-          !forumContainer.contains(event.target)
-        ) {
+        if (!forumButton.contains(event.target) && !forumContainer.contains(event.target)) {
           forumContainer.classList.remove("show");
         }
       });
@@ -138,12 +135,28 @@ class FooterRimbawa extends HTMLElement {
             if (response.ok) {
               const data = await response.json();
               console.log(data);
-              toastr
-                .success("Forum berhasil ditambahkan")
-                .css("margin-top", "90px");
-              setTimeout(() => {
-                location.reload();
-              }, 1000);
+              toastr.success("Forum berhasil ditambahkan").css("margin-top", "90px");
+
+              // Tambahkan post baru ke daftar forum posts tanpa reload halaman
+              const newPost = {
+                id: data.id,
+                judul: title,
+                deskripsi: deskripsi,
+                date_created: new Date().toISOString(),
+                id_user: data.id_user,
+                username: data.username,
+                gambar: data.gambar,
+              };
+              renderPosts([newPost], data.id_user, true);
+
+              // Reset form input fields
+              forumForm.reset();
+
+              // Tutup forum container setelah berhasil menambahkan
+              const forumContainer = document.querySelector(".forum-container");
+              if (forumContainer) {
+                forumContainer.classList.remove("show");
+              }
             } else if (response.status === 401) {
               throw new Error("Unauthorized: Token expired or invalid");
             } else {
@@ -181,15 +194,18 @@ class FooterRimbawa extends HTMLElement {
       }
     }
 
-    function renderPosts(posts, currentUserId) {
+    function renderPosts(posts, currentUserId, append = false) {
       posts.sort((a, b) => new Date(b.date_created) - new Date(a.date_created));
 
-      forumPosts.innerHTML = "";
+      if (!append) {
+        forumPosts.innerHTML = "";
+      }
+
       posts.forEach((post, index) => {
         const postElement = document.createElement("div");
         postElement.classList.add("forum-post");
         const postDate = new Date(post.date_created);
-        const formattedDate = postDate.toLocaleString("en-US", {
+        const formattedDate = postDate.toLocaleString("id-ID", {
           day: "numeric",
           month: "short",
           year: "numeric",
@@ -199,9 +215,7 @@ class FooterRimbawa extends HTMLElement {
 
         postElement.innerHTML = `
         <div class="post-header">
-            <img class="user-icon rounded-circle" src="${
-              post.gambar
-            }" alt="User Icon" width="50" height="50">
+            <img class="user-icon rounded-circle" src="${post.gambar}" alt="User Icon" width="50" height="50">
             <div class="user-info">
                 <h4>${post.username}</h4>
                 <small>${formattedDate}</small>
@@ -226,9 +240,13 @@ class FooterRimbawa extends HTMLElement {
             <h6>${post.judul}</h6>
             <p>${post.deskripsi}</p>
         </div>
-    `;
+      `;
 
-        forumPosts.appendChild(postElement);
+        if (append) {
+          forumPosts.insertBefore(postElement, forumPosts.firstChild);
+        } else {
+          forumPosts.appendChild(postElement);
+        }
       });
 
       const burgerMenus = document.querySelectorAll(".burger-menu");
@@ -257,19 +275,17 @@ class FooterRimbawa extends HTMLElement {
           Swal.fire({
             title: "Edit Forum",
             html: `<input id="editForumTitle" class="swal2-input" value="${post.judul}" placeholder="Judul">
-                        <textarea id="editForumDeskripsi" class="swal2-textarea" placeholder="Deskripsi">${post.deskripsi}</textarea>`,
+                            <textarea id="editForumDeskripsi" class="swal2-textarea" placeholder="Deskripsi">${post.deskripsi}</textarea>`,
             showCancelButton: true,
             confirmButtonText: "Simpan",
             cancelButtonText: "Batal",
             preConfirm: () => {
-              const title =
-                Swal.getPopup().querySelector("#editForumTitle").value;
-              const deskripsi = Swal.getPopup().querySelector(
-                "#editForumDeskripsi"
-              ).value;
+              const title = Swal.getPopup().querySelector("#editForumTitle").value;
+              const deskripsi = Swal.getPopup().querySelector("#editForumDeskripsi").value;
               editPost(post.id, title, deskripsi);
             },
           });
+          event.stopPropagation(); // Mencegah penutupan modal
         } else if (event.target.classList.contains("btn-delete")) {
           const { index } = event.target.dataset;
           const post = posts[index];
@@ -286,29 +302,31 @@ class FooterRimbawa extends HTMLElement {
               deletePost(post.id);
             }
           });
+          event.stopPropagation(); // Mencegah penutupan modal
         }
       });
 
       async function editPost(postId, title, deskripsi) {
         try {
-          const response = await fetch(
-            `http://localhost:3000/api/forum/${postId}`,
-            {
-              method: "PUT",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                judul: title,
-                deskripsi: deskripsi,
-              }),
-            }
-          );
+          const response = await fetch(`http://localhost:3000/api/forum/${postId}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              judul: title,
+              deskripsi: deskripsi,
+            }),
+          });
           if (response.ok) {
             Swal.fire("Sukses", "Forum berhasil diubah", "success");
-            setTimeout(() => {
-              location.reload();
-            }, 1000);
+            // Update forum post locally without page reload
+            const editedPost = posts.find((p) => p.id === postId);
+            if (editedPost) {
+              editedPost.judul = title;
+              editedPost.deskripsi = deskripsi;
+              renderPosts(posts, editedPost.id_user);
+            }
           } else {
             throw new Error("Gagal mengedit forum");
           }
@@ -319,17 +337,17 @@ class FooterRimbawa extends HTMLElement {
 
       async function deletePost(postId) {
         try {
-          const response = await fetch(
-            `http://localhost:3000/api/forum/${postId}`,
-            {
-              method: "DELETE",
-            }
-          );
+          const response = await fetch(`http://localhost:3000/api/forum/${postId}`, {
+            method: "DELETE",
+          });
           if (response.ok) {
             Swal.fire("Sukses", "Forum berhasil dihapus", "success");
-            setTimeout(() => {
-              location.reload();
-            }, 1000);
+            // Remove deleted post from local data without page reload
+            const index = posts.findIndex((p) => p.id === postId);
+            if (index !== -1) {
+              posts.splice(index, 1);
+              renderPosts(posts, null);
+            }
           } else {
             throw new Error("Gagal menghapus forum");
           }
