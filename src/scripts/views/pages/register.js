@@ -25,9 +25,7 @@ const Register = {
     document.body.appendChild(logoElement);
 
     const showPasswordIcon = document.getElementById("showPasswordIcon");
-    const showConfirmPasswordIcon = document.getElementById(
-      "showConfirmPasswordIcon"
-    );
+    const showConfirmPasswordIcon = document.getElementById("showConfirmPasswordIcon");
     const passwordField = document.getElementById("password");
     const confirmPasswordField = document.getElementById("password1");
 
@@ -72,16 +70,13 @@ const Register = {
       }
 
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/auth/register",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ name, username, email, password }),
-          }
-        );
+        const response = await fetch("http://localhost:3000/api/auth/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, username, email, password }),
+        });
 
         const data = await response.json();
 
@@ -89,9 +84,7 @@ const Register = {
           toastr.success(data.message);
           window.location.href = "/#/login";
         } else {
-          toastr.error(
-            data.errors ? data.errors.map((e) => e.msg).join(", ") : data.error
-          );
+          toastr.error(data.errors ? data.errors.map((e) => e.msg).join(", ") : data.error);
         }
       } catch (error) {
         toastr.error("An error occurred during registration.");
