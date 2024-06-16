@@ -868,7 +868,7 @@ section {
         <h1>Selamat Datang di Dashboard!</h1>
       </div>
       <div class="col-12 text-center">
-        <img src="rimbawa-360.png" alt="Rimbawa 360">
+        <center><img src="rimbawa-360.png" alt="Rimbawa 360"></center>
       </div>
       <div class="col-12 text-center">
         <a href="/#/dashboard-direktori" class="btn btn-dashboard btn-lg me-3">Ekowisata</a>
@@ -903,7 +903,7 @@ section {
                 </a>
                 <div class="dropdown d-flex justify-content-between align-items-center">
                     <h1 class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        Direktori Ekowisata Hutan
+                        Destinasi
                     </h1>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="/#/dashboard-edukasi">Edukasi</a></li>
@@ -944,7 +944,7 @@ section {
                         Edukasi
                     </h1>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="/#/dashboard-direktori">Direktori Ekowisata Hutan</a></li>
+                        <li><a class="dropdown-item" href="/#/dashboard-direktori">Destinasi</a></li>
                         <li><a class="dropdown-item" href="/#/dashboard-spesies">Spesies</a></li>
                     </ul>
                     <a href="/#/form-edukasi"><button class="btn btn-tambah rounded-circle"><i class="fas fa-plus"></i></button></a>
@@ -982,7 +982,7 @@ section {
                         Spesies
                     </h1>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="/#/dashboard-direktori">Direktori Ekowisata Hutan</a></li>
+                        <li><a class="dropdown-item" href="/#/dashboard-direktori">Destinasi</a></li>
                         <li><a class="dropdown-item" href="/#/dashboard-edukasi">Edukasi</a></li>
                     </ul>
                     <a href="/#/form-spesies"><button class="btn btn-tambah rounded-circle"><i class="fas fa-plus"></i></button></a>

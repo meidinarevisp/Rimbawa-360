@@ -27,22 +27,24 @@ const DashboardDirektori = {
             ? item.lokasi.substring(0, 50) + "..."
             : item.lokasi;
         itemElement.innerHTML = `
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="/uploads/${item.gambar}" class="img-fluid" alt="${item.nama_tempat}">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">${item.nama_tempat}</h5>
-            <p class="card-text">${truncatedLocation}</p>
-            <div class="d-flex justify-content-end">
-              <a href="/#/edit-form-direktori/${item.id}"><button class="btn btn-edit rounded-circle me-2"><i class="fas fa-edit"></i></button></a>
-              <button class="btn btn-hapus rounded-circle" data-id="${item.id}"><i class="fas fa-trash-alt"></i></button>
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="/uploads/${item.gambar}" class="img-fluid" alt="${item.nama_tempat}">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <div class="card-content">
+                  <h5 class="card-title">${item.nama_tempat}</h5>
+                  <p class="card-text">${truncatedLocation}</p>
+                </div>
+                <div class="card-buttons">
+                  <a href="/#/edit-form-direktori/${item.id}"><button class="btn btn-edit rounded-circle me-2"><i class="fas fa-edit"></i></button></a>
+                  <button class="btn btn-hapus rounded-circle" data-id="${item.id}"><i class="fas fa-trash-alt"></i></button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    `;
+        `;
 
         direktoriContainer.appendChild(itemElement);
 

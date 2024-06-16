@@ -1,5 +1,6 @@
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #e8eedc;
   overflow-x: hidden;
 }
@@ -2224,7 +2225,9 @@ footer .fa-2x {
 @media (max-width: 768px) {
   #cerita-list .col-md-4 {
     flex: 1 1 calc(100% - 10px); /* Adjusted column width for smaller screens */
-    max-width: calc(100% - 10px); /* Adjusted maximum column width for smaller screens */
+    max-width: calc(
+      100% - 10px
+    ); /* Adjusted maximum column width for smaller screens */
     margin-left: 10px;
   }
   #cerita-kamu .btn-tambah {
@@ -2370,27 +2373,25 @@ footer .fa-2x {
   color: #eeeeee;
 }
 
-.dashboard-direktori {
-  padding-bottom: 30px;
-  padding-top: 12px;
-}
-
 .dashboard-direktori h1 {
   margin-left: 200px;
   font-size: 2.5rem;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .dashboard-direktori .dropdown-menu {
-  background-color: #f6f2f2;
+  background-color: #e8eedc;
   border: none;
   width: 50%;
+  margin-top: 10px !important;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-direktori .dropdown-item {
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   font-weight: 400;
-  background-color: #f6f2f2;
+  background-color: #e8eedc;
   color: #373636;
 }
 
@@ -2404,6 +2405,8 @@ footer .fa-2x {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
+  padding-bottom: 30px;
+  padding-top: 12px;
 }
 
 #dashboard-direktori .card {
@@ -2412,12 +2415,13 @@ footer .fa-2x {
   background-color: #004225;
   color: #eeeeee;
   border-radius: 10px;
-  height: 190px;
+  height: 180px;
+  margin-top: 15px;
 }
 
 #dashboard-direktori .card img {
-  width: 220px;
-  height: 190px;
+  width: 235px;
+  height: 180px;
   object-fit: cover;
   border-radius: 10px 0 0 10px !important;
 }
@@ -2438,6 +2442,7 @@ footer .fa-2x {
   width: 50px;
   height: 50px;
   font-size: 1.5rem;
+  margin-top: 10px;
 }
 
 .dashboard-direktori .btn-tambah:hover {
@@ -2446,6 +2451,24 @@ footer .fa-2x {
   border: 2px solid #004225;
 }
 
+#dashboard-direktori .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Ensure the card content is flexible and pushes the buttons to the bottom */
+#dashboard-direktori .card-content {
+  flex-grow: 1;
+}
+
+#dashboard-direktori .card-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Keep the current styles for buttons */
 #dashboard-direktori .btn-edit,
 #dashboard-direktori .btn-hapus {
   background-color: #004225;
@@ -2464,35 +2487,34 @@ footer .fa-2x {
 }
 
 #dashboard-direktori .card-title {
+  margin-left: 10px;
   font-size: 1.6rem;
 }
 
 #dashboard-direktori .card-text {
+  margin-left: 10px;
   color: #e8c614;
-  font-size: 1.2rem;
-}
-
-.dashboard-edukasi {
-  padding-bottom: 30px;
-  padding-top: 12px;
 }
 
 .dashboard-edukasi h1 {
   margin-left: 200px;
   font-size: 2.5rem;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .dashboard-edukasi .dropdown-menu {
-  background-color: #f6f2f2;
+  background-color: #e8eedc;
   border: none;
   width: 50%;
+  margin-top: 10px !important;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-edukasi .dropdown-item {
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   font-weight: 400;
-  background-color: #f6f2f2;
+  background-color: #e8eedc;
   color: #373636;
 }
 
@@ -2506,6 +2528,8 @@ footer .fa-2x {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
+  padding-bottom: 30px;
+  padding-top: 12px;
 }
 
 #dashboard-edukasi .card {
@@ -2514,12 +2538,13 @@ footer .fa-2x {
   background-color: #004225;
   color: #eeeeee;
   border-radius: 10px;
-  height: 188px;
+  height: 200px;
+  margin-top: 15px;
 }
 
 #dashboard-edukasi .card img {
   width: 235px;
-  height: 188px;
+  height: 200px;
   object-fit: cover;
   border-radius: 10px 0 0 10px !important;
 }
@@ -2540,6 +2565,7 @@ footer .fa-2x {
   width: 50px;
   height: 50px;
   font-size: 1.5rem;
+  margin-top: 10px;
 }
 
 .dashboard-edukasi .btn-tambah:hover {
@@ -2548,6 +2574,24 @@ footer .fa-2x {
   border: 2px solid #004225;
 }
 
+#dashboard-edukasi .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Ensure the card content is flexible and pushes the buttons to the bottom */
+#dashboard-edukasi .card-content {
+  flex-grow: 1;
+}
+
+#dashboard-edukasi .card-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Keep the current styles for buttons */
 #dashboard-edukasi .btn-edit,
 #dashboard-edukasi .btn-hapus {
   background-color: #004225;
@@ -2575,27 +2619,25 @@ footer .fa-2x {
   color: #e8c614;
 }
 
-.dashboard-spesies {
-  padding-bottom: 30px;
-  padding-top: 12px;
-}
-
 .dashboard-spesies h1 {
   margin-left: 200px;
   font-size: 2.5rem;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .dashboard-spesies .dropdown-menu {
-  background-color: #f6f2f2;
+  background-color: #e8eedc;
   border: none;
   width: 50%;
+  margin-top: 10px !important;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-spesies .dropdown-item {
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   font-weight: 400;
-  background-color: #f6f2f2;
+  background-color: #e8eedc;
   color: #373636;
 }
 
@@ -2609,6 +2651,8 @@ footer .fa-2x {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
+  padding-bottom: 30px;
+  padding-top: 12px;
 }
 
 #dashboard-spesies .card {
@@ -2617,12 +2661,13 @@ footer .fa-2x {
   background-color: #004225;
   color: #eeeeee;
   border-radius: 10px;
-  height: 160px;
+  height: 150px;
+  margin-top: 15px;
 }
 
 #dashboard-spesies .card img {
-  width: 240px;
-  height: 160px;
+  width: 235px;
+  height: 150px;
   object-fit: cover;
   border-radius: 10px 0 0 10px !important;
 }
@@ -2643,6 +2688,7 @@ footer .fa-2x {
   width: 50px;
   height: 50px;
   font-size: 1.5rem;
+  margin-top: 10px;
 }
 
 .dashboard-spesies .btn-tambah:hover {
@@ -2651,6 +2697,24 @@ footer .fa-2x {
   border: 2px solid #004225;
 }
 
+#dashboard-spesies .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Ensure the card content is flexible and pushes the buttons to the bottom */
+#dashboard-spesies .card-content {
+  flex-grow: 1;
+}
+
+#dashboard-spesies .card-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Keep the current styles for buttons */
 #dashboard-spesies .btn-edit,
 #dashboard-spesies .btn-hapus {
   background-color: #004225;
@@ -2669,12 +2733,12 @@ footer .fa-2x {
 }
 
 #dashboard-spesies .card-title {
-  margin-left: 20px;
+  margin-left: 10px;
   font-size: 1.6rem;
 }
 
 #dashboard-spesies .card-text {
-  margin-left: 20px;
+  margin-left: 10px;
   color: #e8c614;
 }
 
