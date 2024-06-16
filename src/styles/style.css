@@ -1081,13 +1081,8 @@ i.fa-angle-right {
   border-radius: 0 0 20px 20px;
 }
 
-.spesies-section .image-container:hover img,
-.spesies-section .image-container:hover .overlay {
-  transform: scale(0.95); /* Shrinks both the image and overlay */
-}
-
-.spesies-section .image-container:hover .overlay {
-  background-color: rgba(0, 128, 0, 0.3); /* Changes overlay to green with reduced opacity */
+.spesies-section .image-container:hover img {
+  transform: scale(1.1);
 }
 
 .destinasi-section h2 {
