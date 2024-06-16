@@ -736,6 +736,16 @@
     border-radius: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     padding-bottom: 20px;
+    transition: transform 0.3s ease-out;
+    transform-origin: top right;
+    transform: translateX(100%);
+    height: auto !important;
+    visibility: hidden;
+  }
+
+  .navbar-collapse.show {
+    transform: translateX(0);
+    visibility: visible;
   }
 
   .navbar-nav {
@@ -900,11 +910,11 @@
     margin-left: 20px;
   }
   .destinasi-page h2 {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
   }
 
   .destinasi-page h1 {
-    font-size: 2rem;
+    font-size: 2rem !important;
   }
 }
 
@@ -927,6 +937,10 @@
     flex-direction: column;
     gap: 20px;
     padding-left: 20px;
+  }
+
+  .cerita-kita-page .btn-tambah {
+    margin-left: 10px;
   }
 
   .page-cerita {
@@ -968,6 +982,26 @@
 
   .cerita-kita-page h3 {
     font-size: 1.5rem;
+  }
+
+  #cerita-kamu {
+    overflow-x: hidden;
+  }
+
+  #cerita-kamu h2 {
+    font-size: 2.4rem !important;
+    margin-top: -30px;
+    margin-bottom: 10px;
+  }
+
+  #cerita-kamu .btn-tambah {
+    margin-bottom: 20px !important;
+    margin-left: 20px;
+  }
+
+  #cerita-list .card {
+    margin-left: 10px;
+    margin-right: 20px;
   }
 }
 
@@ -1042,10 +1076,11 @@
   .edukasi-section h2 {
     font-size: 1.8rem;
     text-align: center;
+    margin: auto;
   }
 
   .edukasi-section h3 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     text-align: center;
     margin-bottom: 20px;
   }
@@ -1201,10 +1236,14 @@
 /* tentang page - tentang kami */
 @media (max-width: 768px) {
   .tentang-kami-page h2 {
-    font-size: 40px;
+    font-size: 2.4rem !important;
     margin-left: 20px;
     margin-right: 20px;
     text-align: center;
+  }
+
+  .tentang-kami-page {
+    overflow-x: hidden;
   }
 
   .tentang-kami-img img {
@@ -1218,6 +1257,31 @@
     font-size: 1.2em;
     margin-left: 20px;
     margin-right: 20px;
+  }
+
+  .tentang-kami-page p {
+    font-size: 1.4rem !important;
+  }
+
+  .tentang-kami-page .text-tentang {
+    font-size: 1.2rem !important;
+  }
+
+  .tim-kami-section {
+    overflow-x: hidden;
+  }
+
+  .section-faq {
+    overflow-x: hidden;
+  }
+
+  .tim-kami-section h2 {
+    font-size: 2.4rem !important;
+    margin-bottom: 20px;
+  }
+
+  .section-faq h2 {
+    font-size: 2.4rem !important;
   }
 }
 
@@ -1317,7 +1381,11 @@
 @media (max-width: 768px) {
   .profile-picture {
     width: 75%;
-    margin-left: 50px;
+    margin-left: 40px;
     margin-top: -80px;
+  }
+
+  .forum-container {
+    width: calc(100% - 40px);
   }
 }

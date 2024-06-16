@@ -27,7 +27,7 @@ const berandaTemplate = () => `
             <img src="images/pohon.png" alt="Tentang Kami Image" />
           </div>
           <div class="text">
-            <p style="font-size: 1.5rem;"><strong>Apa Itu Rimbawa 360?</strong></p>
+            <p style="font-size: 1.4rem;"><strong>Apa Itu Rimbawa 360?</strong></p>
             <p>
               Rimbawa 360 adalah sebuah platform yang berkomitmen untuk
               mengedukasi masyarakat tentang pentingnya menjaga kelestarian
@@ -486,7 +486,7 @@ const tentangTemplate = () => `
           </div>
           <div class="text">
             <p style="font-size: 1.8rem;"><strong>Apa Itu Rimbawa 360?</strong></p>
-            <p>
+            <p class="text-tentang">
               Rimbawa 360 adalah sebuah platform yang berkomitmen untuk
               mengedukasi masyarakat tentang pentingnya menjaga kelestarian
               hutan dan kehidupan liar di Indonesia. Melalui informasi dan fitur

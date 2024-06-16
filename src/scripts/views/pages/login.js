@@ -58,7 +58,7 @@ const Login = {
         const data = await response.json();
 
         if (response.ok) {
-          toastr.success(data.message);
+          toastr.success(data.message).css("margin-top", "60px");
 
           localStorage.setItem("token", data.token);
           localStorage.setItem("user", JSON.stringify(data.user));
@@ -70,7 +70,9 @@ const Login = {
             window.location.href = "/";
           }
         } else {
-          toastr.error(data.errors ? data.errors.map((e) => e.msg).join(", ") : data.error);
+          toastr.error(
+            data.errors ? data.errors.map((e) => e.msg).join(", ") : data.error
+          );
         }
       } catch (error) {
         toastr.error("An error occurred during login.");

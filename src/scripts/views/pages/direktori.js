@@ -94,7 +94,7 @@ const Direktori = {
               const destinasiContent = `
                 <div class="image-container">
                   <img src="/uploads/${destinasi.gambar}" alt="${destinasi.nama_tempat}" class="img-fluid destinasi-item" data-id="${destinasi.id}" title="klik gambar untuk melihat detail ${destinasi.nama_tempat}" style="cursor: pointer;">
-                  <h1>${destinasi.lokasi}</h1>
+                  <h5>${destinasi.lokasi}</h5>
                 </div>
                 <div class="text-content">
                   <h4>${destinasi.nama_tempat}</h4>
@@ -148,7 +148,8 @@ const Direktori = {
       const map = L.map("map").setView([-2.5, 118], 5);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(map);
 
       const customIcon = L.icon({
