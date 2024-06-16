@@ -2,6 +2,7 @@ import UrlParser from "../../routes/url-parser";
 import { ceritaTemplate } from "../templates/template-creator";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
+import { gsap } from "gsap";
 
 const Cerita = {
   async render() {
@@ -50,9 +51,7 @@ const Cerita = {
                 height="120"
               />
               <h3>${cerita.username}</h3>
-              <p class="waktu-unggah">${new Date(
-                cerita.date_created
-              ).toLocaleString("id-ID", {
+              <p class="waktu-unggah">${new Date(cerita.date_created).toLocaleString("id-ID", {
                 dateStyle: "medium",
                 timeStyle: "short",
               })}</p>
@@ -64,7 +63,21 @@ const Cerita = {
         ceritaItem.innerHTML = ceritaContent;
         ceritaContainer.appendChild(ceritaItem);
       });
+
+      gsap.from(".page-cerita", {
+        opacity: 0,
+        y: 20,
+        duration: 0.5,
+        stagger: 0.2,
+      });
     }
+    gsap.from(".cerita-kita-page h2", {
+      x: -200,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      delay: 0.5,
+    });
 
     async function setupPagination(ceritaData) {
       paginationContainer.innerHTML = "";
@@ -84,10 +97,18 @@ const Cerita = {
           currentPage = i;
           await displayCerita(currentPage, ceritaData);
 
+          // Remove active class from all pagination items and add to the current one
           document.querySelectorAll(".pagination-item").forEach((item) => {
             item.classList.remove("active");
           });
           paginationItem.classList.add("active");
+
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          gsap.from(".page-cerita", {
+            y: 20,
+            duration: 0.5,
+            stagger: 0.2,
+          });
         });
 
         paginationContainer.appendChild(paginationItem);

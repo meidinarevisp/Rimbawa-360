@@ -1,11 +1,11 @@
 import UrlParser from "../../routes/url-parser";
 import { edukasiTemplate } from "../templates/template-creator";
+import { gsap } from "gsap";
 
 const Edukasi = {
   async render() {
     const urlParams = UrlParser.parseActiveUrlWithoutCombiner();
     const renderedTemplate = edukasiTemplate(urlParams);
-
     return renderedTemplate;
   },
 
@@ -37,8 +37,16 @@ const Edukasi = {
           </div>
         `;
 
-        document.getElementById("edukasi-content").innerHTML = kontenHTML;
-        tandaiMenuAktif(id);
+        gsap.to(".edukasi-content", {
+          opacity: 0,
+          y: -20,
+          duration: 0.3,
+          onComplete: function () {
+            document.getElementById("edukasi-content").innerHTML = kontenHTML;
+            gsap.to(".edukasi-content", { opacity: 1, y: 0, duration: 1 });
+            tandaiMenuAktif(id);
+          },
+        });
       } catch (error) {
         console.error("Error:", error);
       }
@@ -56,10 +64,12 @@ const Edukasi = {
         tombolContainer.innerHTML = isuLingkungan
           .map(
             (isu) => `
-          <button class="edukasi-btn" data-id="${isu.id}">${isu.nama_isu}</button>
-        `
+              <button class="edukasi-btn" data-id="${isu.id}">${isu.nama_isu}</button>
+            `
           )
           .join("");
+
+        gsap.from(".edukasi-buttons button", { opacity: 0, y: 20, duration: 1, stagger: 0.2 });
 
         const tombolEdukasi = document.querySelectorAll(".edukasi-btn");
         tombolEdukasi.forEach((tombol) => {
@@ -94,7 +104,25 @@ const Edukasi = {
         }
       });
     }
+
     buatTombolIsuLingkungan();
+
+    gsap.from(".judul-edukasi", {
+      x: -200,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+    });
+
+    gsap.from(".edukasi-page h2", {
+      x: -200,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      delay: 0.5,
+    });
+
+    gsap.from(".edukasi-buttons button", { opacity: 0, y: 20, duration: 1, stagger: 0.2 });
 
     window.scrollTo({ top: 0, behavior: "smooth" });
   },

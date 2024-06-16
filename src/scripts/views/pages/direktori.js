@@ -3,6 +3,7 @@ import { direktoriTemplate } from "../templates/template-creator";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
+import { gsap } from "gsap";
 
 const Direktori = {
   async render() {
@@ -121,7 +122,29 @@ const Direktori = {
 
       await fetchEkowisataData();
 
-      // Create Map
+      gsap.from(".destinasi-page h1", {
+        x: -200,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out",
+      });
+
+      gsap.from(".destinasi-page h2", {
+        x: -200,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out",
+        delay: 0.5,
+      });
+
+      gsap.from(".row", {
+        opacity: 0,
+        y: 50,
+        duration: 0.5,
+        stagger: 0.2,
+        delay: 0.3,
+      });
+
       const map = L.map("map").setView([-2.5, 118], 5);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {

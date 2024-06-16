@@ -1,5 +1,9 @@
 import UrlParser from "../../routes/url-parser";
 import { spesiesTemplate } from "../templates/template-creator";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Spesies = {
   async render() {
@@ -70,6 +74,18 @@ const Spesies = {
         const spesies = spesiesData[i];
         const spesiesCard = createSpesiesCard(spesies);
         container.appendChild(spesiesCard);
+
+        gsap.from(spesiesCard, {
+          scrollTrigger: {
+            trigger: spesiesCard,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: "power2.out",
+        });
       }
 
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -107,6 +123,21 @@ const Spesies = {
     const spesiesData = await fetchSpesiesData();
     showSpesies(1);
     createPagination();
+
+    gsap.from(".spesies-page h2", {
+      x: -200,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+    });
+
+    gsap.from(".spesies-page h1", {
+      x: -200,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      delay: 0.5,
+    });
 
     window.scrollTo({ top: 0, behavior: "smooth" });
   },

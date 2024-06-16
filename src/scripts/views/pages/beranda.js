@@ -1,7 +1,6 @@
 import UrlParser from "../../routes/url-parser";
 import { berandaTemplate } from "../templates/template-creator";
 import { gsap } from "gsap";
-
 import { CustomEase } from "gsap/CustomEase";
 import { RoughEase, ExpoScaleEase, SlowMo } from "gsap/EasePack";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,11 +11,12 @@ const Beranda = {
   async render() {
     const urlParams = UrlParser.parseActiveUrlWithoutCombiner();
     const renderedTemplate = berandaTemplate(urlParams);
-
     return renderedTemplate;
   },
 
   async afterRender() {
+    gsap.registerPlugin(ScrollTrigger);
+
     gsap.from(".hero-image", {
       duration: 1.5,
       opacity: 0,
@@ -55,6 +55,7 @@ const Beranda = {
       ease: "back.out(1.7)",
       delay: 1.2,
     });
+
     gsap.from(".edukasi-section h2", {
       scrollTrigger: {
         trigger: ".edukasi-section h2",
@@ -96,12 +97,83 @@ const Beranda = {
       delay: 1,
     });
 
+    gsap.from(".spesies-section h2", {
+      scrollTrigger: {
+        trigger: ".spesies-section h2",
+        start: "top 90%",
+        once: true,
+        toggleActions: "play none none none",
+      },
+      duration: 1.5,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      delay: 1.4,
+    });
+
+    gsap.from(".spesies-section .col-md-6 .image-container", {
+      scrollTrigger: {
+        trigger: ".spesies-section .col-md-6 .image-container",
+        start: "top 90%",
+        once: true,
+        toggleActions: "play none none none",
+      },
+      duration: 1.5,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      delay: 1.4,
+    });
+
+    gsap.from(".spesies-section .col-md-3:first-child .image-container", {
+      scrollTrigger: {
+        trigger: ".spesies-section .col-md-3:first-child .image-container",
+        start: "top 90%",
+        once: true,
+        toggleActions: "play none none none",
+      },
+      duration: 1.5,
+      opacity: 0,
+      x: -50,
+      ease: "power2.out",
+      stagger: 0.2,
+      delay: 1.4,
+    });
+
+    gsap.from(".spesies-section .col-md-3:last-child .image-container", {
+      scrollTrigger: {
+        trigger: ".spesies-section .col-md-3:last-child .image-container",
+        start: "top 90%",
+        once: true,
+        toggleActions: "play none none none",
+      },
+      duration: 1.5,
+      opacity: 0,
+      x: 50,
+      ease: "power2.out",
+      stagger: 0.2,
+      delay: 1.4,
+    });
+
+    gsap.from(".spesies-section .btn", {
+      scrollTrigger: {
+        trigger: ".spesies-section .btn",
+        start: "top 90%",
+        once: true,
+        toggleActions: "play none none none",
+      },
+      duration: 1.5,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      delay: 1.4,
+    });
+
     gsap.from(".tentang-kami-section h2", {
       scrollTrigger: {
         trigger: ".tentang-kami-section h2",
         start: "top 100%",
         once: true,
-        visibility: 0,
         toggleActions: "play none none none",
       },
       duration: 2,
@@ -110,12 +182,12 @@ const Beranda = {
       ease: "back.out(1.7)",
       delay: 1.2,
     });
+
     gsap.from(".tentang-kami-section .image-tentang img", {
       scrollTrigger: {
         trigger: ".tentang-kami-section .image-tentang img",
         start: "top 100%",
         once: true,
-        visibility: 0,
         toggleActions: "play none none none",
       },
       duration: 2,
@@ -132,7 +204,6 @@ const Beranda = {
         trigger: ".tentang-kami-section .text p",
         start: "top 100%",
         once: true,
-        visibility: 0,
         toggleActions: "play none none none",
       },
       duration: 2,
@@ -142,6 +213,48 @@ const Beranda = {
       ease: "power2.out",
       delay: 0.5,
       stagger: 0.3,
+    });
+    gsap.from(".destinasi-section h2", {
+      scrollTrigger: {
+        trigger: ".destinasi-section h2",
+        start: "top 90%",
+        once: true,
+        toggleActions: "play none none none",
+      },
+      duration: 1.5,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      delay: 2.2,
+    });
+
+    gsap.from(".destinasi-section .row", {
+      scrollTrigger: {
+        trigger: ".destinasi-section .row",
+        start: "top 90%",
+        once: true,
+        toggleActions: "play none none none",
+      },
+      duration: 1.5,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      stagger: 0.3,
+      delay: 2.2,
+    });
+
+    gsap.from(".destinasi-section .btn", {
+      scrollTrigger: {
+        trigger: ".destinasi-section .btn",
+        start: "top 90%",
+        once: true,
+        toggleActions: "play none none none",
+      },
+      duration: 1.5,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      delay: 2.2,
     });
 
     const destinasiSection = document.querySelector(".destinasi-section");
