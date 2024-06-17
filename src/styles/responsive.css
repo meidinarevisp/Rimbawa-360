@@ -1012,7 +1012,7 @@
     align-items: flex-start;
     padding: 20px 20px;
     width: 85%;
-    margin-left: 20px;
+    margin-left: 30px;
   }
 
   .spesies-image {
@@ -1181,6 +1181,12 @@
     height: 200px;
     width: 100%;
     margin-bottom: 0;
+  }
+  .spesies-section .image-container {
+    overflow: visible;
+  }
+  .spesies-section .image-container:hover img {
+    transform: none;
   }
 }
 

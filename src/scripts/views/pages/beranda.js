@@ -5,13 +5,7 @@ import { CustomEase } from "gsap/CustomEase";
 import { RoughEase, ExpoScaleEase, SlowMo } from "gsap/EasePack";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(
-  CustomEase,
-  RoughEase,
-  ExpoScaleEase,
-  SlowMo,
-  ScrollTrigger
-);
+gsap.registerPlugin(CustomEase, RoughEase, ExpoScaleEase, SlowMo, ScrollTrigger);
 
 const Beranda = {
   async render() {
@@ -103,78 +97,6 @@ const Beranda = {
       delay: 1,
     });
 
-    gsap.from(".spesies-section h2", {
-      scrollTrigger: {
-        trigger: ".spesies-section h2",
-        start: "top 90%",
-        once: true,
-        toggleActions: "play none none none",
-      },
-      duration: 1.5,
-      opacity: 0,
-      y: 50,
-      ease: "power2.out",
-      delay: 1.4,
-    });
-
-    gsap.from(".spesies-section .col-md-6 .image-container", {
-      scrollTrigger: {
-        trigger: ".spesies-section .col-md-6 .image-container",
-        start: "top 90%",
-        once: true,
-        toggleActions: "play none none none",
-      },
-      duration: 1.5,
-      opacity: 0,
-      y: 50,
-      ease: "power2.out",
-      delay: 1.4,
-    });
-
-    gsap.from(".spesies-section .col-md-3:first-child .image-container", {
-      scrollTrigger: {
-        trigger: ".spesies-section .col-md-3:first-child .image-container",
-        start: "top 90%",
-        once: true,
-        toggleActions: "play none none none",
-      },
-      duration: 1.5,
-      opacity: 0,
-      x: -50,
-      ease: "power2.out",
-      stagger: 0.2,
-      delay: 1.4,
-    });
-
-    gsap.from(".spesies-section .col-md-3:last-child .image-container", {
-      scrollTrigger: {
-        trigger: ".spesies-section .col-md-3:last-child .image-container",
-        start: "top 90%",
-        once: true,
-        toggleActions: "play none none none",
-      },
-      duration: 1.5,
-      opacity: 0,
-      x: 50,
-      ease: "power2.out",
-      stagger: 0.2,
-      delay: 1.4,
-    });
-
-    gsap.from(".spesies-section .btn", {
-      scrollTrigger: {
-        trigger: ".spesies-section .btn",
-        start: "top 90%",
-        once: true,
-        toggleActions: "play none none none",
-      },
-      duration: 1.5,
-      opacity: 0,
-      y: 50,
-      ease: "power2.out",
-      delay: 1.4,
-    });
-
     gsap.from(".tentang-kami-section h2", {
       scrollTrigger: {
         trigger: ".tentang-kami-section h2",
@@ -220,6 +142,49 @@ const Beranda = {
       delay: 0.5,
       stagger: 0.3,
     });
+
+    gsap.from(".spesies-section h2", {
+      scrollTrigger: {
+        trigger: ".spesies-section h2",
+        start: "top 90%",
+        once: true,
+        toggleActions: "play none none none",
+      },
+      duration: 1.5,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      delay: 1.4,
+    });
+
+    gsap.from(".spesies-section .image-container", {
+      scrollTrigger: {
+        trigger: ".spesies-section .image-container",
+        start: "top 90%",
+        once: true,
+        toggleActions: "play none none none",
+      },
+      duration: 1.5,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      delay: 1.4,
+    });
+
+    gsap.from(".spesies-section .btn", {
+      scrollTrigger: {
+        trigger: ".spesies-section .btn",
+        start: "top 90%",
+        once: true,
+        toggleActions: "play none none none",
+      },
+      duration: 1.5,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      delay: 1.4,
+    });
+
     gsap.from(".destinasi-section h2", {
       scrollTrigger: {
         trigger: ".destinasi-section h2",
@@ -263,6 +228,33 @@ const Beranda = {
       delay: 2.2,
     });
 
+    gsap.from(".cerita-kita-section h2", {
+      scrollTrigger: {
+        trigger: ".cerita-kita-section h2",
+        start: "top 90%",
+        once: true,
+        toggleActions: "play none none none",
+      },
+      duration: 1.5,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      delay: 2.8,
+    });
+
+    gsap.from(".carousel-inner", {
+      scrollTrigger: {
+        trigger: ".carousel-inner",
+        start: "top 90%",
+        once: true,
+        toggleActions: "play none none none",
+      },
+      duration: 1.5,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      delay: 2.8,
+    });
     const destinasiSection = document.querySelector(".destinasi-section");
 
     if (destinasiSection) {
@@ -279,10 +271,7 @@ const Beranda = {
             const destinasiCol = document.createElement("div");
             destinasiCol.classList.add("col-md-4");
 
-            const deskripsiPendek =
-              destinasi.deskripsi.length > 200
-                ? destinasi.deskripsi.substring(0, 200) + "..."
-                : destinasi.deskripsi;
+            const deskripsiPendek = destinasi.deskripsi.length > 200 ? destinasi.deskripsi.substring(0, 200) + "..." : destinasi.deskripsi;
 
             const destinasiContent = `
               <div class="image-container">
@@ -308,9 +297,7 @@ const Beranda = {
         const copyDestinasiArray = [...destinasiArray];
 
         for (let i = 0; i < jumlah; i++) {
-          const randomIndex = Math.floor(
-            Math.random() * copyDestinasiArray.length
-          );
+          const randomIndex = Math.floor(Math.random() * copyDestinasiArray.length);
           destinasiAcak.push(copyDestinasiArray.splice(randomIndex, 1)[0]);
         }
 
@@ -358,9 +345,7 @@ const Beranda = {
                     height="120"
                   />
                   <h3>${cerita.username}</h3>
-                  <p class="waktu-unggah">${new Date(
-                    cerita.date_created
-                  ).toLocaleString("id-ID", {
+                  <p class="waktu-unggah">${new Date(cerita.date_created).toLocaleString("id-ID", {
                     dateStyle: "medium",
                     timeStyle: "short",
                   })}</p>
@@ -378,12 +363,8 @@ const Beranda = {
         console.error("Gagal memuat data cerita:", error);
       }
 
-      const prevButton = carouselElement.querySelector(
-        ".carousel-control-prev"
-      );
-      const nextButton = carouselElement.querySelector(
-        ".carousel-control-next"
-      );
+      const prevButton = carouselElement.querySelector(".carousel-control-prev");
+      const nextButton = carouselElement.querySelector(".carousel-control-next");
 
       prevButton.addEventListener("click", () => {
         carousel.prev();
@@ -405,10 +386,8 @@ const Beranda = {
           if (species.length >= 5) {
             for (let index = 0; index < species.length; index++) {
               var elId = index + 1;
-              document.getElementById("image" + elId).src =
-                "uploads/" + species[index].gambar;
-              document.getElementById("overlay" + elId).innerText =
-                species[index].kelas;
+              document.getElementById("image" + elId).src = "uploads/" + species[index].gambar;
+              document.getElementById("overlay" + elId).innerText = species[index].kelas;
             }
           }
         } catch (error) {
@@ -422,8 +401,7 @@ const Beranda = {
     const edukasiSection = document.querySelector(".edukasi-section");
 
     if (edukasiSection) {
-      const edukasiContainer =
-        edukasiSection.querySelector("#edukasiContainer");
+      const edukasiContainer = edukasiSection.querySelector("#edukasiContainer");
 
       async function fetchEdukasiData() {
         try {
@@ -437,9 +415,7 @@ const Beranda = {
       }
 
       function truncateText(text, maxLength) {
-        return text.length > maxLength
-          ? text.substring(0, maxLength) + "..."
-          : text;
+        return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
       }
 
       async function tampilkanEdukasi() {
@@ -460,9 +436,7 @@ const Beranda = {
                 <hr>
                 <div class="text">${truncatedDeskripsi}</div>
               </div>
-              <div class="image-edukasi"><img src="/uploads/${
-                edukasi.gambar
-              }" alt="${edukasi.nama_isu}" /></div>
+              <div class="image-edukasi"><img src="/uploads/${edukasi.gambar}" alt="${edukasi.nama_isu}" /></div>
             </div>
           `;
 
