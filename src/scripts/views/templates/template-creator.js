@@ -24,7 +24,17 @@ const berandaTemplate = () => `
         <h2 style="text-align: center"><strong>Tentang Kami</strong></h2>
         <div class="content-flex">
           <div class="image-tentang">
-            <img src="images/pohon.png" alt="Tentang Kami Image" />
+          <picture>
+          <source
+            media="(min-width: 1200px)"
+            srcset="./images/pohon-large.png"
+          />
+          <source
+            media="(max-width: 768px)"
+            srcset="./images/pohon-small.png"
+          />
+          <img src="./images/pohon-large.png" alt="Tentang Kami Image" />
+        </picture>
           </div>
           <div class="text">
             <p style="font-size: 1.4rem;"><strong>Apa Itu Rimbawa 360?</strong></p>
@@ -293,7 +303,7 @@ const formCeritaTemplate = () => `
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <img src="/images/cerita-kamu.png" alt="Gambarmu" class="img-fluid" />
+          <center><img src="/images/cerita-kamu.png" alt="Gambarmu" class="img-fluid" /></center>
         </div>
         <div class="col-md-6">
           <h2>
@@ -306,7 +316,7 @@ const formCeritaTemplate = () => `
                 class="form-control"
                 id="cerita"
                 name="cerita"
-                rows="7"
+                rows="8"
                 maxlength="345"
                 required
               ></textarea>
@@ -327,7 +337,7 @@ const editCeritaTemplate = (ceritaId) => `
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <img src="/images/cerita-kamu.png" alt="Gambarmu" class="img-fluid" />
+          <center><img src="/images/cerita-kamu.png" alt="Gambarmu" class="img-fluid" /></center>
         </div>
         <div class="col-md-6">
           <h2>
@@ -336,7 +346,7 @@ const editCeritaTemplate = (ceritaId) => `
           <form method="POST" id="ceritaForm" data-id="${ceritaId}">
             <div class="form-group">
               <label for="cerita"></label>
-              <textarea class="form-control" id="cerita" name="cerita" rows="7" maxlength="345" required></textarea>
+              <textarea class="form-control" id="cerita" name="cerita" rows="8" maxlength="345" required></textarea>
             </div>
             <button type="submit" class="btn btn-kirim-cerita">
               Perbarui Cerita

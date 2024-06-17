@@ -962,13 +962,6 @@
     font-size: 2rem;
   }
 
-  .edit-cerita-page img {
-    position: static;
-    width: 100%;
-    max-width: 100%;
-    margin-top: 20px;
-  }
-
   .btn-tambah {
     width: 40px;
     height: 40px;
@@ -1002,6 +995,15 @@
   #cerita-list .card {
     margin-left: 10px;
     margin-right: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .edit-cerita-page img {
+    position: absolute;
+    top: -130px;
+    right: 60px;
+    margin-bottom: 0;
   }
 }
 

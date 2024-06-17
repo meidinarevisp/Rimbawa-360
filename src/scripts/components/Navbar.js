@@ -12,7 +12,7 @@ class NavbarRimbawa extends HTMLElement {
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-lg d-flex justify-content-between">
           <a class="navbar-brand" href="/">
-            <img src="rimbawa-360.png" alt="Logo" />
+            <img src="rimbawa-360-small.png" alt="Logo" />
           </a>
           <button
             class="navbar-toggler"

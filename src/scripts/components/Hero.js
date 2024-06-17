@@ -6,11 +6,33 @@ class HeroRimbawa extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
  <section class="hero-section">
-      <img
-        src="/heros/hero-1.jpg"
+ <picture>
+          <source
+            media="(min-width: 1200px)"
+            srcset="./heros/hero-1-large.webp"
+          />
+          <source
+            media="(min-width: 1200px)"
+            srcset="./heros/hero-1-large.jpg"
+          />
+          <source
+            media="(max-width: 768px)"
+            srcset="./heros/hero-1-small.webp"
+          />
+          <source
+            media="(max-width: 768px)"
+            srcset="./heros/hero-1-small.jpg"
+          />
+          <source
+            srcset="./heros/hero-1-large.webp"
+            type="image/webp"
+          />
+          <img
+        src="./heros/hero-1-large.jpg"
         alt="Hero Image"
         class="img-fluid hero-image"
       />
+        </picture>
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6">

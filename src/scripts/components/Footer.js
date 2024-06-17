@@ -15,7 +15,7 @@ class FooterRimbawa extends HTMLElement {
         <button class="btn btn-up btn-back-to-top">
           <i class="fas fa-arrow-up"></i>
         </button>
-        <button class="btn btn-comment btn-forum">
+        <button class="btn btn-comment btn-forum" aria-label="Button Forum">
           <i class="fas fa-comment"></i>
         </button>
         <div class="row">
@@ -23,16 +23,16 @@ class FooterRimbawa extends HTMLElement {
             <h5>Ikuti Kami</h5>
             <ul class="list-inline">
               <li class="list-inline-item">
-                <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook fa-2x"></i></a>
               </li>
               <li class="list-inline-item">
-                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
               </li>
               <li class="list-inline-item">
-                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter fa-2x"></i></a>
               </li>
               <li class="list-inline-item">
-                <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
               </li>
             </ul>
           </div>
@@ -103,7 +103,10 @@ class FooterRimbawa extends HTMLElement {
       });
 
       document.addEventListener("click", function (event) {
-        if (!forumButton.contains(event.target) && !forumContainer.contains(event.target)) {
+        if (
+          !forumButton.contains(event.target) &&
+          !forumContainer.contains(event.target)
+        ) {
           forumContainer.classList.remove("show");
         }
       });
@@ -135,7 +138,9 @@ class FooterRimbawa extends HTMLElement {
             if (response.ok) {
               const data = await response.json();
               console.log(data);
-              toastr.success("Forum berhasil ditambahkan").css("margin-top", "90px");
+              toastr
+                .success("Forum berhasil ditambahkan")
+                .css("margin-top", "90px");
 
               // Tambahkan post baru ke daftar forum posts tanpa reload halaman
               const newPost = {
@@ -215,7 +220,9 @@ class FooterRimbawa extends HTMLElement {
 
         postElement.innerHTML = `
         <div class="post-header">
-            <img class="user-icon rounded-circle" src="${post.gambar}" alt="User Icon" width="50" height="50">
+            <img class="user-icon rounded-circle" src="${
+              post.gambar
+            }" alt="User Icon" width="50" height="50">
             <div class="user-info">
                 <h4>${post.username}</h4>
                 <small>${formattedDate}</small>
@@ -280,8 +287,11 @@ class FooterRimbawa extends HTMLElement {
             confirmButtonText: "Simpan",
             cancelButtonText: "Batal",
             preConfirm: () => {
-              const title = Swal.getPopup().querySelector("#editForumTitle").value;
-              const deskripsi = Swal.getPopup().querySelector("#editForumDeskripsi").value;
+              const title =
+                Swal.getPopup().querySelector("#editForumTitle").value;
+              const deskripsi = Swal.getPopup().querySelector(
+                "#editForumDeskripsi"
+              ).value;
               editPost(post.id, title, deskripsi);
             },
           });
@@ -308,16 +318,19 @@ class FooterRimbawa extends HTMLElement {
 
       async function editPost(postId, title, deskripsi) {
         try {
-          const response = await fetch(`http://localhost:3000/api/forum/${postId}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              judul: title,
-              deskripsi: deskripsi,
-            }),
-          });
+          const response = await fetch(
+            `http://localhost:3000/api/forum/${postId}`,
+            {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                judul: title,
+                deskripsi: deskripsi,
+              }),
+            }
+          );
           if (response.ok) {
             Swal.fire("Sukses", "Forum berhasil diubah", "success");
             // Update forum post locally without page reload
@@ -337,9 +350,12 @@ class FooterRimbawa extends HTMLElement {
 
       async function deletePost(postId) {
         try {
-          const response = await fetch(`http://localhost:3000/api/forum/${postId}`, {
-            method: "DELETE",
-          });
+          const response = await fetch(
+            `http://localhost:3000/api/forum/${postId}`,
+            {
+              method: "DELETE",
+            }
+          );
           if (response.ok) {
             Swal.fire("Sukses", "Forum berhasil dihapus", "success");
             // Remove deleted post from local data without page reload
