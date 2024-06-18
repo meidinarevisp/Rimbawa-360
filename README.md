@@ -57,12 +57,15 @@ SHA at the HEAD of the release.
         
         
 2. *Install NPM Dependencies*
+    - Masuk ke direktori project dengan perintah:
+	bash
+	cd Rimbawa-360
 
     - Jalankan perintah berikut untuk menginstal semua dependensi yang diperlukan:
         bash
         npm install
 
-    - Jalankan perintah berikut untuk menginstal node modules:
+    - Jalankan perintah berikut untuk menginstal webpack dan webpack-dev-server:
 	bash
 	npm install webpack webpack-cli webpack-dev-server
         
@@ -84,19 +87,21 @@ SHA at the HEAD of the release.
         bash
         npm run server
         
-   - Setelah itu buka terminal baru dan jalankan:
+   - Setelah itu buka terminal baru dan Jalankan perintah berikut untuk membangun (build) aset dengan Webpack:
         bash
-        npm run build lalu npm run start-dev
-        
+        npm run build
+   - Setelah proses build selesai, jalankan perintah berikut untuk menjalankan server Webpack:
+        bash
+        npm run start-dev
         
     - Proyek akan berjalan di http://localhost:5000 || http://192.168.1.3:5000/ secara default.
 
 6. *Login*
     - Daftar dan login menggunakan akun masing-masing untuk mengakses webnya.
     - Login ke dashboard admin menggunakan akun operator dengan email dan password berikut:
-        - email: cek di DatabaseSeeder
+        - username: cek di DatabaseSeeder
         - password: cek di DatabasesSeeder
 ## Catatan
 
--   Pastikan Anda memiliki Git dan Github CLI yang terinstal di sistem Anda sebelum menjalankan langkah-langkah di atas.
+-   Pastikan Anda memiliki Git, Node.js, dan NPM yang terinstal di sistem Anda sebelum menjalankan langkah-langkah di atas.
 -   Pastikan juga Anda memiliki database yang sudah terbuat dan konfigurasi yang sesuai di file .env.
