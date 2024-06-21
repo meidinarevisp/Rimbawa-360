@@ -667,8 +667,7 @@ nav .dropdown-menu .dropdown-item:hover {
 }
 
 .dropdown-menu .dropdown-item.active {
-  background-color: #bbe0aa !important;
-  color: #333433 !important;
+  color: #56ab2e !important;
 }
 
 .navbar-nav .nav-link.active {

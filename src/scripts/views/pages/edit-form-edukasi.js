@@ -36,7 +36,7 @@ const editFormEdukasi = {
       if (response.ok) {
         Swal.fire("Success!", "Data berhasil diperbarui", "success").then(
           () => {
-            window.location.href = `/#/dashboard-direktori`;
+            window.location.href = `/#/dashboard-edukasi`;
           }
         );
       } else {
