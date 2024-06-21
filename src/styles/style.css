@@ -668,6 +668,7 @@ nav .dropdown-menu .dropdown-item:hover {
 
 .dropdown-menu .dropdown-item.active {
   color: #56ab2e !important;
+  background-color: transparent !important;
 }
 
 .navbar-nav .nav-link.active {
@@ -2443,8 +2444,9 @@ footer .fa-2x {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   padding-top: 12px;
+  margin-bottom: 30px;
 }
 
 #dashboard-direktori .card {
@@ -2566,8 +2568,9 @@ footer .fa-2x {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   padding-top: 12px;
+  margin-bottom: 30px;
 }
 
 #dashboard-edukasi .card {
@@ -2689,8 +2692,9 @@ footer .fa-2x {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   padding-top: 12px;
+  margin-bottom: 30px;
 }
 
 #dashboard-spesies .card {
